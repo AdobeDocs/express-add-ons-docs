@@ -25,6 +25,17 @@ contributors:
 
 # Changelog
 
+## 2026-03-26
+
+### Stabilized
+
+The [`Node.resize()`](../../references/document-sandbox/document-apis/classes/Node.md#resize) Document API and related APIs are no longer experimental and no longer require the `experimentalApis` flag in your manifest.
+
+### Added
+
+- **Experimental** [`MediaContainerNode.replaceMediaWithEditedImage()`](../../references/document-sandbox/document-apis/classes/MediaContainerNode.md#replacemediawitheditedimage): Replaces the current media with an edited version of the same image while preserving existing filter effects, per-element metadata, and asset provenance (including attribution IDs and Adobe Stock information). Use this instead of `replaceMedia()` when the replacing with a modified version of the original image (e.g., recolored, upscaled).
+- **Experimental** [`ReplaceMediaWithEditedImageOptions`](../../references/document-sandbox/document-apis/interfaces/ReplaceMediaWithEditedImageOptions.md) interface: Options for `replaceMediaWithEditedImage()`, including the `preserveCutoutFilter` property.
+
 ## 2026-03-13
 
 ### Updated
@@ -355,7 +366,6 @@ While there are redirects in place, please **add** `https://express.adobe.com/st
 ### Updated
 
 - The [Code Playground](./code-playground.md) documentation has been updated with details about the new [Script Mode](./code-playground-script-mode.md#how-to-use-script-mode) and [Local Persistence](./code-playground-workflow.md) features, as well as additional details around existing features. The updates include:
-
   - New sections explaining Script Mode and Add-on Mode.
   - Detailed descriptions of the different tabs available in the Add-on mode and what type of code belongs in each.
   - Information about local persistence and session management.
@@ -418,7 +428,6 @@ For removing expired SSL certificate or certificate authority, developers can no
 - The version of `@swc-react` components in the templates based on React has been updated to `1.0.3`.
 - The version of `@spectrum-web-components` components in the templates based on SWC has been updated to `1.1.2`.
 - The theme usage has been updated to use the `system` attribute instead of `theme`, ie:
-
   - SWC: `<sp-theme system="express" color="light"  scale="medium">`
   - React: `<Theme system="express" scale="medium" color="light">`
 
@@ -444,7 +453,6 @@ For removing expired SSL certificate or certificate authority, developers can no
 - An [FAQ item](../support/faq.md#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows) was added for a known issue found where the CLI is failing on Windows when running certain versions of Node.js. The [FAQ](../support/faq.md#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows) provides a workaround for this issue.
 
 - The following new properties have been added to the AddOnSdk [`PageMetadata`](../../references/addonsdk/app-document.md#pagemetadata) API:
-
   - [`isBlank`](../../references/addonsdk/app-document.md#pagemetadata): Allows you to check if a page is blank.
   - [`templateDetails`](../../references/addonsdk/app-document.md#pagemetadata): Retrieves details about the template used to create the document.
 
@@ -616,7 +624,6 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
   - [`cloneInPlace()`](../../references/document-sandbox/document-apis/classes/PageNode.md#cloneinplace) method: clones a Page, all artboards within it, and all content within those artboards.
   - Support to Bounds has been added in several classes: [`boundsInParent`](../../references/document-sandbox/document-apis/classes/Node.md#boundsinparent); `boundsLocal` (for both [GroupNode](../../references/document-sandbox/document-apis/classes/GroupNode.md#boundslocal) and [VisualNode](../../references/document-sandbox/document-apis/classes/VisualNode.md#boundslocal)); [`centerPointLocal`](../../references/document-sandbox/document-apis/classes/VisualNode.md#centerpointlocal); [`topLeftLocal`](../../references/document-sandbox/document-apis/classes/VisualNode.md#topleftlocal); [`boundsInNode()`](../../references/document-sandbox/document-apis/classes/Node.md#boundsinnode); [`localPointInNode()`](../../references/document-sandbox/document-apis/classes/VisualNode.md#localpointinnode);
 - The CLI has been updated to release version `2.0.0`, and includes the following:
-
   - Periodic login and EULA consent are no longer required.
   - Two new templates for creating add-ons with built-in support to Spectrum Web Components have been added and documented: `swc-javascript` and `swc-javascript-with-document-sandbox`. Typescript templates have been renamed to `swc-typescript` and `swc-typescript-with-document-sandbox`. See [this page](../getting_started/local_development/dev_tooling.md#templates) for details on all the available templates.
   - Typings have been updated to include the latest SDK changes, and other internal packages are now at version `2.0.0`.
@@ -828,7 +835,6 @@ Some items in the following list of changes may have been mentioned in recent up
   **IMPORTANT:** The above updates should be considered breaking changes, so any add-ons in development that relied on the experimental APIs may not work correctly until you make changes to use the new/updated ones above. The intention was to ensure these important changes were made prior to marking the APIs stable to 1) make them more intuitive for developers, 2) significantly improve the process of working with colors, strokes and fills, and 3) prevent certain operations from corrupting the document.
 
 - The CLI has been updated to release version `1.1.1`, and includes the following:
-
   - The document sandbox templates have been updated to reflect all of the latest changes to the [Document Sandbox APIs](../../references/document-sandbox/), and the `experimentalApis` flag has been removed. Please review the updated [references](../../references/document-sandbox/) and changelog entries thoroughly for details on all of the recent changes. You may also want to refer to the [document sandbox code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) for additional help on how to use them.
   - Typings support has been added to the `javascript` templates to enable intellisense features.
   - Manifest property additions.
@@ -962,7 +968,6 @@ Some items in the following list of changes may have been mentioned in recent up
 - The [Document API References](../../references/document-sandbox/document-apis/) were updated with the following additions and changes:
 
   **New Classes/Interfaces**<br/>
-
   - New [RestrictedItemList class](../../references/document-sandbox/document-apis/classes/RestrictedItemList.md)
   - New [UnknownNode class](../../references/document-sandbox/document-apis/classes/UnknownNode.md)
   - New [SolidColorShapeNode class](../../references/document-sandbox/document-apis/classes/SolidColorShapeNode.md)
@@ -1041,7 +1046,6 @@ New versions of the CLI packages:
 which include:
 
 - Updated templates for both iframe and document sandbox add-ons:
-
   - All new add-ons created (other than those based on javascript) use `spectrum-web-components` with the Express theme pre-set.
   - React-based templates include [`swc-react`](https://opensource.adobe.com/spectrum-web-components/using-swc-react/) setup.
   - The `javascript-with-editor-apis` template has been removed from the initial template selection in this version but replaced with the option from the CLI to [include the document sandbox](https://developer.adobe.com/express/add-ons/docs/references/document-sandbox/#cli-generated-script-runtime-add-on) when creating a new add-on.
@@ -1089,7 +1093,6 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
 ### Updates
 
 - **New Types Package Versions Released** <br/>
-
   - A new version `0.1.6` of the `@adobe-ccwebext/ccweb-add-on-sdk-types` package with the latest typings for the [`AddOnSDK` (iframe)](https://developer.adobe.com/express/add-ons/docs/references/addonsdk/), including new experimental APIs, as well as general improvements and bug fixes.
   - A new version `0.2.0` of the `@adobe-ccwebext/ccweb-add-on-sdk-types` package with the latest typings for the **document sandbox/Editor APIs**.
 
@@ -1201,7 +1204,6 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
   - If you split your work on a document over multiple frames, be sure to protect against reentrancy, otherwise you may end up corrupting the user's undo stack. You should disable elements on the panel UI that could allow the user to execute your code before it is complete and then re-enable those elements when the code is done. The issue will be fixed in a future release.
   - When setting up communication between your panel UI code and your script sandbox code, calling `apiProxy()` with the wrong argument will do nothing without providing any error feedback. If communication is not working, carefully double-check your UI code is requesting the `"script"` API proxy and your script sandbox code is requesting the `"panel"` API proxy.
 - Unexpected behavior
-
   - If the user has a selection and your add-on creates new content, the selection is cleared. This will be addressed before release. An API will be added in the future that will allow you to change the selection to content your add-on creates.
   - When you add text content to a document, font substitution is not working correctly. This means that if you use Asian-language characters, the user may see square boxes instead. If the user were to type the content manually, however, they would see the correct rendering. This issue will be fixed before release.
   - Setting a blend mode on a media container node (e.g., after calling `editor.createImageContainer`) will be visually reflected, but doesn't currently update the "Blend mode" field in the property panel.
