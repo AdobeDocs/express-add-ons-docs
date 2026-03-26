@@ -20,6 +20,18 @@ User's current selection context
 
 [`Context`](Context.md)
 
+---
+
+### documentRoot
+
+• `get` **documentRoot**(): [`BaseNode`](BaseNode.md)
+
+#### Returns
+
+[`BaseNode`](BaseNode.md)
+
+the root of the document.
+
 ## Methods
 
 ### createEllipse()
