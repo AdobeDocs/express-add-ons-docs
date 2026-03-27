@@ -2,7 +2,7 @@
                      LINTER REPORT
 ═══════════════════════════════════════════════════════════════
 
-Generated: 2026-02-25T23:25:36.450Z
+Generated: 2026-03-27T19:47:10.228Z
 Mode: Full Linting (all rules + dead links check)
 Target Directory: /Users/louisa/adobe-dev-site/express-add-ons-docs
 
@@ -74,11 +74,6 @@ Files to process: 240
     Rule: no-dead-urls
 
   ⚠️  WARNING
-    Location: Line 450:3
-    Message: Unexpected dead URL `https://www.figma.com/community/file/1211274196563394418/Adobe-Spectrum-Design-System`, expected live URL
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
     Location: Line 157:1
     Message: Unexpected redirecting URL `https://react-spectrum.adobe.com/react-spectrum/index.html`, expected final URL `https://react-spectrum.adobe.com/`
     Rule: no-dead-urls
@@ -88,6 +83,16 @@ Files to process: 240
     Message: Unexpected redirecting URL `https://react-spectrum.adobe.com/react-spectrum/index.html`, expected final URL `https://react-spectrum.adobe.com/`
     Rule: no-dead-urls
 
+  ⚠️  WARNING
+    Location: Line 450:3
+    Message: Unexpected dead URL `https://www.figma.com/community/file/1211274196563394418/Adobe-Spectrum-Design-System`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 296:203
+    Message: Unexpected dead URL `https://codepen.io/kerrishotts/pen/QWZazJP`, expected live URL
+    Rule: no-dead-urls
+
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/build/design/index.md
 ───────────────────────────────────────────────────────────────
@@ -95,24 +100,6 @@ Files to process: 240
     Location: Line 18:1
     Message: Description is too long (186 characters). Consider keeping it under 160 characters.
     Rule: check-frontmatter
-
-───────────────────────────────────────────────────────────────
-📄 FILE: src/pages/guides/build/design/ux-guidelines/branding-guidelines.md
-───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 25:21
-    Message: Cannot find file `../../../../pdf/Adobe_Express_Developer_Program_brand_guide_100625.pdf`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 29:104
-    Message: Cannot find file `../../../../pdf/Adobe_Express_Developer_Program_brand_guide_100625.pdf`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 49:53
-    Message: Cannot find file `../../../../pdf/Adobe_Express_Developer_Program_brand_guide_100625.pdf`
-    Rule: missing-file
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/build/design/ux-guidelines/feedback-and-messaging.md
@@ -202,6 +189,11 @@ Files to process: 240
     Rule: no-dead-urls
 
   ⚠️  WARNING
+    Location: Line 178:129
+    Message: Unexpected dead URL `https://spectrum.adobe.com/page/button/#Options`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
     Location: Line 168:130
     Message: Unexpected dead URL `https://spectrum.adobe.com/page/button-group/#Usage-guidelines`, expected live URL
     Rule: no-dead-urls
@@ -215,24 +207,6 @@ Files to process: 240
     Location: Line 174:5
     Message: Unexpected dead URL `https://spectrum.adobe.com/page/button/#Usage-guidelines`, expected live URL
     Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 178:129
-    Message: Unexpected dead URL `https://spectrum.adobe.com/page/button/#Options`, expected live URL
-    Rule: no-dead-urls
-
-───────────────────────────────────────────────────────────────
-📄 FILE: src/pages/guides/build/distribute/guidelines/brand-guidelines.md
-───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 23:5
-    Message: Cannot find file `../../../../pdf/Adobe_Express_Developer_Program_brand_guide_100625.pdf`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 31:16
-    Message: Cannot find file `../../../../pdf/Adobe_Express_Developer_Program_brand_guide_100625.pdf`
-    Rule: missing-file
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/build/distribute/guidelines/genai/recommendations.md
@@ -438,11 +412,6 @@ Files to process: 240
     Rule: no-dead-urls
 
   ⚠️  WARNING
-    Location: Line 74:39
-    Message: Unexpected dead URL `https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf`, expected live URL
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
     Location: Line 50:123
     Message: Unexpected redirecting URL `http://discord.gg/nc3QDyFeb4`, expected final URL `https://discord.com/invite/nc3QDyFeb4`
     Rule: no-dead-urls
@@ -453,11 +422,6 @@ Files to process: 240
   ⚠️  WARNING
     Location: Line 23:55
     Message: Unexpected dead URL `mailto:ccintrev@adobe.com`, expected live URL
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 48:35
-    Message: Unexpected dead URL `https://developer.adobe.com/express/embed-sdk/docs/assets/34359598a6bd85d69f1f09839ec43e12/Adobe_Express_Partner_Program_brand_guide.pdf`, expected live URL
     Rule: no-dead-urls
 
   ⚠️  WARNING
@@ -477,7 +441,7 @@ Files to process: 240
 📄 FILE: src/pages/guides/getting-started/changelog.md
 ───────────────────────────────────────────────────────────────
   ❌ ERROR
-    Message: Failed to process file - Internal link "../../references/document-sandbox/document-apis/enumerations/" must end with .md. Run "npm run normalizeLinks" to fix automatically, or manually change to "../../references/document-sandbox/document-apis/enumerations/index.md" or "../../references/document-sandbox/document-apis/enumerations.md".
+    Message: Failed to process file - Internal link "./" must end with .md. Run "npm run normalizeLinks" to fix automatically, or manually change to "./index.md" or "..md".
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/getting-started/code-playground-troubleshooting.md
@@ -534,43 +498,18 @@ Files to process: 240
 📄 FILE: src/pages/guides/getting-started/developer-journey.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 131:2
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-animation.gif`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 149:2
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/bingo-codepen.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 153:2
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/bingo-v1-addon.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 161:2
-    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-scenegraph.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 165:2
-    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-refactor.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 85:50
-    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 89:1
-    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 195:122
+    Location: Line 189:122
     Message: Unexpected redirecting URL `http://discord.gg/nc3QDyFeb4`, expected final URL `https://discord.com/invite/nc3QDyFeb4`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 83:50
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 87:1
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
     Rule: no-dead-urls
 
 ───────────────────────────────────────────────────────────────
@@ -597,6 +536,11 @@ Files to process: 240
     Rule: no-dead-urls
 
   ⚠️  WARNING
+    Location: Line 93:3
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground?executionMode=script`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground&executionMode=script`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
     Location: Line 55:95
     Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-cli`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=dev`
     Rule: no-dead-urls
@@ -611,18 +555,13 @@ Files to process: 240
     Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-cli`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=dev`
     Rule: no-dead-urls
 
-  ⚠️  WARNING
-    Location: Line 93:3
-    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground?executionMode=script`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground&executionMode=script`
-    Rule: no-dead-urls
-
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/getting-started/local-development/dev-tooling.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 235:1
-    Message: Cannot find file `../getting-started/img/playground-enable-dev-mode.gif`
-    Rule: missing-file
+    Location: Line 227:6
+    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
+    Rule: no-dead-urls
 
   ⚠️  WARNING
     Location: Line 192:1
@@ -637,11 +576,6 @@ Files to process: 240
   ⚠️  WARNING
     Location: Line 227:144
     Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-cli`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=dev`
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 227:6
-    Message: Unexpected redirecting URL `https://www.adobe.com/go/addon-playground`, expected final URL `https://new.express.adobe.com/new?category=addOns&mode=playground`
     Rule: no-dead-urls
 
 ───────────────────────────────────────────────────────────────
@@ -664,12 +598,12 @@ Files to process: 240
 📄 FILE: src/pages/guides/getting-started/local-development/mcp-server.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 155:1
+    Location: Line 157:47
     Message: Image is missing alt text: ./img/mcp-server-calling-tools.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
-    Location: Line 157:1
+    Location: Line 157:87
     Message: Image is missing alt text: ./img/mcp-tool-call-example.png
     Rule: no-alt-text-for-image
 
@@ -686,6 +620,11 @@ Files to process: 240
   ⚠️  WARNING
     Location: Line 361:16
     Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 405:30
+    Message: Unexpected redirecting URL `https://modelcontextprotocol.io/legacy/tools/debugging`, expected final URL `https://modelcontextprotocol.io/docs/tools/debugging`
     Rule: no-dead-urls
 
   ⚠️  WARNING
@@ -718,9 +657,14 @@ Files to process: 240
 📄 FILE: src/pages/guides/learn/how-to/create-renditions.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 394:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/export-ppt-font-disclaimer.png`
+    Location: Line 503:14
+    Message: Cannot find file `../../../references/document-sandbox/document-apis/namespaces/Constants/enumerations/create-rendition-format.md`; did you mean `../../../references/document-sandbox/document-apis/interfaces/create-rendition-result.md`
     Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 34:1
+    Message: Description is too long (182 characters). Consider keeping it under 160 characters.
+    Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/learn/how-to/drag-and-drop.md
@@ -729,24 +673,6 @@ Files to process: 240
     Location: Line 230:122
     Message: Unexpected redirecting URL `https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html`, expected final URL `https://helpx.adobe.com/express/web/video-creation-and-editing/change-file-formats/import-gif-limits.html`
     Rule: no-dead-urls
-
-───────────────────────────────────────────────────────────────
-📄 FILE: src/pages/guides/learn/how-to/group-elements.md
-───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 175:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/groups_above.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 194:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/groups_below.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 214:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/groups_middle.png`
-    Rule: missing-file
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/learn/how-to/handle-selection.md
@@ -760,11 +686,6 @@ Files to process: 240
 📄 FILE: src/pages/guides/learn/how-to/index.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 77:2
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-animation.gif`
-    Rule: missing-file
-
-  ⚠️  WARNING
     Location: Line 15:1
     Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
@@ -773,194 +694,61 @@ Files to process: 240
 📄 FILE: src/pages/guides/learn/how-to/position-elements.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 78:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/position_bounding-box.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 110:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/position_rotate.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 145:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/position_rotated-bounding-box.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
     Location: Line 189:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/position_parent.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 189:1
-    Message: Image is missing alt text: src/pages/guides/learn/how-to/images/position_parent.png
+    Message: Image is missing alt text: ./images/position_parent.png
     Rule: no-alt-text-for-image
-
-───────────────────────────────────────────────────────────────
-📄 FILE: src/pages/guides/learn/how-to/resize-elements.md
-───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 113:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/rescale--rescale-proportional-width.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 140:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/rescale--rescale-proportional-height.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 178:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/resize--proportional-styles.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 209:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/rescale--resize-within-ellipse.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 243:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/resize--cover-one-dimension.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 279:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/resize--contain-media.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 321:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/resize--within-media-crop.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 361:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/resize-to-cover.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 397:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/rescale--rescale-proportional-text.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 435:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/rescale--rescale-resize-text.png`
-    Rule: missing-file
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/learn/how-to/tutorials/grids-addon.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 64:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 95:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-animation.gif`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 106:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-communication.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 120:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-git.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 136:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-folder-structure.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 271:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-communicationapi.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 319:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-reference.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 465:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-shape.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 498:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-swc.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 821:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-console.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 831:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-rowheight.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 1018:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/grids-addon-groups.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 64:1
-    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/grids-addon.png
+    Message: Image is missing alt text: ./images/grids-addon.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 95:1
-    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/grids-addon-animation.gif
+    Message: Image is missing alt text: ./images/grids-addon-animation.gif
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 106:1
-    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/grids-addon-communication.png
+    Message: Image is missing alt text: ./images/grids-addon-communication.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 120:1
-    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/grids-addon-git.png
+    Message: Image is missing alt text: ./images/grids-addon-git.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 136:1
-    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/grids-addon-folder-structure.png
+    Message: Image is missing alt text: ./images/grids-addon-folder-structure.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 465:1
-    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/grids-addon-shape.png
+    Message: Image is missing alt text: ./images/grids-addon-shape.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 498:1
-    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/grids-addon-swc.png
+    Message: Image is missing alt text: ./images/grids-addon-swc.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 821:1
-    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/grids-addon-console.png
+    Message: Image is missing alt text: ./images/grids-addon-console.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 831:1
-    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/grids-addon-rowheight.png
+    Message: Image is missing alt text: ./images/grids-addon-rowheight.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 1018:1
-    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/grids-addon-groups.png
+    Message: Image is missing alt text: ./images/grids-addon-groups.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
@@ -969,36 +757,8 @@ Files to process: 240
     Rule: no-dead-urls
 
 ───────────────────────────────────────────────────────────────
-📄 FILE: src/pages/guides/learn/how-to/tutorials/index.md
-───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 26:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/thumbs-grids-addon.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 36:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/thumbs-stats-addon.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 46:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/bingo-v1-addon.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 56:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/thumbs-markdown-addon.png`
-    Rule: missing-file
-
-───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/learn/how-to/tutorials/markdown-parser-text-api.md
 ───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 73:67
-    Message: Unexpected dead URL `https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-markdown-parser-addon/express-markdown-parser-addon-start`, expected live URL
-    Rule: no-dead-urls
-
   ⚠️  WARNING
     Location: Line 61:88
     Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/guides/getting-started/quickstart/`, expected live URL
@@ -1009,19 +769,14 @@ Files to process: 240
     Message: Unexpected dead URL `https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-markdown-parser-addon/`, expected live URL
     Rule: no-dead-urls
 
+  ⚠️  WARNING
+    Location: Line 73:67
+    Message: Unexpected dead URL `https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/express-markdown-parser-addon/express-markdown-parser-addon-start`, expected live URL
+    Rule: no-dead-urls
+
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/learn/how-to/tutorials/spectrum-workshop/index.md
 ───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 42:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/bingo-v1-addon.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 91:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/bingo-codepen.png`
-    Rule: missing-file
-
   ⚠️  WARNING
     Location: Line 17:1
     Message: Description is too long (181 characters). Consider keeping it under 160 characters.
@@ -1040,26 +795,6 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/learn/how-to/tutorials/spectrum-workshop/part1.md
 ───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 53:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/basic-js.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 378:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/lesson1-prestyle.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 469:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/lesson1-poststyle.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 671:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/bingo-v1-addon.png`
-    Rule: missing-file
-
   ⚠️  WARNING
     Location: Line 15:1
     Message: Title is too long (67 characters). Consider keeping it under 60 characters.
@@ -1089,21 +824,6 @@ Files to process: 240
 📄 FILE: src/pages/guides/learn/how-to/tutorials/spectrum-workshop/part2.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 44:5
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/react-starter.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 88:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/swc-button-group-import.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 454:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/lesson2-prestyle.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
     Location: Line 16:1
     Message: Title is too long (62 characters). Consider keeping it under 60 characters.
     Rule: check-frontmatter
@@ -1122,9 +842,14 @@ Files to process: 240
 📄 FILE: src/pages/guides/learn/how-to/tutorials/spectrum-workshop/part3.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 109:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/fonts.png`
-    Rule: missing-file
+    Location: Line 60:31
+    Message: Unexpected dead URL `https://spectrum.adobe.com/page/design-tokens/#Size-tokens`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 103:3
+    Message: Unexpected dead URL `https://spectrum.adobe.com/page/design-tokens/#Size-tokens`, expected live URL
+    Rule: no-dead-urls
 
   ⚠️  WARNING
     Location: Line 147:3
@@ -1137,23 +862,13 @@ Files to process: 240
     Rule: no-dead-urls
 
   ⚠️  WARNING
-    Location: Line 116:128
-    Message: Unexpected redirecting URL `https://opensource.adobe.com/spectrum-web-components/storybook`, expected final URL `https://opensource.adobe.com/spectrum-web-components/storybook/`
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 60:31
-    Message: Unexpected dead URL `https://spectrum.adobe.com/page/design-tokens/#Size-tokens`, expected live URL
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 103:3
-    Message: Unexpected dead URL `https://spectrum.adobe.com/page/design-tokens/#Size-tokens`, expected live URL
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
     Location: Line 107:299
     Message: Unexpected dead URL `https://developer.adobe.com/express/add-ons/docs/guides/design/user_interface/#using-fonts`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 174:152
+    Message: Unexpected dead URL `https://github.com/adobe/spectrum-css/blob/main/components/swatch/metadata/mods.md`, expected live URL
     Rule: no-dead-urls
 
   ⚠️  WARNING
@@ -1162,8 +877,8 @@ Files to process: 240
     Rule: no-dead-urls
 
   ⚠️  WARNING
-    Location: Line 174:152
-    Message: Unexpected dead URL `https://github.com/adobe/spectrum-css/blob/main/components/swatch/metadata/mods.md`, expected live URL
+    Location: Line 116:128
+    Message: Unexpected redirecting URL `https://opensource.adobe.com/spectrum-web-components/storybook`, expected final URL `https://opensource.adobe.com/spectrum-web-components/storybook/`
     Rule: no-dead-urls
 
   ⚠️  WARNING
@@ -1180,103 +895,48 @@ Files to process: 240
 📄 FILE: src/pages/guides/learn/how-to/tutorials/stats-addon.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 29:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/stats-addon.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 55:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/stats-addon-animation.gif`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 160:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/stats-addon-proxy.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 364:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/stats-addon-vscode.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 378:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/stats-addon-doc.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 443:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/stats-addon-flow.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 620:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/stats-addon-lights.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 660:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/stats-addon-type.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 838:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/stats-addon-stats.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
     Location: Line 15:1
     Message: Title is too long (64 characters). Consider keeping it under 60 characters.
     Rule: check-frontmatter
 
   ⚠️  WARNING
     Location: Line 29:1
-    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/stats-addon.png
+    Message: Image is missing alt text: ./images/stats-addon.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 55:1
-    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/stats-addon-animation.gif
+    Message: Image is missing alt text: ./images/stats-addon-animation.gif
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 364:1
-    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/stats-addon-vscode.png
+    Message: Image is missing alt text: ./images/stats-addon-vscode.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 378:1
-    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/stats-addon-doc.png
+    Message: Image is missing alt text: ./images/stats-addon-doc.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 443:1
-    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/stats-addon-flow.png
+    Message: Image is missing alt text: ./images/stats-addon-flow.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 660:1
-    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/stats-addon-type.png
+    Message: Image is missing alt text: ./images/stats-addon-type.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 838:1
-    Message: Image is missing alt text: src/pages/guides/learn/how-to/tutorials/images/stats-addon-stats.png
+    Message: Image is missing alt text: ./images/stats-addon-stats.png
     Rule: no-alt-text-for-image
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/learn/how-to/tutorials/using-lit-typescript.md
 ───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 31:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/lit-logo.svg`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 37:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/tutorials/images/ts-logo-128.svg`
-    Rule: missing-file
-
   ⚠️  WARNING
     Location: Line 20:1
     Message: Description is too long (181 characters). Consider keeping it under 160 characters.
@@ -1304,36 +964,16 @@ Files to process: 240
 📄 FILE: src/pages/guides/learn/how-to/use-geometry.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 138:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/shapes_ellipse.jpg`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 161:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/paths_linea.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 205:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/paths_complex.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 246:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/paths_styled.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
     Location: Line 146:323
     Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorials/SVG_from_scratch/Paths`
     Rule: no-dead-urls
 
 ───────────────────────────────────────────────────────────────
-📄 FILE: src/pages/guides/learn/how-to/use-pdf-powerpoint.md
+📄 FILE: src/pages/guides/learn/how-to/use-text.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 66:1
-    Message: Cannot find file `src/pages/guides/learn/how-to/images/pdf_import.png`
+    Location: Line 479:27
+    Message: Cannot find file `../../../references/document-sandbox/document-apis/namespaces/constants/enumerations/text-style-source.md`
     Rule: missing-file
 
 ───────────────────────────────────────────────────────────────
@@ -1348,11 +988,6 @@ Files to process: 240
 📄 FILE: src/pages/guides/learn/platform-concepts/architecture.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 145:1
-    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/architecture.svg`
-    Rule: missing-file
-
-  ⚠️  WARNING
     Location: Line 61:1
     Message: Description is too long (226 characters). Consider keeping it under 160 characters.
     Rule: check-frontmatter
@@ -1361,33 +996,33 @@ Files to process: 240
 📄 FILE: src/pages/guides/learn/platform-concepts/context.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 128:1
-    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/show-cors.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 160:1
-    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/cors-demo.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
     Location: Line 31:1
     Message: Description is too long (168 characters). Consider keeping it under 160 characters.
     Rule: check-frontmatter
 
   ⚠️  WARNING
+    Location: Line 101:64
+    Message: Unexpected dead URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 101:64
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 102:56
+    Message: Unexpected dead URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 102:56
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
     Location: Line 91:118
     Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe`
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 132:159
-    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin`
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 240:160
-    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin`
     Rule: no-dead-urls
 
   ⚠️  WARNING
@@ -1401,8 +1036,13 @@ Files to process: 240
     Rule: no-dead-urls
 
   ⚠️  WARNING
-    Location: Line 222:189
-    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/crossorigin`
+    Location: Line 132:159
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin`
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 240:160
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin`
     Rule: no-dead-urls
 
   ⚠️  WARNING
@@ -1416,28 +1056,8 @@ Files to process: 240
     Rule: no-dead-urls
 
   ⚠️  WARNING
-    Location: Line 101:64
-    Message: Unexpected dead URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected live URL
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 101:64
-    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy`
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 102:56
-    Message: Unexpected dead URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected live URL
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 102:56
-    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy#allowlists`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Permissions_Policy`
-    Rule: no-dead-urls
-
-  ⚠️  WARNING
-    Location: Line 236:125
-    Message: Unexpected dead URL `https://w906hhl6k.wxp.adobe-addons.com/`, expected live URL
+    Location: Line 222:189
+    Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/crossorigin`
     Rule: no-dead-urls
 
   ⚠️  WARNING
@@ -1455,162 +1075,147 @@ Files to process: 240
     Message: Unexpected dead URL `https://cors-anywhere.herokuapp.com/`, expected live URL
     Rule: no-dead-urls
 
+  ⚠️  WARNING
+    Location: Line 236:125
+    Message: Unexpected dead URL `https://w906hhl6k.wxp.adobe-addons.com/`, expected live URL
+    Rule: no-dead-urls
+
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/learn/platform-concepts/document-api.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 147:1
-    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-log.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 153:1
-    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-scenegraph.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 168:1
-    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-hierarchy.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 174:1
-    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-doc.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 186:1
-    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-ref.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 190:1
-    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-accessor.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 203:1
-    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-stroke.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 215:1
-    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-strokeposition.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 240:1
-    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/stats-addon-animation.gif`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 305:1
-    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-intellisense.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 331:1
-    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-allchildren.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 363:1
-    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-mediacontainer.png`
+    Location: Line 172:38
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/index.md`; did you mean `../../../references/document-sandbox/document-apis/index.md`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 371:23
-    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/RectangleNode.md"`; did you mean `../../../references/document-sandbox/document-apis/classes/Context.md`
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/classes/rectangle-node.md`; did you mean `../../../references/document-sandbox/document-apis/index.md`
     Rule: missing-file
 
   ⚠️  WARNING
-    Location: Line 371:115
-    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/GroupNode.md"`; did you mean `../../../references/document-sandbox/document-apis/classes/Context.md`
+    Location: Line 371:126
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/classes/group-node.md`; did you mean `../../../references/document-sandbox/document-apis/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 574:334
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/classes/group-node.md`; did you mean `../../../references/document-sandbox/document-apis/index.md`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 407:172
-    Message: Cannot find file `../../../references/document-sandbox/document-apis/interfaces/ColorFill.md`; did you mean `../../../references/document-sandbox/document-apis/interfaces/Color.md`
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/interfaces/color-fill.md`; did you mean `../../../references/document-sandbox/document-apis/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 407:269
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/interfaces/stroke.md`; did you mean `../../../references/document-sandbox/document-apis/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 407:468
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/interfaces/color.md`; did you mean `../../../references/document-sandbox/document-apis/index.md`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 411:31
-    Message: Cannot find file `../../../references/document-sandbox/document-apis/interfaces/IFillableNode.md"`; did you mean `../../../references/document-sandbox/document-apis/interfaces/Stroke.md`
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/interfaces/i-fillable-node.md`
     Rule: missing-file
 
   ⚠️  WARNING
-    Location: Line 419:1
-    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-draw.png`
+    Location: Line 482:78
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/classes/context.md`; did you mean `../../../references/document-sandbox/document-apis/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 482:349
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/classes/editor.md`; did you mean `../../../references/document-sandbox/document-apis/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 519:28
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/classes/editor.md`; did you mean `../../../references/document-sandbox/document-apis/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 519:129
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/classes/editor.md`; did you mean `../../../references/document-sandbox/document-apis/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 556:66
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/classes/editor.md`; did you mean `../../../references/document-sandbox/document-apis/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 574:207
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/classes/editor.md`; did you mean `../../../references/document-sandbox/document-apis/index.md`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 500:28
-    Message: Cannot find file `../../../references/document-sandbox/document-apis/enumerations/SceneNodeType.md`; did you mean `../../../references/document-sandbox/document-apis/interfaces/Stroke.md`
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/enumerations/scene-node-type.md`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 504:254
-    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/MediaContainerNode.md`; did you mean `../../../references/document-sandbox/document-apis/classes/Context.md`
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/classes/media-container-node.md`
     Rule: missing-file
 
   ⚠️  WARNING
-    Location: Line 504:368
-    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/MediaContainerNode.md`; did you mean `../../../references/document-sandbox/document-apis/classes/Context.md`
+    Location: Line 504:381
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/classes/media-container-node.md`
     Rule: missing-file
 
   ⚠️  WARNING
-    Location: Line 504:642
-    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/MediaContainerNode.md`; did you mean `../../../references/document-sandbox/document-apis/classes/Context.md`
+    Location: Line 504:668
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/classes/media-container-node.md`
     Rule: missing-file
 
   ⚠️  WARNING
-    Location: Line 504:795
-    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/ImageRectangleNode.md`; did you mean `../../../references/document-sandbox/document-apis/classes/editor.md`
+    Location: Line 504:834
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/classes/image-rectangle-node.md`
     Rule: missing-file
 
   ⚠️  WARNING
-    Location: Line 519:240
-    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/LineNode.md`; did you mean `../../../references/document-sandbox/document-apis/classes/Context.md`
+    Location: Line 519:262
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/classes/line-node.md`; did you mean `../../../references/document-sandbox/document-apis/index.md`
     Rule: missing-file
 
   ⚠️  WARNING
-    Location: Line 519:535
-    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/LineNode.md`; did you mean `../../../references/document-sandbox/document-apis/classes/Context.md`
+    Location: Line 519:569
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/classes/line-node.md`; did you mean `../../../references/document-sandbox/document-apis/index.md`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 544:110
-    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/LineNode.md`; did you mean `../../../references/document-sandbox/document-apis/classes/Context.md`
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/classes/line-node.md`; did you mean `../../../references/document-sandbox/document-apis/index.md`
     Rule: missing-file
 
   ⚠️  WARNING
-    Location: Line 544:220
-    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/LineNode.md`; did you mean `../../../references/document-sandbox/document-apis/classes/Context.md`
+    Location: Line 544:232
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/classes/line-node.md`; did you mean `../../../references/document-sandbox/document-apis/index.md`
     Rule: missing-file
 
   ⚠️  WARNING
-    Location: Line 544:379
-    Message: Cannot find file `../../../references/document-sandbox/document-apis/enumerations/ArrowHeadType.md`; did you mean `../../../references/document-sandbox/document-apis/interfaces/Stroke.md`
+    Location: Line 544:403
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/enumerations/arrow-head-type.md`
     Rule: missing-file
 
   ⚠️  WARNING
-    Location: Line 574:323
-    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/GroupNode.md`; did you mean `../../../references/document-sandbox/document-apis/classes/Context.md`
+    Location: Line 556:222
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/classes/standalone-text-node.md`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 585:190
-    Message: Cannot find file `../../../references/document-sandbox/document-apis/classes/TextNode.md`; did you mean `../../../references/document-sandbox/document-apis/classes/Editor.md`
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/classes/text-node.md`; did you mean `../../../references/document-sandbox/document-apis/index.md`
     Rule: missing-file
 
   ⚠️  WARNING
-    Location: Line 602:1
-    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-refactor.png`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 686:1
-    Message: Cannot find file `src/pages/guides/learn/platform-concepts/images/refs-addon-unsupported.png`
+    Location: Line 585:422
+    Message: Cannot find file `../../../../references/document-sandbox/document-apis/interfaces/point.md`; did you mean `../../../references/document-sandbox/document-apis/index.md`
     Rule: missing-file
 
   ⚠️  WARNING
@@ -1620,78 +1225,91 @@ Files to process: 240
 
   ⚠️  WARNING
     Location: Line 147:1
-    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-log.png
+    Message: Image is missing alt text: ./images/refs-addon-log.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 153:1
-    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-scenegraph.png
+    Message: Image is missing alt text: ./images/refs-addon-scenegraph.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 168:1
-    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-hierarchy.png
+    Message: Image is missing alt text: ./images/refs-addon-hierarchy.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 174:1
-    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-doc.png
+    Message: Image is missing alt text: ./images/refs-addon-doc.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 186:1
-    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-ref.png
+    Message: Image is missing alt text: ./images/refs-addon-ref.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 190:1
-    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-accessor.png
+    Message: Image is missing alt text: ./images/refs-addon-accessor.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 203:1
-    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-stroke.png
+    Message: Image is missing alt text: ./images/refs-addon-stroke.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 215:1
-    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-strokeposition.png
+    Message: Image is missing alt text: ./images/refs-addon-strokeposition.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 240:1
-    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//stats-addon-animation.gif
+    Message: Image is missing alt text: ./images/stats-addon-animation.gif
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 305:1
-    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-intellisense.png
+    Message: Image is missing alt text: ../platform-concepts/images/refs-addon-intellisense.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 331:1
-    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-allchildren.png
+    Message: Image is missing alt text: ../platform-concepts/images/refs-addon-allchildren.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 363:1
-    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-mediacontainer.png
+    Message: Image is missing alt text: ../platform-concepts/images/refs-addon-mediacontainer.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 419:1
-    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-draw.png
+    Message: Image is missing alt text: ../platform-concepts/images/refs-addon-draw.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 602:1
-    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-refactor.png
+    Message: Image is missing alt text: ../platform-concepts/images/refs-addon-refactor.png
     Rule: no-alt-text-for-image
 
   ⚠️  WARNING
     Location: Line 686:1
-    Message: Image is missing alt text: src/pages/guides/learn/platform-concepts/images//refs-addon-unsupported.png
+    Message: Image is missing alt text: ../platform-concepts/images/refs-addon-unsupported.png
     Rule: no-alt-text-for-image
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/guides/learn/samples.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 190:29
+    Message: Unexpected dead URL `https://opensource.adobe.com/spectrum-web-components/using-swc-react/`, expected live URL
+    Rule: no-dead-urls
+
+  ⚠️  WARNING
+    Location: Line 190:235
+    Message: Unexpected dead URL `https://opensource.adobe.com/spectrum-web-components/tools/theme/`, expected live URL
+    Rule: no-dead-urls
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/guides/support/faq.md
@@ -1734,16 +1352,6 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/addonsdk/addonsdk-app.md
 ───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 11:16
-    Message: Cannot find file `app-currentUser.md`; did you mean `app-current-user.md`
-    Rule: missing-file
-
-  ⚠️  WARNING
-    Location: Line 12:5
-    Message: Cannot find file `app-devFlags.md`
-    Rule: missing-file
-
   ⚠️  WARNING
     Location: Line 1:1
     Message: Missing frontmatter section - add --- at the beginning with title and description
@@ -1795,13 +1403,13 @@ Files to process: 240
     Rule: check-frontmatter
 
   ⚠️  WARNING
-    Location: Line 770:14
-    Message: Unexpected redirecting URL `https://helpx.adobe.com/express/web/create-and-edit-images/change-file-formats/image-requirements.html`, expected final URL `https://helpx.adobe.com/express/web/image-creation-and-editing/change-file-formats/image-requirements.html`
+    Location: Line 772:19
+    Message: Unexpected redirecting URL `https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html`, expected final URL `https://helpx.adobe.com/express/web/video-creation-and-editing/change-file-formats/import-gif-limits.html`
     Rule: no-dead-urls
 
   ⚠️  WARNING
-    Location: Line 772:19
-    Message: Unexpected redirecting URL `https://helpx.adobe.com/express/create-and-edit-videos/change-file-formats/import-gif-limits.html`, expected final URL `https://helpx.adobe.com/express/web/video-creation-and-editing/change-file-formats/import-gif-limits.html`
+    Location: Line 770:14
+    Message: Unexpected redirecting URL `https://helpx.adobe.com/express/web/create-and-edit-images/change-file-formats/image-requirements.html`, expected final URL `https://helpx.adobe.com/express/web/image-creation-and-editing/change-file-formats/image-requirements.html`
     Rule: no-dead-urls
 
 ───────────────────────────────────────────────────────────────
@@ -1871,20 +1479,30 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/document-sandbox/document-apis/classes/artboard-list.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 65:49
+    Location: Line 188:49
     Message: Cannot find file `RestrictedItemList.md`; did you mean `restricted-item-list.md`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -1892,7 +1510,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -1900,7 +1523,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -1908,7 +1536,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -1916,7 +1549,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -1924,7 +1562,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -1932,7 +1575,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -1940,7 +1588,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -1948,7 +1601,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -1956,11 +1614,16 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
     Rule: check-frontmatter
 
   ⚠️  WARNING
-    Location: Line 119:27
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 372:49
     Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorials/SVG_from_scratch/Paths`
     Rule: no-dead-urls
 
@@ -1969,7 +1632,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -1977,7 +1645,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -1985,11 +1658,16 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
     Rule: check-frontmatter
 
   ⚠️  WARNING
-    Location: Line 135:27
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 434:49
     Message: Unexpected redirecting URL `https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths`, expected final URL `https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorials/SVG_from_scratch/Paths`
     Rule: no-dead-urls
 
@@ -1998,7 +1676,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2006,7 +1689,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2014,7 +1702,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2022,7 +1715,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2030,7 +1728,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2038,7 +1741,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2046,7 +1754,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2054,20 +1767,30 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/document-sandbox/document-apis/classes/item-list.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 71:49
+    Location: Line 275:49
     Message: Cannot find file `RestrictedItemList.md`; did you mean `restricted-item-list.md`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2075,7 +1798,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2083,7 +1811,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2091,7 +1824,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2099,20 +1837,30 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/document-sandbox/document-apis/classes/page-list.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 66:49
+    Location: Line 192:49
     Message: Cannot find file `RestrictedItemList.md`; did you mean `restricted-item-list.md`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2120,7 +1868,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2128,7 +1881,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2136,7 +1894,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2144,7 +1907,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2152,20 +1920,30 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/document-sandbox/document-apis/classes/restricted-item-list.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 72:46
+    Location: Line 172:46
     Message: Cannot find file `ReadOnlyItemList.md`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2173,7 +1951,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2181,7 +1964,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2189,7 +1977,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2197,7 +1990,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2205,7 +2003,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2213,7 +2016,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2221,7 +2029,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2229,7 +2042,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2237,20 +2055,30 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/document-sandbox/document-apis/classes/threaded-text-list.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
-    Location: Line 64:46
+    Location: Line 142:46
     Message: Cannot find file `ReadOnlyItemList.md`
     Rule: missing-file
 
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2258,7 +2086,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2266,7 +2099,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2274,7 +2112,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2282,7 +2125,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2290,7 +2138,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2298,15 +2151,43 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/document-sandbox/document-apis/enumerations/blend-mode.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
+    Location: Line 17:70
+    Message: Cannot find heading for `#passthrough`
+    Rule: missing-heading
+
+  ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/enumerations/create-rendition-format.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2314,7 +2195,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2322,7 +2208,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2330,7 +2221,38 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/enumerations/ordered-list-numbering.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/enumerations/paragraph-list-type.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2338,7 +2260,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2346,7 +2273,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2354,7 +2286,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2362,7 +2299,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2370,7 +2312,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2378,7 +2325,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2386,7 +2338,25 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/enumerations/text-style-source.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2394,15 +2364,138 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
     Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/index.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 30:5
+    Message: Cannot find file `communication/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 34:223
+    Message: Cannot find file `communication/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 50:110
+    Message: Cannot find file `communication/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 57:28
+    Message: Cannot find file `communication/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 57:199
+    Message: Cannot find file `communication/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 74:174
+    Message: Cannot find file `communication/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 34:386
+    Message: Cannot find file `web/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 50:43
+    Message: Cannot find file `web/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 52:71
+    Message: Cannot find file `web/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 74:220
+    Message: Cannot find file `web/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 114:194
+    Message: Cannot find file `web/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 38:5
+    Message: Cannot find file `document-apis/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 74:249
+    Message: Cannot find file `document-apis/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 118:29
+    Message: Cannot find file `document-apis/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 122:43
+    Message: Cannot find file `document-apis/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 126:298
+    Message: Cannot find file `document-apis/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 42:16
+    Message: Cannot find file `../../guides/learn/how-to/tutorials/index.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 78:161
+    Message: Cannot find file `../../guides/getting-started/local-development/dev-tooling.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 82:47
+    Message: Cannot find file `../../guides/getting-started/local-development/dev-tooling.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 105:21
+    Message: Cannot find file `../../guides/getting-started/local-development/dev-tooling.md`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 84:1
+    Message: Cannot find file `../img/cli-doc-sandbox-prompt.png`
+    Rule: missing-file
+
+  ⚠️  WARNING
+    Location: Line 101:1
+    Message: Cannot find file `../img/script-add-on-sample.png`
+    Rule: missing-file
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/area-text-layout.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2410,7 +2503,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2418,7 +2516,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2426,7 +2529,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2434,7 +2542,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2442,7 +2555,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2450,7 +2568,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2458,7 +2581,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2466,7 +2594,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2474,7 +2607,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2482,7 +2620,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2490,7 +2633,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2498,7 +2646,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2506,7 +2659,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2514,7 +2672,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2522,7 +2685,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2530,7 +2698,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2538,7 +2711,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2546,7 +2724,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2554,7 +2737,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2562,7 +2750,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2570,7 +2763,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2578,7 +2776,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2586,7 +2789,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2594,7 +2802,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2602,7 +2815,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2610,7 +2828,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2618,7 +2841,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2626,7 +2854,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2634,7 +2867,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2642,7 +2880,25 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
+    Rule: check-frontmatter
+
+───────────────────────────────────────────────────────────────
+📄 FILE: src/pages/references/document-sandbox/document-apis/interfaces/replace-media-with-edited-image-options.md
+───────────────────────────────────────────────────────────────
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2650,7 +2906,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2658,7 +2919,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2666,7 +2932,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2674,7 +2945,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2682,7 +2958,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2690,7 +2971,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2698,7 +2984,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2706,7 +2997,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2714,7 +3010,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2722,7 +3023,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2730,7 +3036,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2738,63 +3049,31 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
     Rule: check-frontmatter
 
-───────────────────────────────────────────────────────────────
-📄 FILE: src/pages/references/document-sandbox/document-apis/namespaces/Constants/enumerations/create-rendition-format.md
-───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
-    Rule: check-frontmatter
-
-───────────────────────────────────────────────────────────────
-📄 FILE: src/pages/references/document-sandbox/document-apis/namespaces/Constants/enumerations/ordered-list-numbering.md
-───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
-    Rule: check-frontmatter
-
-───────────────────────────────────────────────────────────────
-📄 FILE: src/pages/references/document-sandbox/document-apis/namespaces/Constants/enumerations/paragraph-list-type.md
-───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
-    Rule: check-frontmatter
-
-───────────────────────────────────────────────────────────────
-📄 FILE: src/pages/references/document-sandbox/document-apis/namespaces/Constants/enumerations/text-style-source.md
-───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
-    Rule: check-frontmatter
-
-───────────────────────────────────────────────────────────────
-📄 FILE: src/pages/references/document-sandbox/document-apis/namespaces/Constants/overview.md
-───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/document-sandbox/document-apis/overview.md
 ───────────────────────────────────────────────────────────────
-  ⚠️  WARNING
-    Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
-    Rule: check-frontmatter
+  ❌ ERROR
+    Message: Failed to process file - Angle bracket "<InlineAlert slots="text" variant="warning"/>" found in table cell. Escape with "\<" and "\>" to prevent MDX parsing errors (e.g., "<InlineAlert slots="text" variant="warning"/>" → "\<InlineAlert slots="text" variant="warning"/\>").
 
 ───────────────────────────────────────────────────────────────
 📄 FILE: src/pages/references/document-sandbox/document-apis/type-aliases/editor-event-handler.md
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2802,7 +3081,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2810,7 +3094,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2818,7 +3107,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2826,7 +3120,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2834,7 +3133,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2842,7 +3146,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2850,7 +3159,12 @@ Files to process: 240
 ───────────────────────────────────────────────────────────────
   ⚠️  WARNING
     Location: Line 1:1
-    Message: Missing frontmatter section - add --- at the beginning with title and description
+    Message: Missing or empty title in frontmatter
+    Rule: check-frontmatter
+
+  ⚠️  WARNING
+    Location: Line 1:1
+    Message: Missing or empty description in frontmatter
     Rule: check-frontmatter
 
 ───────────────────────────────────────────────────────────────
@@ -2890,10 +3204,10 @@ Files to process: 240
 ═══════════════════════════════════════════════════════════════
 
   📁 Files processed:    240
-  📄 Files with issues:  199
-  ❌ Total errors:       2
-  ⚠️  Total warnings:     453
-  📋 Total issues:       455
+  📄 Files with issues:  195
+  ❌ Total errors:       3
+  ⚠️  Total warnings:     517
+  📋 Total issues:       520
 
 Result: ❌ FAILED - Fatal errors found
 
