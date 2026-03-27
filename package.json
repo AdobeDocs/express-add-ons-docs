@@ -12,29 +12,23 @@
     "url": "https://github.com/icaraps"
   },
   "dependencies": {
-    "@adobe/gatsby-theme-aio": "^4.15.1",
     "dotenv": "17.2.2",
     "fs-extra": "11.3.2",
-    "gatsby": "4.22.0",
-    "jszip": "3.10.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
-  "resolutions": {
-    "sharp": "0.33.0",
-    "gatsby-sharp": "1.12.0"
+    "jszip": "3.10.1"
   },
   "scripts": {
-    "dev": "node ./dev.mjs",
+    "dev": "npx --yes github:AdobeDocs/adp-devsite-utils dev",
     "buildNavigation": "npx --yes github:AdobeDocs/adp-devsite-utils buildNavigation -v",
     "buildRedirections": "npx --yes github:AdobeDocs/adp-devsite-utils buildRedirections -v",
     "renameFiles": "npx --yes github:AdobeDocs/adp-devsite-utils renameFiles -v",
     "normalizeLinks": "npx --yes github:AdobeDocs/adp-devsite-utils normalizeLinks -v",
     "buildSiteWideBanner": "npx --yes github:AdobeDocs/adp-devsite-utils buildSiteWideBanner -v",
+    "buildSiteMetadata": "npx --yes github:AdobeDocs/adp-devsite-utils buildSiteMetadata -v",
+    "buildContributors": "npx --yes github:AdobeDocs/adp-devsite-utils buildContributors -v",
     "lint": "npx --yes github:AdobeDocs/adp-devsite-utils runLint -v",
     "lint:errorOnly": "npx --yes github:AdobeDocs/adp-devsite-utils runLint",
-    "link:skipdeadlinks": "npx --yes github:AdobeDocs/adp-devsite-utils runLint --skip-dead-links -v",
-    "link:deadlinkonly": "npx --yes github:AdobeDocs/adp-devsite-utils runLint --dead-links-only -v",
+    "link:externalLinkOnly": "npx --yes github:AdobeDocs/adp-devsite-utils runLint --external-links-only -v",
+    "link:checkAllLinks": "npx --yes github:AdobeDocs/adp-devsite-utils runLint --internal-links-only --external-links-only -v",
     "redirectCheck:stage": "npx --yes github:AdobeDocs/adp-devsite-utils redirectChecker stage --verbose",
     "redirectCheck:prod": "npx --yes github:AdobeDocs/adp-devsite-utils redirectChecker prod --verbose",
     "upload:samples": "node upload-playground-samples.mjs",
@@ -43,17 +37,7 @@
     "devex:generate-sidebar": "node scripts/update-config.js",
     "devex:build-api-reference": "npm run devex:sync-docs && npm run devex:eds-sanitize && npm run devex:generate-sidebar"
   },
-  "remarkConfig": {
-    "plugins": [
-      "remark-validate-links"
-    ]
-  },
   "devDependencies": {
-    "glob": "^11.0.0",
-    "markdownlint": "^0.35.0",
-    "markdownlint-cli": "^0.41.0",
-    "remark-cli": "^11.0.0",
-    "remark-validate-links": "^12.1.0",
-    "string.prototype.matchall": "^4.0.12"
+    "glob": "^11.0.0"
   }
 }
