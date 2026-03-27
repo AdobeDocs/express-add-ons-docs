@@ -9,8 +9,8 @@
     - [Fund for Design](https://developer.adobe.com/fund-for-design)
 
 - buttons:
-  - [Code Playground](https://www.adobe.com/go/addon-playground?session=saved) playgroundId primary
-  - [Console](https://developer.adobe.com/console/) consoleId
+    - [Code Playground](https://www.adobe.com/go/addon-playground?session=saved) playgroundId primary
+    - [Console](https://developer.adobe.com/console/) consoleId
 
 - subPages:
     - [Overview](references/index.md)
