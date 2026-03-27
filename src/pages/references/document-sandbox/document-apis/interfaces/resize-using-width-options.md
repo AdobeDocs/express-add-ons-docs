@@ -2,15 +2,11 @@
 
 # Interface: ResizeUsingWidthOptions
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
-An interface for resizing the node based on a given width when using [Node.resize](../classes/node.md#resize).
+An interface for resizing the node based on a given width when using [Node.resize](../classes/Node.md#resize).
 
 ## Extends
 
--   [`CommonResizeOptions`](common-resize-options.md)
+-   [`CommonResizeOptions`](CommonResizeOptions.md)
 
 ## Properties
 
@@ -23,15 +19,15 @@ Note that some kinds of content may not be able to avoid rescaling in some scena
 
 #### Inherited from
 
-[`CommonResizeOptions`](common-resize-options.md).[`avoidScalingVisualDetailsIfPossible`](common-resize-options.md#avoidscalingvisualdetailsifpossible)
+[`CommonResizeOptions`](CommonResizeOptions.md).[`avoidScalingVisualDetailsIfPossible`](CommonResizeOptions.md#avoidscalingvisualdetailsifpossible)
 
-<HorizontalLine />
+---
 
 ### behavior
 
-• **behavior**: [`contain`](../enumerations/resize-behavior.md#contain) \| [`cover`](../enumerations/resize-behavior.md#cover)
+• **behavior**: [`contain`](../enumerations/ResizeBehavior.md#contain) \| [`cover`](../enumerations/ResizeBehavior.md#cover)
 
-<HorizontalLine />
+---
 
 ### height?
 
@@ -39,7 +35,7 @@ Note that some kinds of content may not be able to avoid rescaling in some scena
 
 If a height is not provided, it will be calculated by multiplying the given width by the current aspect ratio.
 
-<HorizontalLine />
+---
 
 ### width
 
