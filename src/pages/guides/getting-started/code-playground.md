@@ -92,7 +92,7 @@ The Code Playground needs the add-on Development Mode to be enabled in order to 
 
 [![Playground Terms of Use](./img/playground--DTOU.png)](https://www.adobe.com/go/addon-playground)
 
-You can also enable or disable the add-on Development Mode from the Settings panel in Adobe Express. See the [Enable Add-on Development Mode](../getting-started/hello-world.md#enable-add-on-development-mode) section in the Hello, World! guide for detailed instructions.
+You can also enable or disable the add-on Development Mode from the Settings panel in Adobe Express. See the [Enable Add-on Development Mode](hello-world.md#enable-add-on-development-mode) section in the Hello, World! guide for detailed instructions.
 
 ## Playground modes
 
@@ -115,10 +115,10 @@ Use **Add-on Mode** when developing a full add-on experience, including building
 
 ## Quick Start Guides
 
-- **[Script Mode Guide](../getting-started/code-playground-script-mode.md)**: Learn how to use Script Mode for quick document manipulation
-- **[Add-on Mode Guide](../getting-started/code-playground-addon-mode.md)**: Build complete add-ons with UI and functionality
-- **[Workflow & Productivity](../getting-started/code-playground-workflow.md)**: Master keyboard shortcuts, saving, and session management
-- **[Troubleshooting](../getting-started/code-playground-troubleshooting.md)**: Get help with common issues and FAQs
+- **[Script Mode Guide](code-playground-script-mode.md)**: Learn how to use Script Mode for quick document manipulation
+- **[Add-on Mode Guide](code-playground-addon-mode.md)**: Build complete add-ons with UI and functionality
+- **[Workflow & Productivity](code-playground-workflow.md)**: Master keyboard shortcuts, saving, and session management
+- **[Troubleshooting](code-playground-troubleshooting.md)**: Get help with common issues and FAQs
 
 ## Next Steps
 
@@ -127,6 +127,6 @@ Now that you understand the basics of Code Playground, explore our resources to 
 - **[API References](../../references/index.md)**: Learn about the Document APIs and Add-on SDK.
 - **[Tutorials](../learn/how-to/tutorials/index.md)**: Follow step-by-step guides to build complete add-ons.
 - **[How-To Guides](../learn/how-to/index.md)**: Master specific techniques and best practices.
-- **[Local Development](../getting-started/local-development/index.md)**: Set up a full development environment for production-ready add-ons
+- **[Local Development](local-development/index.md)**: Set up a full development environment for production-ready add-ons
 - **Code Samples:** Get inspired by checking out [our code samples](../learn/samples.md) to see what's possible.
 - **Community Support:** Chat with fellow developers on [Discord](http://discord.gg/nc3QDyFeb4), in the [Forums](https://community.adobe.com/t5/adobe-express-developers/ct-p/ct-adobe-express-developers), or join us for our [Office Hours](https://developer.adobe.com/developers-live).

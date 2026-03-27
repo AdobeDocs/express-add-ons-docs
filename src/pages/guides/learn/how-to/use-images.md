@@ -168,7 +168,7 @@ Compared to the previous examples, replacing media is a method that belongs to t
 
 ### Example
 
-Because the Document Sandbox doesn't have access to the `fetch()` function, in the following example the Bitmap data is fetched on the iframe side, and passed to the Document Sandbox to be replaced using the [Communication API](../how-to/tutorials/stats-addon.md).
+Because the Document Sandbox doesn't have access to the `fetch()` function, in the following example the Bitmap data is fetched on the iframe side, and passed to the Document Sandbox to be replaced using the [Communication API](tutorials/stats-addon.md).
 
 You can copy and paste the following code into a [Code Playground](../../getting-started/code-playground.md) session to try it out.
 

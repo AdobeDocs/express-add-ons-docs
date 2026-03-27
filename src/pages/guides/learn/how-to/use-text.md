@@ -986,7 +986,7 @@ Each [`TextContent`](../../../references/document-sandbox/document-apis/interfac
 
 With the introduction of "Text Flow" in Adobe Express (allowing content to move freely between multiple text frames), the concept of a text node had to be separated from text content.
 
-The `fullContent` property _points to_ a [`TextContentModel`](../../../references/document-sandbox/document-apis/classes/text-content-model.md) object, which contains the actual text content that multiple `TextNode` instances can share. For threaded text, `fullContent.frames` returns a [`ThreadedTextList`](../../../references/document-sandbox/document-apis/classes/threaded-text-list.md) of [`ThreadedTextNode`](../../../references/document-sandbox/document-apis/classes//threaded-text-node.md) objects forming a single continuous story.
+The `fullContent` property _points to_ a [`TextContentModel`](../../../references/document-sandbox/document-apis/classes/text-content-model.md) object, which contains the actual text content that multiple `TextNode` instances can share. For threaded text, `fullContent.frames` returns a [`ThreadedTextList`](../../../references/document-sandbox/document-apis/classes/threaded-text-list.md) of [`ThreadedTextNode`](../../../references/document-sandbox/document-apis/classes/threaded-text-node.md) objects forming a single continuous story.
 
 ### Example: Find All Frames Sharing the Same Story
 

@@ -2029,4 +2029,4 @@ export const MD_CONSTANTS = {
 
 ### 5.2 Next steps
 
-If you want to learn more about Text API you can check the [Text How-to](../../how-to/use-text.md), which contains several examples on how to apply Character and Paragraph styles, as well as using fonts and colors.
+If you want to learn more about Text API you can check the [Text How-to](../use-text.md), which contains several examples on how to apply Character and Paragraph styles, as well as using fonts and colors.

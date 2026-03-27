@@ -211,7 +211,7 @@ If you've already developed functionality in Script Mode:
 
 ## Next Steps
 
-- **[Workflow & Productivity](../getting-started/code-playground-workflow.md)**: Learn keyboard shortcuts and session management
-- **[Troubleshooting](../getting-started/code-playground-troubleshooting.md)**: Get help with common issues
+- **[Workflow & Productivity](code-playground-workflow.md)**: Learn keyboard shortcuts and session management
+- **[Troubleshooting](code-playground-troubleshooting.md)**: Get help with common issues
 - **[API References](../../references/index.md)**: Learn about the Document APIs and Add-on SDK
 - **[How-To Guides](../learn/how-to/index.md)**: Master specific techniques and best practices

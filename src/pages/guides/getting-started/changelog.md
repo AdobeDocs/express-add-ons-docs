@@ -113,18 +113,18 @@ We have added new APIs for threaded text handling across multiple frames, as wel
 The Adobe Express Code Playground has received a major update with the release of a new set of features and improvements.
 
 - Open Code Playground with a single click ([https://www.adobe.com/go/addon-playground](https://www.adobe.com/go/addon-playground)) or find the **Code Playground** button in the top navigation bar of the How-to guides, Hello World!, Code Playground pages, and other sections. You can also bookmark links that point to either the [Script](https://www.adobe.com/go/addon-playground?executionMode=script) or [Add-on](https://www.adobe.com/go/addon-playground) Mode.
-- The Code Playground now supports multiple sessions backed up in the cloud, allowing you to save your work and resume where you left off anywhere. Check out the **More** menu to [manage your sessions](./code-playground-workflow.md#session-management) (find, rename, or delete).
+- The Code Playground now supports multiple sessions backed up in the cloud, allowing you to save your work and resume where you left off anywhere. Check out the **More** menu to [manage your sessions](code-playground-workflow.md#session-management) (find, rename, or delete).
 - Now you can try out the code blocks (e.g. in the [How-to guides](../learn/how_to/use_text.md)) by simply clicking on the **Try in playground** button.
-- The [Code Playground](./code-playground.md) documentation has been **updated and split into multiple pages** for better organization.
-  - [Overview](./code-playground.md)
-  - [Script Mode](./code-playground-script-mode.md)
-  - [Add-on Mode](./code-playground-addon-mode.md)
-  - [Workflow & Productivity](./code-playground-workflow.md)
-  - [Troubleshooting](./code-playground-troubleshooting.md)
+- The [Code Playground](code-playground.md) documentation has been **updated and split into multiple pages** for better organization.
+  - [Overview](code-playground.md)
+  - [Script Mode](code-playground-script-mode.md)
+  - [Add-on Mode](code-playground-addon-mode.md)
+  - [Workflow & Productivity](code-playground-workflow.md)
+  - [Troubleshooting](code-playground-troubleshooting.md)
 
 ### Added
 
-- It's now easier to identify Console logs coming from the CLI or Code Playground, because they automatically include new [helpful prefixes](./code-playground-workflow.md#debugging) such as `[Playground: Add-on]`, `[Playground: Script]`, and `[Add-on: <add-on-name>]`.
+- It's now easier to identify Console logs coming from the CLI or Code Playground, because they automatically include new [helpful prefixes](code-playground-workflow.md#debugging) such as `[Playground: Add-on]`, `[Playground: Script]`, and `[Add-on: <add-on-name>]`.
 - Open Add-on testing window with a single click. Bookmark the URL ([https://www.adobe.com/go/addon-cli](https://www.adobe.com/go/addon-cli)) to easily access it later.
 - New Express-specific Document API classes: [`ExpressContext`](../../references/document-sandbox/document-apis/classes/ExpressContext.md), [`ExpressEditor`](../../references/document-sandbox/document-apis/classes/ExpressEditor.md), and [`ExpressViewport`](../../references/document-sandbox/document-apis/classes/ExpressViewport.md), which inherit from the corresponding non-specific Classes.
 - New Text classes: [`StandaloneTextContentModel`](../../references/document-sandbox/document-apis/classes/StandaloneTextContentModel.md) and [`ThreadedTextContentModel`](../../references/document-sandbox/document-apis/classes/ThreadedTextContentModel.md), representing a complete piece of text content contained within a single [`StandaloneTextNode`](../../references/document-sandbox/document-apis/classes/StandaloneTextNode.md) or split across multiple [`ThreadedTextNode`](../../references/document-sandbox/document-apis/classes/ThreadedTextNode.md)s.
@@ -246,7 +246,7 @@ With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [co
 
 ### Added
 
-- The [Code Playground](./code-playground.md) now includes a download feature that allows developers to export their playground code as a zip file containing both the add-on folder structure and a standalone script file. This enables seamless transition from prototyping in the playground to local development using the CLI.
+- The [Code Playground](code-playground.md) now includes a download feature that allows developers to export their playground code as a zip file containing both the add-on folder structure and a standalone script file. This enables seamless transition from prototyping in the playground to local development using the CLI.
 
 ## 2025-07-27
 
@@ -329,8 +329,8 @@ The [Page Metadata API](../../references/addonsdk/app-document.md#pagemetadata) 
 
 - We’ve **completely revamped the information architecture** of the site! 🎉 The new structure is designed to make content easier to navigate, whether you’re just getting started or you’ve been building add-ons for a while. This update aims to reduce friction, surface what matters most, and help both newcomers and experienced developers find their way faster. Among the changes, we have:
   - Rebuilt the Guides navigation from scratch, and grouped the content in new sections (Getting Started, Learn, Build, Support).
-  - Introduced a new [Developer Journey](./developer-journey.md) page.
-  - Rewritten and improved the QuickStart guide, now [Hello, World!](./hello-world.md)
+  - Introduced a new [Developer Journey](developer-journey.md) page.
+  - Rewritten and improved the QuickStart guide, now [Hello, World!](hello-world.md)
   - Moved the Tutorials as [Complete Projects](../learn/how_to/tutorials/index.md) within the [How To Guides](../learn/how_to/index.md), now more visible.
   - Regrouped content into the new [Platform Concepts](../learn/platform_concepts/context.md) and [Advanced Topics](../build/advanced-topics/frameworks-libraries-bundling.md) sections.
   - Updated screenshots, added animations, and enhanced the overall site usability.
@@ -365,7 +365,7 @@ While there are redirects in place, please **add** `https://express.adobe.com/st
 
 ### Updated
 
-- The [Code Playground](./code-playground.md) documentation has been updated with details about the new [Script Mode](./code-playground-script-mode.md#how-to-use-script-mode) and [Local Persistence](./code-playground-workflow.md) features, as well as additional details around existing features. The updates include:
+- The [Code Playground](code-playground.md) documentation has been updated with details about the new [Script Mode](code-playground-script-mode.md#how-to-use-script-mode) and [Local Persistence](code-playground-workflow.md) features, as well as additional details around existing features. The updates include:
   - New sections explaining Script Mode and Add-on Mode.
   - Detailed descriptions of the different tabs available in the Add-on mode and what type of code belongs in each.
   - Information about local persistence and session management.
@@ -610,7 +610,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 ## 2024-05-21
 
-- The [Quickstart](./hello-world.md) and [Distribute](../build/distribute/index.md) guides have been updated to reflect major UI/UX improvements for in-app workflows, particularly around distribution and listing management.
+- The [Quickstart](hello-world.md) and [Distribute](../build/distribute/index.md) guides have been updated to reflect major UI/UX improvements for in-app workflows, particularly around distribution and listing management.
 - The Add-ons tab is now active also in the Adobe Express home page, regardless of whether a project is open or not.
 - A new section on Marketplace [rejections](../build/distribute/rejections.md) has been added, highlighting the most common problems found during the add-on review process and how to avoid them.
 - The [Manifest Reference](../../references/manifest/index.md) has been updated with two new permission properties: `microphone` and `camera`.
@@ -654,7 +654,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
   In addition, the [monetization guidelines](../build/distribute/guidelines/monetization.md) were updated with details to help guide you in communicating your monetization strategy, and include new branding [badges](../build/distribute/guidelines/monetization.md#branding-assets-for-monetization) you can use to visually indicate when content or features require a purchase or when they are paid and unlocked. Please ensure you review the [updated monetization guidelines](../build/distribute/guidelines/monetization.md) carefully for specific details. **NOTE:** Adobe does not currently provide a specific monetization feature, but with this update, provides a way for developers to communicate the monetization details of their add-ons.
 
 - The first phase of add-on analytics support has been released, and allows developers to [download insights data](../build/distribute/public-dist.md#post-submission-details-and-insights) for their published add-ons via the [Download insights](../build/distribute/public-dist.md#post-submission-details-and-insights) button in the in-app distribution modal.
-- A new [Concepts guide](../learn/platform_concepts/document-api.md) was added to the [Document APIs](../../references/document-sandbox/document-apis/) section to provide a deep-dive into the architecture and key elements of the Adobe Express Document Object Model (DOM).
+- A new [Concepts guide](../learn/platform_concepts/document-api.md) was added to the [Document APIs](../../references/document-sandbox/document-apis/index.md) section to provide a deep-dive into the architecture and key elements of the Adobe Express Document Object Model (DOM).
 
 ## 2024-02-14
 
@@ -663,7 +663,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 ## 2024-02-07
 
 - A new [`createPath`](../../references/document-sandbox/document-apis/classes/Editor.md#createpath) method is now available for allowing you to create a path with the Document APIs.
-- Updates descriptions in various methods and classes in the [Document APIs](../../references/document-sandbox/document-apis/).
+- Updates descriptions in various methods and classes in the [Document APIs](../../references/document-sandbox/document-apis/index.md).
 - Updates to the [`createRenditions`](../../references/addonsdk/app-document.md#createrenditions) API, including a new [`print`](../../references/addonsdk/addonsdk-constants.md) option for `RenditionIntent` to be be used for generating a print optimized pdf, and an update to [`PdfRenditionOptions`](../../references/addonsdk/app-document.md#pdfrenditionoptions) which exposes the ability to customize each PDF Page Box's (`MediaBox`, `BleedBox`, `CropBox`, `TrimBox`) dimensions using a `pageBoxes` property.
 - Updates to the [Using Adobe Spectrum tutorial](../learn/how_to/tutorials/spectrum-workshop/index.md) with additional details on [why you should use Spectrum CSS variables](../learn/how_to/tutorials/spectrum-workshop/part3.md#styling-with-spectrum-css) to style your add-ons, and [additional helpful guidelines for locating and using them](../learn/how_to/tutorials/spectrum-workshop/part3.md#layout-and-typography-styling).
 - The table of contents in each Document API class/interface/constant has been removed since it was a duplicate of the right side navigation menu.
@@ -694,7 +694,7 @@ Added a new tutorial - [Building UIs using Adobe's Spectrum Design System](../le
 
 <InlineAlert slots="text" variant="warning"/>
 
-**BREAKING NEWS:** The [Adobe Express Document Sandbox](../../references/document-sandbox/) and all associated APIs have been deemed stable, and **no longer require the `experimentalApis` flag**. As a result, some breaking changes with these experimental APIs were introduced before deeming them stable, and they are summarized below. Please read them thoroughly and update your in-development add-ons as needed. If you run into any issues, please reach out to us on our [Adobe Express Add-on Developer’s Discord channel](http://discord.gg/nc3QDyFeb4) for help.
+**BREAKING NEWS:** The [Adobe Express Document Sandbox](../../references/document-sandbox/index.md) and all associated APIs have been deemed stable, and **no longer require the `experimentalApis` flag**. As a result, some breaking changes with these experimental APIs were introduced before deeming them stable, and they are summarized below. Please read them thoroughly and update your in-development add-ons as needed. If you run into any issues, please reach out to us on our [Adobe Express Add-on Developer’s Discord channel](http://discord.gg/nc3QDyFeb4) for help.
 
 ### Breaking changes (experimental APIs)
 
@@ -780,10 +780,10 @@ Some items in the following list of changes may have been mentioned in recent up
   ```
 
 - A new [`BaseNode`](../../references/document-sandbox/document-apis/classes/BaseNode.md) class has been introduced, and [`ContainerNode`](../../references/document-sandbox/document-apis/interfaces/ContainerNode.md) has been moved from a class to an interface.
-- The key to load APIs that use the Document APIs has changed, as well as the module names you import APIs from in the [Document Sandbox](../../references/document-sandbox/). The old ones will still work, but the CLI and templates have all been updated to use the new names. Please update your add-ons to use the new ones shown below:
+- The key to load APIs that use the Document APIs has changed, as well as the module names you import APIs from in the [Document Sandbox](../../references/document-sandbox/index.md). The old ones will still work, but the CLI and templates have all been updated to use the new names. Please update your add-ons to use the new ones shown below:
 
   **Adobe Express Document APIs SDK import**<br/>
-  For access to the [Express document and content authoring APIs](../../references/document-sandbox/document-apis/):
+  For access to the [Express document and content authoring APIs](../../references/document-sandbox/document-apis/index.md):
 
   <del>
 
@@ -800,7 +800,7 @@ Some items in the following list of changes may have been mentioned in recent up
   ```
 
   **Document Sandbox SDK import**<br/>
-  For access to the [document sandbox runtime APIs](../../references/document-sandbox/):
+  For access to the [document sandbox runtime APIs](../../references/document-sandbox/index.md):
 
   <del>
 
@@ -835,14 +835,14 @@ Some items in the following list of changes may have been mentioned in recent up
   **IMPORTANT:** The above updates should be considered breaking changes, so any add-ons in development that relied on the experimental APIs may not work correctly until you make changes to use the new/updated ones above. The intention was to ensure these important changes were made prior to marking the APIs stable to 1) make them more intuitive for developers, 2) significantly improve the process of working with colors, strokes and fills, and 3) prevent certain operations from corrupting the document.
 
 - The CLI has been updated to release version `1.1.1`, and includes the following:
-  - The document sandbox templates have been updated to reflect all of the latest changes to the [Document Sandbox APIs](../../references/document-sandbox/), and the `experimentalApis` flag has been removed. Please review the updated [references](../../references/document-sandbox/) and changelog entries thoroughly for details on all of the recent changes. You may also want to refer to the [document sandbox code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) for additional help on how to use them.
+  - The document sandbox templates have been updated to reflect all of the latest changes to the [Document Sandbox APIs](../../references/document-sandbox/index.md), and the `experimentalApis` flag has been removed. Please review the updated [references](../../references/document-sandbox/index.md) and changelog entries thoroughly for details on all of the recent changes. You may also want to refer to the [document sandbox code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) for additional help on how to use them.
   - Typings support has been added to the `javascript` templates to enable intellisense features.
   - Manifest property additions.
   - General improvements and bug fixes.
 
   **NOTE:** The new version should be installed by default when you create a new add-on. If, for any reason, it doesn't, you can force it to install by clearing the npx cache first with `npx clear-npx-cache` or by specifying the version in the command, i.e.: `npx @adobe/create-ccweb-add-on@1.1.1 my-add-on`. You can update any existing add-ons to use this new version by updating the version of the `ccweb-add-on-scripts` in the `package.json` to `1.1.1`.
 
-- All [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) and the [Document API tutorial](../learn/how_to/tutorials/grids-addon.md) have also been updated to reflect all of the latest changes to the [Adobe Express Document Sandbox APIs](../../references/document-sandbox/document-apis/) listed here.
+- All [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) and the [Document API tutorial](../learn/how_to/tutorials/grids-addon.md) have also been updated to reflect all of the latest changes to the [Adobe Express Document Sandbox APIs](../../references/document-sandbox/document-apis/index.md) listed here.
 - Removed all experimental APIs notes/warnings around the **Document Sandbox** since they **are now stable**.
 
 <InlineAlert slots="text" variant="warning"/>
@@ -862,7 +862,7 @@ Some items in the following list of changes may have been mentioned in recent up
 
 ### Updates
 
-- The [Document API's](../../references/document-sandbox/document-apis/) were updated to add a new [`ColorUtils`](../../references/document-sandbox/document-apis/classes/ColorUtils.md) class, which replaces the previous `utils` module that was used as a color helper with a more enhanced utlility. If you've used the old `utils` module in your add-ons, it will require you to update them to use the new named import of `colorUtils` instead of `utils`. Color creation should now be done using the new [`colorUtils` module](../../references/document-sandbox/document-apis/classes/ColorUtils.md). An example of the old way and new way to create a color are shown below for reference:
+- The [Document API's](../../references/document-sandbox/document-apis/index.md) were updated to add a new [`ColorUtils`](../../references/document-sandbox/document-apis/classes/ColorUtils.md) class, which replaces the previous `utils` module that was used as a color helper with a more enhanced utlility. If you've used the old `utils` module in your add-ons, it will require you to update them to use the new named import of `colorUtils` instead of `utils`. Color creation should now be done using the new [`colorUtils` module](../../references/document-sandbox/document-apis/classes/ColorUtils.md). An example of the old way and new way to create a color are shown below for reference:
 
   ```js
   // Before
@@ -891,7 +891,7 @@ Some items in the following list of changes may have been mentioned in recent up
   ellipse.fill = ellipseFill;
   ```
 
-- A new release has landed for the [**In-App Developer Submission experience**](../build/distribute/) in Express. Some highlights from the release:
+- A new release has landed for the [**In-App Developer Submission experience**](../build/distribute/index.md) in Express. Some highlights from the release:
 
   **Create Add-on flow:** You can now create [an add-on "container"](../build/distribute/public-dist.md#step-2-add-on-listing-settings) as your first step in building add-ons within the existing in-app distribution workflow. Creating the container gets you access to a few important settings and data (for instance your unique subdomain, see below) before you continue the development process in the CLI. All existing add-ons will automatically receive a parent container with the associated additional features today.
 
@@ -912,7 +912,7 @@ Some items in the following list of changes may have been mentioned in recent up
 ### Updates
 
 - Adds support to the [Add-on UI SDK](../../references/addonsdk/index.md) for retrieving the [document id](../../references/addonsdk/app-document.md#id) and [title](../../references/addonsdk/app-document.md#title), as well as the ability for the add-on to be notified of the [associated events](../../references/addonsdk/addonsdk-app.md#events).
-- Updates the names of the SDK imports for the [Document Sandbox](../../references/document-sandbox/communication/index.md) and the [Document API's SDK](../../references/document-sandbox/document-apis/):
+- Updates the names of the SDK imports for the [Document Sandbox](../../references/document-sandbox/communication/index.md) and the [Document API's SDK](../../references/document-sandbox/document-apis/index.md):
 
   **Document Sandbox SDK import**<br/>
 
@@ -965,7 +965,7 @@ Some items in the following list of changes may have been mentioned in recent up
 ### Updates
 
 - The [Web API's in the Document Sandbox Reference](../../references/document-sandbox/web/index.md) were updated to remove the timer methods which are no longer supported (ie: `setTimeout()`, `clearTimeout` and `setInterval()`, `clearInterval`).
-- The [Document API References](../../references/document-sandbox/document-apis/) were updated with the following additions and changes:
+- The [Document API References](../../references/document-sandbox/document-apis/index.md) were updated with the following additions and changes:
 
   **New Classes/Interfaces**<br/>
   - New [RestrictedItemList class](../../references/document-sandbox/document-apis/classes/RestrictedItemList.md)
@@ -977,7 +977,7 @@ Some items in the following list of changes may have been mentioned in recent up
 
   **Updates to Node Classes**<br/>
 
-The accessors and methods below were removed or replaced with new names in the [`Node` class](../../references/document-sandbox/document-apis/classes/Node.md) and classes that extend it. Please refer to the [Document API References](../../references/document-sandbox/document-apis/) specifically to learn more about each.
+The accessors and methods below were removed or replaced with new names in the [`Node` class](../../references/document-sandbox/document-apis/classes/Node.md) and classes that extend it. Please refer to the [Document API References](../../references/document-sandbox/document-apis/index.md) specifically to learn more about each.
 
 - Removes `absoluteRotation` accessor
 - Removes `absoluteTransform` accessor
@@ -994,7 +994,7 @@ The accessors and methods below were removed or replaced with new names in the [
 
 ## 2023-11-27
 
-Updated [Document API references](../../references/document-sandbox/document-apis/) to include:
+Updated [Document API references](../../references/document-sandbox/document-apis/index.md) to include:
 
 - [ComplexShapeNode class](../../references/document-sandbox/document-apis/classes/ComplexShapeNode.md)
 - [GridLayoutNode class](../../references/document-sandbox/document-apis/classes/GridLayoutNode.md)
@@ -1023,7 +1023,7 @@ Updates to the [OAuth APIs](../../references/addonsdk/app-oauth.md) to allow for
 
 ### Updates
 
-Published new [Guidelines and requirements section](../build/distribute/guidelines/); including [General guidelines](../build/distribute/guidelines/general/), [Developer brand guidelines](../build/distribute/guidelines/), [Monetization guidelines](../build/distribute/guidelines/monetization.md) and [Generative AI guidelines](../build/distribute/guidelines/genai/).
+Published new [Guidelines and requirements section](../build/distribute/guidelines/index.md); including [General guidelines](../build/distribute/guidelines/general/index.md), [Developer brand guidelines](../build/distribute/guidelines/index.md), [Monetization guidelines](../build/distribute/guidelines/monetization.md) and [Generative AI guidelines](../build/distribute/guidelines/genai/index.md).
 
 ## 2023-10-03
 
@@ -1186,7 +1186,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ### Added
 
-- Added new [references section](../../references/document-sandbox/) for the document sandbox APIs.
+- Added new [references section](../../references/document-sandbox/index.md) for the document sandbox APIs.
 
 ### Important notes on document sandbox APIs (aka Document Sandbox)
 
@@ -1230,7 +1230,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ### Added
 
-- Added new properties to the manifest reference for `renditionPreview` in the [`requirements`](../../references/manifest/index.md#requirements) section, and the `script` property to the [`entryPoints`](../../references/manifest/index.md#entrypoints) section to support the new experimental [document sandbox APIs](../../references/document-sandbox/).
+- Added new properties to the manifest reference for `renditionPreview` in the [`requirements`](../../references/manifest/index.md#requirements) section, and the `script` property to the [`entryPoints`](../../references/manifest/index.md#entrypoints) section to support the new experimental [document sandbox APIs](../../references/document-sandbox/index.md).
 - Added [`DisableDragToDocument`](../../references/addonsdk/addonsdk-app.md#disabledragtodocument-type-definition) and [`dropCancelReason`](../../references/addonsdk/addonsdk-app.md#dragendeventdata) support to the [`addonsdk.app`](../../references/addonsdk/addonsdk-app.md) reference.
 
 ## 2023-07-11

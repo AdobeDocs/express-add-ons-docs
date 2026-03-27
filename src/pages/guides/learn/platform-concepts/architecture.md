@@ -922,12 +922,12 @@ See the [SDK Structure & Import Patterns](#sdk-structure--import-patterns) secti
 
 - [Communication APIs Reference](../../../references/document-sandbox/communication/index.md)
 - [UI SDK Reference](../../../references/addonsdk/index.md)
-- [Document API Concepts](../platform-concepts/document-api.md)
+- [Document API Concepts](document-api.md)
 
 ## Next Steps
 
 Now that you understand the architecture, explore these guides and tutorials:
 
-- [Document API deep dive](../platform-concepts/document-api.md): Learn how to use the Document API to create and modify document content.
+- [Document API deep dive](document-api.md): Learn how to use the Document API to create and modify document content.
 - [Building your first add-on](../how-to/tutorials/grids-addon.md): Use the Document API to create a simple add-on that adds a grid to the document.
 - [Using the Communication APIs](../how-to/tutorials/stats-addon.md): Build an add-on to gather statistics on the active document using the Communication APIs.

@@ -72,7 +72,7 @@ You now have a basic understanding of the Adobe Express ecosystem; if you want t
 
 ## Learn
 
-The best way to learn is by doing! Adobe Express integrates a [Playground](../getting-started/code-playground.md) environment that allows you experiment with the code directly in the application, without the need to set up a local development environment.
+The best way to learn is by doing! Adobe Express integrates a [Playground](code-playground.md) environment that allows you experiment with the code directly in the application, without the need to set up a local development environment.
 
 <Embed slots="video" />
 
@@ -86,7 +86,7 @@ To launch the Code Playground experience, follow [this link](https://www.adobe.c
 
 [Launch the Code Playground](https://www.adobe.com/go/addon-playground)
 
-Once it's open, you can play with the code directly in the editor, and see the changes you make reflected in the document. The [Script Mode](../getting-started/code-playground-script-mode.md) is particularly useful for experimenting with the add-on's APIs. Please refer to the complete guide to the [Code Playground](../getting-started/code-playground.md) for more details.
+Once it's open, you can play with the code directly in the editor, and see the changes you make reflected in the document. The [Script Mode](code-playground-script-mode.md) is particularly useful for experimenting with the add-on's APIs. Please refer to the complete guide to the [Code Playground](code-playground.md) for more details.
 
 [![Code Playground](./img/playground.png)](./code-playground.md)
 
@@ -106,13 +106,13 @@ When you feel more comfortable, you can tinker with these other use cases:
 
 ### Scaffold a Local Development Environment
 
-To build a more complex add-on, you can use our free [Command Line Interface (CLI) tool](../getting-started/local-development/dev-tooling.md#using-the-cli), that can set up a new local project (on your machine) with all the necessary files and dependencies to get you started.
+To build a more complex add-on, you can use our free [Command Line Interface (CLI) tool](local-development/dev-tooling.md#using-the-cli), that can set up a new local project (on your machine) with all the necessary files and dependencies to get you started.
 
 ![doc sandbox prompt](./local-development/img/CLI-template-prompt.png)
 
 <InlineAlert slots="text1" variant="success" />
 
-The Code Playground can [export your project as a zip file](../getting-started/code-playground-workflow.md#download-your-code) so that existing add-ons projects can be migrated to the CLI seamlessly.
+The Code Playground can [export your project as a zip file](code-playground-workflow.md#download-your-code) so that existing add-ons projects can be migrated to the CLI seamlessly.
 
 ### Next steps
 

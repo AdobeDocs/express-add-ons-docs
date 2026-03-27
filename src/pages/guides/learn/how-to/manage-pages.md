@@ -474,7 +474,7 @@ const templatePages = createTemplatePages();
 
 ### Check Page Properties
 
-For detailed page information including content analysis and print readiness, see the [Page Metadata How-to Guide](../how-to/page-metadata.md).
+For detailed page information including content analysis and print readiness, see the [Page Metadata How-to Guide](page-metadata.md).
 
 <CodeBlock slots="heading, code" repeat="2" />
 
@@ -564,9 +564,9 @@ Unlike other creation methods (like `editor.createRectangle()`), pages require t
 
 Pages created with `editor.documentRoot.pages.addPage()` integrate seamlessly with other Adobe Express APIs:
 
-- **Metadata APIs** - Use `newPage.id` with Add-on UI SDK metadata APIs to retrieve detailed page information. See the [Page Metadata How-to Guide](../how-to/page-metadata.md) for complete examples.
-- **Rendition APIs** - Export specific pages as images, PDFs, or videos. See [Create Renditions](../how-to/create-renditions.md).
-- **Selection APIs** - Work with selected content on pages. See [Handle Element Selection](../how-to/handle-selection.md).
+- **Metadata APIs** - Use `newPage.id` with Add-on UI SDK metadata APIs to retrieve detailed page information. See the [Page Metadata How-to Guide](page-metadata.md) for complete examples.
+- **Rendition APIs** - Export specific pages as images, PDFs, or videos. See [Create Renditions](create-renditions.md).
+- **Selection APIs** - Work with selected content on pages. See [Handle Element Selection](handle-selection.md).
 - **Content APIs** - Add text, shapes, images, and other content to page artboards using the Document API.
 
 ## FAQs
@@ -607,17 +607,17 @@ Pages created with `editor.documentRoot.pages.addPage()` integrate seamlessly wi
 
 ### Page Information and Metadata
 
-- **[Page Metadata](../how-to/page-metadata.md)** - Get detailed information about pages, including dimensions, content types, and selected page IDs
-- **[Document Metadata](../how-to/document-metadata.md)** - Access document-level information and listen for document events
+- **[Page Metadata](page-metadata.md)** - Get detailed information about pages, including dimensions, content types, and selected page IDs
+- **[Document Metadata](document-metadata.md)** - Access document-level information and listen for document events
 - **[getSelectedPageIds() API](../../../references/addonsdk/app-document.md#getselectedpageids)** - Retrieve IDs of currently selected pages
 
 ### Working with Page Content
 
-- **[Position Elements](../how-to/position-elements.md)** - Position and arrange content within pages and artboards
-- **[Group Elements](../how-to/group-elements.md)** - Organize page content using groups
-- **[Use Geometry](../how-to/use-geometry.md)** - Create shapes and geometric elements for your pages
-- **[Use Text](../how-to/use-text.md)** - Add and style text content on pages
-- **[Use Images](../how-to/use-images.md)** - Import and work with images on pages
+- **[Position Elements](position-elements.md)** - Position and arrange content within pages and artboards
+- **[Group Elements](group-elements.md)** - Organize page content using groups
+- **[Use Geometry](use-geometry.md)** - Create shapes and geometric elements for your pages
+- **[Use Text](use-text.md)** - Add and style text content on pages
+- **[Use Images](use-images.md)** - Import and work with images on pages
 
 ### Document Structure and Context
 
@@ -628,5 +628,5 @@ Pages created with `editor.documentRoot.pages.addPage()` integrate seamlessly wi
 
 ### Advanced Topics
 
-- **[Create Renditions](../how-to/create-renditions.md)** - Export specific pages or entire documents as images, PDFs, or videos
-- **[Handle Element Selection](../how-to/handle-selection.md)** - Work with selected elements on pages
+- **[Create Renditions](create-renditions.md)** - Export specific pages or entire documents as images, PDFs, or videos
+- **[Handle Element Selection](handle-selection.md)** - Work with selected elements on pages

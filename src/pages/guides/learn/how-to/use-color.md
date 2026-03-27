@@ -106,7 +106,7 @@ textNode.fullContent.applyCharacterStyles(
 );
 ```
 
-See the [Use Text](../how-to/use-text.md) page for more examples.
+See the [Use Text](use-text.md) page for more examples.
 
 ### Example: Fill and Stroke colors
 

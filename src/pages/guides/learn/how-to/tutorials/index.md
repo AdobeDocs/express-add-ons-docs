@@ -21,7 +21,7 @@ In this page, you'll find a variety of tutorials covering the Adobe Express Add-
 
 <Info-Card slots="link, image, heading, text" width="50%"/>
 
-[Express Document API](../../how-to/tutorials/grids-addon.md)
+[Express Document API](grids-addon.md)
 
 ![Grids add-on](images/thumbs-grids-addon.png)
 
@@ -31,7 +31,7 @@ Davide Barranca - November 6th, 2023
 
 <Info-Card slots="link, image, heading, text" width="50%"/>
 
-[Stats add-on](../../how-to/tutorials/stats-addon.md)
+[Stats add-on](stats-addon.md)
 
 ![Stats add-on](images/thumbs-stats-addon.png)
 
@@ -41,7 +41,7 @@ Davide Barranca - December 14th, 2023
 
 <Info-Card slots="link, image, heading, text" width="50%"/>
 
-[Express Document API](../../how-to/tutorials/spectrum-workshop/index.md)
+[Express Document API](spectrum-workshop/index.md)
 
 ![Grids add-on](images/bingo-v1-addon.png)
 
@@ -51,7 +51,7 @@ Holly Schinsky - January 25th, 2024
 
 <Info-Card slots="link, image, heading, text" width="50%"/>
 
-[Markdown Parser add-on](../../how-to/tutorials/markdown-parser-text-api.md)
+[Markdown Parser add-on](markdown-parser-text-api.md)
 
 ![Markdown Parser add-on](images/thumbs-markdown-addon.png)
 

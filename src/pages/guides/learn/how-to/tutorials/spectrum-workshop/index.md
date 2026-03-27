@@ -47,7 +47,7 @@ This add-on allows users to select settings to customize a bingo card; including
 
 **February 6th, 2024**
 
-- Updated tips on Spectrum CSS styling to add additional details on [why you should use Spectrum CSS variables](../../../how-to/tutorials/spectrum-workshop/part3.md#styling-with-spectrum-css) to style your add-ons, and [additional helpful guidelines for locating and using them](../../../how-to/tutorials/spectrum-workshop/part3.md#layout-and-typography-styling)
+- Updated tips on Spectrum CSS styling to add additional details on [why you should use Spectrum CSS variables](part3.md#styling-with-spectrum-css) to style your add-ons, and [additional helpful guidelines for locating and using them](part3.md#layout-and-typography-styling)
 
 **January 31st, 2024**
 
@@ -70,13 +70,13 @@ This add-on allows users to select settings to customize a bingo card; including
 
 <List slots="text1, text2" repeat="2" iconColor="#2ac3a2" icon="disc" variant="fullWidth" />
 
-[Configuring your add-on to use Spectrum Web Components](../../../how-to/tutorials/spectrum-workshop/part1.md#create-and-configure-your-add-on)
+[Configuring your add-on to use Spectrum Web Components](part1.md#create-and-configure-your-add-on)
 
-[Using swc-react - Spectrum Web Component wrappers for React](../../../how-to/tutorials/spectrum-workshop/part2.md#import-swc-react-components)
+[Using swc-react - Spectrum Web Component wrappers for React](part2.md#import-swc-react-components)
 
-[Using Spectrum variables to customize the layout of your UI](../../../how-to/tutorials/spectrum-workshop/part2.md#style-your-ui)
+[Using Spectrum variables to customize the layout of your UI](part2.md#style-your-ui)
 
-[Tips, Debugging & Troubleshooting](../../../how-to/tutorials/spectrum-workshop/part3.md#faq--troubleshooting)
+[Tips, Debugging & Troubleshooting](part3.md#faq--troubleshooting)
 
 ## Quickstart: Try Spectrum Web Components
 

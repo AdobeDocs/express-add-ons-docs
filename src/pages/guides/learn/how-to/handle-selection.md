@@ -991,7 +991,7 @@ const selectionManager = new SelectionManager();
 
 <InlineAlert slots="header,text1,text2,text3,text4,text5" variant="warning"/>
 
-Document Modification Restrictions
+**Document Modification Restrictions**
 
 **Never modify the document inside selection change handlers!** This can crash the application.
 
@@ -1126,8 +1126,8 @@ const hasShapes = selection.some(node =>
 
 - **[Context API Reference](../../../references/document-sandbox/document-apis/classes/context.md)** - Complete API documentation for the Context class
 - **[Communication APIs](../../../references/document-sandbox/communication/index.md)** - Learn how to communicate between document sandbox and UI panel  
-- **[Group Elements](../how-to/group-elements.md)** - Working with selections to create and manage groups
-- **[Position Elements](../how-to/position-elements.md)** - Positioning and transforming selected elements
-- **[Use Text](../how-to/use-text.md)** - Examples of working with text selections using `editor.context.selection[0]`
+- **[Group Elements](group-elements.md)** - Working with selections to create and manage groups
+- **[Position Elements](position-elements.md)** - Positioning and transforming selected elements
+- **[Use Text](use-text.md)** - Examples of working with text selections using `editor.context.selection[0]`
 - **[EditorEvent Enumeration](../../../references/document-sandbox/document-apis/enumerations/editor-event.md)** - All available editor events
 - **[Node API Reference](../../../references/document-sandbox/document-apis/classes/node.md)** - Understanding the Node class used in selections

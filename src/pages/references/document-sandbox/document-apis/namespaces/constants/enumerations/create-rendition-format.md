@@ -1,4 +1,4 @@
-[@express-document-sdk](../../../overview.md) / [Constants](../../constants/overview.md) / CreateRenditionFormat
+[@express-document-sdk](../../../overview.md) / [Constants](../overview.md) / CreateRenditionFormat
 
 # Enumeration: CreateRenditionFormat
 

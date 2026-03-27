@@ -65,7 +65,7 @@ The first time you launch the [Code Playground](https://www.adobe.com/go/addon-p
 
 ## Code Playground
 
-The [Code Playground](../getting-started/code-playground.md) is a browser-based editor built right into Adobe Express. No installation required—just open it and start coding.
+The [Code Playground](code-playground.md) is a browser-based editor built right into Adobe Express. No installation required—just open it and start coding.
 
 ### 1. Launch the Playground
 
@@ -88,7 +88,7 @@ Alternatively, see the following animation or expand the details below for a ste
 
 ### 2. Run Your First Script
 
-The Code Playground allows you to operate in [two modalities](../getting-started/code-playground.md#playground-modes):
+The Code Playground allows you to operate in [two modalities](code-playground.md#playground-modes):
 
 - [**Script Mode**](https://www.adobe.com/go/addon-playground?executionMode=script): Directly runs code that operates on the current document
 - [**Add-on Mode**](https://www.adobe.com/go/addon-playground): Creates an add-on with a custom User Interface and logic that can run code on the current document
@@ -124,7 +124,7 @@ You've been using the Document Sandbox APIs, a very extensive set of APIs that l
 
 ### 4. Create an Add-on
 
-Click the **Add-on** tab to switch to the [Add-on mode](../getting-started/code-playground.md#playground-modes). You'll see that the Playground now shows four tabs:
+Click the **Add-on** tab to switch to the [Add-on mode](code-playground.md#playground-modes). You'll see that the Playground now shows four tabs:
 
 - `HTML`: controls the add-on's User Interface.
 - `CSS`: adds styles.
@@ -143,7 +143,7 @@ Even if the result of both the Script and Add-on modes in the Code Playground is
 
 ## Command Line Interface (CLI)
 
-The [Adobe Express add-on CLI](../getting-started/local-development/dev-tooling.md#using-the-cli) allows you to create and host Adobe Express add-ons directly from your local machine.
+The [Adobe Express add-on CLI](local-development/dev-tooling.md#using-the-cli) allows you to create and host Adobe Express add-ons directly from your local machine.
 
 ### 1. Scaffold a New Project
 
@@ -160,7 +160,7 @@ This command will scaffold a new add-on based on "pure" JavaScript with Document
 - `hello-world` is the name of the add-on project you are creating.
 - The `--template` flag specifies the template to use for the add-on; in this case, `javascript-with-document-sandbox`. The parameter is optional, and when missing, the CLI will prompt you to choose one from a list.
 
-The [Templates section](../getting-started/local-development/dev-tooling.md#templates) on the **Development Tools** page provides a list of available options. For detailed guidance on choosing the right template for your project, see the [Add-on Project Anatomy & CLI Templates](../getting-started/addon-project-anatomy.md) guide.
+The [Templates section](local-development/dev-tooling.md#templates) on the **Development Tools** page provides a list of available options. For detailed guidance on choosing the right template for your project, see the [Add-on Project Anatomy & CLI Templates](addon-project-anatomy.md) guide.
 
 <InlineAlert slots="header, text1" variant="info"/>
 
@@ -277,6 +277,6 @@ Any changes to the `manifest.json` will _require a manual reload of your add-on_
 
 Congratulations! You've completed this Hello, World! guide and run your first add-on!
 
-Next, check out the [Code Playground](./code-playground.md) page to discover all its features, and read the [How To Guides](../learn/how-to/index.md) to familiarise with the APIs and plug & play with code snippets. If you've liked the CLI track, in the [Local Development](./local-development/index.md) section you can find more details and debugging instructions.
+Next, check out the [Code Playground](code-playground.md) page to discover all its features, and read the [How To Guides](../learn/how-to/index.md) to familiarise with the APIs and plug & play with code snippets. If you've liked the CLI track, in the [Local Development](local-development/index.md) section you can find more details and debugging instructions.
 
 When you feel comfortable, you can dive into the [Complete Projects](../learn/how-to/tutorials/index.md), where we'll help you build fully-working add-ons from the ground up—the best way to learn is by doing! We also have an extensive collection of [code samples](../learn/samples.md), that are a great resource to help you get started building your own add-ons.

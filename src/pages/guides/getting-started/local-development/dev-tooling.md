@@ -107,7 +107,7 @@ The extra arguments are unnecessary unless you do not want to use a transpiler/b
 
 The add-on CLI contains built-in, pre-configured templates to allow you to create an add-on project based on your favorite development stack in the quickest possible manner. There are currently five base template options based on popular web development trends.
 
-For a comprehensive comparison of all templates, detailed file structures, and guidance on choosing the right template for your project, see the [Add-on Project Anatomy & CLI Templates](../../getting-started/addon-project-anatomy.md) guide.
+For a comprehensive comparison of all templates, detailed file structures, and guidance on choosing the right template for your project, see the [Add-on Project Anatomy & CLI Templates](../addon-project-anatomy.md) guide.
 
 The table below summarizes the templates and their associated frameworks.
 &lt;br/&gt;
@@ -214,7 +214,7 @@ It's possible to achieve the same result when a document is already open clickin
 
 <InlineAlert slots="text, text2" variant="warning"/>
 
-If you run into the error below, you can follow the steps in the [Known Issues & Limitations](../../getting-started/local-development/known-issues-limitations.md#chrome-local-network-access-restriction) guide to fix it.
+If you run into the error below, you can follow the steps in the [Known Issues & Limitations](known-issues-limitations.md#chrome-local-network-access-restriction) guide to fix it.
 
 ![Local Network Access Error](./img/connect-error.png)
 

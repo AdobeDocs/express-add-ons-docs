@@ -34,15 +34,15 @@ The [`Node.resize()`](../references/document-sandbox/document-apis/classes/Node.
 ### Added
 
 - **Experimental** [`MediaContainerNode.replaceMediaWithEditedImage()`](../references/document-sandbox/document-apis/classes/MediaContainerNode.md#replacemediawitheditedimage): Replaces the current media with an edited version of the same image while preserving existing filter effects, per-element metadata, and asset provenance (including attribution IDs and Adobe Stock information). Use this instead of `replaceMedia()` when the replacing with a modified version of the original image (e.g., recolored, upscaled).
-- **Experimental** [`ReplaceMediaWithEditedImageOptions`](../references/document-sandbox/document-apis/interfaces/ReplaceMediaWithEditedImageOptions.md) interface: Options for `replaceMediaWithEditedImage()`, including the `preserveCutoutFilter` property.
+- **Experimental** [`ReplaceMediaWithEditedImageOptions`](document-sandbox/document-apis/interfaces/ReplaceMediaWithEditedImageOptions.md) interface: Options for `replaceMediaWithEditedImage()`, including the `preserveCutoutFilter` property.
 
 ## 2026-03-13
 
 ### Updated
 
-- [Create Renditions](../guides/learn/how_to/create_renditions.md) - Guide now covers [`VisualNode.createRendition()`](../references/document-sandbox/document-apis/classes/VisualNode.md#createrendition), which captures individual elements (shapes, groups, text) as PNG or JPEG from the Document Sandbox. Also documents [`isPresentation()`](../references/addonsdk/app-document.md#ispresentation) for checking document type before offering PPTX export, which is only available for presentation-type documents.
+- [Create Renditions](../guides/learn/how_to/create_renditions.md) - Guide now covers [`VisualNode.createRendition()`](../references/document-sandbox/document-apis/classes/VisualNode.md#createrendition), which captures individual elements (shapes, groups, text) as PNG or JPEG from the Document Sandbox. Also documents [`isPresentation()`](addonsdk/app-document.md#ispresentation) for checking document type before offering PPTX export, which is only available for presentation-type documents.
 - [Use Text](../guides/learn/how_to/use_text.md) - Guide now covers threaded text APIs (`createThreadedText`, [`ThreadedTextList`](../references/document-sandbox/document-apis/classes/ThreadedTextList.md)) for multi-frame text flows, and the [`allTextContent`](../references/document-sandbox/document-apis/classes/PageNode.md#alltextcontent) and [`allDescendants`](../references/document-sandbox/document-apis/classes/PageNode.md#alldescendants) accessors for iterating over text within page or visual node containers.
-- [Use PDF and PowerPoint](../guides/learn/how_to/use_pdf_powerpoint.md) - Guide corrected to use [`importPresentation()`](../references/addonsdk/app-document.md#importpresentation) method, and clarified that only `.pptx` format is supported (legacy `.ppt` not supported).
+- [Use PDF and PowerPoint](../guides/learn/how_to/use_pdf_powerpoint.md) - Guide corrected to use [`importPresentation()`](addonsdk/app-document.md#importpresentation) method, and clarified that only `.pptx` format is supported (legacy `.ppt` not supported).
 
 ## 2026-02-06
 
@@ -55,7 +55,7 @@ We have added new APIs to generate image rendition of visual nodes directly from
 - **Experimental** [`CreateRenditionResult`](../references/document-sandbox/document-apis/interfaces/CreateRenditionResult.md) interface - define the structure of the returned rendition data (e.g., blob, metadata).
 - **Experimental** [`CreateRenditionFormat`](../references/document-sandbox/document-apis/namespaces/Constants/enumerations/CreateRenditionFormat.md) enumeration - specify supported output formats (e.g., PNG, JPEG, PDF) in the `Constants` namespace.
 
-- **Experimental** [`addOnUISdk.app.document.isPresentation()`](../references/addonsdk/app-document.md#ispresentation) asynchronous method - Returns `true` if the document is a presentation, `false` if not.
+- **Experimental** [`addOnUISdk.app.document.isPresentation()`](addonsdk/app-document.md#ispresentation) asynchronous method - Returns `true` if the document is a presentation, `false` if not.
 
 ## 2026-01-26
 
@@ -92,20 +92,20 @@ We have added new APIs for threaded text handling across multiple frames, as wel
 
 ### Updated
 
-- **Major restructure** of the [Add-on UI SDK Constants Reference](./addonsdk/addonsdk-constants.md).
+- **Major restructure** of the [Add-on UI SDK Constants Reference](addonsdk/addonsdk-constants.md).
 - Improved content and metadata for SEO and AI assistant optimization.
-- **Breaking change:** Removed experimental resize/rescale methods (`rescaleProportionalToWidth()`, `rescaleProportionalToHeight()`, `resizeToFitWithin()`, `resizeToCover()`) and replaced with unified **experimental** [`resize()`](../references/document-sandbox/document-apis/classes/Node.md#resize) method offering more flexible behavior control via [`ResizeBehavior`](../references/document-sandbox/document-apis/enumerations/ResizeBehavior.md) options. The [`experimentalApis`](../references/manifest/index.md#requirements) flag is required.
+- **Breaking change:** Removed experimental resize/rescale methods (`rescaleProportionalToWidth()`, `rescaleProportionalToHeight()`, `resizeToFitWithin()`, `resizeToCover()`) and replaced with unified **experimental** [`resize()`](../references/document-sandbox/document-apis/classes/Node.md#resize) method offering more flexible behavior control via [`ResizeBehavior`](../references/document-sandbox/document-apis/enumerations/ResizeBehavior.md) options. The [`experimentalApis`](manifest/index.md#requirements) flag is required.
 -
 
 ## 2025-12-28
 
 ### Added
 
-- **SVG image support** in [`addImage()`](./addonsdk/app-document.md#addimage) - You can now import SVG files (`image/svg+xml`) to the document using the `addImage()` method.
+- **SVG image support** in [`addImage()`](addonsdk/app-document.md#addimage) - You can now import SVG files (`image/svg+xml`) to the document using the `addImage()` method.
 
 ### Updated
 
-- [`getSelectedPageIds()`](./addonsdk/app-document.md#getselectedpageids) method **promoted from experimental to stable** - Retrieve the currently selected page IDs in the document. The [`experimentalApis`](./manifest/index.md#requirements) flag is no longer required to use this API.
+- [`getSelectedPageIds()`](addonsdk/app-document.md#getselectedpageids) method **promoted from experimental to stable** - Retrieve the currently selected page IDs in the document. The [`experimentalApis`](manifest/index.md#requirements) flag is no longer required to use this API.
 
 ## 2025-11-29
 
@@ -180,10 +180,10 @@ The Adobe Express Code Playground has received a major update with the release o
 
 ### Added
 
-- New [`ImportAddOnData`](./addonsdk/addonsdk-app.md#importaddondata) support for enhanced metadata tracking on imported media in [`addImage()`](./addonsdk/app-document.md#addimage), [`addVideo()`](./addonsdk/app-document.md#addvideo), [`addAnimatedImage()`](./addonsdk/app-document.md#addanimatedimage), and [`enableDragToDocument()`](./addonsdk/addonsdk-app.md#enabledragtodocument) methods.
+- New [`ImportAddOnData`](addonsdk/addonsdk-app.md#importaddondata) support for enhanced metadata tracking on imported media in [`addImage()`](addonsdk/app-document.md#addimage), [`addVideo()`](addonsdk/app-document.md#addvideo), [`addAnimatedImage()`](addonsdk/app-document.md#addanimatedimage), and [`enableDragToDocument()`](addonsdk/addonsdk-app.md#enabledragtodocument) methods.
 - New [Handle Element Selection How-to Guide](../guides/learn/how_to/handle_selection.md) covering selection operations, real-time selection events, UI integration patterns, selection-based actions, and working with locked elements.
 - New [Manage Pages How-to Guide](../guides/learn/how_to/manage_pages.md) covering page creation, navigation, and management, positioned in a new **Document Structure** navigation category.
-- [`MediaAttributes`](./addonsdk/addonsdk-app.md#mediaattributes) parameter documentation for [`addVideo()`](./addonsdk/app-document.md#addvideo) method.
+- [`MediaAttributes`](addonsdk/addonsdk-app.md#mediaattributes) parameter documentation for [`addVideo()`](addonsdk/app-document.md#addvideo) method.
 
 ### Updated
 
@@ -202,7 +202,7 @@ The following how-to guides have been updated with `ImportAddOnData` support for
 
 <InlineAlert slots="text" variant="warning" className="inline-alert-bullet-aligned"/>
 
-**IMPORTANT:** The Text Replacement APIs are currently **_experimental only_** and should not be used in any add-ons you will be distributing until they have been declared stable. To use these APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](./manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** The Text Replacement APIs are currently **_experimental only_** and should not be used in any add-ons you will be distributing until they have been declared stable. To use these APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](manifest/index.md#requirements) section of the `manifest.json`.
 
 - New [`mediaAddOnData`](../references/document-sandbox/document-apis/classes/ImageRectangleNode.md#mediaAddOnData) to support additional metadata on the `ImageRectangleNode`.
 - New `link` property in Character Style ranges [`CharacterStylesInput`](../references/document-sandbox/document-apis/interfaces/CharacterStylesInput.md#link) to support hyperlinks.
@@ -215,7 +215,7 @@ The following how-to guides have been updated with `ImportAddOnData` support for
 
 <InlineAlert slots="text" variant="warning" className="inline-alert-bullet-aligned"/>
 
-**IMPORTANT:** The [`cloneInPlace()`](../references/document-sandbox/document-apis/classes/Node.md#cloneInPlace) method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](./manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** The [`cloneInPlace()`](../references/document-sandbox/document-apis/classes/Node.md#cloneInPlace) method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](manifest/index.md#requirements) section of the `manifest.json`.
 
 - Updated [`maskShape`](../references/document-sandbox/document-apis/classes/GridCellNode.md#maskShape) in `GridCellNode` to readonly.
 - The [`BitmapImage`](../references/document-sandbox/document-apis/classes/BitmapImage.md) has been converted from an interface to a class.
@@ -232,9 +232,9 @@ With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [co
 
 ### Added
 
-- New experimental [`getSelectedPageIds()`](./addonsdk/app-document.md#getselectedpageids) method to the [`addOnUISdk.app.document`](./addonsdk/app-document.md) API. This method retrieves the currently selected page IDs in the document, useful for getting metadata or performing operations on only the pages that the user has selected.
-- New [`PptxRenditionOptions`](./addonsdk/app-document.md#pptxrenditionoptions) object for PPTX export support in the [`createRenditions()`](./addonsdk/app-document.md#createrenditions) API. PPTX export is only available for presentation-type documents in Adobe Express.
-- New [`RenditionFormat.pptx`](./addonsdk/addonsdk-constants.md) constant added to support PowerPoint presentation export format with MIME type `"application/vnd.openxmlformats-officedocument.presentationml.presentation"`.
+- New experimental [`getSelectedPageIds()`](addonsdk/app-document.md#getselectedpageids) method to the [`addOnUISdk.app.document`](addonsdk/app-document.md) API. This method retrieves the currently selected page IDs in the document, useful for getting metadata or performing operations on only the pages that the user has selected.
+- New [`PptxRenditionOptions`](addonsdk/app-document.md#pptxrenditionoptions) object for PPTX export support in the [`createRenditions()`](addonsdk/app-document.md#createrenditions) API. PPTX export is only available for presentation-type documents in Adobe Express.
+- New [`RenditionFormat.pptx`](addonsdk/addonsdk-constants.md) constant added to support PowerPoint presentation export format with MIME type `"application/vnd.openxmlformats-officedocument.presentationml.presentation"`.
 
 ### Updated
 
@@ -248,11 +248,11 @@ With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [co
 ### Added
 
 - New [`isAnonymousUser()`](./addonsdk/app-currentUser.md#isanonymoususer) method to the [`addOnUISdk.app.currentUser`](./addonsdk/app-currentUser.md) API. This method returns a boolean indicating whether the current user is browsing as a guest (not logged in).
-- New [`exportAllowed()`](./addonsdk/app-document.md#exportallowed) method added to the [`addOnUISdk.app.document`](./addonsdk/app-document.md) API. This method determines whether the current document can be exported based on its review status in collaborative review and approval workflows.
-- Enhanced [`importPdf()`](./addonsdk/app-document.md#importpdf) method now supports a [`SourceMimeTypeInfo`](./addonsdk/app-document.md#sourcemimetypeinfo) parameter. When your add-on converts Word documents (`.docx`) or Google Docs (`.gdoc`) to PDF before importing, you can now specify the original file's mime type to improve the user experience.
-- Enhanced drag-and-drop functionality with [`SourceMimeTypeInfo`](./addonsdk/addonsdk-app.md#dragcompletiondata) support.
-- New [`fileSizeLimit`](./addonsdk/addonsdk-constants.md) and [`fileSizeLimitUnit`](./addonsdk/addonsdk-constants.md) properties added to the [`PngRenditionOptions`](./addonsdk/app-document.md#pngrenditionoptions) object.
-- New [`bitRate`](./addonsdk/addonsdk-constants.md) and [`frameRate`](./addonsdk/addonsdk-constants.md) properties added to the [`Mp4RenditionOptions`](./addonsdk/app-document.md#mp4renditionoptions) object.
+- New [`exportAllowed()`](addonsdk/app-document.md#exportallowed) method added to the [`addOnUISdk.app.document`](addonsdk/app-document.md) API. This method determines whether the current document can be exported based on its review status in collaborative review and approval workflows.
+- Enhanced [`importPdf()`](addonsdk/app-document.md#importpdf) method now supports a [`SourceMimeTypeInfo`](addonsdk/app-document.md#sourcemimetypeinfo) parameter. When your add-on converts Word documents (`.docx`) or Google Docs (`.gdoc`) to PDF before importing, you can now specify the original file's mime type to improve the user experience.
+- Enhanced drag-and-drop functionality with [`SourceMimeTypeInfo`](addonsdk/addonsdk-app.md#dragcompletiondata) support.
+- New [`fileSizeLimit`](addonsdk/addonsdk-constants.md) and [`fileSizeLimitUnit`](addonsdk/addonsdk-constants.md) properties added to the [`PngRenditionOptions`](addonsdk/app-document.md#pngrenditionoptions) object.
+- New [`bitRate`](addonsdk/addonsdk-constants.md) and [`frameRate`](addonsdk/addonsdk-constants.md) properties added to the [`Mp4RenditionOptions`](addonsdk/app-document.md#mp4renditionoptions) object.
 
 ### Updated
 
@@ -260,7 +260,7 @@ With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [co
 - [Create Renditions guide](../guides/learn/how_to/create_renditions.md) to include proactive export permission checking using `exportAllowed()` before creating renditions with `RenditionIntent.export` or `RenditionIntent.print`. The guide now demonstrates graceful fallback to preview renditions when export is restricted.
 - [PDF and PowerPoint guide](../guides/learn/how_to/use_pdf_powerpoint.md) with information about the `sourceMimeType` parameter for improved UX when importing converted documents.
 - [Drag-and-Drop guide](../guides/learn/how_to/drag_and_drop.md) with examples of using `sourceMimeType` when dragging converted documents.
-- The [Grids add-on tutorial](../guides/learn/how_to/tutorials/grids-addon.md) has been updated to use the Adobe Express native [Color Picker](../references/ui-components/color-picker.md) instead of the hidden `<input>` element workaround.
+- The [Grids add-on tutorial](../guides/learn/how_to/tutorials/grids-addon.md) has been updated to use the Adobe Express native [Color Picker](ui-components/color-picker.md) instead of the hidden `<input>` element workaround.
 
 ## 2025-07-25
 
@@ -282,7 +282,7 @@ With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [co
 
 ### Added
 
-The [Page Metadata API](./addonsdk/app-document.md#pagemetadata) now includes new properties to detect audio, video, and animated content on pages. You can retrieve duration information for pages with temporal content (such as timelines). We've also updated the [how-to guide](../guides/learn/how_to/page_metadata.md) to cover these new capabilities.
+The [Page Metadata API](addonsdk/app-document.md#pagemetadata) now includes new properties to detect audio, video, and animated content on pages. You can retrieve duration information for pages with temporal content (such as timelines). We've also updated the [how-to guide](../guides/learn/how_to/page_metadata.md) to cover these new capabilities.
 
 ## 2025-06-06
 
@@ -308,11 +308,11 @@ The [Page Metadata API](./addonsdk/app-document.md#pagemetadata) now includes ne
 
 ### Added
 
-- Added support for retrieving published (shared) document links via the new [`LinkOptions`](./addonsdk/addonsdk-constants.md) enumerable in [`addOnUISdk.app.document.link()`](../references/addonsdk/app-document.md#link), along with the `documentPublishedLinkAvailable` event, which is triggered when the published link becomes available. Both updates are reflected in the [Document Metadata How-to Guide](../guides/learn/how_to/document_metadata.md).
+- Added support for retrieving published (shared) document links via the new [`LinkOptions`](addonsdk/addonsdk-constants.md) enumerable in [`addOnUISdk.app.document.link()`](addonsdk/app-document.md#link), along with the `documentPublishedLinkAvailable` event, which is triggered when the published link becomes available. Both updates are reflected in the [Document Metadata How-to Guide](../guides/learn/how_to/document_metadata.md).
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The [`link()`](./addonsdk/app-document.md#link) method, the [`LinkOptions`](./addonsdk/addonsdk-constants.md) parameter and the associated link events are currently **_experimental only_** and should not be used in any add-ons you will be distributing until they have been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](./manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** The [`link()`](addonsdk/app-document.md#link) method, the [`LinkOptions`](addonsdk/addonsdk-constants.md) parameter and the associated link events are currently **_experimental only_** and should not be used in any add-ons you will be distributing until they have been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](manifest/index.md#requirements) section of the `manifest.json`.
 
 ### Updates
 
@@ -350,7 +350,7 @@ While there are redirects in place, please **add** `https://express.adobe.com/st
 
 ### Updated
 
-- There are a few notable changes regarding the [Color Picker APIs](./addonsdk/addonsdk-app.md#showcolorpicker), which have now moved to stable:
+- There are a few notable changes regarding the [Color Picker APIs](addonsdk/addonsdk-app.md#showcolorpicker), which have now moved to stable:
   - The `initialColor` parameter now accepts a string in `"#RRGGBB[AA]"` format, in addition to the previous HEX number `0xRRGGBB[AA]`—both with optional alpha channel.
   - We fixed the return value of the `ColorPickerEvent.colorChange` event, which now correctly handles the color with or without the alpha channel, depending on the value of the `disableAlphaChannel` parameter.
   - **Breaking change**: the `ColorPickerEvents` enum has been renamed to `ColorPickerEvent` (singular).
@@ -371,7 +371,7 @@ While there are redirects in place, please **add** `https://express.adobe.com/st
 
 ### Added
 
-- New [`link()`](./addonsdk/app-document.md#link) method added to the `addOnUISdk.app.document` reference and [Document Metadata How-to Guide](../guides/learn/how_to/document_metadata.md). This method retrieves the document link and triggers a `documentLinkAvailable` event when the link is available.
+- New [`link()`](addonsdk/app-document.md#link) method added to the `addOnUISdk.app.document` reference and [Document Metadata How-to Guide](../guides/learn/how_to/document_metadata.md). This method retrieves the document link and triggers a `documentLinkAvailable` event when the link is available.
 - New [vue-starter](../guides/learn/samples.md#vue-starter) sample add-on to help developers get started using Vue.js in their add-ons.
 - Fixes `fromRGB()` method reference in the [Using Color How-to](../guides/learn/how_to/use_color.md).
 
@@ -383,7 +383,7 @@ While there are redirects in place, please **add** `https://express.adobe.com/st
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The [`hasUnavailableFonts()`](./document-sandbox/document-apis/classes/TextContentModel.md#hasunavailablefonts) is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](./manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** The [`hasUnavailableFonts()`](./document-sandbox/document-apis/classes/TextContentModel.md#hasunavailablefonts) is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](manifest/index.md#requirements) section of the `manifest.json`.
 
 ### Updated
 
@@ -430,9 +430,9 @@ For removing expired SSL certificate or certificate authority, developers can no
 
 ### Added
 
-- A native Color Picker is available to add-ons via the [`showColorPicker()`](./addonsdk/addonsdk-app.md#showcolorpicker) and [`hideColorPicker()`](./addonsdk/addonsdk-app.md#hidecolorpicker) methods of the `addOnUiSdk.app` object.
+- A native Color Picker is available to add-ons via the [`showColorPicker()`](addonsdk/addonsdk-app.md#showcolorpicker) and [`hideColorPicker()`](addonsdk/addonsdk-app.md#hidecolorpicker) methods of the `addOnUiSdk.app` object.
 - We've updated the [Use Color](../guides/learn/how_to/use_color.md) How-to guide, now including a few examples on the Color Picker.
-- A [new section](./ui-components/color-picker.md) has been added to the documentation, which provides a reference for the Adobe Express built-in UI components available to add-ons, like the Color Picker.
+- A [new section](ui-components/color-picker.md) has been added to the documentation, which provides a reference for the Adobe Express built-in UI components available to add-ons, like the Color Picker.
 - A new version of the `@adobe/ccweb-add-on-sdk-types` package (v1.14.0) has been released for the CLI. Run `npm update` from the root of your add-on project to update to get the latest typings.
 
 ## 2025-03-07
@@ -447,15 +447,15 @@ For removing expired SSL certificate or certificate authority, developers can no
 
 - An [FAQ item](../guides/support/faq.md#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows) was added for a known issue found where the CLI is failing on Windows when running certain versions of Node.js. The [FAQ](../guides/support/faq.md#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows) provides a workaround for this issue.
 
-- The following new properties have been added to the AddOnSdk [`PageMetadata`](./addonsdk/app-document.md#pagemetadata) API:
-  - [`isBlank`](./addonsdk/app-document.md#pagemetadata): Allows you to check if a page is blank.
-  - [`templateDetails`](./addonsdk/app-document.md#pagemetadata): Retrieves details about the template used to create the document.
+- The following new properties have been added to the AddOnSdk [`PageMetadata`](addonsdk/app-document.md#pagemetadata) API:
+  - [`isBlank`](addonsdk/app-document.md#pagemetadata): Allows you to check if a page is blank.
+  - [`templateDetails`](addonsdk/app-document.md#pagemetadata): Retrieves details about the template used to create the document.
 
-- A new [`runPrintQualityCheck`](./addonsdk/app-document.md#runprintqualitycheck) method has been added to the AddOnSdk [`App.Document`](./addonsdk/app-document.md) API, which allows you to run a print quality check on the document to ensure that it meets print quality standards.
+- A new [`runPrintQualityCheck`](addonsdk/app-document.md#runprintqualitycheck) method has been added to the AddOnSdk [`App.Document`](addonsdk/app-document.md) API, which allows you to run a print quality check on the document to ensure that it meets print quality standards.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The [`runPrintQualityCheck()`](./addonsdk/app-document.md#runprintqualitycheck) is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](./manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** The [`runPrintQualityCheck()`](addonsdk/app-document.md#runprintqualitycheck) is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](manifest/index.md#requirements) section of the `manifest.json`.
 
 ## 2025-03-04
 
@@ -464,15 +464,15 @@ For removing expired SSL certificate or certificate authority, developers can no
 - Stabilized the following HLAPI's:
   - The [TextNode](./document-sandbox/document-apis/classes/TextNode.md) API's.
   - The [fromPostscriptName()](./document-sandbox/document-apis/classes/Fonts.md#fromPostscriptName) API of [Fonts](./document-sandbox/document-apis/classes/Fonts.md) class.
-  - The [TextContentModel](./document-sandbox/document-apis/classes/TextContentModel.md) APIs like [`TextContentModel.characterStyleRanges`](./document-sandbox/document-apis/classes/TextContentModel.md#characterstyleranges). The [`experimentalApis`](./manifest/index.md#requirements) flag is no longer required to use these APIs.
+  - The [TextContentModel](./document-sandbox/document-apis/classes/TextContentModel.md) APIs like [`TextContentModel.characterStyleRanges`](./document-sandbox/document-apis/classes/TextContentModel.md#characterstyleranges). The [`experimentalApis`](manifest/index.md#requirements) flag is no longer required to use these APIs.
 
 ## 2025-03-03
 
 ### Changed
 
-- The Per Element Metadata APIs have been stabilized. You can refer to the [AddOnData](./document-sandbox/document-apis/classes/AddOnData.md) class for details. The [`experimentalApis`](./manifest/index.md#requirements) flag is no longer required to use these APIs.
+- The Per Element Metadata APIs have been stabilized. You can refer to the [AddOnData](./document-sandbox/document-apis/classes/AddOnData.md) class for details. The [`experimentalApis`](manifest/index.md#requirements) flag is no longer required to use these APIs.
 
-- The Selection Change Notification Events APIs have been stabilized. You can refer to the [Context](./document-sandbox/document-apis/classes/Context.md) class, which provides two methods: [`on()`](./document-sandbox/document-apis/classes/Context.md#on) and [`off()`](./document-sandbox/document-apis/classes/Context.md#off). These methods allow you to register and un-register notifications for selection changes and selection properties changes. The [`experimentalApis`](./manifest/index.md#requirements) flag is no longer required to use these APIs.
+- The Selection Change Notification Events APIs have been stabilized. You can refer to the [Context](./document-sandbox/document-apis/classes/Context.md) class, which provides two methods: [`on()`](./document-sandbox/document-apis/classes/Context.md#on) and [`off()`](./document-sandbox/document-apis/classes/Context.md#off). These methods allow you to register and un-register notifications for selection changes and selection properties changes. The [`experimentalApis`](manifest/index.md#requirements) flag is no longer required to use these APIs.
 
 ## 2025-02-26
 
@@ -492,7 +492,7 @@ Added new [`TextContentModel.paragraphStyleRanges`](./document-sandbox/document-
 
 ### Changed
 
-Stabilized [`registerIframe()`](./addonsdk/addonsdk-app.md#registeriframe) and [`openEditorPanel()`](./addonsdk/app-ui.md#openeditorpanel) APIs. The [`experimentalApis`](./manifest/index.md#requirements) flag is no longer required to utilize these APIs.
+Stabilized [`registerIframe()`](addonsdk/addonsdk-app.md#registeriframe) and [`openEditorPanel()`](addonsdk/app-ui.md#openeditorpanel) APIs. The [`experimentalApis`](manifest/index.md#requirements) flag is no longer required to utilize these APIs.
 
 ## 2025-02-17
 
@@ -512,7 +512,7 @@ Stabilized [`registerIframe()`](./addonsdk/addonsdk-app.md#registeriframe) and [
 
 ### Changed
 
-Stabilized [`importPdf()`](./addonsdk/app-document.md#importpdf) and [`importPresentation()`](./addonsdk/app-document.md#importpresentation) APIs. The [`experimentalApis`](./manifest/index.md#requirements) flag is no longer required to utilize these APIs.
+Stabilized [`importPdf()`](addonsdk/app-document.md#importpdf) and [`importPresentation()`](addonsdk/app-document.md#importpresentation) APIs. The [`experimentalApis`](manifest/index.md#requirements) flag is no longer required to utilize these APIs.
 
 ## 2025-01-17
 
@@ -540,13 +540,13 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 ### Added
 
 - Adds a new [Cross-origin Isolation Handling](../guides/build/advanced-topics/coi.md) page which describes an upcoming change to how Adobe Express enforces cross-origin isolation, and the impact it may have on current add-ons, as well as those currently in-development.
-- Updates the descriptions for the [`importPdf()`](./addonsdk/app-document.md#importpdf) and [`importPresentation()`](./addonsdk/app-document.md#importpresentation) functions to clarify that when used, the associated PDF or presentation file will be imported as a new Adobe Express document.
+- Updates the descriptions for the [`importPdf()`](addonsdk/app-document.md#importpdf) and [`importPresentation()`](addonsdk/app-document.md#importpresentation) functions to clarify that when used, the associated PDF or presentation file will be imported as a new Adobe Express document.
 
 ## 2024-10-08
 
 - Adds a brand new version of the [UX Guidelines](../guides/build/design/ux_guidelines/introduction.md) for Adobe Express add-ons.
-- Removes the experimental warnings for [`addAnimatedImage()`](./addonsdk/app-document.md#addanimatedimage) since it is now stable.
-- Adds the `author` property to [`MediaAttributes`](./addonsdk/app-document.md#mediaattributes) to allow it to be used with the [`addAudio()`](./addonsdk/app-document.md#addaudio) API.
+- Removes the experimental warnings for [`addAnimatedImage()`](addonsdk/app-document.md#addanimatedimage) since it is now stable.
+- Adds the `author` property to [`MediaAttributes`](addonsdk/app-document.md#mediaattributes) to allow it to be used with the [`addAudio()`](addonsdk/app-document.md#addaudio) API.
 
 ## 2024-09-30
 
@@ -566,7 +566,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** This round of new APIs is currently **_experimental only_** with the exception of `TextNode.fullContent.text`, and should not be used in any add-ons you will be distributing until it has been declared stable. To use them, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](./manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** This round of new APIs is currently **_experimental only_** with the exception of `TextNode.fullContent.text`, and should not be used in any add-ons you will be distributing until it has been declared stable. To use them, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](manifest/index.md#requirements) section of the `manifest.json`.
 
 ### Fixed
 
@@ -578,15 +578,15 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 ## 2024-09-24
 
-- Adds a new [`addAnimatedImage()`](./addonsdk/app-document.md#addanimatedimage) method which can be used to add **animated GIF** images to the document (as long as they fit within certain [technical constraints](./addonsdk/app-document.md#image-requirements)).
-- Adds a new [`importPdf()`](./addonsdk/app-document.md#importpdf) method which can be used to import a PDF as a new Adobe Express document.
-- Adds a new [`importPresentation()`](./addonsdk/app-document.md#importpresentation) method which can be used to import a Powerpoint as a new Adobe Express document.
-- Adds notes about specific support and handling for animated GIF images when [importing](./addonsdk/app-document.md#addimage) and [dragging content](./addonsdk/addonsdk-app.md#enabledragtodocument). This includes a [new FAQ item](../guides/support/faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) summarizing the associated use cases.
+- Adds a new [`addAnimatedImage()`](addonsdk/app-document.md#addanimatedimage) method which can be used to add **animated GIF** images to the document (as long as they fit within certain [technical constraints](addonsdk/app-document.md#image-requirements)).
+- Adds a new [`importPdf()`](addonsdk/app-document.md#importpdf) method which can be used to import a PDF as a new Adobe Express document.
+- Adds a new [`importPresentation()`](addonsdk/app-document.md#importpresentation) method which can be used to import a Powerpoint as a new Adobe Express document.
+- Adds notes about specific support and handling for animated GIF images when [importing](addonsdk/app-document.md#addimage) and [dragging content](addonsdk/addonsdk-app.md#enabledragtodocument). This includes a [new FAQ item](../guides/support/faq.md#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document) summarizing the associated use cases.
 - Adds all of the new methods mentioned above to the [How-to](../guides/learn/how_to/index.md) section with example code snippets for each.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The [`importPdf()`](./addonsdk/app-document.md#importpdf) and [`importPresentation()`](./addonsdk/app-document.md#importpresentation) methods are currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](./manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** The [`importPdf()`](addonsdk/app-document.md#importpdf) and [`importPresentation()`](addonsdk/app-document.md#importpresentation) methods are currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](manifest/index.md#requirements) section of the `manifest.json`.
 
 ## 2024-09-10
 
@@ -595,12 +595,12 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 ## 2024-07-22
 
-- Added a new [`format`](./addonsdk/app-ui.md#format) property to the `addOnUISdk.app.ui` object that reflects the format used to display dates, times, numbers, etc. in the user's environment. It supports a [`"formatchange"`](./addonsdk/app-ui.md#formatchange) event triggered when the format changes—see an example in the [Locale, Supported Locales, and Format](../guides/learn/how_to/theme_locale.md) section.
-- Removed `mobile` and `app` as [`supportedDeviceClass`](./manifest/index.md#requirementsappssupporteddeviceclass) values in the Manifest's `requirements.apps` object.
+- Added a new [`format`](addonsdk/app-ui.md#format) property to the `addOnUISdk.app.ui` object that reflects the format used to display dates, times, numbers, etc. in the user's environment. It supports a [`"formatchange"`](addonsdk/app-ui.md#formatchange) event triggered when the format changes—see an example in the [Locale, Supported Locales, and Format](../guides/learn/how_to/theme_locale.md) section.
+- Removed `mobile` and `app` as [`supportedDeviceClass`](manifest/index.md#requirementsappssupporteddeviceclass) values in the Manifest's `requirements.apps` object.
 
 ## 2024-05-28
 
-- Added a new _experimental_ [`openEditorPanel()`](./addonsdk/app-ui.md#openeditorpanel) API to programmatically open and interact with the Editor panel. This method of the `addOnUISdk.app.ui` allows navigation to specific tabs and collections, as well as performing content searches. The [Constants](./addonsdk/addonsdk-constants.md) page has been updated accordingly.
+- Added a new _experimental_ [`openEditorPanel()`](addonsdk/app-ui.md#openeditorpanel) API to programmatically open and interact with the Editor panel. This method of the `addOnUISdk.app.ui` allows navigation to specific tabs and collections, as well as performing content searches. The [Constants](addonsdk/addonsdk-constants.md) page has been updated accordingly.
 - Added a new [`Cross-Origin-Embedder-Policy`](../guides/support/faq.md#how-do-i-prevent-my-iframe-content-from-being-blocked-due-to-cross-origin-issues) FAQ.
 
 ## 2024-05-21
@@ -608,7 +608,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 - The [Quickstart](../guides/getting_started/hello-world.md) and [Distribute](../guides/build/distribute/index.md) guides have been updated to reflect major UI/UX improvements for in-app workflows, particularly around distribution and listing management.
 - The Add-ons tab is now active also in the Adobe Express home page, regardless of whether a project is open or not.
 - A new section on Marketplace [rejections](../guides/build/distribute/rejections.md) has been added, highlighting the most common problems found during the add-on review process and how to avoid them.
-- The [Manifest Reference](./manifest/index.md) has been updated with two new permission properties: `microphone` and `camera`.
+- The [Manifest Reference](manifest/index.md) has been updated with two new permission properties: `microphone` and `camera`.
 
 ## 2024-04-10
 
@@ -630,15 +630,15 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 ## 2024-03-19
 
-- Support for Ps and Ai files to be added to the page via the [`addImage()`](./addonsdk/app-document.md#addimage) method. (Note: there were no changes to the drag-n-drop APIs).
-- Adds new `MediaAttributes` parameter to the [`addImage()`](./addonsdk/app-document.md#addimage) method for Ps/Ai file types to pass media attributes like `title`.
-- Adds new [`Mp4RenditionOptions`](./addonsdk/app-document.md#mp4renditionoptions) object to support `mp4` renditions.
-- Adds new [`VideoResolution`](./addonsdk/addonsdk-constants.md) constant to set video resolution options.
-- Adds [`registerIframe()`](./addonsdk/addonsdk-app.md#registeriframe) method and [`unregisterIframe`](./addonsdk/addonsdk-app.md#unregisteriframe-type-definition) type definition with example usage. **NOTE:** These APIs are currently experimental.
+- Support for Ps and Ai files to be added to the page via the [`addImage()`](addonsdk/app-document.md#addimage) method. (Note: there were no changes to the drag-n-drop APIs).
+- Adds new `MediaAttributes` parameter to the [`addImage()`](addonsdk/app-document.md#addimage) method for Ps/Ai file types to pass media attributes like `title`.
+- Adds new [`Mp4RenditionOptions`](addonsdk/app-document.md#mp4renditionoptions) object to support `mp4` renditions.
+- Adds new [`VideoResolution`](addonsdk/addonsdk-constants.md) constant to set video resolution options.
+- Adds [`registerIframe()`](addonsdk/addonsdk-app.md#registeriframe) method and [`unregisterIframe`](addonsdk/addonsdk-app.md#unregisteriframe-type-definition) type definition with example usage. **NOTE:** These APIs are currently experimental.
 
 ## 2024-03-08
 
-- [`getPagesMetadata()`](./addonsdk/app-document.md#getpagesmetadata), [`startPremiumUpgradeIfFreeUser`](./addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) and [`isPremiumUser`](./addonsdk/app-currentUser.md#ispremiumuser) have been moved to stable and no longer require the `experimentalApis` flag to be set.
+- [`getPagesMetadata()`](addonsdk/app-document.md#getpagesmetadata), [`startPremiumUpgradeIfFreeUser`](addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) and [`isPremiumUser`](./addonsdk/app-currentUser.md#ispremiumuser) have been moved to stable and no longer require the `experimentalApis` flag to be set.
 - New examples have been added to the [use cases guide](../guides/learn/how_to/premium_content.md) for handling premium content.
 - A new video has been added to the [grids tutorial](../guides/learn/how_to/tutorials/grids-addon.md) to help guide developers in building the grids add-on.
 
@@ -649,7 +649,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
   In addition, the [monetization guidelines](../guides/build/distribute/guidelines/monetization.md) were updated with details to help guide you in communicating your monetization strategy, and include new branding [badges](../guides/build/distribute/guidelines/monetization.md#branding-assets-for-monetization) you can use to visually indicate when content or features require a purchase or when they are paid and unlocked. Please ensure you review the [updated monetization guidelines](../guides/build/distribute/guidelines/monetization.md) carefully for specific details. **NOTE:** Adobe does not currently provide a specific monetization feature, but with this update, provides a way for developers to communicate the monetization details of their add-ons.
 
 - The first phase of add-on analytics support has been released, and allows developers to [download insights data](../guides/build/distribute/public-dist.md#post-submission-details-and-insights) for their published add-ons via the [Download insights](../guides/build/distribute/public-dist.md#post-submission-details-and-insights) button in the in-app distribution modal.
-- A new [Concepts guide](../guides/learn/platform_concepts/document-api.md) was added to the [Document APIs](./document-sandbox/document-apis/) section to provide a deep-dive into the architecture and key elements of the Adobe Express Document Object Model (DOM).
+- A new [Concepts guide](../guides/learn/platform_concepts/document-api.md) was added to the [Document APIs](document-sandbox/document-apis/index.md) section to provide a deep-dive into the architecture and key elements of the Adobe Express Document Object Model (DOM).
 
 ## 2024-02-14
 
@@ -658,8 +658,8 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 ## 2024-02-07
 
 - A new [`createPath`](./document-sandbox/document-apis/classes/Editor.md#createpath) method is now available for allowing you to create a path with the Document APIs.
-- Updates descriptions in various methods and classes in the [Document APIs](./document-sandbox/document-apis/).
-- Updates to the [`createRenditions`](./addonsdk/app-document.md#createrenditions) API, including a new [`print`](./addonsdk/addonsdk-constants.md) option for `RenditionIntent` to be be used for generating a print optimized pdf, and an update to [`PdfRenditionOptions`](./addonsdk/app-document.md#pdfrenditionoptions) which exposes the ability to customize each PDF Page Box's (`MediaBox`, `BleedBox`, `CropBox`, `TrimBox`) dimensions using a `pageBoxes` property.
+- Updates descriptions in various methods and classes in the [Document APIs](document-sandbox/document-apis/index.md).
+- Updates to the [`createRenditions`](addonsdk/app-document.md#createrenditions) API, including a new [`print`](addonsdk/addonsdk-constants.md) option for `RenditionIntent` to be be used for generating a print optimized pdf, and an update to [`PdfRenditionOptions`](addonsdk/app-document.md#pdfrenditionoptions) which exposes the ability to customize each PDF Page Box's (`MediaBox`, `BleedBox`, `CropBox`, `TrimBox`) dimensions using a `pageBoxes` property.
 - Updates to the [Using Adobe Spectrum tutorial](../guides/learn/how_to/tutorials/spectrum-workshop/index.md) with additional details on [why you should use Spectrum CSS variables](../guides/learn/how_to/tutorials/spectrum-workshop/part3.md#styling-with-spectrum-css) to style your add-ons, and [additional helpful guidelines for locating and using them](../guides/learn/how_to/tutorials/spectrum-workshop/part3.md#layout-and-typography-styling).
 - The table of contents in each Document API class/interface/constant has been removed since it was a duplicate of the right side navigation menu.
 
@@ -671,25 +671,25 @@ Added a new tutorial - [Building UIs using Adobe's Spectrum Design System](../gu
 
 ### New Experimental APIs
 
-- [`startPremiumUpgradeIfFreeUser()`](./addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) experimental API has been added to the [addOnUISdk.app](./addonsdk/addonsdk-app.md) object to display the in-app monetization upgrade flow and returns a value indicating whether the user upgraded to premium or not.
+- [`startPremiumUpgradeIfFreeUser()`](addonsdk/addonsdk-app.md#startpremiumupgradeiffreeuser) experimental API has been added to the [addOnUISdk.app](addonsdk/addonsdk-app.md) object to display the in-app monetization upgrade flow and returns a value indicating whether the user upgraded to premium or not.
 
 - [`isPremiumUser()`](./addonsdk/app-currentUser.md#ispremiumuser) experimental API has been added to the [addOnUISdk.app.currentUser](./addonsdk/app-currentUser.md) object to determine if the current user is a premium or free user.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The above new APIs are currently **experimental only** and should not be used in any add-ons you will be distributing until declared stable. To use these APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](./manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** The above new APIs are currently **experimental only** and should not be used in any add-ons you will be distributing until declared stable. To use these APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](manifest/index.md#requirements) section of the `manifest.json`.
 
 ### Additional Updates
 
-- A new [`PdfRenditionOptions`](./addonsdk/app-document.md#pdfrenditionoptions) object is now available to be used with the the [`createRenditions()` export API](./addonsdk/app-document.md#createrenditions) and allows a user to specify an optional [bleed](./addonsdk/app-document.md#bleed) object (for printing).
-- A new [`isPrintReady`](./addonsdk/app-document.md#pagemetadata) property has been added to the [`PageMetadata` API](./addonsdk/app-document.md#pagemetadata) to indicate if the page is ready to print.
+- A new [`PdfRenditionOptions`](addonsdk/app-document.md#pdfrenditionoptions) object is now available to be used with the the [`createRenditions()` export API](addonsdk/app-document.md#createrenditions) and allows a user to specify an optional [bleed](addonsdk/app-document.md#bleed) object (for printing).
+- A new [`isPrintReady`](addonsdk/app-document.md#pagemetadata) property has been added to the [`PageMetadata` API](addonsdk/app-document.md#pagemetadata) to indicate if the page is ready to print.
 - Updated the [FAQ](../guides/support/faq.md#what-mime-type-is-returned-from-a-pdf-that-was-exported-with-the-createrenditions-method) regarding the mime type for exported PDF files. It will now return `application/pdf` (as opposed to `text/plain` from an earlier update).
 
 ## 2023-12-07
 
 <InlineAlert slots="text" variant="warning"/>
 
-**BREAKING NEWS:** The [Adobe Express Document Sandbox](./document-sandbox/) and all associated APIs have been deemed stable, and **no longer require the `experimentalApis` flag**. As a result, some breaking changes with these experimental APIs were introduced before deeming them stable, and they are summarized below. Please read them thoroughly and update your in-development add-ons as needed. If you run into any issues, please reach out to us on our [Adobe Express Add-on Developer’s Discord channel](http://discord.gg/nc3QDyFeb4) for help.
+**BREAKING NEWS:** The [Adobe Express Document Sandbox](document-sandbox/index.md) and all associated APIs have been deemed stable, and **no longer require the `experimentalApis` flag**. As a result, some breaking changes with these experimental APIs were introduced before deeming them stable, and they are summarized below. Please read them thoroughly and update your in-development add-ons as needed. If you run into any issues, please reach out to us on our [Adobe Express Add-on Developer’s Discord channel](http://discord.gg/nc3QDyFeb4) for help.
 
 ### Breaking changes (experimental APIs)
 
@@ -775,10 +775,10 @@ Some items in the following list of changes may have been mentioned in recent up
   ```
 
 - A new [`BaseNode`](./document-sandbox/document-apis/classes/BaseNode.md) class has been introduced, and [`ContainerNode`](./document-sandbox/document-apis/interfaces/ContainerNode.md) has been moved from a class to an interface.
-- The key to load APIs that use the Document APIs has changed, as well as the module names you import APIs from in the [Document Sandbox](./document-sandbox/). The old ones will still work, but the CLI and templates have all been updated to use the new names. Please update your add-ons to use the new ones shown below:
+- The key to load APIs that use the Document APIs has changed, as well as the module names you import APIs from in the [Document Sandbox](document-sandbox/index.md). The old ones will still work, but the CLI and templates have all been updated to use the new names. Please update your add-ons to use the new ones shown below:
 
   **Adobe Express Document APIs SDK import**<br/>
-  For access to the [Express document and content authoring APIs](./document-sandbox/document-apis/):
+  For access to the [Express document and content authoring APIs](document-sandbox/document-apis/index.md):
 
   <del>
 
@@ -795,7 +795,7 @@ Some items in the following list of changes may have been mentioned in recent up
   ```
 
   **Document Sandbox SDK import**<br/>
-  For access to the [document sandbox runtime APIs](./document-sandbox/):
+  For access to the [document sandbox runtime APIs](document-sandbox/index.md):
 
   <del>
 
@@ -811,7 +811,7 @@ Some items in the following list of changes may have been mentioned in recent up
   import addOnSandboxSdk from "add-on-sdk-document-sandbox";
   ```
 
-- The [`manifest.json` entry point](./manifest/index.md#entrypoints) for the document sandbox script code reference was renamed from `script` to `documentSandbox`, as shown below:
+- The [`manifest.json` entry point](manifest/index.md#entrypoints) for the document sandbox script code reference was renamed from `script` to `documentSandbox`, as shown below:
 
   ```json
     "entryPoints": [
@@ -824,20 +824,20 @@ Some items in the following list of changes may have been mentioned in recent up
       ]
   ```
 
-- The [`apiProxy()`](./addonsdk/instance-runtime.md#apiproxy) method in the [`addOnSandboxSdk.instance.runtime`](./addonsdk/addonsdk-instance.md#objects) object now accepts `"documentSandbox"` as a parameter when referring to the entry point in the manifest where your document sandbox code resides, instead of `"script"`.
-- The [`RuntimeType`](./addonsdk/addonsdk-constants.md) constant now uses the value of `"documentSandbox"` in lieu of `"script"`.
+- The [`apiProxy()`](addonsdk/instance-runtime.md#apiproxy) method in the [`addOnSandboxSdk.instance.runtime`](addonsdk/addonsdk-instance.md#objects) object now accepts `"documentSandbox"` as a parameter when referring to the entry point in the manifest where your document sandbox code resides, instead of `"script"`.
+- The [`RuntimeType`](addonsdk/addonsdk-constants.md) constant now uses the value of `"documentSandbox"` in lieu of `"script"`.
 
   **IMPORTANT:** The above updates should be considered breaking changes, so any add-ons in development that relied on the experimental APIs may not work correctly until you make changes to use the new/updated ones above. The intention was to ensure these important changes were made prior to marking the APIs stable to 1) make them more intuitive for developers, 2) significantly improve the process of working with colors, strokes and fills, and 3) prevent certain operations from corrupting the document.
 
 - The CLI has been updated to release version `1.1.1`, and includes the following:
-  - The document sandbox templates have been updated to reflect all of the latest changes to the [Document Sandbox APIs](./document-sandbox/), and the `experimentalApis` flag has been removed. Please review the updated [references](./document-sandbox/) and changelog entries thoroughly for details on all of the recent changes. You may also want to refer to the [document sandbox code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) for additional help on how to use them.
+  - The document sandbox templates have been updated to reflect all of the latest changes to the [Document Sandbox APIs](document-sandbox/index.md), and the `experimentalApis` flag has been removed. Please review the updated [references](document-sandbox/index.md) and changelog entries thoroughly for details on all of the recent changes. You may also want to refer to the [document sandbox code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) for additional help on how to use them.
   - Typings support has been added to the `javascript` templates to enable intellisense features.
   - Manifest property additions.
   - General improvements and bug fixes.
 
   **NOTE:** The new version should be installed by default when you create a new add-on. If, for any reason, it doesn't, you can force it to install by clearing the npx cache first with `npx clear-npx-cache` or by specifying the version in the command, i.e.: `npx @adobe/create-ccweb-add-on@1.1.1 my-add-on`. You can update any existing add-ons to use this new version by updating the version of the `ccweb-add-on-scripts` in the `package.json` to `1.1.1`.
 
-- All [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) and the [Document API tutorial](../guides/learn/how_to/tutorials/grids-addon.md) have also been updated to reflect all of the latest changes to the [Adobe Express Document Sandbox APIs](./document-sandbox/document-apis/) listed here.
+- All [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) and the [Document API tutorial](../guides/learn/how_to/tutorials/grids-addon.md) have also been updated to reflect all of the latest changes to the [Adobe Express Document Sandbox APIs](document-sandbox/document-apis/index.md) listed here.
 - Removed all experimental APIs notes/warnings around the **Document Sandbox** since they **are now stable**.
 
 <InlineAlert slots="text" variant="warning"/>
@@ -846,18 +846,18 @@ Some items in the following list of changes may have been mentioned in recent up
 
 ### Additional Updates
 
-- A new `getPagesMetadata()` method is now available in the [Add-on UI SDK `document`](./addonsdk/app-document.md#getpagesmetadata) object and includes an example code snippet. **NOTE:** This method is still considered **experimental only** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](./manifest/index.md#requirements) section of the `manifest.json`.
-- The [`createRenditions()` export API](./addonsdk/app-document.md#createrenditions) was updated with the following changes:
-  - You can now choose to generate renditions of specific pages via a new [`Range.specificPages`](./addonsdk/addonsdk-constants.md) constant value.
-  - The returned type now also includes page metadata (see [`PageMetadata`](./addonsdk/app-document.md#pagemetadata)) including useful information such as the id, page size, pixels per inch, and whether the page has premium or temporal (timeline) content or not, (in addition to the existing blob and title). An example is provided in the reference as well as in [the use cases](../guides/learn/how_to/page_metadata.md).
-- A new [document metadata use case example](../guides/learn/how_to/document_metadata.md) has been added to show how to retrieve the [document id](./addonsdk/app-document.md#id) and [title (ie: name)](./addonsdk/app-document.md#title), including how to listen for the [associated events](./addonsdk/addonsdk-app.md#events).
-- New tables have been added to the [Communication API reference](./document-sandbox/communication/index.md) denoting the [supported](./document-sandbox/communication/index.md#supported-data-types) and [unsupported data types](./document-sandbox/communication/index.md#unsupported-data-types) that can be used across the [Communication API](./document-sandbox/communication/index.md) layer.
+- A new `getPagesMetadata()` method is now available in the [Add-on UI SDK `document`](addonsdk/app-document.md#getpagesmetadata) object and includes an example code snippet. **NOTE:** This method is still considered **experimental only** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](manifest/index.md#requirements) section of the `manifest.json`.
+- The [`createRenditions()` export API](addonsdk/app-document.md#createrenditions) was updated with the following changes:
+  - You can now choose to generate renditions of specific pages via a new [`Range.specificPages`](addonsdk/addonsdk-constants.md) constant value.
+  - The returned type now also includes page metadata (see [`PageMetadata`](addonsdk/app-document.md#pagemetadata)) including useful information such as the id, page size, pixels per inch, and whether the page has premium or temporal (timeline) content or not, (in addition to the existing blob and title). An example is provided in the reference as well as in [the use cases](../guides/learn/how_to/page_metadata.md).
+- A new [document metadata use case example](../guides/learn/how_to/document_metadata.md) has been added to show how to retrieve the [document id](addonsdk/app-document.md#id) and [title (ie: name)](addonsdk/app-document.md#title), including how to listen for the [associated events](addonsdk/addonsdk-app.md#events).
+- New tables have been added to the [Communication API reference](document-sandbox/communication/index.md) denoting the [supported](document-sandbox/communication/index.md#supported-data-types) and [unsupported data types](document-sandbox/communication/index.md#unsupported-data-types) that can be used across the [Communication API](document-sandbox/communication/index.md) layer.
 
 ## 2023-12-04
 
 ### Updates
 
-- The [Document API's](./document-sandbox/document-apis/) were updated to add a new [`ColorUtils`](./document-sandbox/document-apis/classes/ColorUtils.md) class, which replaces the previous `utils` module that was used as a color helper with a more enhanced utlility. If you've used the old `utils` module in your add-ons, it will require you to update them to use the new named import of `colorUtils` instead of `utils`. Color creation should now be done using the new [`colorUtils` module](./document-sandbox/document-apis/classes/ColorUtils.md). An example of the old way and new way to create a color are shown below for reference:
+- The [Document API's](document-sandbox/document-apis/index.md) were updated to add a new [`ColorUtils`](./document-sandbox/document-apis/classes/ColorUtils.md) class, which replaces the previous `utils` module that was used as a color helper with a more enhanced utlility. If you've used the old `utils` module in your add-ons, it will require you to update them to use the new named import of `colorUtils` instead of `utils`. Color creation should now be done using the new [`colorUtils` module](./document-sandbox/document-apis/classes/ColorUtils.md). An example of the old way and new way to create a color are shown below for reference:
 
   ```js
   // Before
@@ -874,7 +874,7 @@ Some items in the following list of changes may have been mentioned in recent up
   const color = { red: 1, green: 0, blue: 0, alpha: 1 }; // mandatory alpha
   ```
 
-  The [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) have also been updated, so please also refer to those for further details on how to use it. Please note, the [example code snippets](./document-sandbox/document-apis/index.md#example-code-snippet) and samples using `fills` or `strokes` off a node class were also updated to use a singular `Fill` or `Stroke` object instead of as an `ItemList` object.
+  The [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) have also been updated, so please also refer to those for further details on how to use it. Please note, the [example code snippets](document-sandbox/document-apis/index.md#example-code-snippet) and samples using `fills` or `strokes` off a node class were also updated to use a singular `Fill` or `Stroke` object instead of as an `ItemList` object.
 
   ```js
   // Before
@@ -886,7 +886,7 @@ Some items in the following list of changes may have been mentioned in recent up
   ellipse.fill = ellipseFill;
   ```
 
-- A new release has landed for the [**In-App Developer Submission experience**](../guides/build/distribute/) in Express. Some highlights from the release:
+- A new release has landed for the [**In-App Developer Submission experience**](../guides/build/distribute/index.md) in Express. Some highlights from the release:
 
   **Create Add-on flow:** You can now create [an add-on "container"](../guides/build/distribute/public-dist.md#step-2-add-on-listing-settings) as your first step in building add-ons within the existing in-app distribution workflow. Creating the container gets you access to a few important settings and data (for instance your unique subdomain, see below) before you continue the development process in the CLI. All existing add-ons will automatically receive a parent container with the associated additional features today.
 
@@ -899,15 +899,15 @@ Some items in the following list of changes may have been mentioned in recent up
   **Supported Languages:** The [version details step](../guides/build/distribute/public-dist.md#step-4-enter-listing-details) for publishing add-ons publicly now includes fields to indicate which languages are supported by your add-ons (beyond the required English). You can choose from any of the languages Express supports, and your designation will be shown to users when they browse your listing details. See [our sample for detecting a user's locale to localize your add-on](../guides/learn/how_to/theme_locale.md).
 
 - Updated list of templates and details to include the [Document Sandbox template options](../guides/getting_started/local_development/dev_tooling.md#templates), and how to still scaffold from one when the [`--template` parameter is not explicitly supplied](../guides/getting_started/local_development/dev_tooling.md#no-template-parameter).
-- New FAQ item regarding the mime type for exported PDF files. This is due to an unexpected change made in Adobe Express core to the mime type returned when you generate a PDF using the export [`createRenditions`](./addonsdk/app-document.md#createrenditions) method. In the past it would return `application/pdf`, but currently it returns `text/plain`. This is something to be aware of if you are inspecting the mime type in the response and failing if it's anything other than `application/pdf`.
+- New FAQ item regarding the mime type for exported PDF files. This is due to an unexpected change made in Adobe Express core to the mime type returned when you generate a PDF using the export [`createRenditions`](addonsdk/app-document.md#createrenditions) method. In the past it would return `application/pdf`, but currently it returns `text/plain`. This is something to be aware of if you are inspecting the mime type in the response and failing if it's anything other than `application/pdf`.
 - Removed NPS survey.
 
 ## 2023-11-30
 
 ### Updates
 
-- Adds support to the [Add-on UI SDK](./addonsdk/index.md) for retrieving the [document id](./addonsdk/app-document.md#id) and [title](./addonsdk/app-document.md#title), as well as the ability for the add-on to be notified of the [associated events](./addonsdk/addonsdk-app.md#events).
-- Updates the names of the SDK imports for the [Document Sandbox](./document-sandbox/communication/index.md) and the [Document API's SDK](./document-sandbox/document-apis/):
+- Adds support to the [Add-on UI SDK](addonsdk/index.md) for retrieving the [document id](addonsdk/app-document.md#id) and [title](addonsdk/app-document.md#title), as well as the ability for the add-on to be notified of the [associated events](addonsdk/addonsdk-app.md#events).
+- Updates the names of the SDK imports for the [Document Sandbox](document-sandbox/communication/index.md) and the [Document API's SDK](document-sandbox/document-apis/index.md):
 
   **Document Sandbox SDK import**<br/>
 
@@ -935,7 +935,7 @@ Some items in the following list of changes may have been mentioned in recent up
 
   **NOTE:** This includes the named imports for `utils` and `constants` modules as well if needed (ie: `import { editor, utils, constants } from "express-document-sdk"`).
 
-- Updates the [`manifest.json` entry for the document sandbox script code reference](./manifest/index.md#entrypoints) from `script` to `documentSandbox`, as shown below:
+- Updates the [`manifest.json` entry for the document sandbox script code reference](manifest/index.md#entrypoints) from `script` to `documentSandbox`, as shown below:
 
   ```json
     "entryPoints": [
@@ -948,8 +948,8 @@ Some items in the following list of changes may have been mentioned in recent up
       ]
   ```
 
-- [`apiProxy()`](./addonsdk/instance-runtime.md#apiproxy) now accepts `"documentSandbox"` as a parameter when referring to the entry point in the manifest where your document sandbox code resides, instead of `"script"`.
-- The [`RuntimeType`](./addonsdk/addonsdk-constants.md) constant can now have a value of `"documentSandbox"` in lieu of `"script"`.
+- [`apiProxy()`](addonsdk/instance-runtime.md#apiproxy) now accepts `"documentSandbox"` as a parameter when referring to the entry point in the manifest where your document sandbox code resides, instead of `"script"`.
+- The [`RuntimeType`](addonsdk/addonsdk-constants.md) constant can now have a value of `"documentSandbox"` in lieu of `"script"`.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -959,8 +959,8 @@ Some items in the following list of changes may have been mentioned in recent up
 
 ### Updates
 
-- The [Web API's in the Document Sandbox Reference](./document-sandbox/web/index.md) were updated to remove the timer methods which are no longer supported (ie: `setTimeout()`, `clearTimeout` and `setInterval()`, `clearInterval`).
-- The [Document API References](./document-sandbox/document-apis/) were updated with the following additions and changes:
+- The [Web API's in the Document Sandbox Reference](document-sandbox/web/index.md) were updated to remove the timer methods which are no longer supported (ie: `setTimeout()`, `clearTimeout` and `setInterval()`, `clearInterval`).
+- The [Document API References](document-sandbox/document-apis/index.md) were updated with the following additions and changes:
 
   **New Classes/Interfaces**<br/>
   - New [RestrictedItemList class](./document-sandbox/document-apis/classes/RestrictedItemList.md)
@@ -972,7 +972,7 @@ Some items in the following list of changes may have been mentioned in recent up
 
   **Updates to Node Classes**<br/>
 
-The accessors and methods below were removed or replaced with new names in the [`Node` class](./document-sandbox/document-apis/classes/Node.md) and classes that extend it. Please refer to the [Document API References](./document-sandbox/document-apis/) specifically to learn more about each.
+The accessors and methods below were removed or replaced with new names in the [`Node` class](./document-sandbox/document-apis/classes/Node.md) and classes that extend it. Please refer to the [Document API References](document-sandbox/document-apis/index.md) specifically to learn more about each.
 
 - Removes `absoluteRotation` accessor
 - Removes `absoluteTransform` accessor
@@ -989,7 +989,7 @@ The accessors and methods below were removed or replaced with new names in the [
 
 ## 2023-11-27
 
-Updated [Document API references](./document-sandbox/document-apis/) to include:
+Updated [Document API references](document-sandbox/document-apis/index.md) to include:
 
 - [ComplexShapeNode class](./document-sandbox/document-apis/classes/ComplexShapeNode.md)
 - [GridLayoutNode class](./document-sandbox/document-apis/classes/GridLayoutNode.md)
@@ -1012,13 +1012,13 @@ New questions and answers added to the FAQ regarding Adobe's use of add-on data,
 
 ### Updates
 
-Updates to the [OAuth APIs](./addonsdk/app-oauth.md) to allow for a new optional `windowSize` parameter to be specified in the [`AuthorizationRequest`](./addonsdk/app-oauth.md#authorizationrequest) object and the [`AuthorizeWithOwnRedirectRequest`](./addonsdk/app-oauth.md#authorizewithownredirectrequest) to set the desired size of the authorization window.
+Updates to the [OAuth APIs](addonsdk/app-oauth.md) to allow for a new optional `windowSize` parameter to be specified in the [`AuthorizationRequest`](addonsdk/app-oauth.md#authorizationrequest) object and the [`AuthorizeWithOwnRedirectRequest`](addonsdk/app-oauth.md#authorizewithownredirectrequest) to set the desired size of the authorization window.
 
 ## 2023-10-09
 
 ### Updates
 
-Published new [Guidelines and requirements section](../guides/build/distribute/guidelines/); including [General guidelines](../guides/build/distribute/guidelines/general/), [Developer brand guidelines](../guides/build/distribute/guidelines/), [Monetization guidelines](../guides/build/distribute/guidelines/monetization.md) and [Generative AI guidelines](../guides/build/distribute/guidelines/genai/).
+Published new [Guidelines and requirements section](../guides/build/distribute/guidelines/index.md); including [General guidelines](../guides/build/distribute/guidelines/general/index.md), [Developer brand guidelines](../guides/build/distribute/guidelines/index.md), [Monetization guidelines](../guides/build/distribute/guidelines/monetization.md) and [Generative AI guidelines](../guides/build/distribute/guidelines/genai/index.md).
 
 ## 2023-10-03
 
@@ -1125,7 +1125,7 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
 
 </del>
 
-- A **new 1.4.2 version of the CLI** was also released with an updated [`javascript-with-editor-apis` template](./document-sandbox/index.md) reflecting the default SDK import noted in the first bullet above. The new CLI version will install automatically when you create a new add-on, or you can update existing add-ons by changing the version of the `ccweb-add-on-scripts` in the `package.json` to `1.4.2`.
+- A **new 1.4.2 version of the CLI** was also released with an updated [`javascript-with-editor-apis` template](document-sandbox/index.md) reflecting the default SDK import noted in the first bullet above. The new CLI version will install automatically when you create a new add-on, or you can update existing add-ons by changing the version of the `ccweb-add-on-scripts` in the `package.json` to `1.4.2`.
 - Updated the [FAQ](../guides/support/faq.md) with details on Experimental APIs and suppported file types for exported content.
 
 ## 2023-09-05
@@ -1155,7 +1155,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ### Fixed
 
-- Fixed bug in the [locale](./addonsdk/app-ui.md) example.
+- Fixed bug in the [locale](addonsdk/app-ui.md) example.
 
 ## 2023-08-29
 
@@ -1175,13 +1175,13 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ### Updates
 
-- Premium Content handling details have been added to the [Implementing Common Use Cases Guide](../guides/learn/how_to/premium_content.md). Note the warning for ensuring that you include the specified `permissions` in the [`manifest.json`](./manifest/index.md#entrypointspermissionssandbox) to `allow-popups` and `allow-popups-to-escape-sandbox` to ensure the pricing page can be loaded when needed (and note the addition of the `renditionPreview` flag in the [`requirements`](./manifest/index.md#requirements) of the manifest when you want to allow premium content to be previewed).
+- Premium Content handling details have been added to the [Implementing Common Use Cases Guide](../guides/learn/how_to/premium_content.md). Note the warning for ensuring that you include the specified `permissions` in the [`manifest.json`](manifest/index.md#entrypointspermissionssandbox) to `allow-popups` and `allow-popups-to-escape-sandbox` to ensure the pricing page can be loaded when needed (and note the addition of the `renditionPreview` flag in the [`requirements`](manifest/index.md#requirements) of the manifest when you want to allow premium content to be previewed).
 
 ## 2023-08-09
 
 ### Added
 
-- Added new [references section](./document-sandbox/) for the document sandbox APIs.
+- Added new [references section](document-sandbox/index.md) for the document sandbox APIs.
 
 ### Important notes on document sandbox APIs (aka Document Sandbox)
 
@@ -1225,16 +1225,16 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ### Added
 
-- Added new properties to the manifest reference for `renditionPreview` in the [`requirements`](./manifest/index.md#requirements) section, and the `script` property to the [`entryPoints`](./manifest/index.md#entrypoints) section to support the new experimental [document sandbox APIs](./document-sandbox/).
-- Added [`DisableDragToDocument`](./addonsdk/addonsdk-app.md#disabledragtodocument-type-definition) and [`dropCancelReason`](./addonsdk/addonsdk-app.md#dragendeventdata) support to the [`addonsdk.app`](./addonsdk/addonsdk-app.md) reference.
+- Added new properties to the manifest reference for `renditionPreview` in the [`requirements`](manifest/index.md#requirements) section, and the `script` property to the [`entryPoints`](manifest/index.md#entrypoints) section to support the new experimental [document sandbox APIs](document-sandbox/index.md).
+- Added [`DisableDragToDocument`](addonsdk/addonsdk-app.md#disabledragtodocument-type-definition) and [`dropCancelReason`](addonsdk/addonsdk-app.md#dragendeventdata) support to the [`addonsdk.app`](addonsdk/addonsdk-app.md) reference.
 
 ## 2023-07-11
 
 ### Added
 
 - [UX Guidelines](../guides/build/design/ux_guidelines/introduction.md) are now available!
-- A new [`requestedSize`](./addonsdk/app-document.md#jpgrenditionoptions) parameter can now be supplied as part of the JPG and PNG rendition options passed in when exporting content with the `createRenditions` method.
-- A new [`clipboard` permission](./manifest/index.md#entrypointspermissions) can now be set with the `clipboard-write` value in the manifest to allow an add-on to write data to the clipboard.
+- A new [`requestedSize`](addonsdk/app-document.md#jpgrenditionoptions) parameter can now be supplied as part of the JPG and PNG rendition options passed in when exporting content with the `createRenditions` method.
+- A new [`clipboard` permission](manifest/index.md#entrypointspermissions) can now be set with the `clipboard-write` value in the manifest to allow an add-on to write data to the clipboard.
 - Information on [using fonts](../guides/build/design/ux_guidelines/visual_elements.md#typography).
 - CORS / COEP header handling added to the [CORS guide](../guides/learn/platform_concepts/context.md#cors--coep-handling)
 

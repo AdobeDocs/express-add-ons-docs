@@ -104,7 +104,7 @@ A comprehensive guide to understanding Adobe Express add-on project structure, f
 
 **New to add-ons?**
 
-Start with the [Hello, World! tutorial](../getting-started/hello-world.md) to create your first add-on, then return here to understand project structure. For terminology clarification, see the [Developer Terminology Guide](../learn/fundamentals/terminology.md).
+Start with the [Hello, World! tutorial](hello-world.md) to create your first add-on, then return here to understand project structure. For terminology clarification, see the [Developer Terminology Guide](../learn/fundamentals/terminology.md).
 
 ## Understanding the Basics
 
@@ -161,7 +161,7 @@ my-addon/
 
 **Related guides:**
 
-- [Development Tools](../getting-started/local-development/dev-tooling.md) - CLI commands and local development setup
+- [Development Tools](local-development/dev-tooling.md) - CLI commands and local development setup
 - [Manifest Reference](../../references/manifest/index.md) - Complete manifest configuration guide
 
 ## Build vs. No-Build Templates
@@ -795,10 +795,10 @@ To see the complete file structures of all 10 templates, refer to the template-s
 
 ### Getting Started
 
-- [Hello, World! Tutorial](../getting-started/hello-world.md) - Create your first add-on
-- [Code Playground](../getting-started/code-playground.md) - Experiment with add-on APIs in your browser
-- [Development Tools](../getting-started/local-development/dev-tooling.md) - CLI commands and local development
-- [Adobe Express Add-on MCP Server](../getting-started/local-development/mcp-server.md) - AI-assisted development with LLMs
+- [Hello, World! Tutorial](hello-world.md) - Create your first add-on
+- [Code Playground](code-playground.md) - Experiment with add-on APIs in your browser
+- [Development Tools](local-development/dev-tooling.md) - CLI commands and local development
+- [Adobe Express Add-on MCP Server](local-development/mcp-server.md) - AI-assisted development with LLMs
 
 ### Core Concepts
 

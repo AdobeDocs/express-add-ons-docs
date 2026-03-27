@@ -73,7 +73,7 @@ Check your browser's default download location, you can also review your browser
 2. Ensure you're using the correct mode (Script vs Add-on) for your use case.
 3. Verify that all required APIs are properly imported.
 4. Check the browser console for error messages.
-5. Sessions that are in the [Archived](../getting-started/code-playground-workflow.md#session-limits-and-lifecycle) state cannot be run. You can download your code to continue working on it locally, or copy it to a new session.
+5. Sessions that are in the [Archived](code-playground-workflow.md#session-limits-and-lifecycle) state cannot be run. You can download your code to continue working on it locally, or copy it to a new session.
 6. Try running a simple test code first.
 
 ### Session Not Saving
@@ -82,12 +82,12 @@ Check your browser's default download location, you can also review your browser
 
 **Solutions:**
 
-1. **Check auto-save settings:** Code is not saved automatically. Please read the [Save Your Work](../getting-started/code-playground-workflow.md#save-your-work) section for more details on how to save.
+1. **Check auto-save settings:** Code is not saved automatically. Please read the [Save Your Work](code-playground-workflow.md#save-your-work) section for more details on how to save.
 2. Make sure you're not in incognito/private browsing mode
 3. Try saving manually using the keyboard shortcut (&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt; or &lt;kbd&gt;Cmd&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt;)
 4. Clear browser cache and try again
 5. Check if you have sufficient storage space—you might have reached the maximum number of sessions per user. Delete unused sessions to free up space.
-6. Any changes to [Archived](../getting-started/code-playground-workflow.md#session-limits-and-lifecycle) sessions are not saved.
+6. Any changes to [Archived](code-playground-workflow.md#session-limits-and-lifecycle) sessions are not saved.
 
 ### Performance Issues
 
@@ -186,7 +186,7 @@ Code Playground works best with the latest versions of the following browsers:
 - **[API References](../../references/index.md)**: Complete reference for all available APIs.
 - **[How-To Guides](../learn/how-to/index.md)**: Step-by-step tutorials for common tasks.
 - **[Code Samples](../learn/samples.md)**: Example code to get you started.
-- **[Local Development](../getting-started/local-development/index.md)**: Set up a full development environment.
+- **[Local Development](local-development/index.md)**: Set up a full development environment.
 
 ### Reporting Issues
 
@@ -231,7 +231,7 @@ When reporting issues, please include:
 
 ## Next Steps
 
-- **[Script Mode Guide](../getting-started/code-playground-script-mode.md)**: Learn how to use Script Mode effectively.
-- **[Add-on Mode Guide](../getting-started/code-playground-addon-mode.md)**: Build complete add-ons with UI.
-- **[Workflow & Productivity](../getting-started/code-playground-workflow.md)**: Master keyboard shortcuts and session management.
-- **[Local Development](../getting-started/local-development/index.md)**: Set up a full development environment.
+- **[Script Mode Guide](code-playground-script-mode.md)**: Learn how to use Script Mode effectively.
+- **[Add-on Mode Guide](code-playground-addon-mode.md)**: Build complete add-ons with UI.
+- **[Workflow & Productivity](code-playground-workflow.md)**: Master keyboard shortcuts and session management.
+- **[Local Development](local-development/index.md)**: Set up a full development environment.

@@ -248,7 +248,7 @@ await addOnUISdk.app.document.addAnimatedImage(gifBlob, {
 
 <InlineAlert slots="text" variant="info"/>
 
-[`ImportAddOnData`](../../../references/addonsdk/app-document.md#importaddondata) is also supported in drag-and-drop operations via the [`enableDragToDocument`](../../../references/addonsdk/addonsdk-app.md#enabledragtodocument) method. See the [Drag and Drop guide](../how-to/drag-and-drop.md) for more details.
+[`ImportAddOnData`](../../../references/addonsdk/app-document.md#importaddondata) is also supported in drag-and-drop operations via the [`enableDragToDocument`](../../../references/addonsdk/addonsdk-app.md#enabledragtodocument) method. See the [Drag and Drop guide](drag-and-drop.md) for more details.
 
 ### Example: Retrieve Imported Metadata in Document Sandbox
 

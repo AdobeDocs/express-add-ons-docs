@@ -36,28 +36,28 @@ We're constantly adding new how-tos, so make sure to check back often. If you're
 
 | Topics                         | How-to guides                                     |
 | ------------------------------ | ------------------------------------------------- |
-| Authentication & Authorization | [Use OAuth 2.0](../how-to/oauth2.md)                      |
-| Data & Environment             | [Store Data](../how-to/local-data-management.md)          |
-|                                | [Theme & Locale](../how-to/theme-locale.md)               |
-| UI & Interaction               | [Use Drag & Drop](../how-to/drag-and-drop.md)             |
-|                                | [Use Modal Dialogs](../how-to/modal-dialogs.md)           |
-| Document Structure             | [Manage Pages](../how-to/manage-pages.md)                 |
-| Use Design Elements            | [Use Text](../how-to/use-text.md)                         |
-|                                | [Use Geometry](../how-to/use-geometry.md)                 |
-|                                | [Use Color](../how-to/use-color.md)                       |
-|                                | [Use Images](../how-to/use-images.md)                     |
-|                                | [Use Videos](../how-to/use-videos.md)                     |
-|                                | [Use Audio](../how-to/use-audio.md)                       |
-|                                | [Use PDF and PowerPoint](../how-to/use-pdf-powerpoint.md) |
-|                                | [Handle ElementSelection](../how-to/handle-selection.md)  |
-|                                | [Group Elements](../how-to/group-elements.md)             |
-|                                | [Position Elements](../how-to/position-elements.md)       |
-| Use Metadata                   | [Document Metadata](../how-to/document-metadata.md)       |
-|                                | [Page Metadata](../how-to/page-metadata.md)               |
-|                                | [Element Metadata](../how-to/element-metadata.md)         |
-| Exporting & Output             | [Create Renditions](../how-to/create-renditions.md)       |
-|                                | [Manage Premium Content](../how-to/premium-content.md)    |
-| User Info                      | [Identify users](../how-to/user-info.md)                  |
+| Authentication & Authorization | [Use OAuth 2.0](oauth2.md)                      |
+| Data & Environment             | [Store Data](local-data-management.md)          |
+|                                | [Theme & Locale](theme-locale.md)               |
+| UI & Interaction               | [Use Drag & Drop](drag-and-drop.md)             |
+|                                | [Use Modal Dialogs](modal-dialogs.md)           |
+| Document Structure             | [Manage Pages](manage-pages.md)                 |
+| Use Design Elements            | [Use Text](use-text.md)                         |
+|                                | [Use Geometry](use-geometry.md)                 |
+|                                | [Use Color](use-color.md)                       |
+|                                | [Use Images](use-images.md)                     |
+|                                | [Use Videos](use-videos.md)                     |
+|                                | [Use Audio](use-audio.md)                       |
+|                                | [Use PDF and PowerPoint](use-pdf-powerpoint.md) |
+|                                | [Handle ElementSelection](handle-selection.md)  |
+|                                | [Group Elements](group-elements.md)             |
+|                                | [Position Elements](position-elements.md)       |
+| Use Metadata                   | [Document Metadata](document-metadata.md)       |
+|                                | [Page Metadata](page-metadata.md)               |
+|                                | [Element Metadata](element-metadata.md)         |
+| Exporting & Output             | [Create Renditions](create-renditions.md)       |
+|                                | [Manage Premium Content](premium-content.md)    |
+| User Info                      | [Identify users](user-info.md)                  |
 
 ## Complete Projects
 
@@ -67,12 +67,12 @@ We've created a set of in-depth tutorials that guide you through the process of 
 
 | Topics                        | Tutorials                                                                                      |
 | ----------------------------- | ---------------------------------------------------------------------------------------------- |
-| Document APIs                 | [Design Grid creator](../how-to/tutorials/grids-addon.md)                                              |
-| Communication APIs            | [Stats Add-on](../how-to/tutorials/stats-addon.md)                                                     |
-| Adobe Spectrum Web Components | [Basic JavaScript add-on with Spectrum Web Components](../how-to/tutorials/spectrum-workshop/index.md) |
-| Lit & TypeScript              | [Using Lit & TypeScript](../how-to/tutorials/using-lit-typescript.md)                                  |
+| Document APIs                 | [Design Grid creator](tutorials/grids-addon.md)                                              |
+| Communication APIs            | [Stats Add-on](tutorials/stats-addon.md)                                                     |
+| Adobe Spectrum Web Components | [Basic JavaScript add-on with Spectrum Web Components](tutorials/spectrum-workshop/index.md) |
+| Lit & TypeScript              | [Using Lit & TypeScript](tutorials/using-lit-typescript.md)                                  |
 
-We recommend you to start with the [Design Grid creator](../how-to/tutorials/grids-addon.md), which covers the basics of the add-on SDK and how to use the Document API.
+We recommend you to start with the [Design Grid creator](tutorials/grids-addon.md), which covers the basics of the add-on SDK and how to use the Document API.
 
 [![Design Grid creator](./tutorials/images/grids-addon-animation.gif)](./tutorials/grids-addon.md)
 

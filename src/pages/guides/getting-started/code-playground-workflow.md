@@ -175,7 +175,7 @@ The downloaded zip file will contain a folder with the following structure:
 
 ### Run Downloaded Code
 
-You can run your add-on folder as a local add-on project in your CLI by following the steps in the [Quickstart Guide](../getting-started/hello-world.md). There is a readme file in the add-on folder that will guide you through the process as well.
+You can run your add-on folder as a local add-on project in your CLI by following the steps in the [Quickstart Guide](hello-world.md). There is a readme file in the add-on folder that will guide you through the process as well.
 
 **Note:** You cannot run the `script.js` file alone.
 
@@ -191,11 +191,11 @@ You can run your add-on folder as a local add-on project in your CLI by followin
 
 ## Troubleshooting Common Issues
 
-See the [Troubleshooting](../getting-started/code-playground-troubleshooting.md#common-issues) page for more details on common issues and solutions.
+See the [Troubleshooting](code-playground-troubleshooting.md#common-issues) page for more details on common issues and solutions.
 
 ## Next Steps
 
-- **[Script Mode Guide](../getting-started/code-playground-script-mode.md)**: Learn how to use Script Mode effectively
-- **[Add-on Mode Guide](../getting-started/code-playground-addon-mode.md)**: Build complete add-ons with UI
-- **[Troubleshooting](../getting-started/code-playground-troubleshooting.md)**: Get help with common issues
-- **[Local Development](../getting-started/local-development/index.md)**: Set up a full development environment
+- **[Script Mode Guide](code-playground-script-mode.md)**: Learn how to use Script Mode effectively
+- **[Add-on Mode Guide](code-playground-addon-mode.md)**: Build complete add-ons with UI
+- **[Troubleshooting](code-playground-troubleshooting.md)**: Get help with common issues
+- **[Local Development](local-development/index.md)**: Set up a full development environment
