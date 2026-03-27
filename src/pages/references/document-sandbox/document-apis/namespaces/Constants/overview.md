@@ -6,10 +6,10 @@
 
 ### Enumerations
 
--   [CreateRenditionFormat](../constants/enumerations/create-rendition-format.md)
--   [OrderedListNumbering](../constants/enumerations/ordered-list-numbering.md)
--   [ParagraphListType](../constants/enumerations/paragraph-list-type.md)
--   [TextStyleSource](../constants/enumerations/text-style-source.md)
+-   [CreateRenditionFormat](enumerations/create-rendition-format.md)
+-   [OrderedListNumbering](enumerations/ordered-list-numbering.md)
+-   [ParagraphListType](enumerations/paragraph-list-type.md)
+-   [TextStyleSource](enumerations/text-style-source.md)
 
 ## References
 
