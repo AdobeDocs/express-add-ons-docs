@@ -37,7 +37,11 @@
     "link:deadlinkonly": "npx --yes github:AdobeDocs/adp-devsite-utils runLint --dead-links-only -v",
     "redirectCheck:stage": "npx --yes github:AdobeDocs/adp-devsite-utils redirectChecker stage --verbose",
     "redirectCheck:prod": "npx --yes github:AdobeDocs/adp-devsite-utils redirectChecker prod --verbose",
-    "upload:samples": "node upload-playground-samples.mjs"
+    "upload:samples": "node upload-playground-samples.mjs",
+    "devex:sync-docs": "node scripts/import-docs.js",
+    "devex:eds-sanitize": "node scripts/renameFiles.js && node scripts/normalizeLinks.js",
+    "devex:generate-sidebar": "node scripts/update-config.js",
+    "devex:build-api-reference": "npm run devex:sync-docs && npm run devex:eds-sanitize && npm run devex:generate-sidebar"
   },
   "remarkConfig": {
     "plugins": [
@@ -45,9 +49,11 @@
     ]
   },
   "devDependencies": {
+    "glob": "^11.0.0",
     "markdownlint": "^0.35.0",
     "markdownlint-cli": "^0.41.0",
     "remark-cli": "^11.0.0",
-    "remark-validate-links": "^12.1.0"
+    "remark-validate-links": "^12.1.0",
+    "string.prototype.matchall": "^4.0.12"
   }
 }
