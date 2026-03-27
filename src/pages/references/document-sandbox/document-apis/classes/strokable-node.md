@@ -118,7 +118,7 @@ get allDescendants(): Readonly<Iterable<Node>>;
 
 **`Experimental`**
 
-&lt;InlineAlert slots="text" variant="warning"/&gt;
+<InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
@@ -500,7 +500,7 @@ get allTextContent(): Readonly<Iterable<TextContent>>;
 
 **`Experimental`**
 
-&lt;InlineAlert slots="text" variant="warning"/&gt;
+<InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
@@ -791,7 +791,7 @@ createRendition(options?): Promise<CreateRenditionResult>;
 
 **`Experimental`**
 
-&lt;InlineAlert slots="text" variant="warning"/&gt;
+<InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 

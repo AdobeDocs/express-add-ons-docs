@@ -8,7 +8,7 @@ hideEditInGitHub: true
 
 # Enumeration: FillRule
 
-&lt;InlineAlert slots="text" variant="warning"/&gt;
+<InlineAlert slots="text" variant="warning"/>
 
 *Do not depend on the literal numeric values of these constants*, as they may change. Always reference the enum identifiers in your code.
 
