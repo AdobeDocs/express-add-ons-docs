@@ -1233,7 +1233,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 
 ### Added
 
-- [UX Guidelines](../build/design/ux_guidelines/introduction.md) are now available!
+- [UX Guidelines](../build/design/ux-guidelines/introduction.md) are now available!
 - A new [`requestedSize`](../../references/addonsdk/app-document.md#jpgrenditionoptions) parameter can now be supplied as part of the JPG and PNG rendition options passed in when exporting content with the `createRenditions` method.
 - A new [`clipboard` permission](../../references/manifest/index.md#entrypointspermissions) can now be set with the `clipboard-write` value in the manifest to allow an add-on to write data to the clipboard.
 - Information on [using fonts](../build/design/ux_guidelines/visual_elements.md#typography).
