@@ -6,37 +6,37 @@ A MediaContainerNode is a multi-node construct that displays media (such as imag
 clipping to a shape mask. The underlying media asset is always rectangular, but the final appearance of this node is
 determined by the maskShape which is not necessarily a rectangle.
 
-To create new media container for a bitmap image, see [Editor.createImageContainer](Editor.md#createimagecontainer). APIs for creating a
+To create new media container for a bitmap image, see [Editor.createImageContainer](editor.md#createimagecontainer). APIs for creating a
 container with other content, such as videos, are not yet available.
 
 ## Extends
 
--   [`Node`](Node.md)
+-   [`Node`](node.md)
 
 ## Implements
 
--   [`IMediaContainerNode`](../interfaces/IMediaContainerNode.md)
+-   [`IMediaContainerNode`](../interfaces/i-media-container-node.md)
 
 ## Accessors
 
 ### addOnData
 
-• `get` **addOnData**(): [`AddOnData`](AddOnData.md)
+• `get` **addOnData**(): [`AddOnData`](add-on-data.md)
 
-Get [AddOnData](AddOnData.md) reference for managing the private metadata on this node for this add-on.
+Get [AddOnData](add-on-data.md) reference for managing the private metadata on this node for this add-on.
 
 #### Returns
 
-[`AddOnData`](AddOnData.md)
+[`AddOnData`](add-on-data.md)
 
----
+<HorizontalLine />
 
 ### allChildren
 
-• `get` **allChildren**(): `Readonly`<`Iterable`<[`Node`](Node.md), `any`, `any`\>\>
+• `get` **allChildren**(): `Readonly`&lt;`Iterable`&lt;[`Node`](node.md), `any`, `any`\ &gt;\ &gt;
 
 Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
-GroupNode also provide a mutable [ContainerNode.children](../interfaces/ContainerNode.md#children) list. Other nodes with a more specific structure can
+GroupNode also provide a mutable [ContainerNode.children](../interfaces/container-node.md#children) list. Other nodes with a more specific structure can
 hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
 overall display z-order.
 
@@ -44,13 +44,13 @@ The children of a Node are always other Node classes (never the more minimal Bas
 
 #### Returns
 
-`Readonly`<`Iterable`<[`Node`](Node.md), `any`, `any`\>\>
+`Readonly`&lt;`Iterable`&lt;[`Node`](node.md), `any`, `any`\ &gt;\ &gt;
 
----
+<HorizontalLine />
 
 ### allDescendants
 
-• `get` **allDescendants**(): `Readonly`<`Iterable`<[`Node`](Node.md), `any`, `any`\>\>
+• `get` **allDescendants**(): `Readonly`&lt;`Iterable`&lt;[`Node`](node.md), `any`, `any`\ &gt;\ &gt;
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -64,24 +64,24 @@ Note that the root node (i.e. what this API was called on) is not visited.
 
 The descendants of a Node are always other Node classes (never the more minimal BaseNode).
 
-Warning: Processing text content via this API can be error-prone. Use [VisualNode.allTextContent](VisualNode.md#alltextcontent)
+Warning: Processing text content via this API can be error-prone. Use [VisualNode.allTextContent](visual-node.md#alltextcontent)
 
 #### Returns
 
-`Readonly`<`Iterable`<[`Node`](Node.md), `any`, `any`\>\>
+`Readonly`&lt;`Iterable`&lt;[`Node`](node.md), `any`, `any`\ &gt;\ &gt;
 
----
+<HorizontalLine />
 
 ### allTextContent
 
-• `get` **allTextContent**(): `Readonly`<`Iterable`<[`TextContent`](../interfaces/TextContent.md), `any`, `any`\>\>
+• `get` **allTextContent**(): `Readonly`&lt;`Iterable`&lt;[`TextContent`](../interfaces/text-content.md), `any`, `any`\ &gt;\ &gt;
 
 <InlineAlert slots="text" variant="warning"/>
 
 **IMPORTANT:** This is currently ***experimental only*** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
 Helper to process all text content that is found as part of or within this node. This can be hard to do correctly
-via manual tree traversal since multiple [ThreadedTextNode](ThreadedTextNode.md) can share a single [TextContentModel](TextContentModel.md).
+via manual tree traversal since multiple [ThreadedTextNode](threaded-text-node.md) can share a single [TextContentModel](text-content-model.md).
 
 This iterator returns a single result per TextContentModel that is at least partially displayed within this node,
 even if that content is split across several separate TextNode "frames". If this node is or contains some but not
@@ -91,48 +91,48 @@ Note that visibleRanges and visibleText may not be sorted as TextNode "frames" c
 
 #### Returns
 
-`Readonly`<`Iterable`<[`TextContent`](../interfaces/TextContent.md), `any`, `any`\>\>
+`Readonly`&lt;`Iterable`&lt;[`TextContent`](../interfaces/text-content.md), `any`, `any`\ &gt;\ &gt;
 
----
+<HorizontalLine />
 
 ### blendMode
 
-• `get` **blendMode**(): [`BlendMode`](../enumerations/BlendMode.md)
+• `get` **blendMode**(): [`BlendMode`](../enumerations/blend-mode.md)
 
 Blend mode determines how a node is composited onto the content below it. The default value is
-[BlendMode.normal](../enumerations/BlendMode.md#normal) for most nodes, and [BlendMode.passThrough](../enumerations/BlendMode.md#passthrough) for GroupNodes.
+[BlendMode.normal](../enumerations/blend-mode.md#normal) for most nodes, and [BlendMode.passThrough](../enumerations/blend-mode.md#passthrough) for GroupNodes.
 
 • `set` **blendMode**(`value`): `void`
 
 #### Parameters
 
-• **value**: [`BlendMode`](../enumerations/BlendMode.md)
+• **value**: [`BlendMode`](../enumerations/blend-mode.md)
 
 #### Returns
 
-[`BlendMode`](../enumerations/BlendMode.md)
+[`BlendMode`](../enumerations/blend-mode.md)
 
----
+<HorizontalLine />
 
 ### boundsInParent
 
-• `get` **boundsInParent**(): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
+• `get` **boundsInParent**(): `Readonly`&lt;[`Rect`](../interfaces/rect.md)\ &gt;
 
 An axis-aligned box in the parent’s coordinate space encompassing the node’s layout bounds (its
-[boundsLocal](../interfaces/IVisualNodeBounds.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
+[boundsLocal](../interfaces/i-visual-node-bounds.md#boundslocal), as transformed by its position and rotation relative to the parent). If the node has
 rotation, the top-left of its boundsLocal box (aligned to its own axes) is not necessarily located at the
 top-left of the boundsInParent box (since it's aligned to the parent's axes). This value is well-defined
 even for an orphan node with no parent.
 
 #### Returns
 
-`Readonly`<[`Rect`](../interfaces/Rect.md)\>
+`Readonly`&lt;[`Rect`](../interfaces/rect.md)\ &gt;
 
----
+<HorizontalLine />
 
 ### boundsLocal
 
-• `get` **boundsLocal**(): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
+• `get` **boundsLocal**(): `Readonly`&lt;[`Rect`](../interfaces/rect.md)\ &gt;
 
 The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
 relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
@@ -143,21 +143,21 @@ The top-left corner of the bounding box corresponds to the visual top-left corne
 
 #### Returns
 
-`Readonly`<[`Rect`](../interfaces/Rect.md)\>
+`Readonly`&lt;[`Rect`](../interfaces/rect.md)\ &gt;
 
----
+<HorizontalLine />
 
 ### centerPointLocal
 
-• `get` **centerPointLocal**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
+• `get` **centerPointLocal**(): `Readonly`&lt;[`Point`](../interfaces/point.md)\ &gt;
 
 Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal box.
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/Point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)\ &gt;
 
----
+<HorizontalLine />
 
 ### id
 
@@ -170,13 +170,13 @@ moved to a different part of the document.
 
 `string`
 
----
+<HorizontalLine />
 
 ### locked
 
 • `get` **locked**(): `boolean`
 
-The node's lock/unlock state. Locked nodes are excluded from the selection (see [Context.selection](Context.md#selection)), and
+The node's lock/unlock state. Locked nodes are excluded from the selection (see [Context.selection](context.md#selection)), and
 cannot be edited by the user in the UI unless they are unlocked first. It is still possible to mutate locked nodes
 at the model level using these APIs. However, please consider if modifying a locked node would align with user
 expectations before doing so.
@@ -191,11 +191,11 @@ expectations before doing so.
 
 `boolean`
 
----
+<HorizontalLine />
 
 ### maskShape
 
-• `get` **maskShape**(): [`FillableNode`](FillableNode.md)
+• `get` **maskShape**(): [`FillableNode`](fillable-node.md)
 
 The mask used for cropping/clipping the media. The bounds of this shape are entire visible bounds of the container.
 The shape's geometric properties (position, rotation, size, etc.) can be changed, but it cannot be replaced by a
@@ -203,13 +203,13 @@ different shape via this API.
 
 #### Returns
 
-[`FillableNode`](FillableNode.md)
+[`FillableNode`](fillable-node.md)
 
----
+<HorizontalLine />
 
 ### mediaRectangle
 
-• `get` **mediaRectangle**(): [`ImageRectangleNode`](ImageRectangleNode.md) \| [`UnknownMediaRectangleNode`](UnknownMediaRectangleNode.md)
+• `get` **mediaRectangle**(): [`ImageRectangleNode`](image-rectangle-node.md) \| [`UnknownMediaRectangleNode`](unknown-media-rectangle-node.md)
 
 The rectangular node representing the entire, uncropped bounds of the media (e.g. image, GIFs, or video). The media's position and
 rotation can be changed, but it cannot be resized yet via this API. Media types other than images will yield an UnknownMediaRectangleNode
@@ -217,9 +217,9 @@ object for now.
 
 #### Returns
 
-[`ImageRectangleNode`](ImageRectangleNode.md) \| [`UnknownMediaRectangleNode`](UnknownMediaRectangleNode.md)
+[`ImageRectangleNode`](image-rectangle-node.md) \| [`UnknownMediaRectangleNode`](unknown-media-rectangle-node.md)
 
----
+<HorizontalLine />
 
 ### opacity
 
@@ -237,11 +237,11 @@ The node's opacity, from 0.0 to 1.0
 
 `number`
 
----
+<HorizontalLine />
 
 ### parent
 
-• `get` **parent**(): `undefined` \| [`BaseNode`](BaseNode.md)
+• `get` **parent**(): `undefined` \| [`BaseNode`](base-node.md)
 
 The node's parent. The parent chain will eventually reach ExpressRootNode for all nodes that are part of the document
 content.
@@ -252,9 +252,9 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 
 #### Returns
 
-`undefined` \| [`BaseNode`](BaseNode.md)
+`undefined` \| [`BaseNode`](base-node.md)
 
----
+<HorizontalLine />
 
 ### rotation
 
@@ -267,7 +267,7 @@ change rotation by rotating around a defined centerpoint.
 
 `number`
 
----
+<HorizontalLine />
 
 ### rotationInScreen
 
@@ -280,11 +280,11 @@ cumulative rotation from the node's parent containers.
 
 `number`
 
----
+<HorizontalLine />
 
 ### topLeftLocal
 
-• `get` **topLeftLocal**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
+• `get` **topLeftLocal**(): `Readonly`&lt;[`Point`](../interfaces/point.md)\ &gt;
 
 Position of the node's top-left corner in its own local coordinate space, equal to (boundsLocal.x,
 boundsLocal.y). If the node is rotated, this is not the same as the top-left corner of
@@ -292,9 +292,9 @@ boundsInParent.
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/Point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)\ &gt;
 
----
+<HorizontalLine />
 
 ### transformMatrix
 
@@ -306,11 +306,11 @@ The node's transform matrix relative to its parent.
 
 [`mat2d`](https://glmatrix.net/docs/module-mat2d.html)
 
----
+<HorizontalLine />
 
 ### translation
 
-• `get` **translation**(): `Readonly`<[`Point`](../interfaces/Point.md)\>
+• `get` **translation**(): `Readonly`&lt;[`Point`](../interfaces/point.md)\ &gt;
 
 The translation of the node along its parent's axes. This is identical to the translation component of
 `transformMatrix`. It is often simpler to set a node's position using `setPositionInParent` than by
@@ -320,29 +320,29 @@ setting translation directly.
 
 #### Parameters
 
-• **value**: [`Point`](../interfaces/Point.md)
+• **value**: [`Point`](../interfaces/point.md)
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/Point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)\ &gt;
 
----
+<HorizontalLine />
 
 ### type
 
-• `get` **type**(): [`SceneNodeType`](../enumerations/SceneNodeType.md)
+• `get` **type**(): [`SceneNodeType`](../enumerations/scene-node-type.md)
 
 The node's type.
 
 #### Returns
 
-[`SceneNodeType`](../enumerations/SceneNodeType.md)
+[`SceneNodeType`](../enumerations/scene-node-type.md)
 
----
+<HorizontalLine />
 
 ### visualRoot
 
-• `get` **visualRoot**(): [`VisualNode`](VisualNode.md)
+• `get` **visualRoot**(): [`VisualNode`](visual-node.md)
 
 The highest ancestor that still has visual presence in the document. Typically an Artboard, but for orphaned
 content, it will be the root of the deleted content (which might be this node itself).
@@ -353,35 +353,35 @@ meaningful comparison or conversion between the bounds or coordinate spaces of s
 
 #### Returns
 
-[`VisualNode`](VisualNode.md)
+[`VisualNode`](visual-node.md)
 
 ## Methods
 
 ### boundsInNode()
 
-• **boundsInNode**(`targetNode`): `Readonly`<[`Rect`](../interfaces/Rect.md)\>
+• **boundsInNode**(`targetNode`): `Readonly`&lt;[`Rect`](../interfaces/rect.md)\ &gt;
 
-Convert the node's [boundsLocal](../interfaces/IVisualNodeBounds.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
-node. Both nodes must share the same [visualRoot](MediaContainerNode.md#visualroot), but can lie anywhere within that subtree
+Convert the node's [boundsLocal](../interfaces/i-visual-node-bounds.md#boundslocal) to an axis-aligned bounding box in the coordinate space of the target
+node. Both nodes must share the same [visualRoot](media-container-node.md#visualroot), but can lie anywhere within that subtree
 relative to one another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Parameters
 
-• **targetNode**: [`VisualNode`](VisualNode.md)
+• **targetNode**: [`VisualNode`](visual-node.md)
 
 #### Returns
 
-`Readonly`<[`Rect`](../interfaces/Rect.md)\>
+`Readonly`&lt;[`Rect`](../interfaces/rect.md)\ &gt;
 
 #### Inherited from
 
-[`Node`](Node.md).[`boundsInNode`](Node.md#boundsinnode)
+[`Node`](node.md).[`boundsInNode`](node.md#boundsinnode)
 
----
+<HorizontalLine />
 
 ### cloneInPlace()
 
-• **cloneInPlace**(): [`MediaContainerNode`](MediaContainerNode.md)
+• **cloneInPlace**(): [`MediaContainerNode`](media-container-node.md)
 
 Creates a copy of this node and its entire subtree of descendants.
 
@@ -389,17 +389,17 @@ The node must be attached to a page as the copy will be added as a sibling.
 
 #### Returns
 
-[`MediaContainerNode`](MediaContainerNode.md)
+[`MediaContainerNode`](media-container-node.md)
 
 #### Inherited from
 
-[`Node`](Node.md).[`cloneInPlace`](Node.md#cloneinplace)
+[`Node`](node.md).[`cloneInPlace`](node.md#cloneinplace)
 
----
+<HorizontalLine />
 
 ### createRendition()
 
-• **createRendition**(`options`?): `Promise`<[`CreateRenditionResult`](../interfaces/CreateRenditionResult.md)\>
+• **createRendition**(`options`?): `Promise`&lt;[`CreateRenditionResult`](../interfaces/create-rendition-result.md)\ &gt;
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -412,41 +412,41 @@ As such, there is a 20s timeout before an error is thrown to prevent indefinite 
 
 #### Parameters
 
-• **options?**: [`CreateRenditionOptions`](../interfaces/CreateRenditionOptions.md)
+• **options?**: [`CreateRenditionOptions`](../interfaces/create-rendition-options.md)
 
 #### Returns
 
-`Promise`<[`CreateRenditionResult`](../interfaces/CreateRenditionResult.md)\>
+`Promise`&lt;[`CreateRenditionResult`](../interfaces/create-rendition-result.md)\ &gt;
 
 #### Inherited from
 
-[`Node`](Node.md).[`createRendition`](Node.md#createrendition)
+[`Node`](node.md).[`createRendition`](node.md#createrendition)
 
----
+<HorizontalLine />
 
 ### localPointInNode()
 
-• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`<[`Point`](../interfaces/Point.md)\>
+• **localPointInNode**(`localPoint`, `targetNode`): `Readonly`&lt;[`Point`](../interfaces/point.md)\ &gt;
 
 Convert a point given in the node’s local coordinate space to a point in the coordinate space of the target node.
-Both nodes must share the same [visualRoot](MediaContainerNode.md#visualroot), but can lie anywhere within that subtree relative to one
+Both nodes must share the same [visualRoot](media-container-node.md#visualroot), but can lie anywhere within that subtree relative to one
 another (the target node need not be an ancestor of this node, nor vice versa).
 
 #### Parameters
 
-• **localPoint**: [`Point`](../interfaces/Point.md)
+• **localPoint**: [`Point`](../interfaces/point.md)
 
-• **targetNode**: [`VisualNode`](VisualNode.md)
+• **targetNode**: [`VisualNode`](visual-node.md)
 
 #### Returns
 
-`Readonly`<[`Point`](../interfaces/Point.md)\>
+`Readonly`&lt;[`Point`](../interfaces/point.md)\ &gt;
 
 #### Inherited from
 
-[`Node`](Node.md).[`localPointInNode`](Node.md#localpointinnode)
+[`Node`](node.md).[`localPointInNode`](node.md#localpointinnode)
 
----
+<HorizontalLine />
 
 ### removeFromParent()
 
@@ -465,9 +465,9 @@ removal. No-op if node is already an orphan.
 
 #### Inherited from
 
-[`Node`](Node.md).[`removeFromParent`](Node.md#removefromparent)
+[`Node`](node.md).[`removeFromParent`](node.md#removefromparent)
 
----
+<HorizontalLine />
 
 ### replaceMedia()
 
@@ -478,9 +478,9 @@ Crop settings are not preserved.
 
 #### Parameters
 
-• **media**: [`BitmapImage`](BitmapImage.md)
+• **media**: [`BitmapImage`](bitmap-image.md)
 
-New content to display. Currently must be a [BitmapImage](BitmapImage.md).
+New content to display. Currently must be a [BitmapImage](bitmap-image.md).
 
 #### Returns
 
@@ -488,13 +488,13 @@ New content to display. Currently must be a [BitmapImage](BitmapImage.md).
 
 #### Implementation of
 
-[`IMediaContainerNode`](../interfaces/IMediaContainerNode.md).[`replaceMedia`](../interfaces/IMediaContainerNode.md#replacemedia)
+[`IMediaContainerNode`](../interfaces/i-media-container-node.md).[`replaceMedia`](../interfaces/i-media-container-node.md#replacemedia)
 
----
+<HorizontalLine />
 
 ### replaceMediaWithEditedImage()
 
-• **replaceMediaWithEditedImage**(`blob`, `options`): `Promise`<`void`\>
+• **replaceMediaWithEditedImage**(`blob`, `options`): `Promise`&lt;`void`\ &gt;
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -522,23 +522,23 @@ A blob containing the transformed bitmap derived from the current media.
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`&lt;`void`\ &gt;
 
 #### Throws
 
 If the current media has been generated or modified by generative AI.
 
----
+<HorizontalLine />
 
 ### resize()
 
 • **resize**(`options`): `void`
 
-Resizes this node based on the given [ResizeOptions](../type-aliases/ResizeOptions.md).
+Resizes this node based on the given [ResizeOptions](../type-aliases/resize-options.md).
 
 #### Parameters
 
-• **options**: [`ResizeOptions`](../type-aliases/ResizeOptions.md)
+• **options**: [`ResizeOptions`](../type-aliases/resize-options.md)
 
 #### Returns
 
@@ -546,9 +546,9 @@ Resizes this node based on the given [ResizeOptions](../type-aliases/ResizeOptio
 
 #### Inherited from
 
-[`Node`](Node.md).[`resize`](Node.md#resize)
+[`Node`](node.md).[`resize`](node.md#resize)
 
----
+<HorizontalLine />
 
 ### setPositionInParent()
 
@@ -559,11 +559,11 @@ Move the node so the given `localRegistrationPoint` in its local coordinates is 
 
 #### Parameters
 
-• **parentPoint**: [`Point`](../interfaces/Point.md)
+• **parentPoint**: [`Point`](../interfaces/point.md)
 
 Point in this node's parent's coordinate space to move `localRegistrationPoint` to
 
-• **localRegistrationPoint**: [`Point`](../interfaces/Point.md)
+• **localRegistrationPoint**: [`Point`](../interfaces/point.md)
 
 Point in this node's local coordinate space to align with `parentPoint`
 
@@ -573,7 +573,7 @@ Point in this node's local coordinate space to align with `parentPoint`
 
 #### Inherited from
 
-[`Node`](Node.md).[`setPositionInParent`](Node.md#setpositioninparent)
+[`Node`](node.md).[`setPositionInParent`](node.md#setpositioninparent)
 
 #### Example
 
@@ -586,7 +586,7 @@ rectangle.setPositionInParent(
 );
 ```
 
----
+<HorizontalLine />
 
 ### setRotationInParent()
 
@@ -603,7 +603,7 @@ ancestors also have rotation of their own.
 
 Angle in degrees.
 
-• **localRotationPoint**: [`Point`](../interfaces/Point.md)
+• **localRotationPoint**: [`Point`](../interfaces/point.md)
 
 Point to rotate around, in node's local coordinates.
 
@@ -613,7 +613,7 @@ Point to rotate around, in node's local coordinates.
 
 #### Inherited from
 
-[`Node`](Node.md).[`setRotationInParent`](Node.md#setrotationinparent)
+[`Node`](node.md).[`setRotationInParent`](node.md#setrotationinparent)
 
 #### Example
 
