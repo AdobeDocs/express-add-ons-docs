@@ -1003,7 +1003,7 @@ Updated [Document API references](../../references/document-sandbox/document-api
 
 ## 2023-11-6
 
-- Added a [new tutorial section](../learn/how-to/tutorials/) to the Getting Started guides, including a new ["Building your first add-on with the Document API" tutorial](../learn/how-to/tutorials/grids-addon.md) by Davide Barranca.
+- Added a [new tutorial section](../learn/how-to/tutorials/index.md) to the Getting Started guides, including a new ["Building your first add-on with the Document API" tutorial](../learn/how-to/tutorials/grids-addon.md) by Davide Barranca.
 - Updated the naming conventions from Script Runtime to Document Sandbox and Editor APIs to Adobe Express Document APIs. The Document Sandbox now includes the Communication APIs, Web APIs and the Document APIs.
 - Updated sample code snippets to use the `addOnUISdk` import name (vs `AddOnUISDK`) similar to what's generated in the templates for consistency.
 
