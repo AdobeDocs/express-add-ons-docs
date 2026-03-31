@@ -34,7 +34,7 @@ The [`Node.resize()`](../../references/document-sandbox/document-apis/classes/no
 ### Added
 
 - **Experimental** [`MediaContainerNode.replaceMediaWithEditedImage()`](../../references/document-sandbox/document-apis/classes/media-container-node.md#replacemediawitheditedimage): Replaces the current media with an edited version of the same image while preserving existing filter effects, per-element metadata, and asset provenance (including attribution IDs and Adobe Stock information). Use this instead of `replaceMedia()` when the replacing with a modified version of the original image (e.g., recolored, upscaled).
-- **Experimental** [`ReplaceMediaWithEditedImageOptions`](../../references/document-sandbox/document-apis/interfaces/ReplaceMediaWithEditedImageOptions.md) interface: Options for `replaceMediaWithEditedImage()`, including the `preserveCutoutFilter` property.
+- **Experimental** [`ReplaceMediaWithEditedImageOptions`](../../references/document-sandbox/document-apis/interfaces/replace-media-with-edited-image-options.md) interface: Options for `replaceMediaWithEditedImage()`, including the `preserveCutoutFilter` property.
 
 ## 2026-03-13
 
@@ -1056,7 +1056,7 @@ which include:
 #### Documentation updates
 
 - Updated [document sandbox Reference docs](https://developer.adobe.com/express/add-ons/docs/references/document-sandbox/#cli-generated-script-runtime-add-on) to reflect the new CLI prompt to include document sandbox (vs the specific template).
-- Updated [Getting Started guides](./) documentation and screenshots to reflect the **new Add-on Launchpad panel update** to the new **two-tab view** for "Discover" and "Your Add-ons".
+- Updated [Getting Started guides](./changelog.md) documentation and screenshots to reflect the **new Add-on Launchpad panel update** to the new **two-tab view** for "Discover" and "Your Add-ons".
 
 ## 2023-09-26
 
@@ -1116,7 +1116,7 @@ If you're using the experimental Document Sandbox APIs in any add-ons currently,
 
 &lt;del &gt;
 
-- The [Communication API](../references/document-sandbox/communication/index.md) in the [document sandbox reference section](../references/document-sandbox/) was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
+- The [Communication API](../../references/document-sandbox/communication/index.md) in the [document sandbox reference section](../../references/document-sandbox/index.md) was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:
 
   from:
 
@@ -1236,7 +1236,7 @@ Added new code sample to demonstrate how to use SWC-React and set theme properti
 - [UX Guidelines](../build/design/ux-guidelines/introduction.md) are now available!
 - A new [`requestedSize`](../../references/addonsdk/app-document.md#jpgrenditionoptions) parameter can now be supplied as part of the JPG and PNG rendition options passed in when exporting content with the `createRenditions` method.
 - A new [`clipboard` permission](../../references/manifest/index.md#entrypointspermissions) can now be set with the `clipboard-write` value in the manifest to allow an add-on to write data to the clipboard.
-- Information on [using fonts](../build/design/ux_guidelines/visual_elements.md#typography).
+- Information on [using fonts](../build/design/ux-guidelines/visual-elements.md#typography).
 - CORS / COEP header handling added to the [CORS guide](../learn/platform-concepts/context.md#cors--coep-handling)
 
 ## 2023-06-08

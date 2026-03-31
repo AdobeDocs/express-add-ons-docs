@@ -10,9 +10,9 @@ hideEditInGitHub: true
 
 ## Namespaces
 
-| Namespace | Description |
-| ------ | ------ |
-| [Constants](@hz/namespaces/Constants/overview.md) | - |
+| Namespace                                         | Description |
+|---------------------------------------------------| ------ |
+| [Constants](@hz/namespaces/constants/overview.md) | - |
 
 ## Enumerations
 
@@ -22,18 +22,18 @@ hideEditInGitHub: true
 | [ResizeBehavior](enumerations/resize-behavior.md) | An enum for controlling the behavior of [Node.resize](classes/node.md#resize). |
 | [ParagraphListType](enumerations/paragraph-list-type.md) | Indicates list type: see [UnorderedListStyleInput](interfaces/unordered-list-style-input.md) and [OrderedListStyleInput](interfaces/ordered-list-style-input.md). |
 | [OrderedListNumbering](enumerations/ordered-list-numbering.md) | Numbering types used to display ordered lists: 1, A, a, I, i 01, 001. |
-| [TextStyleSource](enumerations/text-style-source.md) | <InlineAlert slots="text" variant="warning"/> |
+| [TextStyleSource](enumerations/text-style-source.md) | \<InlineAlert slots="text" variant="warning"/\> |
 | [VisualEffectType](enumerations/visual-effect-type.md) | Visual effects that can be applied to a text node. |
-| [CreateRenditionFormat](enumerations/create-rendition-format.md) | <InlineAlert slots="text" variant="warning"/> |
-| [SceneNodeType](enumerations/scene-node-type.md) | <InlineAlert slots="text" variant="warning"/> |
-| [BlendMode](enumerations/blend-mode.md) | <InlineAlert slots="text" variant="warning"/> |
-| [StrokePosition](enumerations/stroke-position.md) | <InlineAlert slots="text" variant="warning"/> |
-| [FillType](enumerations/fill-type.md) | <InlineAlert slots="text" variant="warning"/> |
-| [ArrowHeadType](enumerations/arrow-head-type.md) | <InlineAlert slots="text" variant="warning"/> |
-| [TextAlignment](enumerations/text-alignment.md) | <InlineAlert slots="text" variant="warning"/> |
-| [FillRule](enumerations/fill-rule.md) | <InlineAlert slots="text" variant="warning"/> |
-| [StrokeType](enumerations/stroke-type.md) | <InlineAlert slots="text" variant="warning"/> |
-| [TextLayout](enumerations/text-layout.md) | <InlineAlert slots="text" variant="warning"/> |
+| [CreateRenditionFormat](enumerations/create-rendition-format.md) | \<InlineAlert slots="text" variant="warning"/\> |
+| [SceneNodeType](enumerations/scene-node-type.md) | \<InlineAlert slots="text" variant="warning"/\> |
+| [BlendMode](enumerations/blend-mode.md) | \<InlineAlert slots="text" variant="warning"/\> |
+| [StrokePosition](enumerations/stroke-position.md) | \<InlineAlert slots="text" variant="warning"/\> |
+| [FillType](enumerations/fill-type.md) | \<InlineAlert slots="text" variant="warning"/\> |
+| [ArrowHeadType](enumerations/arrow-head-type.md) | \<InlineAlert slots="text" variant="warning"/\> |
+| [TextAlignment](enumerations/text-alignment.md) | \<InlineAlert slots="text" variant="warning"/\> |
+| [FillRule](enumerations/fill-rule.md) | \<InlineAlert slots="text" variant="warning"/\> |
+| [StrokeType](enumerations/stroke-type.md) | \<InlineAlert slots="text" variant="warning"/\> |
+| [TextLayout](enumerations/text-layout.md) | \<InlineAlert slots="text" variant="warning"/\> |
 | [TextScriptStyle](enumerations/text-script-style.md) | Represents a text script style. |
 
 ## Classes
@@ -94,7 +94,7 @@ hideEditInGitHub: true
 
 | Interface | Description |
 | ------ | ------ |
-| [TextContent](interfaces/text-content.md) | <InlineAlert slots="text" variant="warning"/> |
+| [TextContent](interfaces/text-content.md) | \<InlineAlert slots="text" variant="warning"/\> |
 | [CharacterStyles](interfaces/character-styles.md) | Text styles that can be applied to any range of characters, even a short span like a single word. (Contrast with ParagraphStyles, which must be applied to an entire paragraph atomically). |
 | [CharacterStylesInput](interfaces/character-styles-input.md) | Variant of [CharacterStyles](interfaces/character-styles.md) with all style fields optional, used for applyCharacterStyles(). When using that API, any fields not specified are left unchanged, preserving the text's existing styles. |
 | [CharacterStylesRangeInput](interfaces/character-styles-range-input.md) | Variant of [CharacterStylesRange](interfaces/character-styles-range.md) with all style fields optional, along with the range of characters they apply to. Used for the characterStyleRanges setter. When invoking the setter, any fields not specified are reset to their defaults. |
@@ -104,7 +104,7 @@ hideEditInGitHub: true
 | [Fill](interfaces/fill.md) | Base interface representing any fill in the scenegraph. See [FillableNode](classes/fillable-node.md). Currently, you can only create [ColorFill](interfaces/color-fill.md)s, but you might encounter other fill types when reading scenegraph content. |
 | [ColorFill](interfaces/color-fill.md) | Represents a solid-color fill. |
 | [IFillableNode](interfaces/i-fillable-node.md) | Interface for [FillableNode](classes/fillable-node.md) *and* any other nodes with a similar `fill` property that do not directly inherit from the FillableNode class. |
-| [ReplaceMediaWithEditedImageOptions](interfaces/replace-media-with-edited-image-options.md) | <InlineAlert slots="text" variant="warning"/> |
+| [ReplaceMediaWithEditedImageOptions](interfaces/replace-media-with-edited-image-options.md) | \<InlineAlert slots="text" variant="warning"/\> |
 | [IMediaContainerNode](interfaces/i-media-container-node.md) | Interface for nodes that contain media. |
 | [CommonResizeOptions](interfaces/common-resize-options.md) | An interface for arbitrary resize operations regardless of whether given a width or height when using [Node.resize](classes/node.md#resize). |
 | [RescaleProportionalToWidthOptions](interfaces/rescale-proportional-to-width-options.md) | An interface for rescaling the node based on a given width when using [Node.resize](classes/node.md#resize). |
@@ -130,8 +130,8 @@ hideEditInGitHub: true
 | [AutoHeightTextLayout](interfaces/auto-height-text-layout.md) | Auto-height text: Width is explicitly set, and text wraps to use as much vertical space as necessary to display the full content. |
 | [AreaTextLayout](interfaces/area-text-layout.md) | Area text: both width and height are explicitly set. If text content is too long to fit, the end of the text will be clipped. If text content is short, the frame's bounds will occupy extra height that is just blank space. |
 | [UnsupportedTextLayout](interfaces/unsupported-text-layout.md) | Represents a text layout the API does not yet support setting or reading the details of. |
-| [CreateRenditionOptions](interfaces/create-rendition-options.md) | <InlineAlert slots="text" variant="warning"/> |
-| [CreateRenditionResult](interfaces/create-rendition-result.md) | <InlineAlert slots="text" variant="warning"/> |
+| [CreateRenditionOptions](interfaces/create-rendition-options.md) | \<InlineAlert slots="text" variant="warning"/\> |
+| [CreateRenditionResult](interfaces/create-rendition-result.md) | \<InlineAlert slots="text" variant="warning"/\> |
 | [IVisualNodeBounds](interfaces/i-visual-node-bounds.md) | An interface for the bounds of a [VisualNode](classes/visual-node.md). |
 | [RectangleGeometry](interfaces/rectangle-geometry.md) | - |
 | [Rect](interfaces/rect.md) | - |

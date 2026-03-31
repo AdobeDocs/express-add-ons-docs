@@ -27,7 +27,7 @@ To publish and share your add-on, it must first go through a review process. By 
 
 This set of guides is meant to provide you with an idea of what types of information you will need for the submission process and how to best prepare for review. Working through the guides provided in this section will help you make sure you’ve accounted for all of our review requirements, so you can avoid having to fix things and resubmit before being published.
 
-Check out this short video below on how to share and publish your add-on to help you get started more quickly. &lt;br/&gt;&lt;br/&gt;
+Check out this short video below on how to share and publish your add-on to help you get started more quickly. \<br/\> \<br/\>
 
 <Embed slots="video" />
 
@@ -35,11 +35,11 @@ https://www.youtube.com/embed/Xdu7TRSsU3I?si=kUcJ6EMnQeNVQa-X
 
 &lt;!-- ## Review Guides
 
-- [Review Guidelines](review_guidelines.md)
+- [Review Guidelines](review-process/index.md)
 
 ## Distribution Guides
-- [Submit for Private Distribution](../distribute/submit-private-dist.md)
-- [Submit for Public Distribution](../distribute/submit-public-dist.md) 
+- [Submit for Private Distribution](../distribute/private-dist.md)
+- [Submit for Public Distribution](../distribute/public-dist.md) 
 
 ### Publisher profile
 
