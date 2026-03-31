@@ -98,7 +98,7 @@ Choose `Yes` at the prompt to include the document sandbox setup in your generat
 
 The screenshot below shows what the default script-based add-on generated from the CLI looks like when running:
 
-![script add-on sample screenshot](../img/script-add-on-sample.png)
+![script add-on sample screenshot](../../img/script-add-on-sample.png)
 
 <InlineAlert slots="text" variant="info"/>
 
