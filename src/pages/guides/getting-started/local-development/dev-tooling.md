@@ -1,37 +1,3 @@
----
-keywords:
-  - Adobe Express
-  - Express Add-on SDK
-  - Express Editor
-  - Adobe Express
-  - Add-on SDK
-  - SDK
-  - JavaScript
-  - Extend
-  - Extensibility
-  - API
-  - Add-on Manifest
-title: Quickstart
-description: This is the Quickstart page
-contributors:
-  - https://github.com/hollyschinsky
-  - https://github.com/undavide
----
-
-# Development Tools
-
-This section provides a set of guides to help you in the development stage of your add-on.
-
-## Using the CLI
-
-The add-on CLI (Command Line Interface) is the main tool that enables you to develop, test, and package add-ons for our platform. With the add-on CLI, you can create a new add-on project, build and test your add-on locally, and package your add-on for distribution.
-
-Here are some key features of the add-on CLI:
-
-- **Project creation:** The add-on CLI provides a command to create a new add-on project with a basic file structure and configuration.
-- **Local development:** The add-on CLI includes a built-in server that allows you to test your add-on locally before deploying it to our platform.
-- **Live reloading:** The add-on CLI watches your project files for changes and automatically reloads the server when a change is detected.
-- **Packaging:** The add-on CLI provides a command to package your add-on for distribution, including creating a ZIP file that can be uploaded to our platform.
 
 ### CLI `create` options
 
@@ -45,7 +11,7 @@ The table below shows the list of arguments that can be specified with the CLI c
 
 For instance, the following command would specify all possible arguments:
 
-```bash
+```bash-disableLineNumbers
 npx @adobe/create-ccweb-add-on my-addon --template react-typescript --verbose
 ```
 
@@ -81,13 +47,13 @@ The table below shows a list of arguments that can be specified with the `start`
 
 For instance, to specify a port of `8080` instead, use the following command:
 
-```bash
+```bash-disableLineNumbers
 npm run start -- --port 8080
 ```
 
 To specify you want to use `webpack` AND port `8080`:
 
-```bash
+```bash-disableLineNumbers
 npm run start -- --use webpack --port 8080
 ```
 
@@ -132,19 +98,19 @@ As well as the following five template options, which include support for the [D
 
 You can supply any of the above template names after the `--template` parameter:
 
-```bash
+```bash-disableLineNumbers
 npx @adobe/create-ccweb-add-on <add-on-name> --template <template>
 ```
 
 For instance, the following is an example of a command that will create an add-on based on the `react-javascript` template:
 
-```bash
+```bash-disableLineNumbers
 npx @adobe/create-ccweb-add-on helloworld-react-js --template react-javascript
 ```
 
 and below is how you could specify the `react-javascript-with-document-sandbox` template:
 
-```bash
+```bash-disableLineNumbers
 npx @adobe/create-ccweb-add-on helloworld-react-js-doc-sandbox --template react-javascript-with-document-sandbox
 ```
 

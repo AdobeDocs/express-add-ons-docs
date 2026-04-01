@@ -81,7 +81,7 @@ The quickest way to get started with a scaffolded project set up with the docume
 
 or the CLI will prompt you to choose from the [base templates](../../../guides/getting-started/local-development/dev-tooling.md#templates), then ask if you want to include the document sandbox:
 
-![CLI prompt for document sandbox](../../../img/cli-doc-sandbox-prompt.png)
+![CLI prompt for document sandbox](../../img/cli-doc-sandbox-prompt.png)
 
 Choose `Yes` at the prompt to include the document sandbox setup in your generated project. The project structure that's generated will differ depending on which base template you chose, but the two important additions to note, are the existence of a `script` entry point in your `manifest.json`, and the `code.js` file it references.
 
@@ -98,7 +98,7 @@ Choose `Yes` at the prompt to include the document sandbox setup in your generat
 
 The screenshot below shows what the default script-based add-on generated from the CLI looks like when running:
 
-![script add-on sample screenshot](../../../img/script-add-on-sample.png)
+![script add-on sample screenshot](../../img/script-add-on-sample.png)
 
 <InlineAlert slots="text" variant="info"/>
 
