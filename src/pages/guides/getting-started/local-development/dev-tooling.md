@@ -15,7 +15,7 @@ For instance, the following command would specify all possible arguments:
 npx @adobe/create-ccweb-add-on my-addon --template react-typescript --verbose
 ```
 
-<InlineAlert slots="heading, text1, text2, text3, text4, text5" variant="info"/>
+<InlineAlert slots="heading, text1, text2, code, text4, code" variant="info"/>
 
 #### CLI troubleshooting
 
@@ -30,7 +30,7 @@ npx @adobe/create-ccweb-add-on my-addon
 
 The above may prove useful when updated versions of the CLI are released. If you want to read each individual CLI command manual page, run them via `npx` with the `--help` flag, for example:
 
-```bash
+```bash-disableLineNumbers
 npx @adobe/ccweb-add-on-scripts start --help
 ```
 
