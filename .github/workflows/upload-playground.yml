@@ -22,13 +22,13 @@ jobs:
     name: Upload playground samples
     uses: AdobeDocs/adp-devsite-workflow/.github/workflows/upload-playground.yml@main
     with:
-      TARGET_BRANCH: ${{ inputs.target_branch || 'main' }}
+      TARGET_BRANCH: ${{ inputs.target_branch || github.ref_name || 'main' }}
       FOLDER_PATH: ${{ inputs.folder_path || 'src/pages' }}
     secrets:
-      IMS_BASE_URL: ${{ inputs.target_branch == 'main' && 'https://ims-na1.adobelogin.com' || 'https://ims-na1-stg1.adobelogin.com' }}
-      FFC_BASE_URL: ${{ inputs.target_branch == 'main' && 'https://ffc-addon.adobe.io/' || 'https://ffc-addon-stage.adobe.io/' }}
-      PLAYGROUND_CLIENT_ID: ${{ inputs.target_branch == 'main' && secrets.PLAYGROUND_CLIENT_ID || secrets.PLAYGROUND_CLIENT_ID_STAGE }}
-      PLAYGROUND_CLIENT_SECRET: ${{ inputs.target_branch == 'main' && secrets.PLAYGROUND_CLIENT_SECRET || secrets.PLAYGROUND_CLIENT_SECRET_STAGE }}
-      PLAYGROUND_AUTH_CODE: ${{ inputs.target_branch == 'main' && secrets.PLAYGROUND_AUTH_CODE || secrets.PLAYGROUND_AUTH_CODE_STAGE }}
-      PLAYGROUND_API_KEY: ${{ inputs.target_branch == 'main' && secrets.PLAYGROUND_API_KEY || secrets.PLAYGROUND_API_KEY_STAGE }}
+      IMS_BASE_URL: ${{ (inputs.target_branch || github.ref_name || 'main') == 'main' && 'https://ims-na1.adobelogin.com' || 'https://ims-na1-stg1.adobelogin.com' }}
+      FFC_BASE_URL: ${{ (inputs.target_branch || github.ref_name || 'main') == 'main' && 'https://ffc-addon.adobe.io/' || 'https://ffc-addon-stage.adobe.io/' }}
+      PLAYGROUND_CLIENT_ID: ${{ (inputs.target_branch || github.ref_name || 'main') == 'main' && secrets.PLAYGROUND_CLIENT_ID || secrets.PLAYGROUND_CLIENT_ID_STAGE }}
+      PLAYGROUND_CLIENT_SECRET: ${{ (inputs.target_branch || github.ref_name || 'main') == 'main' && secrets.PLAYGROUND_CLIENT_SECRET || secrets.PLAYGROUND_CLIENT_SECRET_STAGE }}
+      PLAYGROUND_AUTH_CODE: ${{ (inputs.target_branch || github.ref_name || 'main') == 'main' && secrets.PLAYGROUND_AUTH_CODE || secrets.PLAYGROUND_AUTH_CODE_STAGE }}
+      PLAYGROUND_API_KEY: ${{ (inputs.target_branch || github.ref_name || 'main') == 'main' && secrets.PLAYGROUND_API_KEY || secrets.PLAYGROUND_API_KEY_STAGE }}
 
