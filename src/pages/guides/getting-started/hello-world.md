@@ -181,7 +181,7 @@ npx @adobe/create-ccweb-add-on hello-world
 
 The above may prove useful when updated versions of the CLI are released. If you want to read each individual CLI command manual page, run them via `npx` with the `--help` flag, for example:
 
-```bash
+```bash-disableLineNumbers
 npx @adobe/ccweb-add-on-scripts start --help
 ```
 

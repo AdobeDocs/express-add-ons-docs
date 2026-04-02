@@ -1,3 +1,37 @@
+---
+keywords:
+  - Adobe Express
+  - Express Add-on SDK
+  - Express Editor
+  - Adobe Express
+  - Add-on SDK
+  - SDK
+  - JavaScript
+  - Extend
+  - Extensibility
+  - API
+  - Add-on Manifest
+title: Quickstart
+description: This is the Quickstart page
+contributors:
+  - https://github.com/hollyschinsky
+  - https://github.com/undavide
+---
+
+# Development Tools
+
+This section provides a set of guides to help you in the development stage of your add-on.
+
+## Using the CLI
+
+The add-on CLI (Command Line Interface) is the main tool that enables you to develop, test, and package add-ons for our platform. With the add-on CLI, you can create a new add-on project, build and test your add-on locally, and package your add-on for distribution.
+
+Here are some key features of the add-on CLI:
+
+- **Project creation:** The add-on CLI provides a command to create a new add-on project with a basic file structure and configuration.
+- **Local development:** The add-on CLI includes a built-in server that allows you to test your add-on locally before deploying it to our platform.
+- **Live reloading:** The add-on CLI watches your project files for changes and automatically reloads the server when a change is detected.
+- **Packaging:** The add-on CLI provides a command to package your add-on for distribution, including creating a ZIP file that can be uploaded to our platform.
 
 ### CLI `create` options
 
