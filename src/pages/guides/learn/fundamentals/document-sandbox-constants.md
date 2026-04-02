@@ -73,9 +73,9 @@ Constants equal their variable name as a string (e.g., `FillType.color` equals `
 
 <InlineAlert slots="header, text" variant="info"/>
 
-Add-on UI vs. Document Sandbox constants
+**Add-on UI vs. Document Sandbox constants**
 
-Separate sets of constants are available in both the [Add-on UI](ui-sdk-constants.md) and the Document Sandbox environments. For the complete technical specification on the constants covered in this guide, see the [Document APIs Constants Reference](../../../references/document-sandbox/document-apis/enumerations/ArrowHeadType.md)
+Separate sets of constants are available in both the [Add-on UI](ui-sdk-constants.md) and the Document Sandbox environments. For the complete technical specification on the constants covered in this guide, see the [Document APIs Constants Reference](../../../references/document-sandbox/document-apis/enumerations/arrow-head-type.md)
 
 ## Quick Start
 
@@ -218,7 +218,7 @@ editor.context.selection.forEach(node => {
 
 <InlineAlert slots="text" variant="info"/>
 
-Additional node types like `artboard`, `complexShape`, `gridLayout`, and others are available. See the [SceneNodeType Reference](../../../references/document-sandbox/document-apis/enumerations/SceneNodeType.md) for the complete list.
+Additional node types like `artboard`, `complexShape`, `gridLayout`, and others are available. See the [SceneNodeType Reference](../../../references/document-sandbox/document-apis/enumerations/scene-node-type.md) for the complete list.
 
 ## Working with Colors
 
@@ -244,7 +244,7 @@ rectangle.stroke = {
 
 <InlineAlert slots="text" variant="info"/>
 
-For comprehensive color creation, conversion, and application examples, see the [Use Color Guide](../how_to/use_color.md).
+For comprehensive color creation, conversion, and application examples, see the [Use Color Guide](../how-to/use-color.md).
 
 ## Common Patterns
 
@@ -401,13 +401,13 @@ function changeColor(node, color) {
 
 #### Q: How do I create colors for use with constants?
 
-**A:** Use `colorUtils.fromRGB(r, g, b, alpha)` or `colorUtils.fromHex("#RRGGBB")` to create Color objects. Import with: `import { colorUtils } from "express-document-sdk"`. See the [Use Color Guide](../how_to/use_color.md) for complete examples.
+**A:** Use `colorUtils.fromRGB(r, g, b, alpha)` or `colorUtils.fromHex("#RRGGBB")` to create Color objects. Import with: `import { colorUtils } from "express-document-sdk"`. See the [Use Color Guide](../how-to/use-color.md) for complete examples.
 
 ## Related Documentation
 
-- [Document APIs Reference](../../../references/document-sandbox/document-apis/)
-- [Document APIs Constants](../../../references/document-sandbox/document-apis/enumerations/ArrowHeadType.md)
-- [ColorUtils Reference](../../../references/document-sandbox/document-apis/classes/ColorUtils.md)
-- [Use Color Guide](../how_to/use_color.md) - Comprehensive color workflow examples
-- [Add-on UI SDK Constants](./ui-sdk-constants.md)
-- [Developer Terminology](./terminology.md)
+- [Document APIs Reference](../../../references/document-sandbox/document-apis/index.md)
+- [Document APIs Constants](../../../references/document-sandbox/document-apis/enumerations/arrow-head-type.md)
+- [ColorUtils Reference](../../../references/document-sandbox/document-apis/classes/color-utils.md)
+- [Use Color Guide](../how-to/use-color.md) - Comprehensive color workflow examples
+- [Add-on UI SDK Constants](ui-sdk-constants.md)
+- [Developer Terminology](terminology.md)

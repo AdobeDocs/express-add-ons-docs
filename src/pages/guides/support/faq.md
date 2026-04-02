@@ -26,7 +26,7 @@ contributors:
 
 ## Questions
 
-<!-- - [How do I run on a different port than the default (ie: 8080 for example)?](#how-do-i-run-on-a-different-port-than-the-default-ie-8080-for-example)
+&lt;!-- - [How do I run on a different port than the default (ie: 8080 for example)?](#how-do-i-run-on-a-different-port-than-the-default-ie-8080-for-example)
 - [Is `yarn` supported with the CLI, or only `npm`?](#is-yarn-supported-with-the-cli-or-only-npm)
 - [How do I save the state of my add-on?](#how-do-i-save-the-state-of-my-add-on)
 - [How do I use top level `await` while using webpack?](#how-do-i-use-top-level-await-while-using-webpack)
@@ -56,7 +56,7 @@ contributors:
 - [How can I update my trader details in the publisher profile after submission?](#how-can-i-update-my-trader-details-in-the-publisher-profile-after-submission)
 - [What happens if an EU user has a deep link to my add-on and I am not compliant with the European Union Digital Services Act (DSA) trader requirements?](#what-happens-if-an-eu-user-has-a-deep-link-to-my-add-on-and-i-am-not-compliant-with-the-european-union-digital-services-act-dsa-trader-requirements)
 - [Can an EU user still use my add-on if they have already installed it, but I am not compliant with the DSA trader requirements?](#can-an-eu-user-still-use-my-add-on-if-they-have-already-installed-it-but-i-am-not-compliant-with-the-dsa-trader-requirements)
-- [Why is the CLI failing with an Invalid URL error when creating a new add-on on Windows?](#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows) -->
+- [Why is the CLI failing with an Invalid URL error when creating a new add-on on Windows?](#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows) --&gt;
 
 ### 🛠️ Development Environment & Tooling
 
@@ -152,11 +152,11 @@ Starting with Chrome version 142 (released in early 2025), Chrome introduced a n
 
 **Note:** Option 2 applies to ALL websites, not just Adobe Express, so it is not recommended for general use.
 
-For more details, see the [Known Issues & Limitations](../getting_started/local_development/known_issues_limitations.md#chrome-local-network-access-restriction) guide.
+For more details, see the [Known Issues & Limitations](../getting-started/local-development/known-issues-limitations.md#chrome-local-network-access-restriction) guide.
 
 ### How do I save the state of my add-on?
 
-The add-on's state is reset quite frequently (changing panels, changing viewport widths etc), so one may want to save state to [ClientStorage](../../references/addonsdk/instance-clientStorage.md) and use that to restore state when the add-on loads. For example, if the user has to navigate into a deep folder hierarchy, they may not want to repeat that again just because they clicked the media panel to add a shape. Or if they are editing a form (e.g., an AI prompt), they may not want to lose that content when they navigated to another panel for a moment. When it makes sense to store a lot of UI state (and when it doesn't) is highly dependent upon the add-on's use case.
+The add-on's state is reset quite frequently (changing panels, changing viewport widths etc), so one may want to save state to [ClientStorage](../../references/addonsdk/instance-client-storage.md) and use that to restore state when the add-on loads. For example, if the user has to navigate into a deep folder hierarchy, they may not want to repeat that again just because they clicked the media panel to add a shape. Or if they are editing a form (e.g., an AI prompt), they may not want to lose that content when they navigated to another panel for a moment. When it makes sense to store a lot of UI state (and when it doesn't) is highly dependent upon the add-on's use case.
 
 ### How do I use top level `await` while using webpack?
 
@@ -202,7 +202,7 @@ You can call `preventDefault` on the submit event to prevent the browser from tr
 
 ### How do I enable CORS for a service that blocks my add-on requests due to the origin?
 
-To help enable a smoother experience for developers dealing with CORS, we provide each add-on with a unique [subdomain](../learn/platform_concepts/context.md#subdomain) which can be supplied in the list of [allowed origins](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin) that can make requests to a given service. See the section on [CORS](../learn/platform_concepts/context.md#cors) for more details on determining your unique subdomain and using it to enable CORS.
+To help enable a smoother experience for developers dealing with CORS, we provide each add-on with a unique [subdomain](../learn/platform-concepts/context.md#subdomain) which can be supplied in the list of [allowed origins](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin) that can make requests to a given service. See the section on [CORS](../learn/platform-concepts/context.md#cors) for more details on determining your unique subdomain and using it to enable CORS.
 
 ### How do I prevent my iframe content from being blocked due to cross-origin issues?
 
@@ -327,7 +327,7 @@ Yes, however, there are [technical requirements](https://helpx.adobe.com/express
 
 ### Why do I receive a "No 'Access-Control-Allow-Origin' header is present on the requested resource" error?
 
-This error message indicates that the server that the JavaScript code is making a request to did not include the proper CORS (Cross-Origin Resource Sharing) headers in its response. Please see [this section on CORS](../learn/platform_concepts/context.md#cors) for more details on handling CORS with your add-on.
+This error message indicates that the server that the JavaScript code is making a request to did not include the proper CORS (Cross-Origin Resource Sharing) headers in its response. Please see [this section on CORS](../learn/platform-concepts/context.md#cors) for more details on handling CORS with your add-on.
 
 ### What permissions are available for add-ons and how do I configure them?
 
@@ -359,7 +359,7 @@ Adobe Express add-ons support several types of permissions that you configure in
 }
 ```
 
-For complete details on all available permissions and their usage, see the [manifest permissions documentation](../../references/manifest/index.md#entrypointspermissions) and the [add-on context guide](../learn/platform_concepts/context.md#permissions).
+For complete details on all available permissions and their usage, see the [manifest permissions documentation](../../references/manifest/index.md#entrypointspermissions) and the [add-on context guide](../learn/platform-concepts/context.md#permissions).
 
 ### Is [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) supported?
 

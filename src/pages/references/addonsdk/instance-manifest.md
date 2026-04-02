@@ -6,13 +6,13 @@ The `manifest` object provides access to the `manifest.json` file entries of the
 
 `object` (specific type `Record`)
 
-Please see the [Manifest Schema Reference](../manifest/) for the whole list of properties and types that can be specified in the `manifest.json` for your add-on.
+Please see the [Manifest Schema Reference](../manifest/index.md) for the whole list of properties and types that can be specified in the `manifest.json` for your add-on.
 
 ### Example Usage
 
 Below is an example of using the `manifest` object, along with the expected output.
 
-<CodeBlock slots="heading, code" repeat="2" languages="JavaScript" />
+<CodeBlock slots="heading, code" repeat="2"  />
 
 #### JavaScript
 

@@ -67,9 +67,9 @@ Constants equal their variable name as a string (e.g., `ButtonType.primary` equa
 
 <InlineAlert slots="header, text" variant="info"/>
 
-Add-on UI vs. Document Sandbox constants
+**Add-on UI vs. Document Sandbox constants**
 
-Separate sets of constants are available in both the Add-on UI and the [Document Sandbox](./document-sandbox-constants.md) environments. For the complete technical specification on the constants covered in this guide, see the [Add-on UI Constant Reference](../../../references/addonsdk/addonsdk-constants.md).
+Separate sets of constants are available in both the Add-on UI and the [Document Sandbox](document-sandbox-constants.md) environments. For the complete technical specification on the constants covered in this guide, see the [Add-on UI Constant Reference](../../../references/addonsdk/addonsdk-constants.md).
 
 ## Quick Start
 
@@ -85,7 +85,7 @@ const format = addOnUISdk.constants.RenditionFormat.png;
 
 <InlineAlert slots="header,text1" variant="warning"/>
 
-#### Important
+**Important**
 
 Some constants (like `AppEvent`, `ColorPickerEvent`) are **only available as named exports** and cannot be accessed through `addOnUISdk.constants.*`. See [Import Patterns](#import-patterns) below.
 
@@ -310,13 +310,13 @@ await createRenditions({
 
 #### Q: Do constants work the same in Document Sandbox?
 
-**A:** No, Document Sandbox has different constants from `express-document-sdk`. See [Document Sandbox Constants](./document-sandbox-constants.md) for sandbox-specific constants.
+**A:** No, Document Sandbox has different constants from `express-document-sdk`. See [Document Sandbox Constants](document-sandbox-constants.md) for sandbox-specific constants.
 
 ## Next Steps
 
 - **Complete Reference**: See [Constants Reference](../../../references/addonsdk/addonsdk-constants.md) for all available constants
 - **Practical Guides**:
-  - [Create Renditions](../how_to/create_renditions.md) - Using export constants
-  - [Modal Dialogs](../how_to/modal_dialogs.md) - Using dialog constants
-  - [Use Color](../how_to/use_color.md) - Using color picker constants
-  - [Theme & Locale](../how_to/theme_locale.md) - Using event constants
+  - [Create Renditions](../how-to/create-renditions.md) - Using export constants
+  - [Modal Dialogs](../how-to/modal-dialogs.md) - Using dialog constants
+  - [Use Color](../how-to/use-color.md) - Using color picker constants
+  - [Theme & Locale](../how-to/theme-locale.md) - Using event constants

@@ -11,53 +11,116 @@ keywords:
   - Extensibility
   - API
   - Add-on Manifest
-title: Document APIs
-description: An introduction to the Document APIs available in the document sandbox.
+title: Document Sandbox Overview
+description: An overview of the document sandbox used for content authoring with the Adobe Express Document APIs.
 contributors:
   - https://github.com/hollyschinsky
-hideBreadcrumbNav: true
 ---
 
-# Document APIs
+# Document Sandbox
 
-The [Document APIs](./classes/Editor.md) provide access to the user's document, allowing you to access the document structure and properties, and apply changes to it via the provided APIs.
+The document sandbox is a sandboxed JavaScript execution environment, which allows to execute add-on's JavaScript code securely and synchronously in another JavaScript environment e.g., browser.
 
 ## Overview
 
-Some examples of what you can do with the [Adobe Express Document APIs](./classes/Editor.md) are creating shapes, adding pages to the document, clearing the artboard and more. See the following sections for more details and examples of using these new APIs.
+The document sandbox exposes three categories of APIs, which each have their own specific references and are outlined below.
 
-## Access to Express Document APIs
+### Communication APIs
 
-An exported `editor` module is provided to enable access to the [Document APIs](./classes/Editor.md). You can simply import this module into your script file code to access the methods provided below. For example:
+The [communication APIs](../communication/index.md) allow you to communicate between the document sandbox and the iframe runtime where your add-on is running via exposed APIs.
 
-```js
-import { editor } from "express-document-sdk"; // named import 'editor' from express-document-sdk module
+### Web APIs
+
+The document sandbox does NOT provide a full fledged browser’s JavaScript execution environment. Most of the browsers APIs/Global Objects are not available. For these, the developers can use iframe runtime environment and [communicate](../communication/index.md#expose-apis-from-the-ui) the result back to the script running inside document sandbox environment. Some of the commonly used [Web APIs](../web/index.md) (with limited scope) have been provided inside document sandbox environment.
+
+### Document APIs
+
+The [document APIs](index.md) provide access to the user's document structure and properties, and allow you to make changes and author content to the Adobe Express document via the provided APIs.
+
+<InlineAlert slots="text" variant="success"/>
+
+Please see the [tutorials section](../../../guides/learn/how-to/tutorials/index.md) to learn more about using the document sandbox and Adobe Express Document APIs.
+
+## Document Sandbox's JavaScript Engine
+
+The document sandbox is a sandboxed JavaScript execution environment, which allows to execute add-on's JavaScript code securely and synchronously in another JavaScript environment e.g., browser.
+
+Some key concepts to note about the document sandbox include:
+
+- Limited access to browser APIs (see the [Web APIs](../web/index.md) reference). Note however, you can use the [communication APIs](../communication/index.md) to expose browser APIs (ie: `fetch`) from the iframe environment to be used in the document sandbox.
+- Runs in a slower execution environment.
+- Provides no debugging capabilities other than those provided by the [injected `console` functions](../web/index.md#console-object).
+- Runs in the same context/thread as the host's application business logic, thus providing access to interact with it via the injected APIs.
+
+## Getting Started with the APIs
+
+The methods defined in the [communication API reference](../communication/index.md) are used to expose and use the API proxies between the iframe and script environments of your add-on. Start with the [communication reference](../communication/index.md) to learn more about how to expose APIs and use them from either environment.
+
+### Document sandbox entry point
+
+To use the document sandbox APIs in your add-on, start by defining a new `documentSandbox` entry point in your `manifest.json` file with the value set to the name of the file containing the JavaScript code you're using with the document sandbox APIs:
+
+```json
+    "entryPoints": [
+        {
+            "type": "panel",
+            "id": "panel1",
+            "main": "index.html",
+            "documentSandbox": "code.js"
+        }
+    ]
 ```
 
-See the example below for further usage details.
+The JavaScript code in the file referenced can then access any of the injected global objects and module APIs defined in all of the APIs outlined in this set of references ([communication APIs](../communication/index.md), [Web APIs](../web/index.md) and [document APIs](index.md)).
 
-## Example Code Snippet
+### CLI Generated Document Sandbox Add-on
 
-The following code snippet illustrates how to use the [Express Document APIs](./classes/Editor.md) from the document sandbox code running in your `code.js` for instance, to access the current document, create a rectangle, set some properties and a fill for the rectangle, and finally, add it to the document:
+The quickest way to get started with a scaffolded project set up with the document sandbox bindings for you is via the CLI. When creating a new add-on, you can [specify a template name](../../../guides/getting-started/local-development/dev-tooling.md#templates) that includes the document sandbox support:
 
-```js{try id=createAndFillRectangle}
-const insertionParent = editor.context.insertionParent; // get node to insert content into
+`npx @adobe/create-ccweb-add-on helloworld --template javascript-with-document-sandbox`
 
-const rectangle = editor.createRectangle();
-rectangle.width = 200;
-rectangle.height = 150;
-rectangle.translation = { x: 100, y: 20 };
-console.log(rectangle); // for debugging purpose
+or the CLI will prompt you to choose from the [base templates](../../../guides/getting-started/local-development/dev-tooling.md#templates), then ask if you want to include the document sandbox:
 
-const [red, green, blue, alpha] = [0.8, 0.6, 0.2, 0.7];
-// Note: alpha param is optional
-const aColor = colorUtils.fromRGB(red, green, blue, alpha);
-const rectangleFill = editor.makeColorFill(aColor);
-rectangle.fill = rectangleFill;
+![CLI prompt for document sandbox](../../img/cli-doc-sandbox-prompt.png)
 
-insertionParent.children.append(rectangle);
+Choose `Yes` at the prompt to include the document sandbox setup in your generated project. The project structure that's generated will differ depending on which base template you chose, but the two important additions to note, are the existence of a `script` entry point in your `manifest.json`, and the `code.js` file it references.
+
+```json
+"entryPoints": [
+        {
+            "type": "panel",
+            "id": "panel1",
+            "main": "index.html",
+            "documentSandbox": "code.js"
+        }
+    ]
 ```
 
-## Tutorials, References & Code Samples
+The screenshot below shows what the default script-based add-on generated from the CLI looks like when running:
 
-Please see [this extensive tutorial](../../../guides/learn/how_to/tutorials/grids-addon.md) provided to help you build your first add-on using the Document APIs in our [tutorials section](../../../guides/learn/how_to/tutorials/). Also be sure to check out the [full set of API documentation](../document-apis/classes/Editor.md) as well as the [editor-apis](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/editor-apis) and [image-and-page](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/image-and-page) code samples provided in the [document sandbox samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) for more details on using the [Document APIs](./classes/Editor.md).
+![script add-on sample screenshot](../../img/script-add-on-sample.png)
+
+<InlineAlert slots="text" variant="info"/>
+
+Please refer to the [Using the CLI](../../../guides/getting-started/local-development/dev-tooling.md#using-the-cli) section to get more information on how to use the CLI and create new add-on.
+\<br/\>
+
+## Code Samples
+
+The following [code samples](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples) have also been provided to help you get started using these new document sandbox APIs.
+
+### [communication-iframe-documentSandbox sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/communication-iframe-documentSandbox)
+
+Demonstrates the use of the communication APIs to expose and proxy APIs bidirectionally between the iframe and document sandbox environments. Also includes demonstrating how to use some of the [Web APIs](../web/index.md) such as `console.log()`.
+
+### [editor-apis sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/editor-apis)
+
+Demonstrates how to use the [document APIs](index.md) to create various shapes and add them to the document.
+
+### [image-and-page sample](https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples/image-and-page)
+
+A more comprehensive example of using the [document APIs](index.md) to add a page, images and shapes, as well as clear the artboard.
+
+## Debugging script based add-ons
+
+Debugging with breakpoints from the document sandbox (via `code.js`) is currently not supported and for the time-being, only console logging (via `console.log()`) can be used. However, support for debugging by applying breakpoints in the code will be available in the near future. Please refer to [Example Code Snippet](index.md#example-code-snippet), where a `rectangle` object is printed to console for debugging purpose.

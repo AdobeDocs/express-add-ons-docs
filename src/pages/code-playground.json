@@ -1,0 +1,16 @@
+{
+    "total": 2,
+    "offset": 0,
+    "limit": 2,
+    "data": [
+        {
+            "key": "code-playground-staging-url",
+            "value": "https://stage.projectx.corp.adobe.com/new"
+        },
+        {
+            "key": "code-playground-production-url",
+            "value": "https://new.express.adobe.com/new"
+        }
+    ],
+    ":type": "sheet"
+}
