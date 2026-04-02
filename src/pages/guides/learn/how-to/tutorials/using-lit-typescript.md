@@ -98,7 +98,7 @@ Lit uses [_reactive properties_](https://lit.dev/docs/components/properties/) to
 
 TypeScript allows you to [define types](https://www.typescriptlang.org/docs/handbook/2/basic-types.html#static-type-checking) for variables, function parameters, and return values, which helps catch type-related errors at compile time.
 
-```typescript
+```typescript-disableLineNumbers
 let message: string = "Hello, TypeScript!";
 ```
 
@@ -106,7 +106,7 @@ let message: string = "Hello, TypeScript!";
 
 TypeScript can automatically [infer types](https://www.typescriptlang.org/docs/handbook/type-inference.html#handbook-content) based on the assigned values, reducing the need for explicit type annotations.
 
-```typescript
+```typescript-disableLineNumbers
 let count = 42; // inferred as number
 ```
 
@@ -391,7 +391,7 @@ To create a new component using Lit and TypeScript, follow these steps:
 
 #### Step 1: Create a new TypeScript file in the `src/ui/components` directory.
 
-```bash
+```bash-disableLineNumbers
 touch src/ui/components/MyCustomButton.ts
 ```
 

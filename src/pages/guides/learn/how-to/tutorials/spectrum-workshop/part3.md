@@ -159,7 +159,7 @@ Some benefits to using Spectrum CSS variables to style your components over abso
 
 - **Overriding variables:** you can override the Spectrum CSS variables as needed in your add-on as well, by setting the name of the spectrum variable to a new value, for instance:
 
-  ```css
+  ```css-disableLineNumbers
   --spectrum-global-dimension-font-size-150: 16px;
   ```
 
@@ -213,7 +213,7 @@ This section provides answers to common questions and helps troubleshoot errors 
 
 **A:** Yes! You can override any Spectrum CSS variable by setting it to a new value in your CSS:
 
-```css
+```css-disableLineNumbers
 --spectrum-global-dimension-font-size-150: 16px;
 ```
 

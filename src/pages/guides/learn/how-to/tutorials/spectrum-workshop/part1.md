@@ -38,7 +38,7 @@ There are a few open source Spectrum libraries available, but we specifically re
 
 Use the CLI to create a new add-on based on the basic `javascript` template:
 
-```js
+```js-disableLineNumbers
 npx @adobe/create-ccweb-add-on bingo-card-generator-js --template javascript
 ```
 

@@ -111,7 +111,7 @@ The complete code for the Grids System add-on can be found [here](https://github
 
 You can either clone the entire repository:
 
-```bash
+```bash-disableLineNumbers
 git clone https://github.com/AdobeDocs/express-add-on-samples.git
 ```
 
@@ -822,7 +822,7 @@ When the user clicks the Create button, the parameters from the UI are properly 
 
 To begin with, we'll create rows: rectangles that must be as wide as the page. To calculate their height, first, subtract the total number of gutters (which is equal to the number of rows plus one) from the page height. Then, divide the resulting value by the number of rows.
 
-```text
+```text-disableLineNumbers
 rowHeight = (pageHeight - (rowsNumber + 1) * gutter) / rowsNumber;
 ```
 
@@ -1084,7 +1084,7 @@ addGrid({ columns, rows, gutter, columnColor, rowColor }) {
 
 From the users' perspective, it would speed up the testing process of new grid designs if they could clear the current one and experiment with different combinations—that is, a Delete button. You can both add and remove elements to a container object's `children` list: most Node elements have a `removeFromParent()` method, which detaches them from their parent container.
 
-```js
+```js-disableLineNumbers
 gridGroup.removeFromParent(); // voilà
 ```
 
