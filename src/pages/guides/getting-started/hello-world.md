@@ -168,7 +168,7 @@ The [Templates section](local-development/dev-tooling.md#templates) on the **Dev
 
 If you're using the CLI in the terminal, you'll need to add `openssl` to the `path` under Environment Variables. If `git` is installed, `openssl` can be found at `C:\Program >Files\Git\usr\bin`. Otherwise, you can [download `git`](https://git-scm.com/downloads) and add the directory location to the `path` variable in your Environment Variables.
 
-<InlineAlert slots="header, text1, text2, text3, text4" variant="warning"/>
+<InlineAlert slots="header, text1, code, text3, code" variant="warning"/>
 
 #### CLI troubleshooting
 
