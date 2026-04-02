@@ -113,9 +113,7 @@ More formally stated, any scripting environment must expose information about th
 
 Developers with a front-end background may instinctively associate the notion of DOM with HTML and the Browser. Although it has been the most common case for decades, all applications supporting scripting rely on their own Document Object Model—as those working with desktop versions of the Creative Cloud know very well. The Adobe Express add-on system is technically different from CEP extensions in Adobe After Effects or UXP plugins in Adobe Photoshop; still, the concept of the DOM is equally valid.
 
-<InlineAlert variant="warning" slots="heading, text1, text2, text3w" />
-
-**Warning** 
+<InlineAlert variant="warning" slots="text1, text2, text3w" />
 
 Some confusion may arise regarding the meaning of the following terms—let me clarify.
 
@@ -206,7 +204,7 @@ Some properties rely on interfaces to define their type. The ellipse's `stroke` 
 
 Let's use the `stroke` to demonstrate the use of Constants in the DOM. They are a named import—mind the lowercase spelling.
 
-```js
+```js-disableLineNumbers
 import { editor, colorUtils, constants } from "express-document-sdk";
 ```
 
@@ -304,11 +302,11 @@ The bottom line is that `.d.ts` and `tsconfig.json` files in your JavaScript (an
 
 ![](../platform-concepts/images/refs-addon-intellisense.png)
 
-<InlineAlert variant="info" slots="text1, text2, text3" />
+<InlineAlert variant="info" slots="text1, code, text3" />
 
 To use TypeScript declarations in existing projects, install the `@adobe/ccweb-add-on-sdk-types` package.
 
-```sh
+```sh-disableLineNumbers
 npm install @adobe/ccweb-add-on-sdk-types --saveDev
 ```
 
@@ -398,7 +396,7 @@ These are classes that serve as a **base for other classes**. Used by Adobe to r
 
 `Editor` and `ColorUtils` are special **Singleton classes** that aren't meant to be instantiated or extended; the former acts as the entry point for APIs that read or modify the document's content, whereas the latter provides static utility methods for color manipulation. They are brought into the scope as lowercase named imports from the `"express-document-sdk"`.
 
-```js
+```js-disableLineNumbers
 import { editor, colorUtils } from "express-document-sdk";
 ```
 
@@ -531,7 +529,7 @@ hLine.setEndPoints(
 
 Here, an arbitrary 20px margin is added between the horizontal line and the selected node; this could very well be a parameter chosen by the user from a UI control you can add later. The line is extended to a `nodeWidth` length, i.e., the `mediaRectangle`'s. You can finally add it to the scenegraph.
 
-```js
+```js-disableLineNumbers
 editor.context.insertionParent.children.append(hLine);
 ```
 
