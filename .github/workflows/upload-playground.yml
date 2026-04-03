@@ -38,5 +38,5 @@ jobs:
       PLAYGROUND_CLIENT_ID: ${{ (inputs.deploy_env || 'main') == 'main' && secrets.PLAYGROUND_CLIENT_ID || (secrets.PLAYGROUND_CLIENT_ID_STAGE || secrets.PLAYGROUND_CLIENT_ID) }}
       PLAYGROUND_CLIENT_SECRET: ${{ (inputs.deploy_env || 'main') == 'main' && secrets.PLAYGROUND_CLIENT_SECRET || (secrets.PLAYGROUND_CLIENT_SECRET_STAGE || secrets.PLAYGROUND_CLIENT_SECRET) }}
       PLAYGROUND_AUTH_CODE: ${{ (inputs.deploy_env || 'main') == 'main' && secrets.PLAYGROUND_AUTH_CODE || (secrets.PLAYGROUND_AUTH_CODE_STAGE || secrets.PLAYGROUND_AUTH_CODE) }}
-      PLAYGROUND_API_KEY: ${{secrets.PLAYGROUND_API_KEY}}
+      PLAYGROUND_API_KEY: ${{ (inputs.deploy_env || 'main') == 'main' && secrets.PLAYGROUND_API_KEY || secrets.PLAYGROUND_API_KEY_STAGE  }}
 
