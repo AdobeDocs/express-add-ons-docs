@@ -106,13 +106,13 @@ Use the [`editor.documentRoot.pages.addPage()`](../../../references/document-san
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
-// Define page dimensions (width x height in pixel)
+// Define page dimensions (width x height in pixels)
 const pageGeometry = {
   width: 1080,
   height: 1080
 };
 
-// Add a new page with the specified dimensions below
+// Add a new page with the specified dimensions
 const newPage = editor.documentRoot.pages.addPage(pageGeometry);
 
 console.log("New page created:", newPage);
