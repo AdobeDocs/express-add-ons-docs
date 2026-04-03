@@ -24,6 +24,23 @@ on:
         type: string
         required: false
         default: "src/pages"
+  workflow_call:
+    inputs:
+      deploy_env:
+        description: "Deploy target environment (main=prod endpoints, stage=stage endpoints)"
+        type: string
+        required: false
+        default: "main"
+      target_branch:
+        description: "Target repo branch for PR (usually main)"
+        type: string
+        required: false
+        default: "main"
+      folder_path:
+        description: "Folder path to read files from (defaults to src/pages)"
+        type: string
+        required: false
+        default: "src/pages"
 
 jobs:
   upload-playground:
