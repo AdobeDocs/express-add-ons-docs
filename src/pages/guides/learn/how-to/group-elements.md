@@ -60,11 +60,11 @@ To create a Group, you can use the [`editor.createGroup()`](../../../references/
 import { editor } from "express-document-sdk";
 
 // Create some Text
-const greeting = editor.createText("Hiya!!!!!!");
+const greeting = editor.createText("Hiya!");
 greeting.translation = { x: 0, y: 0 };
 
 // Create some other Text
-const saluto = editor.createText("Ciao!!!");
+const saluto = editor.createText("Ciao!");
 saluto.translation = { x: 0, y: 50 };
 
 // Create a Group
