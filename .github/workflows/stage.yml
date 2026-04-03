@@ -20,3 +20,13 @@ jobs:
       env: stage
       baseSha: ${{ inputs.baseSha }}
       deployAll: ${{ inputs.deployAll }}
+
+  upload_playground:
+    name: Upload playground samples (stage)
+    needs: deployment
+    uses: ./.github/workflows/upload-playground.yml
+    with:
+      deploy_env: stage
+      target_branch: ${{ github.ref_name }}
+      folder_path: src/pages
+    secrets: inherit
