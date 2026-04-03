@@ -64,7 +64,7 @@ const greeting = editor.createText("Hiya!!!!");
 greeting.translation = { x: 0, y: 0 };
 
 // Create some other Text
-const saluto = editor.createText("Ciao!");
+const saluto = editor.createText("Ciao!!!!");
 saluto.translation = { x: 0, y: 50 };
 
 // Create a Group
