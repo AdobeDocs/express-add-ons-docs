@@ -3,11 +3,19 @@ name: Upload playground samples
 
 on:
   push:
-    branches: [main, stage]
+    branches: [main]
   workflow_dispatch:
     inputs:
+      deploy_env:
+        description: "Deploy target environment (main=prod endpoints, stage=stage endpoints)"
+        type: choice
+        required: false
+        default: "main"
+        options:
+          - "main"
+          - "stage"
       target_branch:
-        description: "Target branch to send PR to (e.g., main, stage, etc)"
+        description: "Target repo branch for PR (usually main)"
         type: string
         required: false
         default: "main"
@@ -25,10 +33,10 @@ jobs:
       TARGET_BRANCH: ${{ inputs.target_branch || github.ref_name || 'main' }}
       FOLDER_PATH: ${{ inputs.folder_path || 'src/pages' }}
     secrets:
-      IMS_BASE_URL: ${{ (inputs.target_branch || github.ref_name || 'main') == 'main' && 'https://ims-na1.adobelogin.com' || 'https://ims-na1-stg1.adobelogin.com' }}
-      FFC_BASE_URL: ${{ (inputs.target_branch || github.ref_name || 'main') == 'main' && 'https://ffc-addon.adobe.io/' || 'https://ffc-addon-stage.adobe.io/' }}
-      PLAYGROUND_CLIENT_ID: ${{ (inputs.target_branch || github.ref_name || 'main') == 'main' && secrets.PLAYGROUND_CLIENT_ID || secrets.PLAYGROUND_CLIENT_ID_STAGE }}
-      PLAYGROUND_CLIENT_SECRET: ${{ (inputs.target_branch || github.ref_name || 'main') == 'main' && secrets.PLAYGROUND_CLIENT_SECRET || secrets.PLAYGROUND_CLIENT_SECRET_STAGE }}
-      PLAYGROUND_AUTH_CODE: ${{ (inputs.target_branch || github.ref_name || 'main') == 'main' && secrets.PLAYGROUND_AUTH_CODE || secrets.PLAYGROUND_AUTH_CODE_STAGE }}
-      PLAYGROUND_API_KEY: ${{ secrets.PLAYGROUND_API_KEY }}
+      IMS_BASE_URL: ${{ (inputs.deploy_env || 'main') == 'main' && 'https://ims-na1.adobelogin.com' || 'https://ims-na1-stg1.adobelogin.com' }}
+      FFC_BASE_URL: ${{ (inputs.deploy_env || 'main') == 'main' && 'https://ffc-addon.adobe.io/' || 'https://ffc-addon-stage.adobe.io/' }}
+      PLAYGROUND_CLIENT_ID: ${{ (inputs.deploy_env || 'main') == 'main' && secrets.PLAYGROUND_CLIENT_ID || (secrets.PLAYGROUND_CLIENT_ID_STAGE || secrets.PLAYGROUND_CLIENT_ID) }}
+      PLAYGROUND_CLIENT_SECRET: ${{ (inputs.deploy_env || 'main') == 'main' && secrets.PLAYGROUND_CLIENT_SECRET || (secrets.PLAYGROUND_CLIENT_SECRET_STAGE || secrets.PLAYGROUND_CLIENT_SECRET) }}
+      PLAYGROUND_AUTH_CODE: ${{ (inputs.deploy_env || 'main') == 'main' && secrets.PLAYGROUND_AUTH_CODE || (secrets.PLAYGROUND_AUTH_CODE_STAGE || secrets.PLAYGROUND_AUTH_CODE) }}
+      PLAYGROUND_API_KEY: ${{secrets.PLAYGROUND_API_KEY}}
 
