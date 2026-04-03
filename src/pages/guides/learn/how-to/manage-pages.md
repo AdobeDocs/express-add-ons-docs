@@ -115,8 +115,8 @@ const pageGeometry = {
 // Add a new page with the specified dimensions
 const newPage = editor.documentRoot.pages.addPage(pageGeometry);
 
-console.log("New page created:", newPage);
-console.log("Page dimensions:", newPage.width, "x", newPage.height);
+console.log("New page created::", newPage);
+console.log("Page dimensions::", newPage.width, "x", newPage.height);
 ```
 
 #### TypeScript
