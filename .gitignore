@@ -36,3 +36,6 @@ cypress/screenshots
 
 # lerna
 lerna-debug.log
+
+# local scratch (folder and all contents)
+/TEMP/
