@@ -221,6 +221,7 @@
         - [Add-on Architecture](guides/learn/platform-concepts/architecture.md)
         - [iframe Runtime Context & Security](guides/learn/platform-concepts/context.md)
         - [The Document API](guides/learn/platform-concepts/document-api.md)
+        - [Deprecation Policy](guides/learn/platform-concepts/deprecation-policy.md)
     - [SDK Fundamentals](guides/learn/fundamentals/terminology.md)
         - [Terminology](guides/learn/fundamentals/terminology.md)
         - [Use Add-on UI SDK Constants](guides/learn/fundamentals/ui-sdk-constants.md)
