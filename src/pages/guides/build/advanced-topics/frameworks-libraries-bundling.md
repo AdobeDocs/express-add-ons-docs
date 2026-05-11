@@ -41,7 +41,7 @@ An example of how this works in Visual Studio Code is shown in this short clip b
 
 <Embed slots="video" />
 
-https://main--adp-devsite--adobedocs.aem.page/express/add-ons/intellisense.mp4
+https://raw.githubusercontent.com/AdobeDocs/express-add-ons-docs/refs/heads/main/static/videos/intellisense.mp4
 
 <InlineAlert slots="text" variant="info"/>
 
