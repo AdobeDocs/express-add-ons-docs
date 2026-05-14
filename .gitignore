@@ -1,11 +1,14 @@
+# .gitignore
 
-# OS and IDE generated files #
-##############################
-.DS_Store
-.vscode
-.history
-.idea
 .editorconfig
+.idea
+.DS_Store
+.vscode/*
+.nvmrc
+# cursor
+.cursorignore
+.cursorindexingignore
+.cursor/
 
 # npm yarn
 node_modules
@@ -36,15 +39,13 @@ cypress/screenshots
 # lerna
 lerna-debug.log
 
-# local actions
+# Added by update-bot
+.vscode
+.history
 .actrc
 .secrets
 local-test.yml
-
-# yalc
 .yalc
 yalc.lock
-
-#txt
 linter-output.txt
 linter-report.txt
