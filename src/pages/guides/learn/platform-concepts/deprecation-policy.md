@@ -49,7 +49,7 @@ faq:
       answer: "Each add-on is treated independently. What an add-on sees is determined by the SDK it was built against, not by the user's session or by what other add-ons are doing. If two add-ons were built against different SDK versions, they observe different API surfaces and different behaviors side by side—one add-on's migration timeline never affects another's."
 
     - question: "Will my users see anything when an API I use is deprecated?"
-      answer: "Usually not. The deprecation lifecycle is mostly invisible in the Adobe Express UI. For broader deprecations that require Express to enter Add-on Compatible Mode for live legacy add-ons, users see a one-time confirmation dialog and, on subsequent invocations in the same session, a brief auto-dismissing toast. Once you rebuild and resubmit against the current SDK, none of that UX is shown for your add-on."
+      answer: "Usually not. The deprecation lifecycle is mostly invisible in the Adobe Express UI."
 
     - question: "Are experimental APIs covered by this policy?"
       answer: "No. Experimental APIs are explicitly outside this lifecycle: they can change shape, change behavior, or be withdrawn at any time, without a deprecation phase or scheduled removal date. They are also only allowed during development—the `experimentalApis: true` flag in your `manifest.json` must be removed before you submit your add-on to the marketplace, so an experimental API will never be present in a live submission."
@@ -88,11 +88,7 @@ How Adobe Express evolves the add-on SDK without breaking live add-ons.
 
 The Adobe Express add-on platform is under active development. New APIs are introduced, behaviors are refined, and occasionally older APIs need to be retired. The **deprecation policy** is the contract that lets the platform evolve without surprising users with broken add-ons or forcing every developer to update on a single deadline.
 
-In short:
-
-- **Live add-ons continue to work** with the API surface they were built and submitted against.
-- **New submissions** are built against a current SDK in which deprecated APIs are flagged and removed APIs are absent.
-- The platform manages the transition for you. To pick up new APIs and behaviors, you **rebuild against the latest SDK and resubmit** your add-on to the marketplace.
+In short, the platform manages the transition for you. You will always get the latest APIs from the SDK during local development. And the platform also ensures that the live add-ons do not break and continue to keep working.
 
 This page explains the lifecycle of a deprecated API, the signals you will see while a deprecation is in progress, and what you need to do to keep your add-on current.
 
@@ -114,9 +110,9 @@ Some APIs are released as **experimental** for early feedback before they are co
 - The `experimentalApis` flag is **only allowed during development**. It must be removed before you submit your add-on to the marketplace—an add-on that depends on experimental APIs cannot be submitted.
 - Experimental APIs are **not covered by the rest of this lifecycle**. They may change shape, change behavior, or be withdrawn at any time, without a deprecation phase, console warning, or scheduled removal date.
 - Reference pages for experimental APIs carry a prominent **_experimental only_** callout that names the flag and warns against shipping.
-- When an experimental API is judged stable, it graduates to **Active** and from that point is governed by the rest of this lifecycle.
+- When an experimental API is judged solid, it graduates to **Stable** and from that point is governed by the rest of this lifecycle.
 
-### 2. Active
+### 2. Stable
 
 The API ships in the SDK as a stable surface. It is **fully supported**. There are no deprecation signals on it.
 
@@ -126,14 +122,13 @@ The platform team marks the API as deprecated. From this point on:
 
 - The **API still works for every add-on**, regardless of when it was submitted.
 - The reference documentation marks the API as _deprecated_ and links to the replacement.
-- The API is annotated with the `@deprecated` JSDoc tag in the SDK type definitions. The deprecation message identifies the recommended replacement and the planned removal date.
 - Calls to the deprecated API log a **throttled warning** to the developer console at runtime. Repeated calls in tight loops do not flood the console; the message is intended for developer awareness, not for end users.
 
 This stage is your window to migrate. The deprecation message tells you what to switch to and when the API is scheduled to be removed.
 
 ### 4. Removed
 
-On the announced removal date, the API is **taken out of the SDK exposed to new submissions**:
+On the announced removal date, the API is **taken out of the SDK**:
 
 - Add-ons **submitted on or after that date can no longer use the API**. It is not part of the SDK they build against.
 - Add-ons **submitted before that date are unaffected**. The same code, in the same marketplace listing, keeps observing the original behavior.
@@ -142,7 +137,7 @@ On the announced removal date, the API is **taken out of the SDK exposed to new 
 
 After enough time has passed, the platform is no longer obligated to preserve the legacy code path. At this point the API is gone for everyone, including live add-ons that depended on it; those add-ons need to be updated to remain in the marketplace.
 
-The standing target window between deprecation (stage 3) and removal (stage 4) is **two quarters—roughly six months**. This window is treated as a developer guarantee: enough time to migrate, build, and resubmit. Specific deprecations may use a longer window when the affected surface is broad or when enterprise rollout schedules require it; any non-standard window is communicated alongside the deprecation.
+The window between deprecation (stage 3) and removal (stage 4) could vary; it is treated as a developer guarantee: enough time to migrate, build, and resubmit. The best approach is to switch to the latest API as soon as you notice a deprecation warning.
 
 <InlineAlert variant="warning" slots="header, text1"/>
 
@@ -216,26 +211,6 @@ Each add-on installed on a user's device is treated independently. Two add-ons r
 
 Most deprecations are invisible to the people who use your add-on—the lifecycle plays out in the SDK and in your build, not in the Adobe Express UI. 
 
-Some deprecations, though, are broad enough that Express needs to enter a temporary **Add-on Compatible Mode** to keep already-submitted add-ons working while their developers migrate. When this is the case, users of the affected add-ons see two notices.
-
-### First invocation in a session: Confirmation dialog
-
-![Add-on Compatible Mode confirmation dialog](images/deprecation-policy--add-on-compatibility-mode.png)
-
-The user must confirm to continue. If they decline, the add-on is not run and the session stays in the normal runtime.
-
-### Subsequent invocations: Toast
-
-Once Add-on Compatible Mode is on, further invocations of affected add-ons do not show the dialog again. Instead, a brief, auto-dismissing toast reminds the user of the current state:
-
-![Add-on Compatibility Mode toast](images/deprecation-policy--add-on-compatibility-mode-toast.png)
-
-The mode stays on for the rest of the session and resets when the user refreshes Express or starts a new session.
-
-### Add-ons built against the current SDK
-
-An add-on that has been rebuilt and resubmitted against the current SDK never triggers this UX. Users see no dialog, no toast, and no mode change. This is the most direct user-experience reason to migrate well before your users encounter the dialog: the dialog text names the developer—you—as the party who hasn't updated yet.
-
 ## FAQs
 
 #### Will my live add-on suddenly break when an API is deprecated?
@@ -264,7 +239,7 @@ Each add-on is treated independently. What an add-on sees is determined by the S
 
 #### Will my users see anything when an API I use is deprecated?
 
-Usually not. The deprecation lifecycle is mostly invisible in the Adobe Express UI. For broader deprecations that require Express to enter Add-on Compatible Mode for live legacy add-ons, users see a one-time confirmation dialog and, on subsequent invocations in the same session, a brief auto-dismissing toast. Once you rebuild and resubmit against the current SDK, none of that UX is shown for your add-on.
+Usually not. The deprecation lifecycle is mostly invisible in the Adobe Express UI.
 
 #### Are experimental APIs covered by this policy?
 
