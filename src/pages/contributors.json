@@ -1,7 +1,7 @@
 {
-  "total": 242,
+  "total": 243,
   "offset": 0,
-  "limit": 242,
+  "limit": 243,
   "data": [
     {
       "page": "/config",
@@ -150,11 +150,11 @@
     {
       "page": "/guides/build/distribute/",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4",
+        "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4"
       ],
-      "lastUpdated": "2/24/2026"
+      "lastUpdated": "3/31/2026"
     },
     {
       "page": "/guides/build/distribute/guidelines/",
@@ -206,7 +206,7 @@
         "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4"
       ],
-      "lastUpdated": "2/26/2026"
+      "lastUpdated": "2/25/2026"
     },
     {
       "page": "/guides/build/distribute/guidelines/general/accessibility",
@@ -258,12 +258,12 @@
     {
       "page": "/guides/build/distribute/guidelines/general/listing",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/5939127?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4",
-        "https://avatars.githubusercontent.com/u/359935?v=4",
-        "https://avatars.githubusercontent.com/u/5939127?v=4"
+        "https://avatars.githubusercontent.com/u/359935?v=4"
       ],
-      "lastUpdated": "3/19/2026"
+      "lastUpdated": "4/17/2026"
     },
     {
       "page": "/guides/build/distribute/guidelines/general/performance",
@@ -340,7 +340,7 @@
         "https://avatars.githubusercontent.com/u/5939127?v=4",
         "https://avatars.githubusercontent.com/u/77717258?v=4"
       ],
-      "lastUpdated": "2/24/2026"
+      "lastUpdated": "4/2/2026"
     },
     {
       "page": "/guides/build/distribute/rejections",
@@ -378,10 +378,10 @@
       "page": "/guides/getting-started/changelog",
       "avatars": [
         "https://avatars.githubusercontent.com/u/5939127?v=4",
-        "https://avatars.githubusercontent.com/u/113968869?v=4",
-        "https://avatars.githubusercontent.com/u/14320591?v=4"
+        "https://avatars.githubusercontent.com/u/14320591?v=4",
+        "https://avatars.githubusercontent.com/u/113968869?v=4"
       ],
-      "lastUpdated": "3/30/2026"
+      "lastUpdated": "4/17/2026"
     },
     {
       "page": "/guides/getting-started/code-playground",
@@ -437,7 +437,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/27/2026"
+      "lastUpdated": "4/2/2026"
     },
     {
       "page": "/guides/getting-started/local-development/",
@@ -460,7 +460,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/27/2026"
+      "lastUpdated": "4/2/2026"
     },
     {
       "page": "/guides/getting-started/local-development/known-issues-limitations",
@@ -476,7 +476,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/24/2026"
+      "lastUpdated": "3/31/2026"
     },
     {
       "page": "/guides/getting-started/local-development/vs-code",
@@ -527,10 +527,11 @@
     {
       "page": "/guides/learn/how-to/create-renditions",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/5939127?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/27/2026"
+      "lastUpdated": "4/17/2026"
     },
     {
       "page": "/guides/learn/how-to/document-metadata",
@@ -560,7 +561,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/26/2026"
+      "lastUpdated": "4/3/2026"
     },
     {
       "page": "/guides/learn/how-to/handle-selection",
@@ -583,14 +584,14 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/26/2026"
+      "lastUpdated": "3/27/2026"
     },
     {
       "page": "/guides/learn/how-to/modal-dialogs",
       "avatars": [
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "2/22/2026"
+      "lastUpdated": "2/23/2026"
     },
     {
       "page": "/guides/learn/how-to/oauth2",
@@ -606,7 +607,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/26/2026"
+      "lastUpdated": "3/27/2026"
     },
     {
       "page": "/guides/learn/how-to/position-elements",
@@ -614,7 +615,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/25/2026"
+      "lastUpdated": "3/26/2026"
     },
     {
       "page": "/guides/learn/how-to/premium-content",
@@ -622,7 +623,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/26/2026"
+      "lastUpdated": "3/27/2026"
     },
     {
       "page": "/guides/learn/how-to/resize-elements",
@@ -637,7 +638,7 @@
       "avatars": [
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "2/22/2026"
+      "lastUpdated": "2/23/2026"
     },
     {
       "page": "/guides/learn/how-to/tutorials/",
@@ -645,7 +646,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/26/2026"
+      "lastUpdated": "3/27/2026"
     },
     {
       "page": "/guides/learn/how-to/tutorials/grids-addon",
@@ -653,7 +654,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "2/27/2026"
+      "lastUpdated": "4/2/2026"
     },
     {
       "page": "/guides/learn/how-to/tutorials/markdown-parser-text-api",
@@ -661,7 +662,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/26/2026"
+      "lastUpdated": "3/27/2026"
     },
     {
       "page": "/guides/learn/how-to/tutorials/spectrum-workshop/",
@@ -669,7 +670,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/26/2026"
+      "lastUpdated": "3/27/2026"
     },
     {
       "page": "/guides/learn/how-to/tutorials/spectrum-workshop/part1",
@@ -677,7 +678,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/26/2026"
+      "lastUpdated": "4/2/2026"
     },
     {
       "page": "/guides/learn/how-to/tutorials/spectrum-workshop/part2",
@@ -693,7 +694,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "2/27/2026"
+      "lastUpdated": "4/2/2026"
     },
     {
       "page": "/guides/learn/how-to/tutorials/stats-addon",
@@ -701,7 +702,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/26/2026"
+      "lastUpdated": "3/27/2026"
     },
     {
       "page": "/guides/learn/how-to/tutorials/using-lit-typescript",
@@ -709,7 +710,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "2/27/2026"
+      "lastUpdated": "4/2/2026"
     },
     {
       "page": "/guides/learn/how-to/use-audio",
@@ -725,7 +726,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/26/2026"
+      "lastUpdated": "3/27/2026"
     },
     {
       "page": "/guides/learn/how-to/use-geometry",
@@ -733,7 +734,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/26/2026"
+      "lastUpdated": "3/27/2026"
     },
     {
       "page": "/guides/learn/how-to/use-images",
@@ -741,7 +742,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/26/2026"
+      "lastUpdated": "3/27/2026"
     },
     {
       "page": "/guides/learn/how-to/use-pdf-powerpoint",
@@ -749,15 +750,16 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/15/2026"
+      "lastUpdated": "3/16/2026"
     },
     {
       "page": "/guides/learn/how-to/use-text",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/5939127?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/26/2026"
+      "lastUpdated": "4/17/2026"
     },
     {
       "page": "/guides/learn/how-to/use-videos",
@@ -772,7 +774,7 @@
       "avatars": [
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "2/22/2026"
+      "lastUpdated": "2/23/2026"
     },
     {
       "page": "/guides/learn/platform-concepts/architecture",
@@ -780,7 +782,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/26/2026"
+      "lastUpdated": "3/27/2026"
     },
     {
       "page": "/guides/learn/platform-concepts/context",
@@ -795,7 +797,7 @@
       "avatars": [
         "https://avatars.githubusercontent.com/u/5939127?v=4"
       ],
-      "lastUpdated": "5/11/2026"
+      "lastUpdated": "5/18/2026"
     },
     {
       "page": "/guides/learn/platform-concepts/document-api",
@@ -803,7 +805,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/11/2026"
+      "lastUpdated": "4/2/2026"
     },
     {
       "page": "/guides/learn/samples",
@@ -832,7 +834,7 @@
         "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/25365634?v=4"
       ],
-      "lastUpdated": "2/22/2026"
+      "lastUpdated": "2/23/2026"
     },
     {
       "page": "/references/addonsdk/",
@@ -869,7 +871,7 @@
         "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4"
       ],
-      "lastUpdated": "10/21/2025"
+      "lastUpdated": "10/22/2025"
     },
     {
       "page": "/references/addonsdk/addonsdk-instance",
@@ -894,7 +896,7 @@
       "avatars": [
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "2/22/2026"
+      "lastUpdated": "2/23/2026"
     },
     {
       "page": "/references/addonsdk/app-document",
@@ -905,7 +907,7 @@
         "https://avatars.githubusercontent.com/u/5939127?v=4",
         "https://avatars.githubusercontent.com/u/77717258?v=4"
       ],
-      "lastUpdated": "3/15/2026"
+      "lastUpdated": "3/16/2026"
     },
     {
       "page": "/references/addonsdk/app-oauth",
@@ -954,7 +956,7 @@
         "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/25365634?v=4"
       ],
-      "lastUpdated": "2/22/2026"
+      "lastUpdated": "2/23/2026"
     },
     {
       "page": "/references/addonsdk/runtime-dialog",
@@ -1018,16 +1020,16 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/18/2026"
+      "lastUpdated": "4/17/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/classes/artboard-list",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4",
-        "https://avatars.githubusercontent.com/u/113968869?v=4",
-        "https://avatars.githubusercontent.com/u/14320591?v=4"
+        "https://avatars.githubusercontent.com/u/113968869?v=4"
       ],
-      "lastUpdated": "3/18/2026"
+      "lastUpdated": "3/31/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/classes/artboard-node",
@@ -1054,7 +1056,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/18/2026"
+      "lastUpdated": "4/17/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/classes/base-node",
@@ -1063,7 +1065,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/18/2026"
+      "lastUpdated": "4/17/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/classes/bitmap-image",
@@ -1072,7 +1074,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/27/2026"
+      "lastUpdated": "4/17/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/classes/color-utils",
@@ -1081,7 +1083,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/18/2026"
+      "lastUpdated": "4/17/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/classes/complex-shape-node",
@@ -1098,7 +1100,7 @@
         "https://avatars.githubusercontent.com/u/5939127?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/18/2026"
+      "lastUpdated": "4/17/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/classes/editor",
@@ -1106,7 +1108,7 @@
         "https://avatars.githubusercontent.com/u/5939127?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/27/2026"
+      "lastUpdated": "4/17/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/classes/ellipse-node",
@@ -1150,7 +1152,7 @@
         "https://avatars.githubusercontent.com/u/5939127?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/18/2026"
+      "lastUpdated": "4/17/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/classes/fillable-node",
@@ -1167,7 +1169,7 @@
         "https://avatars.githubusercontent.com/u/5939127?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/18/2026"
+      "lastUpdated": "4/17/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/classes/grid-cell-node",
@@ -1208,11 +1210,11 @@
     {
       "page": "/references/document-sandbox/document-apis/classes/item-list",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4",
-        "https://avatars.githubusercontent.com/u/113968869?v=4",
-        "https://avatars.githubusercontent.com/u/14320591?v=4"
+        "https://avatars.githubusercontent.com/u/113968869?v=4"
       ],
-      "lastUpdated": "3/18/2026"
+      "lastUpdated": "3/31/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/classes/line-node",
@@ -1252,11 +1254,11 @@
     {
       "page": "/references/document-sandbox/document-apis/classes/page-list",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4",
-        "https://avatars.githubusercontent.com/u/113968869?v=4",
-        "https://avatars.githubusercontent.com/u/14320591?v=4"
+        "https://avatars.githubusercontent.com/u/113968869?v=4"
       ],
-      "lastUpdated": "3/18/2026"
+      "lastUpdated": "3/31/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/classes/page-node",
@@ -1283,7 +1285,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/18/2026"
+      "lastUpdated": "4/17/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/classes/read-only-mask",
@@ -1292,7 +1294,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/18/2026"
+      "lastUpdated": "4/17/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/classes/rectangle-node",
@@ -1306,11 +1308,11 @@
     {
       "page": "/references/document-sandbox/document-apis/classes/restricted-item-list",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4",
-        "https://avatars.githubusercontent.com/u/113968869?v=4",
-        "https://avatars.githubusercontent.com/u/14320591?v=4"
+        "https://avatars.githubusercontent.com/u/113968869?v=4"
       ],
-      "lastUpdated": "3/18/2026"
+      "lastUpdated": "3/31/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/classes/solid-color-shape-node",
@@ -1364,7 +1366,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/27/2026"
+      "lastUpdated": "4/17/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/classes/text-node",
@@ -1396,11 +1398,11 @@
     {
       "page": "/references/document-sandbox/document-apis/classes/threaded-text-list",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4",
-        "https://avatars.githubusercontent.com/u/113968869?v=4",
-        "https://avatars.githubusercontent.com/u/14320591?v=4"
+        "https://avatars.githubusercontent.com/u/113968869?v=4"
       ],
-      "lastUpdated": "3/27/2026"
+      "lastUpdated": "3/31/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/classes/threaded-text-node",
@@ -1446,6 +1448,13 @@
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
       "lastUpdated": "3/27/2026"
+    },
+    {
+      "page": "/references/document-sandbox/document-apis/constants/overview",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/5939127?v=4"
+      ],
+      "lastUpdated": "4/17/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/enumerations/arrow-head-type",
@@ -1975,8 +1984,8 @@
       "page": "/references/document-sandbox/document-apis/overview",
       "avatars": [
         "https://avatars.githubusercontent.com/u/5939127?v=4",
-        "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4",
+        "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/25365634?v=4",
         "https://avatars.githubusercontent.com/u/25644763?v=4",
         "https://avatars.githubusercontent.com/u/108254604?v=4",
@@ -1985,7 +1994,7 @@
         "https://avatars.githubusercontent.com/u/23693692?v=4",
         "https://avatars.githubusercontent.com/u/359935?v=4"
       ],
-      "lastUpdated": "3/27/2026"
+      "lastUpdated": "4/17/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/type-aliases/editor-event-handler",
@@ -2078,7 +2087,7 @@
         "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4"
       ],
-      "lastUpdated": "2/22/2026"
+      "lastUpdated": "2/23/2026"
     }
   ],
   ":type": "sheet"
