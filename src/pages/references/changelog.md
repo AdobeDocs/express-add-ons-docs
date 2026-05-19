@@ -25,6 +25,12 @@ contributors:
 
 # Changelog
 
+## 2026-05-19
+
+### Added
+
+- New [Deprecation Policy](../guides/learn/platform-concepts/deprecation-policy.md) guide explaining the API lifecycle from the developer's and user's perspective.
+
 ## 2026-03-26
 
 ### Stabilized
