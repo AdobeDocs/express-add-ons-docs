@@ -49,3 +49,6 @@ local-test.yml
 yalc.lock
 linter-output.txt
 linter-report.txt
+
+# local scratch (folder and all contents)
+/TEMP/

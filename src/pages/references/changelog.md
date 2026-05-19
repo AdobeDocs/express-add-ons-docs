@@ -25,11 +25,17 @@ contributors:
 
 # Changelog
 
+## 2026-05-19
+
+### Added
+
+- New [Deprecation Policy](../guides/learn/platform-concepts/deprecation-policy.md) guide explaining the API lifecycle from the developer's and user's perspective.
+
 ## 2026-03-26
 
 ### Stabilized
 
-The [`Node.resize()`](../references/document-sandbox/document-apis/classes/Node.md#resize) Document API and related APIs are no longer experimental and no longer require the `experimentalApis` flag in your manifest.
+The [`Node.resize()`](../references/document-sandbox/document-apis/classes/node.md#resize) Document API and related APIs are no longer experimental and no longer require the `experimentalApis` flag in your manifest.
 
 ### Added
 
@@ -63,7 +69,7 @@ We have added new APIs to generate image rendition of visual nodes directly from
 
 We have added new APIs for threaded text handling across multiple frames, as well as new accessors for retrieving a flattened list of all descendant nodes and text content within the page and visual node containers.
 
-- **Experimental** [`Editor.createThreadedText()`](../references/document-sandbox/document-apis/classes/Editor.md#createthreadedtext) method - Create a [`ThreadedTextNode`](../references/document-sandbox/document-apis/classes/threaded-text-node.md) for threaded text handling across multiple frames.
+- **Experimental** [`Editor.createThreadedText()`](../references/document-sandbox/document-apis/classes/editor.md#createthreadedtext) method - Create a [`ThreadedTextNode`](../references/document-sandbox/document-apis/classes/threaded-text-node.md) for threaded text handling across multiple frames.
 - **Experimental** [`ThreadedTextList`](../references/document-sandbox/document-apis/classes/threaded-text-list.md) class - Represents an ordered list of [`ThreadedTextNode`](../references/document-sandbox/document-apis/classes/threaded-text-node.md) objects, creating a single, continuous text story across multiple frames.
 - **Experimental** [`allDescendants`](../references/document-sandbox/document-apis/classes/page-node.md#alldescendants) accessor on [`PageNode`](../references/document-sandbox/document-apis/classes/page-node.md) and [`VisualNode`](../references/document-sandbox/document-apis/classes/visual-node.md) - Returns a flattened, read-only list of all descendant nodes within the container. For text-based nodes, please use the new `allTextContent` accessor instead.
 - **Experimental** [`allTextContent`](../references/document-sandbox/document-apis/classes/page-node.md#alltextcontent) accessor on [`PageNode`](../references/document-sandbox/document-apis/classes/page-node.md) and [`VisualNode`](../references/document-sandbox/document-apis/classes/visual-node.md) - Returns a flattened, read-only list of [`TextContent`](../references/document-sandbox/document-apis/interfaces/text-content.md) instances from all text-based nodes within the container.
@@ -94,7 +100,7 @@ We have added new APIs for threaded text handling across multiple frames, as wel
 
 - **Major restructure** of the [Add-on UI SDK Constants Reference](addonsdk/addonsdk-constants.md).
 - Improved content and metadata for SEO and AI assistant optimization.
-- **Breaking change:** Removed experimental resize/rescale methods (`rescaleProportionalToWidth()`, `rescaleProportionalToHeight()`, `resizeToFitWithin()`, `resizeToCover()`) and replaced with unified **experimental** [`resize()`](../references/document-sandbox/document-apis/classes/Node.md#resize) method offering more flexible behavior control via [`ResizeBehavior`](../references/document-sandbox/document-apis/enumerations/resize-behavior.md) options. The [`experimentalApis`](manifest/index.md#requirements) flag is required.
+- **Breaking change:** Removed experimental resize/rescale methods (`rescaleProportionalToWidth()`, `rescaleProportionalToHeight()`, `resizeToFitWithin()`, `resizeToCover()`) and replaced with unified **experimental** [`resize()`](../references/document-sandbox/document-apis/classes/node.md#resize) method offering more flexible behavior control via [`ResizeBehavior`](../references/document-sandbox/document-apis/enumerations/resize-behavior.md) options. The [`experimentalApis`](manifest/index.md#requirements) flag is required.
 -
 
 ## 2025-12-28
@@ -154,7 +160,7 @@ The Adobe Express Code Playground has received a major update with the release o
 
 ### Updated
 
-- [`cloneInPlace()`](../references/document-sandbox/document-apis/classes/Node.md#cloneinplace) method **promoted from experimental to stable** - Available on all node types for creating copies with subtrees
+- [`cloneInPlace()`](../references/document-sandbox/document-apis/classes/node.md#cloneinplace) method **promoted from experimental to stable** - Available on all node types for creating copies with subtrees
 - [`paragraphStyleRanges`](../references/document-sandbox/document-apis/classes/text-content-model.md#paragraphstyleranges) property **promoted from experimental to stable** - Get/set paragraph-level styles with ranges
 - [`applyParagraphStyles()`](../references/document-sandbox/document-apis/classes/text-content-model.md#applyparagraphstyles) method **promoted from experimental to stable** - Apply styles to specific paragraph ranges
 - [`layout`](../references/document-sandbox/document-apis/classes/standalone-text-node.md#layout) property **promoted from experimental to stable** - Control text layout modes for standalone text
@@ -211,11 +217,11 @@ The following how-to guides have been updated with `ImportAddOnData` support for
 
 ### Updated
 
-- Renamed `clone()` to [`cloneInPlace()`](../references/document-sandbox/document-apis/classes/Node.md#cloneInPlace).
+- Renamed `clone()` to [`cloneInPlace()`](../references/document-sandbox/document-apis/classes/node.md#cloneInPlace).
 
 <InlineAlert slots="text" variant="warning" className="inline-alert-bullet-aligned"/>
 
-**IMPORTANT:** The [`cloneInPlace()`](../references/document-sandbox/document-apis/classes/Node.md#cloneInPlace) method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](manifest/index.md#requirements) section of the `manifest.json`.
+**IMPORTANT:** The [`cloneInPlace()`](../references/document-sandbox/document-apis/classes/node.md#cloneInPlace) method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](manifest/index.md#requirements) section of the `manifest.json`.
 
 - Updated [`maskShape`](../references/document-sandbox/document-apis/classes/grid-cell-node.md#maskShape) in `GridCellNode` to readonly.
 - The [`BitmapImage`](../references/document-sandbox/document-apis/classes/bitmap-image.md) has been converted from an interface to a class.
@@ -267,7 +273,7 @@ With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can [co
 ### Added
 
 - The Text API has been updated to include Super/SubScript via the `baselineShift` property of the [CharacterStyles](./document-sandbox/document-apis/interfaces/character-styles.md) interface. The corresponding [TextScriptStyle](./document-sandbox/document-apis/enumerations/text-script-style.md) enumerable has been added. The new API has been introduced as stable.
-- A new [`cloneInPlace()`](./document-sandbox/document-apis/classes/Node.md#cloneInPlace) method has been added to the [Node](./document-sandbox/document-apis/classes/Node.md) class and propagated to all its subclasses, which allows you to clone a node and all its children. This new API is still experimental, and requires the `experimentalApis` flag to be set to `true` in the add-on's `manifest.json`.
+- A new [`cloneInPlace()`](./document-sandbox/document-apis/classes/node.md#cloneInPlace) method has been added to the [Node](./document-sandbox/document-apis/classes/node.md) class and propagated to all its subclasses, which allows you to clone a node and all its children. This new API is still experimental, and requires the `experimentalApis` flag to be set to `true` in the add-on's `manifest.json`.
 - New [`MediaRectangleNode`](./document-sandbox/document-apis/classes/media-rectangle-node.md), a base class for a rectangular node that represents the _uncropped_ media within a [`MediaContainerNode`](./document-sandbox/document-apis/classes/media-container-node.md).
 - New [`UnknownMediaRectangleNode`](./document-sandbox/document-apis/classes/unknown-media-rectangle-node.md), a subclass of [`MediaRectangleNode`](./document-sandbox/document-apis/classes/media-rectangle-node.md) for cases where the media type is not yet supported by the API.
 
@@ -294,12 +300,12 @@ The [Page Metadata API](addonsdk/app-document.md#pagemetadata) now includes new 
 
 ### Added
 
-- Four new Resize/Rescale APIs have been added to the [Node](./document-sandbox/document-apis/classes/Node.md) class as experimental features:
+- Four new Resize/Rescale APIs have been added to the [Node](./document-sandbox/document-apis/classes/node.md) class as experimental features:
   - `rescaleProportionalToHeight()`
   - `rescaleProportionalToWidth()`
   - `resizeToCover()`
   - `resizeToFitWithin()`
-- [`Editor.createText()`](./document-sandbox/document-apis/classes/Editor.md#createtext) now accepts a String parameter, which sets the text content of the new node. The use without a parameter is deprecated.
+- [`Editor.createText()`](./document-sandbox/document-apis/classes/editor.md#createtext) now accepts a String parameter, which sets the text content of the new node. The use without a parameter is deprecated.
 - [`TextNode()`](./document-sandbox/document-apis/classes/text-node.md) is now an abstract base class with two specialized subclasses:
   - [StandaloneTextNode](./document-sandbox/document-apis/classes/standalone-text-node.md): displays text in a single frame.
   - [ThreadedTextNode](./document-sandbox/document-apis/classes/threaded-text-node.md): supports text that can flow across multiple frames.
@@ -463,7 +469,7 @@ For removing expired SSL certificate or certificate authority, developers can no
 
 - Stabilized the following HLAPI's:
   - The [TextNode](./document-sandbox/document-apis/classes/text-node.md) API's.
-  - The [fromPostscriptName()](./document-sandbox/document-apis/classes/Fonts.md#fromPostscriptName) API of [Fonts](./document-sandbox/document-apis/classes/Fonts.md) class.
+  - The [fromPostscriptName()](./document-sandbox/document-apis/classes/fonts.md#fromPostscriptName) API of [Fonts](./document-sandbox/document-apis/classes/fonts.md) class.
   - The [TextContentModel](./document-sandbox/document-apis/classes/text-content-model.md) APIs like [`TextContentModel.characterStyleRanges`](./document-sandbox/document-apis/classes/text-content-model.md#characterstyleranges). The [`experimentalApis`](manifest/index.md#requirements) flag is no longer required to use these APIs.
 
 ## 2025-03-03
@@ -472,7 +478,7 @@ For removing expired SSL certificate or certificate authority, developers can no
 
 - The Per Element Metadata APIs have been stabilized. You can refer to the [AddOnData](./document-sandbox/document-apis/classes/add-on-data.md) class for details. The [`experimentalApis`](manifest/index.md#requirements) flag is no longer required to use these APIs.
 
-- The Selection Change Notification Events APIs have been stabilized. You can refer to the [Context](./document-sandbox/document-apis/classes/Context.md) class, which provides two methods: [`on()`](./document-sandbox/document-apis/classes/Context.md#on) and [`off()`](./document-sandbox/document-apis/classes/Context.md#off). These methods allow you to register and un-register notifications for selection changes and selection properties changes. The [`experimentalApis`](manifest/index.md#requirements) flag is no longer required to use these APIs.
+- The Selection Change Notification Events APIs have been stabilized. You can refer to the [Context](./document-sandbox/document-apis/classes/context.md) class, which provides two methods: [`on()`](./document-sandbox/document-apis/classes/context.md#on) and [`off()`](./document-sandbox/document-apis/classes/context.md#off). These methods allow you to register and un-register notifications for selection changes and selection properties changes. The [`experimentalApis`](manifest/index.md#requirements) flag is no longer required to use these APIs.
 
 ## 2025-02-26
 
@@ -561,7 +567,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
   - [AvailableFont](./document-sandbox/document-apis/classes/available-font.md) and [UnavailableFont](./document-sandbox/document-apis/classes/unavailable-font.md) classes.
   - Supporting interfaces, enumerations and type aliases.
 - Added **Per Element Metadata APIs**: with this feature, add-ons can store private metadata to any node of the Express document. This metadata is accessible only to the add-on that has set it. See the [`AddOnData`](./document-sandbox/document-apis/classes/add-on-data.md) class and the [`addOnData`](./document-sandbox/document-apis/classes/base-node.md#addondata) accessor for the BaseNode class.
-- Added **Selection Change Notification Events APIs**: add-on can register to be notified when selection and properties in the selection changes on the document. The [`Context`](./document-sandbox/document-apis/classes/Context.md) class will expose two [`on()`](./document-sandbox/document-apis/classes/Context.md#on) and [`off()`](./document-sandbox/document-apis/classes/Context.md#off) methods which can be used to register and un-register selection change and selection properties change notifications.
+- Added **Selection Change Notification Events APIs**: add-on can register to be notified when selection and properties in the selection changes on the document. The [`Context`](./document-sandbox/document-apis/classes/context.md) class will expose two [`on()`](./document-sandbox/document-apis/classes/context.md#on) and [`off()`](./document-sandbox/document-apis/classes/context.md#off) methods which can be used to register and un-register selection change and selection properties change notifications.
 - Added a new [`GridCellNode`](./document-sandbox/document-apis/classes/grid-cell-node.md) class that represents a **cell in a grid**.
 
 <InlineAlert slots="text" variant="warning"/>
@@ -591,7 +597,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 ## 2024-09-10
 
 - Added a new [`replaceMedia()`](./document-sandbox/document-apis/classes/media-container-node.md#replacemedia) method to the `MediaContainerNode` class that can be used to replace existing media inline.
-- Refactoring done to the [`Stroke`](./document-sandbox/document-apis/interfaces/Stroke.md) APIs.
+- Refactoring done to the [`Stroke`](./document-sandbox/document-apis/interfaces/stroke.md) APIs.
 
 ## 2024-07-22
 
@@ -617,7 +623,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
   - [`currentPage`](./document-sandbox/document-apis/classes/express-context.md#currentpage) Context accessor: returns the active page.
   - [`visualRoot`](./document-sandbox/document-apis/classes/visual-node.md#visualroot) accessor: the highest ancestor that still has visual presence in the document—typically, an Artboard.
   - [`cloneInPlace()`](./document-sandbox/document-apis/classes/page-node.md#cloneinplace) method: clones a Page, all artboards within it, and all content within those artboards.
-  - Support to Bounds has been added in several classes: [`boundsInParent`](./document-sandbox/document-apis/classes/Node.md#boundsinparent); `boundsLocal` (for both [GroupNode](./document-sandbox/document-apis/classes/group-node.md#boundslocal) and [VisualNode](./document-sandbox/document-apis/classes/visual-node.md#boundslocal)); [`centerPointLocal`](./document-sandbox/document-apis/classes/visual-node.md#centerpointlocal); [`topLeftLocal`](./document-sandbox/document-apis/classes/visual-node.md#topleftlocal); [`boundsInNode()`](./document-sandbox/document-apis/classes/Node.md#boundsinnode); [`localPointInNode()`](./document-sandbox/document-apis/classes/visual-node.md#localpointinnode);
+  - Support to Bounds has been added in several classes: [`boundsInParent`](./document-sandbox/document-apis/classes/node.md#boundsinparent); `boundsLocal` (for both [GroupNode](./document-sandbox/document-apis/classes/group-node.md#boundslocal) and [VisualNode](./document-sandbox/document-apis/classes/visual-node.md#boundslocal)); [`centerPointLocal`](./document-sandbox/document-apis/classes/visual-node.md#centerpointlocal); [`topLeftLocal`](./document-sandbox/document-apis/classes/visual-node.md#topleftlocal); [`boundsInNode()`](./document-sandbox/document-apis/classes/node.md#boundsinnode); [`localPointInNode()`](./document-sandbox/document-apis/classes/visual-node.md#localpointinnode);
 - The CLI has been updated to release version `2.0.0`, and includes the following:
   - Periodic login and EULA consent are no longer required.
   - Two new templates for creating add-ons with built-in support to Spectrum Web Components have been added and documented: `swc-javascript` and `swc-javascript-with-document-sandbox`. Typescript templates have been renamed to `swc-typescript` and `swc-typescript-with-document-sandbox`. See [this page](../guides/getting-started/local-development/dev-tooling.md#templates) for details on all the available templates.
@@ -657,7 +663,7 @@ You must provide trader details by February 16, 2025, to keep your add-on visibl
 
 ## 2024-02-07
 
-- A new [`createPath`](./document-sandbox/document-apis/classes/Editor.md#createpath) method is now available for allowing you to create a path with the Document APIs.
+- A new [`createPath`](./document-sandbox/document-apis/classes/editor.md#createpath) method is now available for allowing you to create a path with the Document APIs.
 - Updates descriptions in various methods and classes in the [Document APIs](document-sandbox/document-apis/index.md).
 - Updates to the [`createRenditions`](addonsdk/app-document.md#createrenditions) API, including a new [`print`](addonsdk/addonsdk-constants.md) option for `RenditionIntent` to be be used for generating a print optimized pdf, and an update to [`PdfRenditionOptions`](addonsdk/app-document.md#pdfrenditionoptions) which exposes the ability to customize each PDF Page Box's (`MediaBox`, `BleedBox`, `CropBox`, `TrimBox`) dimensions using a `pageBoxes` property.
 - Updates to the [Using Adobe Spectrum tutorial](../guides/learn/how-to/tutorials/spectrum-workshop/index.md) with additional details on [why you should use Spectrum CSS variables](../guides/learn/how-to/tutorials/spectrum-workshop/part3.md#styling-with-spectrum-css) to style your add-ons, and [additional helpful guidelines for locating and using them](../guides/learn/how-to/tutorials/spectrum-workshop/part3.md#layout-and-typography-styling).
@@ -695,7 +701,7 @@ Added a new tutorial - [Building UIs using Adobe's Spectrum Design System](../gu
 
 Some items in the following list of changes may have been mentioned in recent updates but are being listed in this summary again to serve as a reminder.
 
-- The methods in the [Document API Editor class](./document-sandbox/document-apis/classes/Editor.md) to create a color fill and stroke have been renamed to [`makeColorFill`](./document-sandbox/document-apis/classes/Editor.md#makecolorfill) and [`makeStroke`](./document-sandbox/document-apis/classes/Editor.md#makestroke) respectively.
+- The methods in the [Document API Editor class](./document-sandbox/document-apis/classes/editor.md) to create a color fill and stroke have been renamed to [`makeColorFill`](./document-sandbox/document-apis/classes/editor.md#makecolorfill) and [`makeStroke`](./document-sandbox/document-apis/classes/editor.md#makestroke) respectively.
 - `strokes` and `fills` have been renamed to their singular counterpart. (Express does not support multiple strokes or fills). You should use `stroke` and `fill` going forward to access them, and they will no longer be `ItemList` objects, since they represent only a single stroke or fill.
 
   ```js
@@ -708,7 +714,7 @@ Some items in the following list of changes may have been mentioned in recent up
   ellipse.fill = ellipseFill;
   ```
 
-  - `fill` and `stroke.color` are just a [color object](./document-sandbox/document-apis/interfaces/Color.md) of the form `{ red, green, blue, alpha }`.
+  - `fill` and `stroke.color` are just a [color object](./document-sandbox/document-apis/interfaces/color.md) of the form `{ red, green, blue, alpha }`.
   - `stroke` is an object of the form `{ color, width, dashPattern, dashOffset }`
 
 - Color utilities have moved to [`colorUtils`](./document-sandbox/document-apis/classes/color-utils.md) instead of `utils`.
@@ -966,13 +972,13 @@ Some items in the following list of changes may have been mentioned in recent up
   - New [RestrictedItemList class](./document-sandbox/document-apis/classes/restricted-item-list.md)
   - New [UnknownNode class](./document-sandbox/document-apis/classes/unknown-node.md)
   - New [SolidColorShapeNode class](./document-sandbox/document-apis/classes/solid-color-shape-node.md)
-  - New [Point interface](./document-sandbox/document-apis/interfaces/Point.md)
-  - New `queueAsyncEdit` method added to the [Editor](./document-sandbox/document-apis/classes/Editor.md) class.
+  - New [Point interface](./document-sandbox/document-apis/interfaces/point.md)
+  - New `queueAsyncEdit` method added to the [Editor](./document-sandbox/document-apis/classes/editor.md) class.
   - Renames the [Constants](./document-sandbox/document-apis/constants/overview.md) to remove the `Value` suffix.
 
   **Updates to Node Classes**\<br/\>
 
-The accessors and methods below were removed or replaced with new names in the [`Node` class](./document-sandbox/document-apis/classes/Node.md) and classes that extend it. Please refer to the [Document API References](document-sandbox/document-apis/index.md) specifically to learn more about each.
+The accessors and methods below were removed or replaced with new names in the [`Node` class](./document-sandbox/document-apis/classes/node.md) and classes that extend it. Please refer to the [Document API References](document-sandbox/document-apis/index.md) specifically to learn more about each.
 
 - Removes `absoluteRotation` accessor
 - Removes `absoluteTransform` accessor
