@@ -16,6 +16,19 @@ keywords:
   - Metadata
   - MediaAttributes
   - replaceMedia
+  - replaceMediaWithEditedImage
+  - ReplaceMediaWithEditedImageOptions
+  - preserveCutoutFilter
+  - MediaContainerNode
+  - ImageRectangleNode
+  - BitmapImage
+  - fetchBitmapImage
+  - addOnData
+  - mediaAddOnData
+  - experimentalApis
+  - photo effects
+  - image transformation
+  - provenance
 title: Use Images
 description: Use Images.
 contributors:
@@ -51,7 +64,22 @@ faq:
 
     - question: "Can I replace any media type with `replaceMedia()`?"
       answer: "Currently, `replaceMedia()` only accepts `BitmapImage` objects. The original media can be any type, but replacement must be a static image."
-      
+
+    - question: "How do I replace media with an edited variant of the existing image?"
+      answer: "Call the experimental `replaceMediaWithEditedImage(blob, { preserveCutoutFilter })` method on a `MediaContainerNode`. It accepts a `Blob` directly and preserves `addOnData`, attribution, and filter effects from the original image."
+
+    - question: "When should I use `replaceMediaWithEditedImage()` instead of `replaceMedia()`?"
+      answer: "Use `replaceMediaWithEditedImage()` when the new blob is a modified version of the current image (recolor, upscale, stylize). Use `replaceMedia()` when the replacement is a completely unrelated image."
+
+    - question: "What does `preserveCutoutFilter` do?"
+      answer: "When `true`, the cutout (background-removal) filter applied to the current media is re-applied to the new blob. When `false`, the cutout filter is dropped."
+
+    - question: "Does `replaceMediaWithEditedImage()` preserve crop settings?"
+      answer: "Yes, if the new blob has the same aspect ratio as the original. If the aspect ratio differs, the crop is reset but filter effects and metadata are still preserved."
+
+    - question: "Why does `replaceMediaWithEditedImage()` throw?"
+      answer: "It throws if the current media has been generated or modified by generative AI, because the API cannot safely overwrite the existing derived-from link to the original asset."
+
     - question: "How do I attach custom metadata to imported images?"
       answer: "Use the optional `importAddOnData` parameter with `nodeAddOnData` and `mediaAddOnData` objects to store custom metadata that can be retrieved later via document sandbox APIs."
 ---
@@ -379,6 +407,108 @@ MediaContainerNode
     └── UnknownMediaRectangleNode  > for other media types
 ```
 
+## Replace Media with an Edited Image
+
+The [`replaceMediaWithEditedImage()`](../../../references/document-sandbox/document-apis/classes/media-container-node.md#replacemediawitheditedimage) method on [`MediaContainerNode`](../../../references/document-sandbox/document-apis/classes/media-container-node.md) replaces the current media with an *edited variant* of the same image — a recolor, upscale, stylized version, and so on — while preserving the original's filter effects, per-element metadata (`addOnData`), and asset provenance (attribution IDs, author information, source such as Adobe Stock).
+
+It accepts a `Blob` containing the transformed bitmap as the first argument, and a [`ReplaceMediaWithEditedImageOptions`](../../../references/document-sandbox/document-apis/interfaces/replace-media-with-edited-image-options.md) object as the second. The only option is `preserveCutoutFilter`: when `true`, the existing cutout (background-removal) filter is re-applied to the new image. The method returns a `Promise<void>`, and throws if the current media has been generated or modified by generative AI.
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** The `replaceMediaWithEditedImage()` API is currently ***experimental only*** and requires the `experimentalApis` flag set to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of `manifest.json`.
+
+Pick this method over [`replaceMedia()`](../../../references/document-sandbox/document-apis/classes/media-container-node.md#replacemedia) when the new pixels are derived from the existing image. If the replacement is an unrelated image, use `replaceMedia()` instead.
+
+| When the replacement blob is…                                      | `replaceMediaWithEditedImage(blob, options)`                                 | `replaceMedia(media)`         |
+| ------------------------------------------------------------------ | ---------------------------------------------------------------------------- | ----------------------------- |
+| An edited variant of the current image (recolor, upscale, stylize) | ✅ Use this — preserves metadata + filters                                    | ❌ Drops metadata and filters  |
+| A completely unrelated image                                       | ❌ Throws on GenAI-modified source; preserves attribution that does not apply | ✅ Use this                    |
+| Same aspect ratio as original                                      | Crop preserved                                                               | Crop reset                    |
+| Different aspect ratio                                             | Crop reset, filters preserved                                                | Crop reset, filters preserved |
+
+### Example
+
+Assuming the user has selected a `MediaContainerNode`, the canonical recipe is two calls: first fetch the original bitmap as a `Blob` on the sandbox side via [`ImageRectangleNode.fetchBitmapImage()`](../../../references/document-sandbox/document-apis/classes/image-rectangle-node.md#fetchbitmapimage) and [`BitmapImage.data()`](../../../references/document-sandbox/document-apis/classes/bitmap-image.md#data), pass it to the iframe for editing, then call `replaceMediaWithEditedImage()` with the edited blob.
+
+```json
+// manifest.json
+{
+  "requirements": {
+    "apps": [{ "name": "Express", "apiVersion": 1 }],
+    "experimentalApis": true // 👈 👀 required for replaceMediaWithEditedImage()
+  }
+}
+```
+
+```js
+// sandbox/code.js
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
+import { editor, constants } from "express-document-sdk";
+
+const { runtime } = addOnSandboxSdk.instance;
+
+runtime.exposeApi({
+  async getOriginalBlob() {
+    if (!editor.context.hasSelection) return null;
+
+    const node = editor.context.selection[0];
+    if (node.type !== constants.SceneNodeType.mediaContainer) return null;
+
+    // 👈 fetchBitmapImage() is itself experimental — same manifest flag covers it.
+    const bitmapImage = await node.mediaRectangle.fetchBitmapImage();
+    return await bitmapImage.data();
+  },
+
+  async replaceWithEdited(editedBlob, preserveCutout = true) {
+    const node = editor.context.selection[0];
+    if (node?.type !== constants.SceneNodeType.mediaContainer) {
+      throw new Error("Select a MediaContainerNode first.");
+    }
+
+    try {
+      await node.replaceMediaWithEditedImage(editedBlob, {
+        preserveCutoutFilter: preserveCutout // 👈
+      });
+    } catch (err) {
+      // ⚠️ Throws if the current media was generated or modified by generative AI.
+      console.error("replaceMediaWithEditedImage rejected:", err);
+      throw err;
+    }
+  }
+});
+```
+
+```js
+// ui/index.js
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+addOnUISdk.ready.then(async () => {
+  const sandboxProxy = await addOnUISdk.instance.runtime.apiProxy("documentSandbox");
+
+  // 1. Pull the original image's blob out of the selected node.
+  const originalBlob = await sandboxProxy.getOriginalBlob();
+  if (!originalBlob) return;
+
+  // 2. Apply the add-on's transformation on the iframe side (canvas, AI model,
+  //    library — anything that produces a new Blob from the original pixels).
+  const editedBlob = await transformBlob(originalBlob); // 👈 add-on-specific edit
+
+  // 3. Hand the edited blob back to the sandbox to replace the media in place.
+  await sandboxProxy.replaceWithEdited(editedBlob, true);
+});
+```
+
+### Example: drop the cutout filter when the edit changes the foreground
+
+When the add-on's edit substantially changes the foreground subject (e.g. a radical warp or recolor), the cached cutout mask no longer fits. Pass `preserveCutoutFilter: false` to discard it; the Express filter and metadata are still preserved.
+
+```js
+// sandbox/code.js — partial
+await node.replaceMediaWithEditedImage(editedBlob, {
+  preserveCutoutFilter: false // 👈 cutout will be dropped
+});
+```
+
 ## FAQs
 
 #### Q: How do I add images to a document?
@@ -426,6 +556,26 @@ MediaContainerNode
 #### Q: Can I replace any media type with `replaceMedia()`?
 
 **A:** Currently, `replaceMedia()` only accepts `BitmapImage` objects. The original media can be any type, but replacement must be a static image.
+
+#### Q: How do I replace media with an edited variant of the existing image?
+
+**A:** Call the experimental `replaceMediaWithEditedImage(blob, { preserveCutoutFilter })` method on a `MediaContainerNode`. It accepts a `Blob` directly and preserves `addOnData`, attribution, and filter effects from the original image.
+
+#### Q: When should I use `replaceMediaWithEditedImage()` instead of `replaceMedia()`?
+
+**A:** Use `replaceMediaWithEditedImage()` when the new blob is a modified version of the current image (recolor, upscale, stylize). Use `replaceMedia()` when the replacement is a completely unrelated image.
+
+#### Q: What does `preserveCutoutFilter` do?
+
+**A:** When `true`, the cutout (background-removal) filter applied to the current media is re-applied to the new blob. When `false`, the cutout filter is dropped.
+
+#### Q: Does `replaceMediaWithEditedImage()` preserve crop settings?
+
+**A:** Yes, if the new blob has the same aspect ratio as the original. If the aspect ratio differs, the crop is reset but filter effects and metadata are still preserved.
+
+#### Q: Why does `replaceMediaWithEditedImage()` throw?
+
+**A:** It throws if the current media has been generated or modified by generative AI, because the API cannot safely overwrite the existing derived-from link to the original asset.
 
 #### Q: How do I attach custom metadata to imported images?
 
