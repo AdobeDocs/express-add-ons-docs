@@ -35,7 +35,7 @@ faq:
       answer: "Deprecation is a signal that an API is on its way out: it still works, but you should plan to migrate. Removal is when the API is taken out of the SDK. Once an API is removed, new submissions can no longer use it; live submissions that already used it continue to observe the original behavior."
 
     - question: "What is the standard window between deprecation and removal?"
-      answer: "The standing target is two quarters—roughly six months—between when an API is marked deprecated and when it is removed. This window is intended to give developers time to migrate and resubmit, and to give enterprise customers time to absorb the change. Specific deprecations may use a longer window when the affected surface is broad."
+      answer: "The window varies by deprecation. Each announcement names a scheduled removal date. The intent is to give developers enough time to migrate, build, and resubmit, and to give enterprise customers time to absorb the change. Specific deprecations may use a longer window when the affected surface is broad."
 
     - question: "What do I need to do to pick up new APIs and behaviors?"
       answer: "Rebuild your add-on against the latest SDK and resubmit it to the marketplace. Resubmitting is what causes the platform to expose the current API surface—and the current API behaviors—to your add-on."
@@ -224,7 +224,7 @@ Deprecation is a signal that an API is on its way out: it still works, but you s
 
 #### What is the standard window between deprecation and removal?
 
-The standing target is two quarters—roughly six months—between when an API is marked deprecated and when it is removed. This window is intended to give developers time to migrate and resubmit, and to give enterprise customers time to absorb the change. Specific deprecations may use a longer window when the affected surface is broad.
+The window varies by deprecation. Each announcement names a scheduled removal date. The intent is to give developers enough time to migrate, build, and resubmit, and to give enterprise customers time to absorb the change. Specific deprecations may use a longer window when the affected surface is broad.
 
 #### What do I need to do to pick up new APIs and behaviors?
 
