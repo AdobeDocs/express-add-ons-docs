@@ -11,13 +11,13 @@
     "name": "Tim Kim",
     "url": "https://github.com/timkim"
   },
-  "engines": {
-    "node": "^24.11.0"
-  },
   "dependencies": {
     "dotenv": "17.2.2",
     "fs-extra": "11.3.2",
     "jszip": "3.10.1"
+  },
+  "engines": {
+    "node": "^24.11.0"
   },
   "scripts": {
     "dev": "npx --yes --prefer-online github:AdobeDocs/adp-devsite-utils dev",
