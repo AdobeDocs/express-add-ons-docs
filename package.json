@@ -1,11 +1,11 @@
 {
   "private": true,
-  "name": "dev-site-documentation-template",
+  "name": "express-add-ons-docs",
   "version": "1.0.0",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AdobeDocs/dev-site-documentation-template"
+    "url": "https://github.com/AdobeDocs/express-add-ons-docs"
   },
   "author": {
     "name": "Tim Kim",
