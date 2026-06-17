@@ -21,4 +21,12 @@ linter-report.txt
 .cursorindexingignore
 .cursor/
 lerna-debug.log
-/TEMP/
+
+# DevEx
+temp/
+.yarn/
+.venv/
+.editorconfig
+.claude/
+*.bak
+npm-debug.log*
