@@ -87,28 +87,28 @@ This page explains the model and the contract it creates for add-ons: what activ
 
 **New to the document model?**
 
-If terms like *page*, *artboard*, and *scenegraph* are unfamiliar, start with the [Document API Concepts](document-api.md) guide and the [Developer Terminology](../fundamentals/terminology.md) reference. When you're ready to write code, the [Support Large Documents](../how-to/large-document-support.md) how-to has the recipes.
+If terms like _page_, _artboard_, and _scenegraph_ are unfamiliar, start with the [Document API Concepts](document-api.md) guide and the [Developer Terminology](../fundamentals/terminology.md) reference. When you're ready to write code, the [Support Large Documents](../how-to/large-document-support.md) how-to has the recipes.
 
 ## Why Large Document Support exists
 
-A document model that keeps every page's content in memory works well until documents get big. As page counts climb, the cost of holding all that content—every shape, every block of text, every image on every page—grows with the document, and eventually it becomes impractical. On lower-end devices the ceiling arrives sooner: Express can run out of memory and become unstable.
+A document model that keeps every page's content in memory works well until documents get big. As page counts climb, the cost of holding all that content—every shape, every block of text, every image on every page—grows with the document, and eventually it becomes impractical.
 
 Large Document Support removes that ceiling by loading page content on demand. The pages you are working with are active and fully available; the rest are kept inactive until you return to them. The benefit is scale and stability. The consequence—the part that matters to add-on developers—is that **content is no longer guaranteed to be available everywhere, all the time.**
 
 ## Active and Inactive pages
 
-Think of a document as a shelf of books. The book open on your desk is *active*: you can read its pages and write in its margins. The other books are still on the shelf—you can read each spine to know its title and thickness, but to read what's inside one you first have to take it down and open it.
+Think of a document as a shelf of books. The book open on your desk is _active_: you can read its pages and write in its margins. The other books are still on the shelf—you can read each spine to know its title, but to read what's inside one you first have to take it down and open it.
 
 Pages work the same way:
 
 - An **active page** has its content loaded. You can read and modify everything in it—its artboards, text, shapes, and more.
 - An **inactive page** does not. Its **metadata**—`id`, `name`, `width`, `height`, and add-on data—is still readable, the way a book's spine is. But its **DOM content**—artboards and the nodes inside them—is not accessible until the page becomes active again.
 
-A useful rule of thumb is **visible equals active**: the page in the viewport is always active. **The reverse does not hold**—Express may keep several pages active at once, and a page you visited a moment ago may linger in an active state for a while. The important discipline is to *not rely on it*: a page can be marked inactive at any time, and once it is, its entire subtree becomes inaccessible together.
+A useful rule of thumb is **visible equals active**: the page in the viewport is always active. **The reverse does not hold**—Express may keep several pages active at once, and a page you visited a moment ago may linger in an active state for a while. The important fact is to _not rely on it_: a page can be marked inactive at any time, and once it is, its entire subtree becomes inaccessible together.
 
-This is why the model draws a hard line between **content** and **metadata**. Metadata describes a page; content lives inside it. Metadata is cheap and stays available even for inactive pages. Content is what Express loads and unloads. 
+This is why the model draws a hard line between **content** and **metadata**. Metadata describes a page; content lives inside it. Metadata is cheap and stays available even for inactive pages. Content is what Express loads and unloads.
 
-## Who is impacted
+## What add-ons are impacted
 
 Not every add-on is affected. An add-on that operates on the current page, and doesn't carry node references across asynchronous waits, generally needs no changes. The add-ons that need attention fall into a few recognizable use cases:
 
@@ -122,38 +122,38 @@ If your add-on does none of these, the model's introduction is invisible to it. 
 
 ## The Active Page contract
 
-The new model creates a simple contract: **an add-on should only hold references to nodes on a currently active page.** A node reference captured from an active page is valid only while that page stays active. Pass a *stale* reference—one whose page has since gone inactive—to any API, and the call throws. This is deliberate. 
+The new model creates a simple contract: **an add-on should only hold references to nodes on a currently active page.** A node reference captured from an active page is valid only while that page stays active. Pass a _stale_ reference—one whose page has since gone inactive—to any API, and the call deliberately throws.
 
 **Scrolling a page into view is not the same as activating it** for content access: `viewport.bringIntoView()` only scrolls the viewport to a node. It does not activate an inactive page or make that page’s content available. `bringIntoView()` must be called with an active node; passing a stale reference from an inactive page, including an inactive artboard, throws an error. The method is a viewport primitive, not a page-switch primitive—using it to prepare a page for editing is the wrong pattern, and the new APIs are meant to handle that instead.
 
 ## The new ActivePageNode class
 
-To make the active/inactive distinction explicit in code rather than implicit in your memory, the document model gains a new class. Today the hierarchy runs `BaseNode → PageNode`. Under Large Document Support it gains a leaf: `BaseNode` → `PageNode` → `ActivePageNode`.
+To make the active/inactive distinction explicit in code rather than implicit in your memory, the document model gains a **new class**. Today the hierarchy runs `BaseNode → PageNode`. Under Large Document Support it gains a leaf: `BaseNode` → `PageNode` → `ActivePageNode`.
 
 `PageNode` remains the general page class—it carries the metadata that is always available. `ActivePageNode` represents a page whose content is currently accessible, and the content-bearing members move onto it. The split means the type you hold tells you what you're allowed to do: if you have an `ActivePageNode`, the content is there; if you have a plain `PageNode`, you have metadata and must activate the page to reach its content.
 
-| Aspect | Today | With Large Document Support |
-| :--- | :--- | :--- |
-| Hierarchy | `BaseNode → PageNode` | `BaseNode → PageNode → ActivePageNode` |
-| Page metadata (`id`, `name`, `width`, `height`, add-on data) | on `PageNode` | unchanged—readable even when the page is inactive |
-| Page content (`artboards` and the nodes within) | `PageNode.artboards` | on the active page only, via `ActivePageNode.artboards` |
-| Subtree traversal (`allDescendants`, `allTextContent`) | on `PageNode` | on `ActivePageNode` |
-| Cloning (`cloneInPlace`) | `PageNode.cloneInPlace` | `ActivePageNode.cloneInPlace` |
+| Aspect                                                       | Today                   | With Large Document Support                             |
+| :----------------------------------------------------------- | :---------------------- | :------------------------------------------------------ |
+| Hierarchy                                                    | `BaseNode → PageNode`   | `BaseNode → PageNode → ActivePageNode`                  |
+| Page metadata (`id`, `name`, `width`, `height`, add-on data) | on `PageNode`           | unchanged—readable even when the page is inactive       |
+| Page content (`artboards` and the nodes within)              | `PageNode.artboards`    | on the active page only, via `ActivePageNode.artboards` |
+| Subtree traversal (`allDescendants`, `allTextContent`)       | on `PageNode`           | on `ActivePageNode`                                     |
+| Cloning (`cloneInPlace`)                                     | `PageNode.cloneInPlace` | `ActivePageNode.cloneInPlace`                           |
 
-Introducing `ActivePageNode` does not, by itself, break existing add-ons: where the platform hands you the active page—`editor.context.currentPage`, for instance—you receive an `ActivePageNode`, and the content members you already use are still there. The same narrowing applies to `pages.addPage()` and `artboard.parent`, which now return an `ActivePageNode` too. What changes is that those members are no longer reachable from an *inactive* page, which is exactly the case the two new APIs address.
+Introducing `ActivePageNode` does not, by itself, break existing add-ons: where the platform hands you the active page—`editor.context.currentPage`, for instance—you receive an `ActivePageNode`, and the content members you already use are still there. The same narrowing applies to `pages.addPage()` and `artboard.parent`, which now return an `ActivePageNode` too. What changes is that those members are no longer reachable from an _inactive_ page, which is exactly the case the two new APIs address.
 
 ## The foundational APIs
 
 Two APIs let an add-on work with content safely. This page describes what they're for; the [Support Large Documents](../how-to/large-document-support.md) how-to shows how to call them.
 
-- **`visitPages`** answers *"how do I reach content on pages that aren't in view?"* Given a set of pages, it activates each one in turn and hands your callback a fully accessible `ActivePageNode`, guaranteeing the page stays active for the duration of that callback. It is the safe replacement for iterating `pages` and touching content directly. Because a pass over a large document can take several seconds, it pairs naturally with a progress indicator.
-- **`keepContentActiveDuringAsync`** answers *"how do I keep working with this node across an `await`?"* You hand it a **target** (the node or page to keep active), an **async lambda** that does the waiting, and a **synchronous follow-up** that applies your edits while the target is still active—so an asset download or a translation call doesn't leave you holding a stale reference. It is the safe replacement for the older `queueAsyncEdit()` pattern.
+- **`visitPages`** answers _"how do I reach content on pages that aren't in view?"_ Given a set of pages, it activates each one in turn and hands your callback a fully accessible `ActivePageNode`, guaranteeing the page stays active for the duration of that callback. It is the safe replacement for iterating `pages` and touching content directly. Because a pass over a large document can take several seconds, it pairs naturally with a progress indicator.
+- **`keepContentActiveDuringAsync`** answers _"how do I keep working with this node across an `await`?"_ You hand it a **target** (the node or page to keep active), an **async function** that does the waiting, and a **synchronous follow-up** that applies your edits while the target is still active—so an asset download or a translation call doesn't leave you holding a stale reference. It is the safe replacement for the older `queueAsyncEdit()` pattern.
 
 Both APIs ship as **experimental** in the first phase of the rollout (see below), which means they sit outside the usual stability guarantees and require the `experimentalApis` flag during development.
 
 ## Add-on Compatibility Mode
 
-For add-ons that haven't been updated yet, Express provides a temporary fallback called **Add-on Compatibility Mode**. It relaxes the model by attempting to keep *all* pages active, so a legacy add-on that assumes content is always available can keep working during the migration period.
+For add-ons that haven't been updated yet, Express provides a temporary fallback called **Add-on Compatibility Mode**. It relaxes the model by attempting to keep _all_ pages active, so a legacy add-on that assumes content is always available can keep working during the migration period.
 
 It is essential to read compatibility mode for what it is: a migration aid, not a guarantee. As documents grow, keeping all content active is exactly the thing the model exists to avoid, and it may become impractical or impossible. An add-on that behaves correctly in compatibility mode on a small document can still fail on a significantly larger one, and on low-end devices Express may be unable to enter the mode at all. Its purpose is to buy time and reduce disruption—not to remove the need to migrate. The right posture is to treat it as breathing room and update to the new APIs regardless.
 
@@ -161,18 +161,18 @@ It is essential to read compatibility mode for what it is: a migration aid, not 
 
 Large Document Support won't be an overnight switch. It rolls out over roughly a **seven-month migration window**, structured so that developers get time to assess, migrate, test, and resubmit before any enforcement. The per-API mechanics of this—how an API moves from deprecated to removed to fully withdrawn, and why your live add-on keeps working throughout—follow the platform's existing [Deprecation Policy](deprecation-policy.md); the phases below time that lifecycle to the Large Document Support rollout.
 
-| Phase | Target | What happens on the platform | What it means for you |
-| :--- | :--- | :--- | :--- |
-| **1** | ~mid-June 2026 | New Large Document Support APIs ship as experimental; the APIs incompatible with the model are deprecated; a testing mechanism becomes available. | Assess whether your add-on is impacted, review the migration patterns, and start testing. Add-ons in active development can still reach the marketplace on the existing APIs. |
-| **2** | ~mid-July 2026 | The new APIs stabilize; deprecated APIs are removed from the SDK; the migration window and the marketplace submission cutoff begin. | Migrate, test, and resubmit. Local builds that still reference removed APIs will fail. An add-on's safe status is tied to its submission date. |
-| **2a** | ~early-October 2026 | Add-on Compatibility Mode is introduced; user-facing warnings begin for impacted marketplace add-ons; the final three-month window opens. | Finish migration. Don't rely on compatibility mode for correctness. Users may begin seeing warnings for un-migrated add-ons. |
-| **3** | ~mid-January 2027 | Large Document Support becomes the default; compatibility mode is withdrawn; deprecated APIs are fully withdrawn; impacted, un-migrated marketplace add-ons may be removed. | Be fully migrated. This is the steady state—the new APIs and the active-page model are simply how Express works. |
+| Phase  | Target              | What happens on the platform                                                                                                                                                | What it means for you                                                                                                                                                         |
+| :----- | :------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **1**  | ~mid-June 2026      | New Large Document Support APIs ship as experimental; the APIs incompatible with the model are deprecated; a testing mechanism becomes available.                           | Assess whether your add-on is impacted, review the migration patterns, and start testing. Add-ons in active development can still reach the marketplace on the existing APIs. |
+| **2**  | ~mid-July 2026      | The new APIs stabilize; deprecated APIs are removed from the SDK; the migration window and the marketplace submission cutoff begin.                                         | Migrate, test, and resubmit. Local builds that still reference removed APIs will fail. An add-on's safe status is tied to its submission date.                                |
+| **2a** | ~early-October 2026 | Add-on Compatibility Mode is introduced; user-facing warnings begin for impacted marketplace add-ons; the final three-month window opens.                                   | Finish migration. Don't rely on compatibility mode for correctness. Users may begin seeing warnings for un-migrated add-ons.                                                  |
+| **3**  | ~mid-January 2027   | Large Document Support becomes the default; compatibility mode is withdrawn; deprecated APIs are fully withdrawn; impacted, un-migrated marketplace add-ons may be removed. | Be fully migrated. This is the steady state—the new APIs and the active-page model are simply how Express works.                                                              |
 
 <InlineAlert slots="header, text1" variant="warning"/>
 
 **Dates are targets**
 
-The milestone dates above are planning targets and may shift as the rollout proceeds. Treat the *sequence* and the *actions* as stable; confirm exact dates against the latest announcements before planning around a specific deadline.
+The milestone dates above are planning targets and may shift as the rollout proceeds. Treat the _sequence_ and the _actions_ as stable; confirm exact dates against the latest announcements before planning around a specific deadline.
 
 ## Marketplace and private add-ons
 
@@ -182,7 +182,7 @@ For **marketplace add-ons**, Adobe will attempt to identify impacted add-ons and
 
 For **private and internally distributed add-ons**, the same behavior changes apply, but the enforcement model is lighter: these add-ons are not automatically removed, and Adobe does not monitor or contact their owners the way it does for the marketplace. The responsibility for testing and updating them rests with their owners. Left unmodified, they may stop working correctly once the migration period ends.
 
-A closing reassurance that cuts the other way: developers whose add-ons are *not* impacted should not feel compelled to make changes or resubmit purely for compliance. The goal is correctness under the new model, not churn for its own sake.
+A closing reassurance that cuts the other way: developers whose add-ons are _not_ impacted should not feel compelled to make changes or resubmit purely for compliance. The goal is correctness under the new model, not churn for its own sake.
 
 ## Common mistakes
 
@@ -194,7 +194,7 @@ for (const page of editor.documentRoot.pages) {
 }
 ```
 
-✅ Use `visitPages()`, which activates each page before handing it to your callback. The wrong form is a *silent* bug: content getters on an inactive page return empty rather than throwing, so the loop quietly does nothing for every page that isn't active.
+✅ Use `visitPages()`, which activates each page before handing it to your callback. The wrong form is a _silent_ bug: content getters on an inactive page return empty rather than throwing, so the loop quietly does nothing for every page that isn't active.
 
 ❌ **Holding a node reference across an `await`.**
 
