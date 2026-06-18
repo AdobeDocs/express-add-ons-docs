@@ -25,6 +25,17 @@ contributors:
 
 # Changelog
 
+## 2026-06-18
+
+### Added
+
+- New [Large Document Support](../learn/platform-concepts/large-document-support.md) concepts guide explaining how Adobe Express will handle large documents in the future, including the active/inactive page model, the `ActivePageNode` hierarchy, compatibility mode, and the phased rollout timeline.
+- New [how-to guide](../learn/how-to/large-document-support.md) with recipes for `visitPages`, `keepContentActiveDuringAsync`, replacing deprecated APIs (`queueAsyncEdit`, `PageNode.artboards`, `PageNode.allDescendants`, `PageNode.allTextContent`, `PageNode.cloneInPlace`), and avoiding stale node references.
+
+### Updated
+
+- [Manage Pages](../learn/how-to/manage-pages.md)—revised page-iteration examples to be Large Document Support–safe.
+
 ## 2026-05-19
 
 ### Added
@@ -798,29 +809,29 @@ Some items in the following list of changes may have been mentioned in recent up
   import { editor } from "express";
   ```
 
- &lt;/del &gt;
+&lt;/del &gt;
 
-  ```js
-  // New
-  import { editor } from "express-document-sdk";
-  ```
+```js
+// New
+import { editor } from "express-document-sdk";
+```
 
-  **Document Sandbox SDK import**&lt;br /&gt;
-  For access to the [document sandbox runtime APIs](../../references/document-sandbox/index.md):
+**Document Sandbox SDK import**&lt;br /&gt;
+For access to the [document sandbox runtime APIs](../../references/document-sandbox/index.md):
 
-  &lt;del &gt;
+&lt;del &gt;
 
-  ```js
-  // Old
-  import AddOnScriptSdk from "AddOnScriptSdk";
-  ```
+```js
+// Old
+import AddOnScriptSdk from "AddOnScriptSdk";
+```
 
-  &lt;/del &gt;
+&lt;/del &gt;
 
-  ```js
-  // New
-  import addOnSandboxSdk from "add-on-sdk-document-sandbox";
-  ```
+```js
+// New
+import addOnSandboxSdk from "add-on-sdk-document-sandbox";
+```
 
 - The [`manifest.json` entry point](../../references/manifest/index.md#entrypoints) for the document sandbox script code reference was renamed from `script` to `documentSandbox`, as shown below:
 

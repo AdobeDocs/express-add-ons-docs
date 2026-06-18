@@ -25,6 +25,17 @@ contributors:
 
 # Changelog
 
+## 2026-06-18
+
+### Added
+
+- New [Large Document Support](../guides/learn/platform-concepts/large-document-support.md) concepts guide explaining how Adobe Express will handle large documents in the future, including the active/inactive page model, the `ActivePageNode` hierarchy, compatibility mode, and the phased rollout timeline.
+- New [how-to guide](../guides/learn/how-to/large-document-support.md) with recipes for `visitPages`, `keepContentActiveDuringAsync`, replacing deprecated APIs (`queueAsyncEdit`, `PageNode.artboards`, `PageNode.allDescendants`, `PageNode.allTextContent`, `PageNode.cloneInPlace`), and avoiding stale node references.
+
+### Updated
+
+- [Manage Pages](../guides/learn/how-to/manage-pages.md)—revised page-iteration examples to be Large Document Support–safe.
+
 ## 2026-05-19
 
 ### Added
@@ -1147,7 +1158,7 @@ Please note, in both cases, the `MediaAttributes` object is required for audio c
 
 \<!-- \<InlineAlert slots="text" variant="warning"/\>
 
-**IMPORTANT:** The new Audio API's are currently ***experimental only*** and should not be used in any add-ons you will be distributing until they have been deemed stable. To try out these new APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](manifest/index.md#requirements) section of the `manifest.json`. --\>
+**IMPORTANT:** The new Audio API's are currently **_experimental only_** and should not be used in any add-ons you will be distributing until they have been deemed stable. To try out these new APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](manifest/index.md#requirements) section of the `manifest.json`. --\>
 
 ## 2023-08-31
 

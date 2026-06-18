@@ -15,7 +15,6 @@ keywords:
   - PageList
   - BaseNode
   - ArtboardNode
-  - allChildren
   - allDescendants
   - allTextContent
   - artboards
@@ -76,6 +75,15 @@ For the model behind this—active versus inactive pages, and why it exists—se
 
 They apply to the Document Sandbox APIs (`editor.*`, `pages.*`). If your add-on uses only the iframe Add-on UI SDK (`addOnUISdk.app.document.*`—`createRenditions`, `getPagesMetadata`, `addImage`, and the like), you don't need to change anything: Adobe Express activates the pages those calls need on your behalf.
 
+## What you don't need to change
+
+Several common operations stay safe and need no migration:
+
+- Anything on the **current** page, accessed synchronously—`editor.context.currentPage` and its content.
+- **Page metadata** on any page—`id`, `name`, `width`, `height`, and add-on data—even when the page is inactive.
+- Iterating `editor.documentRoot.pages` itself (the page list), as long as you don't read each page's content.
+- `editor.create*()` factories and `editor.loadBitmapImage()`, which return objects that aren't tied to a page.
+
 ## Visit all pages in a document
 
 The `visitPages()` method on [`editor.documentRoot.pages`](../../../references/document-sandbox/document-apis/classes/page-list.md) accepts an array of pages and a callback. It activates each page in turn and invokes the callback with a fully accessible `ActivePageNode`, so you can read and write that page's content. The page is guaranteed to remain active until the callback returns; if the callback returns a promise, the page stays active until it resolves (use an `async` callback when you need to `await`). There is no need to call [`editor.queueAsyncEdit()`](../../../references/document-sandbox/document-apis/classes/editor.md) inside the callback. Pages may be visited in a different order than the array you pass.
@@ -119,9 +127,30 @@ await pages.visitPages(destPages, (activePage) => {     // 👈 each activePage 
 });
 ```
 
+### Example: Process every page with an async call
+
+Use an `async` callback when each page needs an `await`—the page stays active until the returned promise resolves:
+
+```js
+// sandbox/code.js
+import { editor } from "express-document-sdk";
+
+const pages = editor.documentRoot.pages;
+
+await pages.visitPages([...pages], async (page) => {     // 👈 async callback
+  const textNodes = [...page.allTextContent];
+  const originals = textNodes.map((n) => n.text);
+
+  // The page stays active across this await
+  const translated = await translateAll(originals);
+
+  textNodes.forEach((n, i) => (n.text = translated[i]));
+});
+```
+
 ## Read content on the active page
 
-[`editor.context.currentPage`](../../../references/document-sandbox/document-apis/classes/context.md) returns an `ActivePageNode`—the page currently in view. Page **content** (`artboards`, and the nodes within) and subtree traversal (`allChildren`, `allDescendants`, `allTextContent`) live on `ActivePageNode`, not on [`PageNode`](../../../references/document-sandbox/document-apis/classes/page-node.md). Page **metadata** (`id`, `addOnData`, `width`, `height`, `name`) remains on `PageNode` and is readable even when the page is inactive.
+[`editor.context.currentPage`](../../../references/document-sandbox/document-apis/classes/context.md) returns an `ActivePageNode`—the page currently in view (`pages.addPage()` and `artboard.parent` return one too). Page **content** (`artboards`, and the nodes within) and subtree traversal (`allDescendants`, `allTextContent`) live on `ActivePageNode`, not on [`PageNode`](../../../references/document-sandbox/document-apis/classes/page-node.md). Page **metadata** (`id`, `addOnData`, `width`, `height`, `name`) remains on `PageNode` and is readable even when the page is inactive.
 
 ### Example: Work with the active page's content
 
@@ -141,7 +170,7 @@ console.log("items on the artboard:", artboard.children.length);
 
 ## Keep content active during async operations
 
-When an add-on awaits an asynchronous operation (a network request, a translation call), the user may navigate away and the node it was working on may go stale. The `editor.keepContentActiveDuringAsync()` method takes a **target** node (or page) to keep active, an **async lambda** that does the awaiting, and a **synchronous follow-up** that runs while the target is still active:
+Reach for `keepContentActiveDuringAsync()` when you already hold a **single** node or page and need it to survive one `await`; use `visitPages()` instead when you're iterating across pages. When an add-on awaits an asynchronous operation (a network request, a translation call), the user may navigate away and the node it was working on may go stale. The `editor.keepContentActiveDuringAsync()` method takes a **target** node (or page) to keep active, an **async lambda** that does the awaiting, and a **synchronous follow-up** that runs while the target is still active:
 
 ```js
 // sandbox/code.js
