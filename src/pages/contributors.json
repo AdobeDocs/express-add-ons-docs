@@ -1,7 +1,7 @@
 {
-  "total": 243,
+  "total": 245,
   "offset": 0,
-  "limit": 243,
+  "limit": 245,
   "data": [
     {
       "page": "/config",
@@ -10,7 +10,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "5/11/2026"
+      "lastUpdated": "6/17/2026"
     },
     {
       "page": "/guides/",
@@ -381,7 +381,7 @@
         "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4"
       ],
-      "lastUpdated": "5/19/2026"
+      "lastUpdated": "6/18/2026"
     },
     {
       "page": "/guides/getting-started/code-playground",
@@ -519,10 +519,11 @@
     {
       "page": "/guides/learn/how-to/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/5939127?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/27/2026"
+      "lastUpdated": "6/17/2026"
     },
     {
       "page": "/guides/learn/how-to/create-renditions",
@@ -572,6 +573,13 @@
       "lastUpdated": "3/27/2026"
     },
     {
+      "page": "/guides/learn/how-to/large-document-support",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/5939127?v=4"
+      ],
+      "lastUpdated": "6/18/2026"
+    },
+    {
       "page": "/guides/learn/how-to/local-data-management",
       "avatars": [
         "https://avatars.githubusercontent.com/u/14320591?v=4"
@@ -581,10 +589,11 @@
     {
       "page": "/guides/learn/how-to/manage-pages",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/5939127?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/27/2026"
+      "lastUpdated": "6/17/2026"
     },
     {
       "page": "/guides/learn/how-to/modal-dialogs",
@@ -808,6 +817,13 @@
       "lastUpdated": "4/2/2026"
     },
     {
+      "page": "/guides/learn/platform-concepts/large-document-support",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/5939127?v=4"
+      ],
+      "lastUpdated": "6/18/2026"
+    },
+    {
       "page": "/guides/learn/samples",
       "avatars": [
         "https://avatars.githubusercontent.com/u/113968869?v=4",
@@ -980,7 +996,7 @@
         "https://avatars.githubusercontent.com/u/97891206?v=4",
         "https://avatars.githubusercontent.com/u/25365634?v=4"
       ],
-      "lastUpdated": "5/19/2026"
+      "lastUpdated": "6/18/2026"
     },
     {
       "page": "/references/document-sandbox/",
