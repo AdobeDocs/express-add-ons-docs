@@ -37,28 +37,28 @@ contributors:
 faq:
   questions:
     - question: "How do I add images to a document?"
-      answer: 'Call `addOnUISdk.app.document.addImage(blob, attributes, importAddOnData)` with image blob and optional MediaAttributes and ImportAddOnData.'
+      answer: "Call `addOnUISdk.app.document.addImage(blob, attributes, importAddOnData)` with image blob and optional MediaAttributes and ImportAddOnData."
 
     - question: "What parameters does addImage require?"
       answer: "A Blob object is required. MediaAttributes (title, author) and ImportAddOnData (custom metadata) are optional."
 
     - question: "How do I get an image as a blob?"
-      answer: 'Use `fetch(imageUrl).then(r => r.blob())` to convert images to blob format.'
+      answer: "Use `fetch(imageUrl).then(r => r.blob())` to convert images to blob format."
 
     - question: "Can I use local image files?"
       answer: "Yes, use relative paths from add-on root with fetch() to load local images."
 
     - question: "How do I add animated GIFs?"
-      answer: 'Use `addOnUISdk.app.document.addAnimatedImage(blob, attributes, importAddOnData)` instead of addImage().'
+      answer: "Use `addOnUISdk.app.document.addAnimatedImage(blob, attributes, importAddOnData)` instead of addImage()."
 
     - question: "Why doesn't addImage work with GIFs?"
       answer: "addImage() converts animations to static images; use addAnimatedImage() to preserve animation."
 
     - question: "What image formats are supported?"
-      answer: "AI, GIF, HEIC, JPEG, JPG, PNG, PSB, PSD, PSDT, SVG, and WEBP. Max 8192px dimension, 80MB (desktop) or 40MB (mobile), and 65 million pixels."
+      answer: "See the image requirements reference for the current list of supported formats and size limits."
 
     - question: "Are there GIF size limitations?"
-      answer: "Yes, refer to the FAQ section for specific GIF size and weight limitations."
+      answer: "Yes, see the support FAQ for the current animated GIF size and weight limitations."
     - question: "How do I replace media in an existing `MediaContainerNode`?"
       answer: "Use the `replaceMedia()` method on a `MediaContainerNode` with a BitmapImage` object created via `Editor.loadBitmapImage()`."
 
@@ -66,7 +66,7 @@ faq:
       answer: "Currently, `replaceMedia()` only accepts `BitmapImage` objects. The original media can be any type, but replacement must be a static image."
 
     - question: "How do I replace media with an edited variant of the existing image?"
-      answer: "Call the experimental `replaceMediaWithEditedImage(blob, { preserveCutoutFilter })` method on a `MediaContainerNode`. It accepts a `Blob` directly and preserves `addOnData`, attribution, and filter effects from the original image."
+      answer: "Call the experimental `replaceMediaWithEditedImage(blob, { preserveCutoutFilter })` method on a `MediaContainerNode`. It accepts a `Blob` directly and preserves `addOnData`, attribution, and filter effects from the original image. Enable `experimentalApis` in `manifest.json` first."
 
     - question: "When should I use `replaceMediaWithEditedImage()` instead of `replaceMedia()`?"
       answer: "Use `replaceMediaWithEditedImage()` when the new blob is a modified version of the current image (recolor, upscale, stylize). Use `replaceMedia()` when the replacement is a completely unrelated image."
@@ -116,10 +116,11 @@ addOnUISdk.ready.then(async () => {
         title: "Placeholder image", // 👈 Optional MediaAttributes
         author: "Adobe Developer",
       },
-      { // 👈 Optional ImportAddOnData - metadata that persists with the image
-        nodeAddOnData: { "imageId": "placeholder_123", "category": "demo" },
-        mediaAddOnData: { "source": "external", "resolution": "600x400" }
-      }
+      {
+        // 👈 Optional ImportAddOnData - metadata that persists with the image
+        nodeAddOnData: { imageId: "placeholder_123", category: "demo" },
+        mediaAddOnData: { source: "external", resolution: "600x400" },
+      },
     );
   } catch (e) {
     console.error("Failed to add the image", e);
@@ -167,12 +168,13 @@ addOnUISdk.ready.then(async () => {
       gifImageBlob, // 👈 Blob object
       {
         title: "Animated GIF",
-        author: "GIF Creator"
+        author: "GIF Creator",
       }, // 👈 Optional MediaAttributes
-      { // 👈 Optional ImportAddOnData
-        nodeAddOnData: { "gifId": "animated_456", "type": "animation" },
-        mediaAddOnData: { "duration": "3s", "frames": "24" }
-      }
+      {
+        // 👈 Optional ImportAddOnData
+        nodeAddOnData: { gifId: "animated_456", type: "animation" },
+        mediaAddOnData: { duration: "3s", frames: "24" },
+      },
     );
   } catch (e) {
     console.error("Failed to add the image", e);
@@ -207,14 +209,22 @@ You can copy and paste the following code into a [Code Playground](../../getting
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Get Started</title>
-</head>
+  </head>
   <body>
     <div class="container">
-      <button id="replace-media-btn" disabled>Replace Media</button>
+      <button
+        id="replace-media-btn"
+        disabled
+      >
+        Replace Media
+      </button>
     </div>
   </body>
 </html>
@@ -248,7 +258,6 @@ button:not([disabled]):hover {
   background-color: rgb(64, 70, 202);
   cursor: pointer;
 }
-
 ```
 
 #### iFrame JS
@@ -316,7 +325,6 @@ addOnUISdk.ready.then(async () => {
         replaceButton.disabled = false;
         showMessage(result.error);
       }
-
     } catch (error) {
       console.error("Failed to replace media:", error);
       replaceButton.textContent = "Replace Selected Media";
@@ -345,7 +353,7 @@ runtime.exposeApi({
       if (!editor.context.hasSelection) {
         return {
           success: false,
-          error: "No node selected. Please select a MediaContainerNode first."
+          error: "No node selected. Please select a MediaContainerNode first.",
         };
       }
 
@@ -353,7 +361,8 @@ runtime.exposeApi({
       if (selectedNode.type !== constants.SceneNodeType.mediaContainer) {
         return {
           success: false,
-          error: "Selected node is not a MediaContainerNode. Please select an image or media container."
+          error:
+            "Selected node is not a MediaContainerNode. Please select an image or media container.",
         };
       }
 
@@ -366,17 +375,16 @@ runtime.exposeApi({
       });
 
       return {
-        success: true
+        success: true,
       };
-
     } catch (error) {
       console.error("Failed to replace media:", error);
       return {
         success: false,
-        error: "Failed to replace media. Please try again."
+        error: "Failed to replace media. Please try again.",
       };
     }
-  }
+  },
 });
 ```
 
@@ -409,22 +417,22 @@ MediaContainerNode
 
 ## Replace Media with an Edited Image
 
-The [`replaceMediaWithEditedImage()`](../../../references/document-sandbox/document-apis/classes/media-container-node.md#replacemediawitheditedimage) method on [`MediaContainerNode`](../../../references/document-sandbox/document-apis/classes/media-container-node.md) replaces the current media with an *edited variant* of the same image — a recolor, upscale, stylized version, and so on — while preserving the original's filter effects, per-element metadata (`addOnData`), and asset provenance (attribution IDs, author information, source such as Adobe Stock).
+The [`replaceMediaWithEditedImage()`](../../../references/document-sandbox/document-apis/classes/media-container-node.md#replacemediawitheditedimage) method on [`MediaContainerNode`](../../../references/document-sandbox/document-apis/classes/media-container-node.md) replaces the current media with an _edited variant_ of the same image—a recolor, upscale, stylized version, and so on—while preserving the original's filter effects, per-element metadata (`addOnData`), and asset provenance (attribution IDs, author information, source such as Adobe Stock).
 
 It accepts a `Blob` containing the transformed bitmap as the first argument, and a [`ReplaceMediaWithEditedImageOptions`](../../../references/document-sandbox/document-apis/interfaces/replace-media-with-edited-image-options.md) object as the second. The only option is `preserveCutoutFilter`: when `true`, the existing cutout (background-removal) filter is re-applied to the new image. The method returns a `Promise<void>`, and throws if the current media has been generated or modified by generative AI.
 
 <InlineAlert slots="text" variant="warning"/>
 
-**IMPORTANT:** The `replaceMediaWithEditedImage()` API is currently ***experimental only*** and requires the `experimentalApis` flag set to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of `manifest.json`.
+**IMPORTANT:** The `replaceMediaWithEditedImage()` API is currently **_experimental only_** and requires the `experimentalApis` flag set to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of `manifest.json`.
 
 Pick this method over [`replaceMedia()`](../../../references/document-sandbox/document-apis/classes/media-container-node.md#replacemedia) when the new pixels are derived from the existing image. If the replacement is an unrelated image, use `replaceMedia()` instead.
 
-| When the replacement blob is…                                      | `replaceMediaWithEditedImage(blob, options)`                                 | `replaceMedia(media)`         |
-| ------------------------------------------------------------------ | ---------------------------------------------------------------------------- | ----------------------------- |
-| An edited variant of the current image (recolor, upscale, stylize) | ✅ Use this — preserves metadata + filters                                    | ❌ Drops metadata and filters  |
-| A completely unrelated image                                       | ❌ Throws on GenAI-modified source; preserves attribution that does not apply | ✅ Use this                    |
-| Same aspect ratio as original                                      | Crop preserved                                                               | Crop reset                    |
-| Different aspect ratio                                             | Crop reset, filters preserved                                                | Crop reset, filters preserved |
+| When the replacement blob is…                                      | `replaceMediaWithEditedImage(blob, options)`                                  | `replaceMedia(media)`         |
+| ------------------------------------------------------------------ | ----------------------------------------------------------------------------- | ----------------------------- |
+| An edited variant of the current image (recolor, upscale, stylize) | ✅ Use this: preserves metadata + filters                                     | ❌ Drops metadata and filters |
+| A completely unrelated image                                       | ❌ Throws on GenAI-modified source; preserves attribution that does not apply | ✅ Use this                   |
+| Same aspect ratio as original                                      | Crop preserved                                                                | Crop reset                    |
+| Different aspect ratio                                             | Crop reset, filters preserved                                                 | Crop reset, filters preserved |
 
 ### Example
 
@@ -467,14 +475,14 @@ runtime.exposeApi({
 
     try {
       await node.replaceMediaWithEditedImage(editedBlob, {
-        preserveCutoutFilter: preserveCutout // 👈
+        preserveCutoutFilter: preserveCutout, // 👈
       });
     } catch (err) {
       // ⚠️ Throws if the current media was generated or modified by generative AI.
       console.error("replaceMediaWithEditedImage rejected:", err);
       throw err;
     }
-  }
+  },
 });
 ```
 
@@ -483,7 +491,8 @@ runtime.exposeApi({
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
-  const sandboxProxy = await addOnUISdk.instance.runtime.apiProxy("documentSandbox");
+  const sandboxProxy =
+    await addOnUISdk.instance.runtime.apiProxy("documentSandbox");
 
   // 1. Pull the original image's blob out of the selected node.
   const originalBlob = await sandboxProxy.getOriginalBlob();
@@ -505,7 +514,7 @@ When the add-on's edit substantially changes the foreground subject (e.g. a radi
 ```js
 // sandbox/code.js — partial
 await node.replaceMediaWithEditedImage(editedBlob, {
-  preserveCutoutFilter: false // 👈 cutout will be dropped
+  preserveCutoutFilter: false, // 👈 cutout will be dropped
 });
 ```
 
@@ -537,17 +546,11 @@ await node.replaceMediaWithEditedImage(editedBlob, {
 
 #### Q: What image formats are supported?
 
-**A:** AI, GIF, HEIC, JPEG, JPG, PNG, PSB, PSD, PSDT, SVG, and WEBP.
-
-**Limits:**
-
-- Maximum dimension: 8192px (width or height)
-- Maximum file size: 80MB (desktop) or 40MB (mobile)
-- Maximum pixel count: 65 million pixels (width × height)
+**A:** See the image requirements reference for the current list of supported formats and size limits.
 
 #### Q: Are there GIF size limitations?
 
-**A:** Yes, refer to the FAQ section for specific GIF size and weight limitations.
+**A:** Yes, see the support FAQ for the current animated GIF size and weight limitations.
 
 #### Q: How do I replace media in an existing `MediaContainerNode`?
 
@@ -559,7 +562,7 @@ await node.replaceMediaWithEditedImage(editedBlob, {
 
 #### Q: How do I replace media with an edited variant of the existing image?
 
-**A:** Call the experimental `replaceMediaWithEditedImage(blob, { preserveCutoutFilter })` method on a `MediaContainerNode`. It accepts a `Blob` directly and preserves `addOnData`, attribution, and filter effects from the original image.
+**A:** Call the experimental `replaceMediaWithEditedImage(blob, { preserveCutoutFilter })` method on a `MediaContainerNode`. It accepts a `Blob` directly and preserves `addOnData`, attribution, and filter effects from the original image. Enable `experimentalApis` in `manifest.json` first.
 
 #### Q: When should I use `replaceMediaWithEditedImage()` instead of `replaceMedia()`?
 
