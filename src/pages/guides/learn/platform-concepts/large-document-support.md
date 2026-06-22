@@ -110,7 +110,7 @@ This is why the model draws a hard line between **content** and **metadata**. Me
 
 ## What add-ons are impacted
 
-Not every add-on is affected. An add-on that operates on the current page, and doesn't carry node references across asynchronous waits, generally needs no changes. The add-ons that need attention fall into a few recognizable use cases:
+Not every add-on is affected. An add-on that performs synchronous operations on the current page, and doesn't carry node references across asynchronous waits, generally needs no changes. The add-ons that need attention fall into a few recognizable use cases:
 
 - **Whole-document passes.** Anything that walks every page to read or change content—text find-and-replace, applying a color theme across the document, client-side export. These assume every page's content is reachable; with the new model, it isn't.
 - **Asynchronous operations on content.** An add-on that downloads an asset, waits, and then places it on the page; or one that does work after any `await`. During the wait time the user can navigate away, and the page the add-on was holding can go inactive.
