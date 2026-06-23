@@ -36,7 +36,7 @@ faq:
     - question: "Why is Adobe introducing it?"
       answer: "As documents grow, keeping every page's content in memory becomes impractical and eventually impossible, especially on lower-end devices. Large Document Support lets Express load page content on demand, so performance and stability hold up as documents scale."
     - question: "Is my add-on affected?"
-      answer: "Not necessarily. Only add-ons that depend on content being available everywhere are affected—those that iterate over all pages, read content on pages that aren't in view, jump between pages, or hold node references across an asynchronous operation. Add-ons that work only with the current page and don't span async boundaries generally need no changes."
+      answer: "Not all add-ons are impacted. Only add-ons that depend on content being available all the time are affected—those that iterate over all pages, read content on pages that aren't in view, jump between pages, or hold node references across an asynchronous operation. Add-ons that work only with the current page and don't span async boundaries generally need no changes."
     - question: "What is the difference between an active and an inactive page?"
       answer: "An active page has its content loaded and accessible. An inactive page does not: its metadata (id, name, dimensions, add-on data) is still readable, but its content (artboards, text, shapes) is not, until the page is made active again. A visible page is always active, but Express may keep additional pages active beyond the one in view."
     - question: "What is an ActivePageNode?"
@@ -89,7 +89,7 @@ This page explains the model and the contract it creates for add-ons: what activ
 
 If terms like _page_, _artboard_, and _scenegraph_ are unfamiliar, start with the [Document API Concepts](document-api.md) guide and the [Developer Terminology](../fundamentals/terminology.md) reference. When you're ready to write code, the [Support Large Documents](../how-to/large-document-support.md) how-to has the recipes.
 
-## Why Large Document Support exists
+## How Large Document Support works
 
 A document model that keeps every page's content in memory works well until documents get big. As page counts climb, the cost of holding all that content—every shape, every block of text, every image on every page—grows with the document, and eventually it becomes impractical.
 
@@ -180,9 +180,11 @@ The milestone dates above are planning targets and may shift as the rollout proc
 
 The migration applies to every distribution model, but enforcement differs by where an add-on lives.
 
-For **marketplace add-ons**, Adobe will attempt to identify impacted add-ons and reach out to their developers. Impacted add-ons that aren't updated by the end of the migration window may be removed from the marketplace, and users may see compatibility warnings before that point. One subtlety is worth stating plainly: updating the code is not sufficient on its own. An impacted marketplace add-on must be **resubmitted** to be recognized as compatible—resubmission is what tells the platform the add-on now meets the new requirements.
+For **marketplace add-ons**, Adobe will attempt to identify impacted add-ons and reach out to their developers. Despite our best efforts, this analysis may output false positives; we recommend that you review the results and double-check your add-on's actual logic and API usage.
 
-For **private and internally distributed add-ons**, the same behavior changes apply, but the enforcement model is lighter: these add-ons are not automatically removed, and Adobe does not monitor or contact their owners the way it does for the marketplace. The responsibility for testing and updating them rests with their owners. Left unmodified, they may stop working correctly once the migration period ends.
+Impacted add-ons that aren't updated by the end of the migration window may be removed from the marketplace, and users may see compatibility warnings before that point. Please note that updated add-ons must be **resubmitted** to the Marketplace to be recognized as compatible—resubmission is what tells the platform the add-on now meets the new requirements.
+
+For **private and internally distributed add-ons**, the same behavior changes apply, but the enforcement model is lighter: these add-ons are not automatically removed, as Adobe does not monitor or contact their owners the way it does for the Marketplace. The responsibility for testing and updating them rests with their owners. Left unmodified, they may stop working correctly once the migration period ends.
 
 A closing reassurance that cuts the other way: developers whose add-ons are _not_ impacted should not feel compelled to make changes or resubmit purely for compliance. The goal is correctness under the new model, not churn for its own sake.
 
@@ -222,7 +224,7 @@ As documents grow, keeping every page's content in memory becomes impractical an
 
 #### Is my add-on affected?
 
-Not necessarily. Only add-ons that depend on content being available everywhere are affected—those that iterate over all pages, read content on pages that aren't in view, jump between pages, or hold node references across an asynchronous operation. Add-ons that work only with the current page and don't span async boundaries generally need no changes.
+Not all add-ons are impacted. Only add-ons that depend on content being available all the time are affected—those that iterate over all pages, read content on pages that aren't in view, jump between pages, or hold node references across an asynchronous operation. Add-ons that work only with the current page and don't span async boundaries generally need no changes.
 
 #### What is the difference between an active and an inactive page?
 
