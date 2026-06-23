@@ -61,13 +61,13 @@ faq:
 
 # Support Large Documents
 
-Adobe Express no longer keeps every page of a document loaded at once, so add-ons must access page content only while a page is active. 
+Adobe Express no longer keeps every page of a document loaded at once, so add-ons must access page content only while a page is active.
 
 For the model behind this—active versus inactive pages, and why it exists—see [Large Document Support](../platform-concepts/large-document-support.md). This guide covers the code changes.
 
 <InlineAlert slots="text1" variant="warning"/>
 
-**IMPORTANT:** The `visitPages` and `keepContentActiveDuringAsync` APIs are currently ***experimental only*** and require the `experimentalApis` flag set to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of `manifest.json`.
+**IMPORTANT:** The `visitPages` and `keepContentActiveDuringAsync` APIs are currently **_experimental only_** and require the `experimentalApis` flag set to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of `manifest.json`.
 
 <InlineAlert slots="header, text1" variant="info"/>
 
@@ -97,8 +97,10 @@ import { editor } from "express-document-sdk";
 const pages = editor.documentRoot.pages;
 
 // Visit every page; each `page` is an ActivePageNode, active for the callback's duration
-await pages.visitPages([...pages], (page) => {        // 👈 pass an array of pages
-  for (const textNode of page.allTextContent) {        // content is accessible here
+await pages.visitPages([...pages], (page) => {
+  // 👈 pass an array of pages
+  for (const textNode of page.allTextContent) {
+    // content is accessible here
     console.log("text:", textNode.text);
   }
 });
@@ -121,9 +123,10 @@ const sourceNode = editor.context.selection[0];
 // Everything except the source page
 const destPages = [...pages].filter((p) => p.id !== sourcePage.id);
 
-await pages.visitPages(destPages, (activePage) => {     // 👈 each activePage is active here
+await pages.visitPages(destPages, (activePage) => {
+  // 👈 each activePage is active here
   const clone = sourceNode.cloneInPlace();
-  activePage.artboards.first.children.append(clone);    // ✅ append onto the active page
+  activePage.artboards.first.children.append(clone); // ✅ append onto the active page
 });
 ```
 
@@ -137,7 +140,8 @@ import { editor } from "express-document-sdk";
 
 const pages = editor.documentRoot.pages;
 
-await pages.visitPages([...pages], async (page) => {     // 👈 async callback
+await pages.visitPages([...pages], async (page) => {
+  // 👈 async callback
   const textNodes = [...page.allTextContent];
   const originals = textNodes.map((n) => n.text);
 
@@ -158,13 +162,13 @@ await pages.visitPages([...pages], async (page) => {     // 👈 async callback
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
-const page = editor.context.currentPage;        // ActivePageNode
+const page = editor.context.currentPage; // ActivePageNode
 
 // Metadata is always available
 console.log("page:", page.id, page.width, "x", page.height);
 
 // Content is available because this page is active
-const artboard = page.artboards.first;          // 👈 artboards live on ActivePageNode
+const artboard = page.artboards.first; // 👈 artboards live on ActivePageNode
 console.log("items on the artboard:", artboard.children.length);
 ```
 
@@ -187,13 +191,14 @@ import { editor } from "express-document-sdk";
 const textNode = editor.context.selection[0];
 
 await editor.keepContentActiveDuringAsync(
-  textNode,                                             // 👈 the target to keep active
+  textNode, // 👈 the target to keep active
   // async work — your awaits happen here
   async () => translateText(textNode.fullContent.text),
   // synchronous follow-up — runs while `textNode` is still active
-  (translated) => {                                     // 👈 safe to edit here
-    textNode.fullContent.text = translated;             // ✅ no queueAsyncEdit() needed
-  }
+  (translated) => {
+    // 👈 safe to edit here
+    textNode.fullContent.text = translated; // ✅ no queueAsyncEdit() needed
+  },
 );
 ```
 
@@ -205,15 +210,15 @@ Do all your document edits in the third argument, the `afterAsyncCallback`—it 
 
 ## Replace deprecated APIs
 
-Several content-access APIs that assumed every page was loaded are deprecated and move to `ActivePageNode`. Update each call to run against an active page (from `visitPages()` or `editor.context.currentPage`). All are removed from the SDK on **2026-07-15**.
+Several content-access APIs that assumed every page was loaded are deprecated and move to `ActivePageNode`. Update each call to run against an active page (from `visitPages()` or `editor.context.currentPage`). All are removed from the SDK during [Phase 2](../platform-concepts/large-document-support.md#rollout-and-migration-timeline) of the migration.
 
-| Deprecated | Use instead | Removed from SDK |
-| :--- | :--- | :--- |
-| `PageNode.artboards` | `ActivePageNode.artboards` | 2026-07-15 |
-| `PageNode.allDescendants` | `ActivePageNode.allDescendants` | 2026-07-15 |
-| `PageNode.allTextContent` | `ActivePageNode.allTextContent` | 2026-07-15 |
-| `PageNode.cloneInPlace()` | `ActivePageNode.cloneInPlace()` | 2026-07-15 |
-| `editor.queueAsyncEdit()` | `editor.keepContentActiveDuringAsync()` | 2026-07-15 |
+| Deprecated                | Use instead                             | Removed from SDK |
+| :------------------------ | :-------------------------------------- | :--------------- |
+| `PageNode.artboards`      | `ActivePageNode.artboards`              | Phase 2          |
+| `PageNode.allDescendants` | `ActivePageNode.allDescendants`         | Phase 2          |
+| `PageNode.allTextContent` | `ActivePageNode.allTextContent`         | Phase 2          |
+| `PageNode.cloneInPlace()` | `ActivePageNode.cloneInPlace()`         | Phase 2          |
+| `editor.queueAsyncEdit()` | `editor.keepContentActiveDuringAsync()` | Phase 2          |
 
 ### Example: Migrate a whole-document pass
 
@@ -224,7 +229,8 @@ A common pattern—iterating `pages` and reading each page's content—**silentl
 import { editor } from "express-document-sdk";
 
 for (const page of editor.documentRoot.pages) {
-  for (const textNode of page.allTextContent) {   // ❌ empty for every inactive page
+  for (const textNode of page.allTextContent) {
+    // ❌ empty for every inactive page
     // ...process textNode
   }
 }
@@ -235,8 +241,10 @@ for (const page of editor.documentRoot.pages) {
 import { editor } from "express-document-sdk";
 
 const pages = editor.documentRoot.pages;
-await pages.visitPages([...pages], (page) => {     // page is an ActivePageNode
-  for (const textNode of page.allTextContent) {     // ✅ available on the active page
+await pages.visitPages([...pages], (page) => {
+  // page is an ActivePageNode
+  for (const textNode of page.allTextContent) {
+    // ✅ available on the active page
     // ...process textNode
   }
 });
@@ -252,7 +260,7 @@ import { editor } from "express-document-sdk";
 
 const node = editor.context.selection[0];
 await someAsyncOperation();
-console.log(node.boundsInParent);     // ❌ may throw: the page may now be inactive
+console.log(node.boundsInParent); // ❌ may throw: the page may now be inactive
 ```
 
 When this happens, Adobe Express fails fast with an actionable error rather than returning wrong data:
