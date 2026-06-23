@@ -27,6 +27,12 @@ contributors:
 
 ## 2026-06-18
 
+<InlineAlert slots="header, text1" variant="info"/>
+
+#### Large Document Support
+
+Adobe Express is evolving to handle documents with a large number of pages. This is a major change that _may_ require you to update your add-on to be compatible with the new model. Read the [Large Document Support](../learn/platform-concepts/large-document-support.md) guide to learn more.
+
 ### Added
 
 - New [Large Document Support](../learn/platform-concepts/large-document-support.md) concepts guide explaining how Adobe Express will handle large documents in the future, including the active/inactive page model, the `ActivePageNode` hierarchy, compatibility mode, and the phased rollout timeline.
