@@ -101,7 +101,7 @@ await pages.visitPages([...pages], (page) => {
   // 👈 pass an array of pages
   for (const textNode of page.allTextContent) {
     // content is accessible here
-    console.log("text:", textNode.text);
+    console.log("text:", textNode.textContentModel.text);
   }
 });
 ```
@@ -140,6 +140,11 @@ import { editor } from "express-document-sdk";
 
 const pages = editor.documentRoot.pages;
 
+const translateAll = async (texts) => {
+  // Simulate an async operation
+  return texts.map(() => "Translated text");
+};
+
 await pages.visitPages([...pages], async (page) => {
   // 👈 async callback
   const textNodes = [...page.allTextContent];
@@ -148,7 +153,7 @@ await pages.visitPages([...pages], async (page) => {
   // The page stays active across this await
   const translated = await translateAll(originals);
 
-  textNodes.forEach((n, i) => (n.text = translated[i]));
+  textNodes.forEach((n, i) => (n.textContentModel.text = translated[i]));
 });
 ```
 
@@ -178,7 +183,7 @@ Reach for `keepContentActiveDuringAsync()` when you already hold a **single** no
 
 ```js
 // sandbox/code.js
-editor.keepContentActiveDuringAsync(target, asyncLambda, afterAsyncCallback);
+editor.keepContentActiveDuringAsync(target, asyncFunction, afterAsyncCallback);
 ```
 
 ### Example: Update a node after an async call
@@ -189,6 +194,11 @@ import { editor } from "express-document-sdk";
 
 // Assuming the user has selected a text node
 const textNode = editor.context.selection[0];
+
+const translateText = async (text) => {
+  // Simulate an async operation
+  return "Translated text";
+};
 
 await editor.keepContentActiveDuringAsync(
   textNode, // 👈 the target to keep active
