@@ -54,7 +54,7 @@ faq:
     - question: "Are visitPages and keepContentActiveDuringAsync stable?"
       answer: "Not yet. In Phase 1 they are experimental, so set `experimentalApis: true` in your `manifest.json` during development."
     - question: "How do I test my add-on with Large Document Support?"
-      answer: "Enable the dedicated Large Document Support testing environment and validate your add-on against it; don't assume that testing in regular Express is sufficient, and don't share the testing environment with end users."
+      answer: "Open https://new.express.adobe.com/lArg3-d0c-supp0rt-4-add0ns in its own browser tab—that URL enforces Large Document Support for developer testing. Stress-test with your add-on open: add pages, switch pages in the UI mid-operation, use very long documents, and re-run whole-document passes and async workflows. Don't share the URL with end users."
     - question: "Do my iframe (Add-on UI SDK) APIs need changes?"
       answer: "No. If your add-on uses only the iframe `document.*` APIs—`createRenditions`, `getPagesMetadata`, `addImage`—Adobe Express activates the pages those calls need for you. Migration applies to Document Sandbox code (`editor.*`, `pages.*`)."
 ---
@@ -281,13 +281,25 @@ When this happens, Adobe Express fails fast with an actionable error rather than
 
 ## Test your add-on with Large Document Support
 
-Don't assume that testing in regular Express exercises this behavior. Enable the dedicated Large Document Support testing environment so pages are activated and deactivated as they will be in production, then validate your add-on—especially whole-document passes and any operation that spans an `await`.
+Don't assume that testing in regular Express exercises this behavior. Use the dedicated Large Document Support testing URL so pages are activated and deactivated as they will be in production, then validate your add-on—especially whole-document passes and any operation that spans an `await`. For background on what the testing environment exercises, see [Large Document Support](../platform-concepts/large-document-support.md#testing).
 
-<InlineAlert slots="header, text1" variant="info"/>
+### Open the testing environment
 
-**Testing setup**
+1. In its own browser tab, open [https://new.express.adobe.com/lArg3-d0c-supp0rt-4-add0ns](https://new.express.adobe.com/lArg3-d0c-supp0rt-4-add0ns).
+2. Load your add-on and run your workflows there—not in regular Express.
 
-A feature flag will be provided to enforce Large Document Support during testing. The exact flag name and setup steps are not yet finalized. Keep the testing environment to yourself—it should not be shared with your add-on's users.
+This URL is a developer feature flag: it enforces the active/inactive page model as if Large Document Support were already the default.
+
+### Stress-test while your add-on is open
+
+Reproduce the flows users trigger without thinking about them:
+
+- Add new pages while a routine is running.
+- Switch the active page in the Express UI while your add-on is open or mid-operation.
+- Work in very long documents with a lot of content.
+- Re-run whole-document passes and any async workflow that spans an `await`.
+
+Keep this testing environment to yourself—do not share the URL with your add-on's users.
 
 ## FAQs
 
@@ -329,7 +341,7 @@ A feature flag will be provided to enforce Large Document Support during testing
 
 #### Q: How do I test my add-on with Large Document Support?
 
-**A:** Enable the dedicated Large Document Support testing environment and validate your add-on against it; don't assume that testing in regular Express is sufficient, and don't share the testing environment with end users.
+**A:** Open [https://new.express.adobe.com/lArg3-d0c-supp0rt-4-add0ns](https://new.express.adobe.com/lArg3-d0c-supp0rt-4-add0ns) in its own browser tab—that URL enforces Large Document Support for developer testing. Stress-test with your add-on open: add pages, switch pages in the UI mid-operation, use very long documents, and re-run whole-document passes and async workflows. Don't share the URL with end users.
 
 #### Q: Do my iframe (Add-on UI SDK) APIs need changes?
 

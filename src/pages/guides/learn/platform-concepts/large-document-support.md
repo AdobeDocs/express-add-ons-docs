@@ -47,6 +47,8 @@ faq:
       answer: "It is a temporary mode that keeps all pages active so that add-ons not yet updated can keep working during the migration period. It is a migration aid, not a guarantee: on large documents or low-end devices Express may be unable to keep everything active, and the add-on may still fail. Treat it as breathing room, not a permanent solution."
     - question: "How long do I have to migrate?"
       answer: "The initiative provides a migration window of roughly seven months, spanning the phases from the first API release to final enforcement. Specific dates are targets and may shift; the phase overview on this page tracks where the rollout currently stands."
+    - question: "How do I test my add-on with Large Document Support?"
+      answer: "Open https://new.express.adobe.com/lArg3-d0c-supp0rt-4-add0ns in its own browser tab. That URL enforces Large Document Support as if the new model were already in place, so you can validate your add-on before production rollout. Stress-test with your add-on open: add pages, switch pages in the Express UI mid-operation, and use very long documents with a lot of content. Don't share the URL with end users."
     - question: "What happens to my marketplace add-on if I don't migrate?"
       answer: "Impacted marketplace add-ons that are not updated by the end of the migration window may be removed from the marketplace, and users may see compatibility warnings before then. Updating the code is not enough on its own—an impacted marketplace add-on must be resubmitted to be recognized as compatible."
     - question: "Are private and internally distributed add-ons affected?"
@@ -127,7 +129,13 @@ Developers whose add-ons are _not_ impacted should not feel compelled to make ch
 
 Large Document Support will be introduced in a phased manner, over a **seven-month migration window** structured so that developers get time to assess, migrate, test, and resubmit before any enforcement. The per-API mechanics of this—how an API moves from deprecated to removed to fully withdrawn, and why your live add-on keeps working throughout—follow the platform's existing [Deprecation Policy](deprecation-policy.md); the phases below time that lifecycle to the Large Document Support rollout.
 
-![Large Document Support rollout phases](./images/LDS-timeline.png)
+<InlineAlert slots="header, text1" variant="warning"/>
+
+#### Dates are targets
+
+The milestone dates above are planning targets and may shift as the rollout proceeds. Treat the _sequence_ and the _actions_ as stable; confirm exact dates against the latest announcements before planning around a specific deadline.
+
+![Large Document Support rollout phases](./images/LDS-timeline-p1.png)
 
 | Phase  | Target              | What happens on the platform                                                                                                                                                | What it means for you                                                                                                                                                         |
 | :----- | :------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -135,12 +143,6 @@ Large Document Support will be introduced in a phased manner, over a **seven-mon
 | **2**  | ~mid-July 2026      | The new APIs stabilize; deprecated APIs are removed from the SDK; the migration window and the marketplace submission cutoff begin.                                         | Migrate, test, and resubmit. Local builds that still reference removed APIs will fail. An add-on's safe status is tied to its submission date.                                |
 | **2a** | ~early-October 2026 | Add-on Compatibility Mode is introduced; user-facing warnings begin for impacted marketplace add-ons; the final three-month window opens.                                   | Finish migration. Don't rely on compatibility mode for correctness. Users may begin seeing warnings for un-migrated add-ons.                                                  |
 | **3**  | ~mid-January 2027   | Large Document Support becomes the default; compatibility mode is withdrawn; deprecated APIs are fully withdrawn; impacted, un-migrated marketplace add-ons may be removed. | Be fully migrated. This is the steady state—the new APIs and the active-page model are simply how Express works.                                                              |
-
-<InlineAlert slots="header, text1" variant="warning"/>
-
-#### Dates are targets
-
-The milestone dates above are planning targets and may shift as the rollout proceeds. Treat the _sequence_ and the _actions_ as stable; confirm exact dates against the latest announcements before planning around a specific deadline.
 
 ## Understanding the new model
 
@@ -231,7 +233,17 @@ For add-ons that haven't been updated yet, Express provides a temporary fallback
 
 It is essential to read compatibility mode for what it is: a migration aid, not a guarantee. As documents grow, keeping all content active is exactly the thing the model exists to avoid, and it may become impractical or impossible. An add-on that behaves correctly in compatibility mode on a small document can still fail on a significantly larger one, and on low-end devices Express may be unable to enter the mode at all. Its purpose is to buy time and reduce disruption—not to remove the need to migrate. The right posture is to treat it as breathing room and update to the new APIs regardless.
 
-Treating Add-on Compatibility Mode as permanent is a mistake. It works until it doesn't—on a large enough document or a constrained device, keeping everything active is the very thing the model avoids. The fix is not a better fallback; it is migration.
+Treating Add-on Compatibility Mode as permanent is a mistake. It works until it doesn't—on a large enough document or a constrained device, keeping everything active is the very thing the model avoids.
+
+## Testing your add-on with Large Document Support
+
+We are introducing a dedicated testing URL that turns on Large Document Support in Adobe Express as if the new model were already in place. Open [https://new.express.adobe.com/lArg3-d0c-supp0rt-4-add0ns](https://new.express.adobe.com/lArg3-d0c-supp0rt-4-add0ns) in its own browser tab and use Express there while you assess and validate your add-on.
+
+Regular Express does not exercise page activation and deactivation the way production will once Large Document Support is fully rolled out. This URL acts as a developer feature flag: it enforces the active/inactive page behavior so you can see whether your add-on still works when content is not guaranteed to stay available everywhere, all the time.
+
+**Stress-test with your add-on open.** The failure modes users trigger without thinking about them are the ones worth reproducing deliberately: add new pages, run asynchronous operations, and change the active page in the Express UI while your add-on is still mid-operation. Use very long documents with a lot of content, and repeat those flows. Whole-document passes, async work that spans an `await`, and any logic that assumes every page's content stays reachable are where silent failures and stale-reference errors tend to surface first.
+
+Keep this testing environment to yourself—do not share the URL with your add-on's users, to avoid any confusion or misuse with other developers' add-ons. For the migration patterns to validate against it, see the [Support Large Documents](../how-to/large-document-support.md) how-to.
 
 ## FAQs
 
@@ -266,6 +278,10 @@ It is a temporary mode that keeps all pages active so that add-ons not yet updat
 #### How long do I have to migrate?
 
 The initiative provides a migration window of roughly seven months, spanning the phases from the first API release to final enforcement. Specific dates are targets and may shift; the phase overview on this page tracks where the rollout currently stands.
+
+#### How do I test my add-on with Large Document Support?
+
+Open [https://new.express.adobe.com/lArg3-d0c-supp0rt-4-add0ns](https://new.express.adobe.com/lArg3-d0c-supp0rt-4-add0ns) in its own browser tab. That URL enforces Large Document Support as if the new model were already in place, so you can validate your add-on before production rollout. Stress-test with your add-on open: add pages, switch pages in the Express UI mid-operation, and use very long documents with a lot of content. Don't share the URL with end users.
 
 #### What happens to my marketplace add-on if I don't migrate?
 
