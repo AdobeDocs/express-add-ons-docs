@@ -33,7 +33,7 @@ always have a default/fallback case to handle any unknown values you may encount
 | `mediaContainer` | `"MediaContainer"` | Type of MediaContainerNode, representing the top-level container of the multi-node construct used to display images or video. |
 | `imageRectangle` | `"ImageRectangle"` | Type of MediaContainerNode's "media rectangle" child when it is holding an image |
 | `unknownMediaRectangle` | `"UnknownMediaRectangle"` | Type of MediaContainerNode's "media rectangle" child when it is holding an unknown media type |
-| `page` | `"Page"` | Type of PageNode |
+| `page` | `"Page"` | Type of PageNode, or ActivePageNode |
 | `complexShape` | `"ComplexShape"` | Type of ComplexShapeNode, representing a complex prepackaged shape with fill and stroke, that appears as a leaf node in the UI |
 | `solidColorShape` | `"SolidColorShape"` | Type of SolidColorShapeNode, representing a solid-color prepackaged shape that appears as a leaf node in the UI |
 | `strokeShape` | `"StrokeShape"` | Type of StrokeShapeNode, representing a stroke-only prepackaged shape that appears as a leaf node in the UI |

@@ -18,6 +18,10 @@ To create new pages, see [PageList.addPage](page-list.md#addpage).
 
 - [`BaseNode`](base-node.md)
 
+## Extended by
+
+- [`ActivePageNode`](active-page-node.md)
+
 ## Implements
 
 - [`IRectangularNode`](../interfaces/i-rectangular-node.md)
@@ -97,6 +101,10 @@ overall display z-order.
 Although BaseNode's allChildren may yield other BaseNodes, the subclasses Node and ArtboardNode override allChildren
 to guarantee all their children are full-fledged Node instances.
 
+##### Deprecated
+
+This API will be removed after 2026-07-15. Use `ActivePageNode.allChildren` instead.
+
 ##### Returns
 
 `Readonly`&lt;`Iterable`&lt;[`BaseNode`](base-node.md)&gt;&gt;
@@ -104,6 +112,28 @@ to guarantee all their children are full-fledged Node instances.
 #### Inherited from
 
 [`BaseNode`](base-node.md).[`allChildren`](base-node.md#allchildren)
+
+<HorizontalLine />
+
+### artboards
+
+#### Get Signature
+
+```ts
+get artboards(): ArtboardList;
+```
+
+The artboards or "scenes," which hold the page's visual contents. If multiple artboards are present, this list
+represents an ordered keyframe sequence in the page's animation timeline.
+To create new artboards, see [ArtboardList.addArtboard](artboard-list.md#addartboard).
+
+##### Deprecated
+
+This API will be removed after 2026-07-15. Use `ActivePageNode.artboards` instead.
+
+##### Returns
+
+[`ArtboardList`](artboard-list.md)
 
 <HorizontalLine />
 
@@ -149,81 +179,6 @@ that was part of the document content earlier. Deleted nodes can be reattached t
 #### Inherited from
 
 [`BaseNode`](base-node.md).[`parent`](base-node.md#parent)
-
-<HorizontalLine />
-
-### artboards
-
-#### Get Signature
-
-```ts
-get artboards(): ArtboardList;
-```
-
-The artboards or "scenes," which hold the page's visual contents. If multiple artboards are present, this list
-represents an ordered keyframe sequence in the page's animation timeline.
-To create new artboards, see [ArtboardList.addArtboard](artboard-list.md#addartboard).
-
-##### Returns
-
-[`ArtboardList`](artboard-list.md)
-
-<HorizontalLine />
-
-### allDescendants
-
-#### Get Signature
-
-```ts
-get allDescendants(): Readonly<Iterable<VisualNode>>;
-```
-
-**`Experimental`**
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
-Helper to recursively traverse *all* the exposed scenegraph content within the subtree of this node.
-Every container node and every leaf node will be visited via a pre-order tree traversal.
-Although once called the list of direct descendants is static, changes to further descendants may appear while
-iterating depending on when the operation occurs relative to the parent being yielded.
-Note that the root node (i.e. what this API was called on) is not visited.
-
-Warning: Processing text content via this API can be error-prone. Use [VisualNode.allTextContent](visual-node.md#alltextcontent)
-
-##### Returns
-
-`Readonly`&lt;`Iterable`&lt;[`VisualNode`](visual-node.md)&gt;&gt;
-
-<HorizontalLine />
-
-### allTextContent
-
-#### Get Signature
-
-```ts
-get allTextContent(): Readonly<Iterable<TextContent>>;
-```
-
-**`Experimental`**
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
-Helper to process all text content that is found as part of or within this node. This can be hard to do correctly
-via manual tree traversal since multiple [ThreadedTextNode](threaded-text-node.md) can share a single [TextContentModel](text-content-model.md).
-
-This iterator returns a single result per TextContentModel that is at least partially displayed within this node,
-even if that content is split across several separate TextNode "frames". If this node is or contains some but not
-all of the display frames of an overall TextContentModel, that model is still included as a result.
-
-Note that visibleRanges and visibleText may not be sorted as TextNode "frames" can appear in any order in the scenegraph.
-
-##### Returns
-
-`Readonly`&lt;`Iterable`&lt;[`TextContent`](../interfaces/text-content.md)&gt;&gt;
 
 <HorizontalLine />
 
@@ -374,7 +329,7 @@ removal. No-op if node is already an orphan.
 
 <HorizontalLine />
 
-### cloneInPlace()
+### ~~cloneInPlace()~~
 
 ```ts
 cloneInPlace(): PageNode;
@@ -390,3 +345,7 @@ switches to display this artboard.
 `PageNode`
 
 the cloned page.
+
+#### Deprecated
+
+This API will be removed after 2026-07-15. Use `ActivePageNode.cloneInPlace` instead.

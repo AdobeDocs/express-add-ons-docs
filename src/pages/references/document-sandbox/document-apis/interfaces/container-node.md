@@ -328,6 +328,37 @@ removal. No-op if node is already an orphan.
 
 <HorizontalLine />
 
+### hasDescendant()
+
+```ts
+hasDescendant(node): boolean;
+```
+
+**`Experimental`**
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Returns true if the given node is a descendant (i.e. within the subtree) of this node.
+Returns false if passed `this` itself, as a node is not inside its own subtree.
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `node` | [`VisualNode`](../classes/visual-node.md) |
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[`VisualNode`](../classes/visual-node.md).[`hasDescendant`](../classes/visual-node.md#hasdescendant)
+
+<HorizontalLine />
+
 ### localPointInNode()
 
 ```ts

@@ -32,6 +32,7 @@
         - [Web APIs](references/document-sandbox/web/index.md)
         - [Document APIs](references/document-sandbox/document-apis/index.md)
             - [Classes](references/document-sandbox/document-apis/classes/editor.md)
+                - [ActivePageNode](references/document-sandbox/document-apis/classes/active-page-node.md)
                 - [AddOnData](references/document-sandbox/document-apis/classes/add-on-data.md)
                 - [ArtboardList](references/document-sandbox/document-apis/classes/artboard-list.md)
                 - [ArtboardNode](references/document-sandbox/document-apis/classes/artboard-node.md)
