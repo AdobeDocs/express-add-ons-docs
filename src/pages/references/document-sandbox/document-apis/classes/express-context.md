@@ -148,14 +148,14 @@ other UI state.
 #### Get Signature
 
 ```ts
-get currentPage(): PageNode;
+get currentPage(): ActivePageNode;
 ```
 
 ##### Returns
 
-[`PageNode`](page-node.md)
+[`ActivePageNode`](active-page-node.md)
 
-The currently viewed page.
+The currently viewed page, which contains [Context.selection](context.md#selection) and [Context.insertionParent](context.md#insertionparent).
 To change the current page, call [ExpressViewport.bringIntoView](express-viewport.md#bringintoview) with an artboard or other content on that page.
 
 ## Methods

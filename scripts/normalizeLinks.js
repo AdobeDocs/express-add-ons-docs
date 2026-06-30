@@ -1,6 +1,5 @@
 const path = require("path");
 const fs = require("node:fs");
-const matchAll = require("string.prototype.matchall");
 const {
   ROOT_DIR,
   DOC_APIS_SUBDIR,
@@ -20,7 +19,7 @@ function normalizeLinksInMarkdownFile(file, files) {
 
   const absFile = path.resolve(ROOT_DIR, file);
   const data = fs.readFileSync(absFile, "utf8");
-  const links = matchAll(data, new RegExp(linkPattern, "gm"));
+  const links = data.matchAll(new RegExp(linkPattern, "gm"));
 
   [...links].forEach((link) => {
     const optionalPrefix = link[2] ?? "";

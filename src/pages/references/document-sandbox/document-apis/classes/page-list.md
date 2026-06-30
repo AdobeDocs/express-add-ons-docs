@@ -15,6 +15,11 @@ sequence. Those artboards, in turn, contain all the visual content of the docume
 PageList also provides APIs for adding/removing pages from the document. PageList is never empty: it is illegal to
 remove the last remaining page from the list.
 
+Pages outside the current viewport are not guaranteed to be fully loaded, thus the PageNode classes returned from
+this list do not allow accessing the page's content directly. The [ActivePageNode](active-page-node.md) subclass represents a
+Page that is fully loaded and whose contents are accessible synchronously. The current [Context](context.md) is always an
+an ActivePageNode. To load any other pages for access, use the *asynchronous* [visitPages](#visitpages) API.
+
 ## Extends
 
 - [`RestrictedItemList`](restricted-item-list.md)&lt;[`PageNode`](page-node.md)&gt;
@@ -103,15 +108,88 @@ Last item in this list, or undefined if list is empty.
 
 ## Methods
 
+### visitPages()
+
+```ts
+visitPages(pages, callback): Promise<void>;
+```
+
+**`Experimental`**
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Visit the given pages asynchronously: loading each one in turn so its content is accessible, and then invoking
+your provided `callback` for the resulting fully-accessible [ActivePageNode](active-page-node.md).
+
+The callback receives an [ActivePageNode](active-page-node.md), which provides full access to the page's content tree (artboards
+and all descendants). This access is only guaranteed inside the callback; do not hold onto the reference after the
+callback returns.
+
+Visiting many pages can be slow – up to tens of seconds in larger documents. Any feature which visits all pages
+in the entire document should include a progress UI so users understand when the operation is still ongoing.
+
+There is no guarantee more than one of the Pages will be loaded at the same time – there may only be one page
+accessible at a time, each visited with sight delays in between. If your `callback` returns long-running
+promises, iteration may pause until some of the promises resolve and free up capacity to load the next page(s)
+in the visit list.
+
+Pages may be visited in a different order than provided for performance reasons, but each callback is still called
+exactly once per page.
+
+Use an `async` callback (or return a promise) so `visitPages` waits for all `await` work on each page before
+moving on. Do not start async work without awaiting it as it may make the page inactive before your edits run.
+
+#### Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `pages` | [`PageNode`](page-node.md)[] | Pages to visit. |
+| `callback` | (`page`) =&gt; `void` \| `Promise`&lt;`void`&gt; | Called once per page while that page is active. Document edits are allowed during the callback, including after `await` on host APIs (such as `loadBitmapImage`) or UI proxy methods. Use an `async` callback so `visitPages` waits until your per-page work finishes. |
+
+#### Returns
+
+`Promise`&lt;`void`&gt;
+
+#### Examples
+
+Call a UI iframe API to translate text on each page, then write the result back to the page (no `keepContentActiveDuringAsync` needed).
+`panelUiProxy.translateText` is a method on your add-on's UI iframe proxy:
+```
+await pages.visitPages([...pages], async (page) => {
+    // Assume the first child is a text node for now
+    const textNode = page.artboards.first.children.item(0) as TextNode;
+    const translated = await panelUiProxy.translateText(textNode.fullContent.text);
+    textNode.fullContent.text = translated;
+});
+```
+
+Load an image from the host, then add it to the page:
+```
+await pages.visitPages([...pages], async (page) => {
+    const bitmap = await editor.loadBitmapImage(imageBlob);
+    const container = editor.createImageContainer(bitmap);
+    page.artboards.first.children.append(container);
+});
+```
+
+<HorizontalLine />
+
 ### addPage()
 
 ```ts
-addPage(inputGeometry): PageNode;
+addPage(inputGeometry): ActivePageNode;
 ```
 
 Create a new page containing a single empty artboard, and add it to the end of the list. The artboard is configured
 with the same defaults as in [ArtboardList.addArtboard](artboard-list.md#addartboard). The page's artboard becomes the default target for
 newly inserted content ([Context.insertionParent](context.md#insertionparent)) and the viewport switches to display this artboard.
+
+The newly created page starts out already "active" initially, so you can immediately access its subtree to
+populate it with content. You should not hold onto this ActivePageNode reference across an async period of time
+however, since it might become inaccessible at any point after the initial synchronous block of execution where
+it was created. Use [Editor.keepContentActiveDuringAsync](editor.md#keepcontentactiveduringasync) if you need to work with this page's content asynchronously.
 
 #### Parameters
 
@@ -121,7 +199,9 @@ newly inserted content ([Context.insertionParent](context.md#insertionparent)) a
 
 #### Returns
 
-[`PageNode`](page-node.md)
+[`ActivePageNode`](active-page-node.md)
+
+the newly created page.
 
 <HorizontalLine />
 

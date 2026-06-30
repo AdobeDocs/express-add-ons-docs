@@ -1,0 +1,3 @@
+# Hand-maintained navigation sidebar — 4-space list indent (see .editorconfig).
+# Prettier defaults to 2-space indent for Markdown and would rewrite this on save.
+src/pages/config.md

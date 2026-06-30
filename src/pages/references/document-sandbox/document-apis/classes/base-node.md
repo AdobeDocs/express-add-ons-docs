@@ -71,6 +71,10 @@ overall display z-order.
 Although BaseNode's allChildren may yield other BaseNodes, the subclasses Node and ArtboardNode override allChildren
 to guarantee all their children are full-fledged Node instances.
 
+##### Deprecated
+
+This API will be removed after 2026-07-15. Use `ActivePageNode.allChildren` instead.
+
 ##### Returns
 
 `Readonly`&lt;`Iterable`&lt;`BaseNode`&gt;&gt;

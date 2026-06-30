@@ -783,6 +783,37 @@ The node must be attached to a page as the copy will be added as a sibling.
 
 <HorizontalLine />
 
+### hasDescendant()
+
+```ts
+hasDescendant(node): boolean;
+```
+
+**`Experimental`**
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Returns true if the given node is a descendant (i.e. within the subtree) of this node.
+Returns false if passed `this` itself, as a node is not inside its own subtree.
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `node` | [`VisualNode`](visual-node.md) |
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[`FillableNode`](fillable-node.md).[`hasDescendant`](fillable-node.md#hasdescendant)
+
+<HorizontalLine />
+
 ### localPointInNode()
 
 ```ts

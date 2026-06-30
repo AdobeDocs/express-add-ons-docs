@@ -88,6 +88,30 @@ moved to a different part of the document.
 
 <HorizontalLine />
 
+### type
+
+#### Get Signature
+
+```ts
+get type(): SceneNodeType;
+```
+
+The node's type.
+
+##### Returns
+
+[`SceneNodeType`](../enumerations/scene-node-type.md)
+
+#### Implementation of
+
+[`ContainerNode`](../interfaces/container-node.md).[`type`](../interfaces/container-node.md#type)
+
+#### Inherited from
+
+[`Node`](node.md).[`type`](node.md#type)
+
+<HorizontalLine />
+
 ### children
 
 #### Get Signature
@@ -188,30 +212,6 @@ even for an orphan node with no parent.
 #### Inherited from
 
 [`Node`](node.md).[`boundsInParent`](node.md#boundsinparent)
-
-<HorizontalLine />
-
-### type
-
-#### Get Signature
-
-```ts
-get type(): SceneNodeType;
-```
-
-The node's type.
-
-##### Returns
-
-[`SceneNodeType`](../enumerations/scene-node-type.md)
-
-#### Implementation of
-
-[`ContainerNode`](../interfaces/container-node.md).[`type`](../interfaces/container-node.md#type)
-
-#### Inherited from
-
-[`Node`](node.md).[`type`](node.md#type)
 
 <HorizontalLine />
 
@@ -823,6 +823,41 @@ The node must be attached to a page as the copy will be added as a sibling.
 #### Inherited from
 
 [`Node`](node.md).[`cloneInPlace`](node.md#cloneinplace)
+
+<HorizontalLine />
+
+### hasDescendant()
+
+```ts
+hasDescendant(node): boolean;
+```
+
+**`Experimental`**
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Returns true if the given node is a descendant (i.e. within the subtree) of this node.
+Returns false if passed `this` itself, as a node is not inside its own subtree.
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `node` | [`VisualNode`](visual-node.md) |
+
+#### Returns
+
+`boolean`
+
+#### Implementation of
+
+[`ContainerNode`](../interfaces/container-node.md).[`hasDescendant`](../interfaces/container-node.md#hasdescendant)
+
+#### Inherited from
+
+[`Node`](node.md).[`hasDescendant`](node.md#hasdescendant)
 
 <HorizontalLine />
 

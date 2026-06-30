@@ -25,6 +25,23 @@ contributors:
 
 # Changelog
 
+## 2026-06-18
+
+<InlineAlert slots="header, text1" variant="info"/>
+
+#### Large Document Support
+
+Adobe Express is evolving to handle documents with a large number of pages. This is a major change that _may_ require you to update your add-on to be compatible with the new model. Read the [Large Document Support](../guides/learn/platform-concepts/large-document-support.md) guide to learn more.
+
+### Added
+
+- New [Large Document Support](../guides/learn/platform-concepts/large-document-support.md) concepts guide explaining how Adobe Express will handle large documents in the future, including the active/inactive page model, the `ActivePageNode` hierarchy, compatibility mode, and the phased rollout timeline.
+- New [how-to guide](../guides/learn/how-to/large-document-support.md) with recipes for [`visitPages`](./document-sandbox/document-apis/classes/page-list.md#visitpages), [`keepContentActiveDuringAsync`](./document-sandbox/document-apis/classes/editor.md#keepcontentactiveduringasync), replacing deprecated APIs (`queueAsyncEdit`, `PageNode.artboards`, `PageNode.allDescendants`, `PageNode.allTextContent`, `PageNode.cloneInPlace`), and avoiding stale node references.
+
+### Updated
+
+- [Manage Pages](../guides/learn/how-to/manage-pages.md)—revised page-iteration examples to be Large Document Support–safe.
+
 ## 2026-05-19
 
 ### Added
@@ -1147,7 +1164,7 @@ Please note, in both cases, the `MediaAttributes` object is required for audio c
 
 \<!-- \<InlineAlert slots="text" variant="warning"/\>
 
-**IMPORTANT:** The new Audio API's are currently ***experimental only*** and should not be used in any add-ons you will be distributing until they have been deemed stable. To try out these new APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](manifest/index.md#requirements) section of the `manifest.json`. --\>
+**IMPORTANT:** The new Audio API's are currently **_experimental only_** and should not be used in any add-ons you will be distributing until they have been deemed stable. To try out these new APIs, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](manifest/index.md#requirements) section of the `manifest.json`. --\>
 
 ## 2023-08-31
 

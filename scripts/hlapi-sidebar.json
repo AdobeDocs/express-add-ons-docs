@@ -4,6 +4,10 @@
     "path": "references/document-sandbox/document-apis/classes/editor.md",
     "pages": [
       {
+        "title": "ActivePageNode",
+        "path": "references/document-sandbox/document-apis/classes/active-page-node.md"
+      },
+      {
         "title": "AddOnData",
         "path": "references/document-sandbox/document-apis/classes/add-on-data.md"
       },

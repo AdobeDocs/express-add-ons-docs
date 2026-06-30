@@ -40,6 +40,7 @@ hideEditInGitHub: true
 
 | Class | Description |
 | ------ | ------ |
+| [ActivePageNode](classes/active-page-node.md) | A PageNode represents a page in the document, a child of the root node of the document's "scenegraph" artwork tree (see [ExpressRootNode](classes/express-root-node.md)). A page contains one or more artboards, which in turn contain all the page's visual content. If multiple artboards are present, each represents a keyframe "scene" in the page's animation timeline. |
 | [ArtboardList](classes/artboard-list.md) | ArtboardList represents an ordered list of ArtboardNodes, which are the children of one [PageNode](classes/page-node.md). If multiple artboards are present, each represents a keyframe "scene" in the page's animation timeline. |
 | [ArtboardNode](classes/artboard-node.md) | An ArtboardNode represents the topmost container of visual content within a [PageNode](classes/page-node.md). When a page contains multiple artboards, each represents a keyframe "scene" in the page's animation timeline. |
 | [BaseNode](classes/base-node.md) | A "node" represents an object in the scenegraph, the document's visual content tree. This base class includes only the most fundamental nonvisual properties that even nodes near the top of the document structure share (such as PageNode). The more tangible visual content typically extends the richer Node class which extends BaseNode with additional properties. |

@@ -14,7 +14,7 @@ hideEditInGitHub: true
 
 **IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
 
-The values yielded by [VisualNode.allTextContent](../classes/visual-node.md#alltextcontent) and [PageNode.allTextContent](../classes/page-node.md#alltextcontent).
+The values yielded by [VisualNode.allTextContent](../classes/visual-node.md#alltextcontent) and [ActivePageNode.allTextContent](../classes/active-page-node.md#alltextcontent).
 
 ## Properties
 

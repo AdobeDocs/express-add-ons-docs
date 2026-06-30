@@ -166,14 +166,16 @@ The background fill of the artboard. Artboards must always have a fill.
 #### Get Signature
 
 ```ts
-get parent(): PageNode | undefined;
+get parent(): ActivePageNode | undefined;
 ```
 
-The node's parent. Undefined if the node is an orphan.
+The node's parent. Undefined if the node is an orphan. If you can access an artboard (or its children) in a given
+synchronous frame of time, then its parent Page is guaranteed to be an [ActivePageNode](active-page-node.md), and all other
+artboards within the page are synchronously accessible as well.
 
 ##### Returns
 
-[`PageNode`](page-node.md) \| `undefined`
+[`ActivePageNode`](active-page-node.md) \| `undefined`
 
 #### Implementation of
 
@@ -471,6 +473,41 @@ removal. No-op if node is already an orphan.
 #### Inherited from
 
 [`VisualNode`](visual-node.md).[`removeFromParent`](visual-node.md#removefromparent)
+
+<HorizontalLine />
+
+### hasDescendant()
+
+```ts
+hasDescendant(node): boolean;
+```
+
+**`Experimental`**
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Returns true if the given node is a descendant (i.e. within the subtree) of this node.
+Returns false if passed `this` itself, as a node is not inside its own subtree.
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `node` | [`VisualNode`](visual-node.md) |
+
+#### Returns
+
+`boolean`
+
+#### Implementation of
+
+[`ContainerNode`](../interfaces/container-node.md).[`hasDescendant`](../interfaces/container-node.md#hasdescendant)
+
+#### Inherited from
+
+[`VisualNode`](visual-node.md).[`hasDescendant`](visual-node.md#hasdescendant)
 
 <HorizontalLine />
 

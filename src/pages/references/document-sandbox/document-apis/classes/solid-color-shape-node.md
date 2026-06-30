@@ -53,6 +53,27 @@ Get [AddOnData](add-on-data.md) reference for managing the private metadata on t
 
 <HorizontalLine />
 
+### id
+
+#### Get Signature
+
+```ts
+get id(): string;
+```
+
+A unique identifier for this node that stays the same when the file is closed & reopened, or if the node is
+moved to a different part of the document.
+
+##### Returns
+
+`string`
+
+#### Inherited from
+
+[`Node`](node.md).[`id`](node.md#id)
+
+<HorizontalLine />
+
 ### allChildren
 
 #### Get Signature
@@ -267,44 +288,28 @@ set color(color): void;
 
 <HorizontalLine />
 
-### centerPointLocal
+### boundsLocal
 
 #### Get Signature
 
 ```ts
-get centerPointLocal(): Readonly<Point>;
+get boundsLocal(): Readonly<Rect>;
 ```
 
-Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal box.
+The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
+relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
+"spine" of the shape as well as its stroke, but excluding effects such as shadows.
+
+The top-left corner of the bounding box corresponds to the visual top-left corner of the node, but this value is
+*not* necessarily (0,0) – this is especially true for Text and Path nodes.
 
 ##### Returns
 
-`Readonly`&lt;[`Point`](../interfaces/point.md)&gt;
+`Readonly`&lt;[`Rect`](../interfaces/rect.md)&gt;
 
 #### Inherited from
 
-[`Node`](node.md).[`centerPointLocal`](node.md#centerpointlocal)
-
-<HorizontalLine />
-
-### id
-
-#### Get Signature
-
-```ts
-get id(): string;
-```
-
-A unique identifier for this node that stays the same when the file is closed & reopened, or if the node is
-moved to a different part of the document.
-
-##### Returns
-
-`string`
-
-#### Inherited from
-
-[`Node`](node.md).[`id`](node.md#id)
+[`Node`](node.md).[`boundsLocal`](node.md#boundslocal)
 
 <HorizontalLine />
 
@@ -528,28 +533,23 @@ Note that visibleRanges and visibleText may not be sorted as TextNode "frames" c
 
 <HorizontalLine />
 
-### boundsLocal
+### centerPointLocal
 
 #### Get Signature
 
 ```ts
-get boundsLocal(): Readonly<Rect>;
+get centerPointLocal(): Readonly<Point>;
 ```
 
-The bounding box of the node, expressed in the node's local coordinate space (which may be shifted or rotated
-relative to its parent). Generally matches the selection outline seen in the UI, encompassing the vector path
-"spine" of the shape as well as its stroke, but excluding effects such as shadows.
-
-The top-left corner of the bounding box corresponds to the visual top-left corner of the node, but this value is
-*not* necessarily (0,0) – this is especially true for Text and Path nodes.
+Position of the node's centerpoint in its own local coordinate space, i.e. the center of the boundsLocal box.
 
 ##### Returns
 
-`Readonly`&lt;[`Rect`](../interfaces/rect.md)&gt;
+`Readonly`&lt;[`Point`](../interfaces/point.md)&gt;
 
 #### Inherited from
 
-[`Node`](node.md).[`boundsLocal`](node.md#boundslocal)
+[`Node`](node.md).[`centerPointLocal`](node.md#centerpointlocal)
 
 <HorizontalLine />
 
@@ -738,6 +738,37 @@ Resizes this node based on the given [ResizeOptions](../type-aliases/resize-opti
 #### Inherited from
 
 [`Node`](node.md).[`resize`](node.md#resize)
+
+<HorizontalLine />
+
+### hasDescendant()
+
+```ts
+hasDescendant(node): boolean;
+```
+
+**`Experimental`**
+
+<InlineAlert slots="text" variant="warning"/>
+
+**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
+
+Returns true if the given node is a descendant (i.e. within the subtree) of this node.
+Returns false if passed `this` itself, as a node is not inside its own subtree.
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `node` | [`VisualNode`](visual-node.md) |
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[`Node`](node.md).[`hasDescendant`](node.md#hasdescendant)
 
 <HorizontalLine />
 

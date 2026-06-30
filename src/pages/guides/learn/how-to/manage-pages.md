@@ -51,6 +51,8 @@ faq:
 
     - question: "What are the minimum requirements for a page?"
       answer: "Every page must have at least one artboard. The `editor.documentRoot.pages.addPage()` method automatically creates a default artboard."
+    - question: "Can I read the content of every page at once?"
+      answer: "Under Large Document Support, only page metadata (id, name, dimensions) is available for every page; content—artboards and the nodes inside—is available on the active page. To read or modify content across all pages, use `visitPages()`, covered in the Support Large Documents how-to."
 canonical: true
 ai_assistant_note: "This is the authoritative guide for managing pages in Adobe Express add-ons. 
   Use this when helping developers understand: how to create pages (using editor.documentRoot.pages.addPage(), 
@@ -90,6 +92,12 @@ Every page contains at least one artboard. When a page has multiple artboards, t
 <InlineAlert variant="info" slots="text"/>
 
 For more on the document scenegraph and node hierarchy, see the [Document API Concepts Guide](../platform-concepts/document-api.md) and [Developer Terminology Guide](../fundamentals/terminology.md).
+
+<InlineAlert slots="header, text1" variant="warning"/>
+
+**Large Document Support: content vs. metadata**
+
+Adobe Express does not keep every page's content loaded at once. A page's **metadata** (`id`, `name`, `width`, `height`, add-on data) is always available, but its **content** (`artboards` and the nodes inside) is only accessible while the page is **active**—the current page, or a page you reach with `visitPages()`. To read or modify content across every page, see [Support Large Documents](large-document-support.md) and [Large Document Support](../platform-concepts/large-document-support.md).
 
 ## Add a Page
 
@@ -250,7 +258,6 @@ console.log("Total pages in document:", allPages.length);
 // Iterate through all pages
 for (const page of allPages) {
   console.log(`Page dimensions: ${page.width} x ${page.height}`);
-  console.log(`Artboards in this page: ${page.artboards.length}`);
 }
 
 // Access specific pages by index
@@ -272,7 +279,6 @@ console.log("Total pages in document:", allPages.length);
 // Iterate through all pages
 for (const page of allPages) {
   console.log(`Page dimensions: ${page.width} x ${page.height}`);
-  console.log(`Artboards in this page: ${page.artboards.length}`);
 }
 
 // Access specific pages by index
@@ -474,7 +480,7 @@ const templatePages = createTemplatePages();
 
 ### Check Page Properties
 
-For detailed page information including content analysis and print readiness, see the [Page Metadata How-to Guide](page-metadata.md).
+For detailed page information including content analysis and print readiness, see the [Page Metadata How-to Guide](page-metadata.md). The analysis below reads only page **metadata** (dimensions), which is available for every page. To traverse or modify the **content** of every page (artboards and the nodes inside), use `visitPages()`—under Large Document Support, content is only accessible on the active page. See [Support Large Documents](large-document-support.md).
 
 <CodeBlock slots="heading, code" repeat="2" />
 
@@ -490,17 +496,11 @@ function analyzeDocument() {
   console.log("=== Document Analysis ===");
   console.log(`Total pages: ${pages.length}`);
   
+  // Page metadata (dimensions) is available for every page, active or not
   for (let i = 0; i < pages.length; i++) {
     const page = pages[i];
     console.log(`\nPage ${i + 1}:`);
     console.log(`  Dimensions: ${page.width} x ${page.height}`);
-    console.log(`  Artboards: ${page.artboards.length}`);
-    
-    // Count content in each artboard
-    for (let j = 0; j < page.artboards.length; j++) {
-      const artboard = page.artboards[j];
-      console.log(`  Artboard ${j + 1}: ${artboard.children.length} items`);
-    }
   }
 }
 
@@ -512,7 +512,7 @@ analyzeDocument();
 
 ```ts
 // sandbox/code.ts
-import { editor, PageList, PageNode, ArtboardNode } from "express-document-sdk";
+import { editor, PageList, PageNode } from "express-document-sdk";
 
 function analyzeDocument(): void {
   const pages: PageList = editor.documentRoot.pages;
@@ -520,17 +520,11 @@ function analyzeDocument(): void {
   console.log("=== Document Analysis ===");
   console.log(`Total pages: ${pages.length}`);
   
+  // Page metadata (dimensions) is available for every page, active or not
   for (let i = 0; i < pages.length; i++) {
     const page: PageNode = pages[i];
     console.log(`\nPage ${i + 1}:`);
     console.log(`  Dimensions: ${page.width} x ${page.height}`);
-    console.log(`  Artboards: ${page.artboards.length}`);
-    
-    // Count content in each artboard
-    for (let j = 0; j < page.artboards.length; j++) {
-      const artboard: ArtboardNode = page.artboards[j];
-      console.log(`  Artboard ${j + 1}: ${artboard.children.length} items`);
-    }
   }
 }
 
@@ -603,6 +597,10 @@ Pages created with `editor.documentRoot.pages.addPage()` integrate seamlessly wi
 
 **A:** Every page must have at least one artboard. The `editor.documentRoot.pages.addPage()` method automatically creates a default artboard.
 
+#### Q: Can I read the content of every page at once?
+
+**A:** Under Large Document Support, only page metadata (id, name, dimensions) is available for every page; content—artboards and the nodes inside—is available on the active page. To read or modify content across all pages, use `visitPages()`, covered in the Support Large Documents how-to.
+
 ## Related Topics
 
 ### Page Information and Metadata
@@ -625,6 +623,8 @@ Pages created with `editor.documentRoot.pages.addPage()` integrate seamlessly wi
 - **[Context API Reference](../../../references/document-sandbox/document-apis/classes/context.md)** - Current page, selection, and insertion context
 - **[PageNode API Reference](../../../references/document-sandbox/document-apis/classes/page-node.md)** - Detailed page node documentation
 - **[PageList API Reference](../../../references/document-sandbox/document-apis/classes/page-list.md)** - Page list management methods
+- **[Large Document Support](../platform-concepts/large-document-support.md)** - The active/inactive page model and why page content isn't always loaded
+- **[Support Large Documents](large-document-support.md)** - Visit pages, keep content active during async operations, and replace deprecated APIs
 
 ### Advanced Topics
 
