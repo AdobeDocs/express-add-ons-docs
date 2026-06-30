@@ -36,7 +36,7 @@ Adobe Express is evolving to handle documents with a large number of pages. This
 ### Added
 
 - New [Large Document Support](../guides/learn/platform-concepts/large-document-support.md) concepts guide explaining how Adobe Express will handle large documents in the future, including the active/inactive page model, the `ActivePageNode` hierarchy, compatibility mode, and the phased rollout timeline.
-- New [how-to guide](../guides/learn/how-to/large-document-support.md) with recipes for `visitPages`, `keepContentActiveDuringAsync`, replacing deprecated APIs (`queueAsyncEdit`, `PageNode.artboards`, `PageNode.allDescendants`, `PageNode.allTextContent`, `PageNode.cloneInPlace`), and avoiding stale node references.
+- New [how-to guide](../guides/learn/how-to/large-document-support.md) with recipes for [`visitPages`](./document-sandbox/document-apis/classes/page-list.md#visitpages), [`keepContentActiveDuringAsync`](./document-sandbox/document-apis/classes/editor.md#keepcontentactiveduringasync), replacing deprecated APIs (`queueAsyncEdit`, `PageNode.artboards`, `PageNode.allDescendants`, `PageNode.allTextContent`, `PageNode.cloneInPlace`), and avoiding stale node references.
 
 ### Updated
 
