@@ -78,3 +78,10 @@ If you have any questions, feel free to contact us at [ccintrev@adobe.com](mailt
 - Our [Developer Brand Guidelines](../guidelines/brand-guidelines.md)
 - Our [Monetization Guidelines](../guidelines/monetization.md) (if you are monetizing your add-on)
 - Our [Generative AI Guidelines](../guidelines/genai/index.md) (if you are using Generative AI)
+
+## Community resources
+
+<InfoCard slots="articles"  wide />
+
+- [https://blog.developer.adobe.com/en/publish/2026/05/how-to-get-your-adobe-express-add-on-approved-avoiding-the-most-common-rejections](https://blog.developer.adobe.com/en/publish/2026/05/how-to-get-your-adobe-express-add-on-approved-avoiding-the-most-common-rejections)
+- [https://blog.developer.adobe.com/en/publish/2025/01/how-to-market-and-monetize-adobe-express-add-ons](https://blog.developer.adobe.com/en/publish/2025/01/how-to-market-and-monetize-adobe-express-add-ons)
