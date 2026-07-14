@@ -79,7 +79,7 @@ If you have any questions, feel free to contact us at [ccintrev@adobe.com](mailt
 - Our [Monetization Guidelines](../guidelines/monetization.md) (if you are monetizing your add-on)
 - Our [Generative AI Guidelines](../guidelines/genai/index.md) (if you are using Generative AI)
 
-## Community resources
+## Related content
 
 <InfoCard slots="articles"  wide />
 
