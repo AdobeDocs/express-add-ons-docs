@@ -140,7 +140,7 @@ Unlike `createText()`, which returns a node that must be appended to a parent vi
 
 ### Example: Create Threaded Text with Multiple Frames
 
-```js
+```js-data-playground-session-id="createBasicThreadedText"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url-stage="https://stage.projectx.corp.adobe.com/new"-data-playground-url="https://new.express.adobe.com/new"
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
@@ -466,7 +466,7 @@ contentModel.deleteText({ start: 13, length: 6 });
 // It's Friday, deploy to Production!
 
 // You can delete multiple ranges calling the method as many times as needed
-contentModel.deleteText({ start: 12, length: 22 });
+contentModel.deleteText({ start: 11, length: 22 });
 
 // It's Friday!
 ```
