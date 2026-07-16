@@ -208,18 +208,35 @@ editor.context.insertionParent.children.append(g);
 
 `PathNode` instances have `fill` and `stroke` properties that you can use to style the path, very much like, say, a [`RectangleNode`](../../../references/document-sandbox/document-apis/classes/rectangle-node.md). In the code snippet below, we're going to add some life to the path from the previous example.
 
-```js
+```js-data-playground-session-id="createMultipleColorPaths"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url-stage="https://stage.projectx.corp.adobe.com/new"-data-playground-url="https://new.express.adobe.com/new"
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
-const p1 = editor.createPath(/* same as before... */);
-const p2 = editor.createPath(/* same as before... */);
-const p3 = editor.createPath(/* same as before... */);
-const p4 = editor.createPath(/* same as before... */);
-const p5 = editor.createPath(/* same as before... */);
-const p6 = editor.createPath(/* same as before... */);
-const p7 = editor.createPath(/* same as before... */);
-const p8 = editor.createPath(/* same as before... */);
+ const p1 = editor.createPath( `M310,222 A92,92 0 1,0 126,222 A92,92 0 1,0 310,222 Z`);
+ const p2 = editor.createPath(
+  `M425.096,209.235
+    C425.096,209.235 520.492,413.969 554.392,486.722
+    C556.956,492.226 556.533,498.659 553.270,503.779
+    C550.007,508.900 544.355,512.000 538.283,512.000
+    C453.556,512.000 199.784,512.000 115.057,512.000
+    C108.985,512.000 103.333,508.900 100.070,503.779
+    C96.807,498.659 96.384,492.226 98.948,486.722
+    C133.289,413.023 230.896,203.545 230.896,203.545
+    L278.678,236.000 L331.559,195.000 L383.266,236.000 L425.096,209.235 Z`
+ );
+ const p3 = editor.createPath(
+  `M230.896,203.545
+    L278.041,102.365
+    C286.849,83.461 305.815,71.375 326.670,71.375
+    C347.525,71.375 366.491,83.461 375.299,102.365
+    L425.096,209.235 L383.266,236.000 L331.559,195.000
+    L278.678,236.000 L230.896,203.545 Z`
+ );
+const p4 = editor.createPath(`M218,106 L218,66`);
+const p5 = editor.createPath(`M160.074,121.590 L140.074,87.150`);
+const p6 = editor.createPath(`M117.878,164.193 L83.138,144.193`);
+const p7 = editor.createPath(`M101.831,222.119 L61.831,222.119`);
+const p8 = editor.createPath(`M118.076,280.194 L83.336,300.194`);
 
 const g = editor.createGroup();
 g.children.append(p1, p2, p3, p4, p5, p6, p7, p8);

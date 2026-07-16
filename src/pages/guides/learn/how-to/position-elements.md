@@ -156,7 +156,7 @@ The one Rectangle on the canvas, as we've used here for demonstration purposes, 
 
 In the following example, we'll create and group two rectangles; the group itself will be rotated and translated. We'll then find out the position of the second rectangle in the artboard's axis.
 
-```js
+```js-data-playground-session-id="rectCoordinateSpace"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url-stage="https://stage.projectx.corp.adobe.com/new"-data-playground-url="https://new.express.adobe.com/new"
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 

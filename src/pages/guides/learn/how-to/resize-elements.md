@@ -86,7 +86,7 @@ Proportional resizing maintains the element's aspect ratio while changing its si
 
 ### Example: Resize by Width
 
-```js
+```js-data-playground-session-id="resizeWidthRect"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url-stage="https://stage.projectx.corp.adobe.com/new"-data-playground-url="https://new.express.adobe.com/new"
 // sandbox/code.js
 import { editor, colorUtils, constants } from "express-document-sdk";
 
@@ -114,7 +114,7 @@ console.log(`New dimensions: ${rect.width} x ${rect.height}`);
 
 ### Example: Resize by Height
 
-```js
+```js-data-playground-session-id="resizeHeightEllipse"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url-stage="https://stage.projectx.corp.adobe.com/new"-data-playground-url="https://new.express.adobe.com/new"
 // sandbox/code.js
 import { editor, colorUtils, constants } from "express-document-sdk";
 
@@ -183,7 +183,7 @@ The `contain` behavior fits an element entirely within specified dimensions, sim
 
 ### Example: Contain Within Bounds (Shapes)
 
-```js
+```js-data-playground-session-id="containWithinShapes"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url-stage="https://stage.projectx.corp.adobe.com/new"-data-playground-url="https://new.express.adobe.com/new"
 // sandbox/code.js
 import { editor, colorUtils, constants } from "express-document-sdk";
 
@@ -218,7 +218,7 @@ Please note that shapes are resized to fit within a bounding box **disregarding 
 
 You can specify only one dimension with `contain` behavior to adjust that dimension while ideally keeping the other fixed:
 
-```js
+```js-data-playground-session-id="createShapeWithRatio"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url-stage="https://stage.projectx.corp.adobe.com/new"-data-playground-url="https://new.express.adobe.com/new"
 // sandbox/code.js
 import { editor, colorUtils, constants } from "express-document-sdk";
 
@@ -372,7 +372,7 @@ Text elements adjust their font size when resized. Both proportional and contain
 
 ### Example: Resize Text Proportionally
 
-```js
+```js-data-playground-session-id="createResizeBasicText"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url-stage="https://stage.projectx.corp.adobe.com/new"-data-playground-url="https://new.express.adobe.com/new"
 // sandbox/code.js
 import { editor, constants } from "express-document-sdk";
 
@@ -440,7 +440,7 @@ In the screenshot above, the original text is top-left; top-right, the result of
 
 Page resizing uses a simpler approach; simply set the `width` and `height` properties:
 
-```js
+```js-data-playground-session-id="pageResizing"-data-playground-mode="playground"-data-playground-session="new"-data-playground-execution-mode="script"-data-playground-url-stage="https://stage.projectx.corp.adobe.com/new"-data-playground-url="https://new.express.adobe.com/new"
 // sandbox/code.js
 import { editor } from "express-document-sdk";
 
