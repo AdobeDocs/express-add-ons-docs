@@ -109,9 +109,13 @@ If terms like _page_, _artboard_, and _scenegraph_ are unfamiliar, start with th
 
 Not every add-on is affected. An add-on that performs synchronous operations on the current page, and doesn't carry node references across asynchronous waits, generally needs no changes. If your add-on depends on content being available everywhere, all the time, you should review the rest of this page and the [Support Large Documents](../how-to/large-document-support.md) how-to.
 
-<InlineAlert slots="text1" variant="info"/>
+<InlineAlert slots="header, text1, text2" variant="info"/>
 
-To help you triage, Adobe provides the **Large Document Support add-on check** skill—a tool that scans your add-on's code for the deprecated APIs and the unsafe node-reference patterns described on this page and flags whether it is likely impacted. Treat its result as a _starting point_ for assessment, not a verdict: it can produce false positives and false negatives, so always validate against the [testing environment](#testing-your-add-on-with-large-document-support) regardless of what it reports.
+#### Large Document Support Checker Skill
+
+To help you triage, Adobe provides the [Large Document Support add-on check skill](https://github.com/AdobeDocs/express-add-ons-docs/raw/refs/heads/main/static/zip/large-document-support-add-on-check.zip)—a tool that you can use with your LLM of choice, to scan your add-on's code for the deprecated APIs and the unsafe node-reference patterns described on this page and flag whether it is likely impacted.
+
+**Treat its result as a starting point** for assessment, not a verdict: it can produce false positives and false negatives, so always validate against the [testing environment](#testing-your-add-on-with-large-document-support) regardless of what it reports.
 
 ### What add-ons are impacted?
 
