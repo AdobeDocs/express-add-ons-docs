@@ -16,6 +16,12 @@ keywords:
   - document model
   - visitPages
   - keepContentActiveDuringAsync
+  - visitPages progress bar
+  - createRenditions
+  - getPagesMetadata
+  - printQualityCheck
+  - stable API
+  - Large Document Support add-on check
   - stale node reference
   - Add-on Compatibility Mode
   - migration
@@ -37,12 +43,20 @@ faq:
       answer: "As documents grow, keeping every page's content in memory becomes impractical and eventually impossible, especially on lower-end devices. Large Document Support lets Express load page content on demand, so performance and stability hold up as documents scale."
     - question: "Is my add-on affected?"
       answer: "Not all add-ons are impacted. Only add-ons that depend on content being available all the time are affected—those that iterate over all pages, read content on pages that aren't in view, jump between pages, or hold node references across an asynchronous operation. Add-ons that work only with the current page and don't span async boundaries generally need no changes."
+    - question: "How do I check whether my add-on is impacted?"
+      answer: "As a starting point, run the Large Document Support add-on check—a skill Adobe provides that scans your add-on's code for the deprecated APIs and the unsafe node-reference patterns this page describes and reports whether your add-on is likely impacted. Treat the result as a starting point, not a ruling: it can produce false positives and false negatives, so always validate your add-on in the testing environment regardless of what it reports."
     - question: "What is the difference between an active and an inactive page?"
       answer: "An active page has its content loaded and accessible. An inactive page does not: its metadata (id, name, dimensions, add-on data) is still readable, but its content (artboards, text, shapes) is not, until the page is made active again. A visible page is always active, but Express may keep additional pages active beyond the one in view."
     - question: "What is an ActivePageNode?"
       answer: "A new class in the document model that represents a page whose content is currently accessible. Content-bearing members such as artboards, allTextContent, and cloneInPlace now live on ActivePageNode rather than on PageNode, which makes the active/inactive distinction explicit in the API surface."
     - question: "Do I have to rewrite my add-on?"
       answer: "Most add-ons need only targeted changes: replace whole-document content traversal with visitPages(), wrap async operations in keepContentActiveDuringAsync(), and stop holding node references across asynchronous boundaries. The introduction of ActivePageNode by itself does not break existing code."
+    - question: "Do I still need the experimentalApis flag for visitPages and keepContentActiveDuringAsync?"
+      answer: "No, not as of Phase 2. Both APIs shipped as experimental in Phase 1 and required the experimentalApis flag during development. With Phase 2 they have graduated to stable—they now sit inside the usual stability guarantees, and you no longer need the experimentalApis flag to call them."
+    - question: "What happens if the user cancels a visitPages operation?"
+      answer: "While visitPages runs, Express shows a modal progress bar that blocks page-switching for the duration of your callback. It carries a cancel button, and pressing it rejects the promise visitPages returned, so handle that rejection in your code. Automatic rollback of partial changes on cancel is not yet in place, so if your callback had already modified some pages, cleaning up is currently your responsibility."
+    - question: "Do my iframe (Add-on UI SDK) calls like createRenditions need changes?"
+      answer: "No. Add-ons that use only the iframe Add-on UI SDK (addOnUISdk.app.document.*) need no code changes—Express activates the pages those calls need on your behalf. The one thing to plan for is timing: calls that span many pages, such as createRenditions, getPagesMetadata, and printQualityCheck, can take noticeably longer on large documents, and there is no built-in progress UI. Surface your own feedback—a toast, a spinner, or an inline message—so a longer call reads as progress rather than a frozen add-on."
     - question: "What is Add-on Compatibility Mode, and can I rely on it?"
       answer: "It is a temporary mode that keeps all pages active so that add-ons not yet updated can keep working during the migration period. It is a migration aid, not a guarantee: on large documents or low-end devices Express may be unable to keep everything active, and the add-on may still fail. Treat it as breathing room, not a permanent solution."
     - question: "How long do I have to migrate?"
@@ -93,9 +107,11 @@ If terms like _page_, _artboard_, and _scenegraph_ are unfamiliar, start with th
 
 ## Is my add-on affected?
 
-Not every add-on is affected. An add-on that performs synchronous operations on the current page, and doesn't carry node references across asynchronous waits, generally needs no changes.
+Not every add-on is affected. An add-on that performs synchronous operations on the current page, and doesn't carry node references across asynchronous waits, generally needs no changes. If your add-on depends on content being available everywhere, all the time, you should review the rest of this page and the [Support Large Documents](../how-to/large-document-support.md) how-to.
 
-If your add-on depends on content being available everywhere, all the time, you should review the rest of this page and the [Support Large Documents](../how-to/large-document-support.md) how-to.
+<InlineAlert slots="text1" variant="info"/>
+
+To help you triage, Adobe provides the **Large Document Support add-on check** skill—a tool that scans your add-on's code for the deprecated APIs and the unsafe node-reference patterns described on this page and flags whether it is likely impacted. Treat its result as a _starting point_ for assessment, not a verdict: it can produce false positives and false negatives, so always validate against the [testing environment](#testing-your-add-on-with-large-document-support) regardless of what it reports.
 
 ### What add-ons are impacted?
 
@@ -112,6 +128,14 @@ If your add-on does none of these, the model's introduction is invisible to it.
 There's a split by **which SDK surface** you call. Add-ons that use only the iframe Add-on UI SDK (`addOnUISdk.app.document.*`, like renditions, page metadata, or adding media) are largely unaffected: Adobe Express activates the pages those calls need on your behalf.
 
 The migration applies to **Document Sandbox** code (`editor.*`, `pages.*`), which works close to the document model and must reach content safely itself.
+
+<InlineAlert slots="header, text1, text2" variant="info"/>
+
+#### Keep your users informed
+
+Iframe APIs need no code changes as Express autonomously activates each page it needs behind the scenes, but there is one subtlety worth planning for. Calls to `createRenditions()`, `getPagesMetadata()`, and `printQualityCheck()` that span many pages **can take noticeably longer on large documents**, due to the on-the-fly page activation.
+
+As there is no built-in progress indicator for these calls, the user may think the add-on has frozen. **You should consider adding your own feedback to the user**, either as a toast, a spinner, or an inline message. This way, the user sees that the add-on is working and that the call is progressing.
 
 ### Marketplace enforcement
 
@@ -135,12 +159,12 @@ Large Document Support will be introduced in a phased manner, over a **seven-mon
 
 The milestone dates above are planning targets and may shift as the rollout proceeds. Treat the _sequence_ and the _actions_ as stable; confirm exact dates against the latest announcements before planning around a specific deadline.
 
-![Large Document Support rollout phases](./images/LDS-timeline-p1.png)
+![Large Document Support rollout phases](./images/LDS-timeline-p2.png)
 
 | Phase  | Target              | What happens on the platform                                                                                                                                                | What it means for you                                                                                                                                                         |
 | :----- | :------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **1**  | ~June-end 2026      | New Large Document Support APIs ship as experimental; the APIs incompatible with the model are deprecated; a testing mechanism becomes available.                           | Assess whether your add-on is impacted, review the migration patterns, and start testing. Add-ons in active development can still reach the marketplace on the existing APIs. |
-| **2**  | ~mid-July 2026      | The new APIs stabilize; deprecated APIs are removed from the SDK; the migration window and the marketplace submission cutoff begin.                                         | Migrate, test, and resubmit. Local builds that still reference removed APIs will fail. An add-on's safe status is tied to its submission date.                                |
+| **2**  | ~July-end 2026      | The new APIs stabilize; deprecated APIs are removed from the SDK; the migration window and the marketplace submission cutoff begin.                                         | Migrate, test, and resubmit. Local builds that still reference removed APIs will fail. An add-on's safe status is tied to its submission date.                                |
 | **2a** | ~early-October 2026 | Add-on Compatibility Mode is introduced; user-facing warnings begin for impacted marketplace add-ons; the final three-month window opens.                                   | Finish migration. Don't rely on compatibility mode for correctness. Users may begin seeing warnings for un-migrated add-ons.                                                  |
 | **3**  | ~mid-January 2027   | Large Document Support becomes the default; compatibility mode is withdrawn; deprecated APIs are fully withdrawn; impacted, un-migrated marketplace add-ons may be removed. | Be fully migrated. This is the steady state—the new APIs and the active-page model are simply how Express works.                                                              |
 
@@ -195,13 +219,21 @@ Introducing `ActivePageNode` does not, by itself, break existing add-ons: where 
 
 ### `visitPages()`
 
-`visitPages()` answers _"how do I reach content on pages that aren't in view?"_ Given a set of pages, it activates each one in turn and hands your callback a fully accessible `ActivePageNode`, guaranteeing the page stays active for the duration of that callback. It is the safe replacement for iterating `pages` and touching content directly. Because a pass over a large document can take several seconds, it pairs naturally with a progress indicator.
+`visitPages()` answers _"how do I reach content on pages that aren't in view?"_ Given a set of pages, it activates each one in turn and hands your callback a fully accessible `ActivePageNode`, guaranteeing the page stays active for the duration of that callback. It is the safe replacement for iterating `pages` and touching content directly.
+
+Because a pass over a large document can take several seconds, Express shows a **modal progress bar** while `visitPages()` runs, whose UI may see minor changes in later releases. The dialog blocks the user from switching pages while your callback executes—so the page it hands you cannot be pulled out from under you mid-pass—and it appears only after a short minimum delay, so a quick pass doesn't flash a dialog on screen. It also carries a way to cancel the operation, **rejecting the promise** `visitPages()` returned.
+
+![visitPages progress bar](./images/LDS--progress-bar.png)
+
+<InlineAlert slots="text1" variant="warning"/>
+
+One caveat for this phase: automatic rollback of partial changes on cancel is **not yet in place**, so if your callback has already modified some pages when the user cancels, cleaning up is currently your responsibility.
 
 ### `keepContentActiveDuringAsync()`
 
 `keepContentActiveDuringAsync()` answers _"how do I keep working with this node across an `await`?"_ You hand it a **target** (the node or page to keep active), an **async function** that does the waiting, and a **synchronous follow-up** that applies your edits while the target is still active—so an asset download or a translation call doesn't leave you holding a stale reference. It is the safe replacement for the older `queueAsyncEdit()` pattern.
 
-Both `visitPages()` and `keepContentActiveDuringAsync()` ship as **experimental** in the first phase of the rollout (see above), which means they sit outside the usual stability guarantees and require the `experimentalApis` flag during development.
+Both `visitPages()` and `keepContentActiveDuringAsync()` shipped as **experimental** in the first phase of the rollout (see above). As of **Phase 2** they have graduated to **stable**: they now sit inside the usual stability guarantees, and you no longer need the `experimentalApis` flag to call them.
 
 ### Common migration mistakes
 
@@ -259,6 +291,10 @@ As documents grow, keeping every page's content in memory becomes impractical an
 
 Not all add-ons are impacted. Only add-ons that depend on content being available all the time are affected—those that iterate over all pages, read content on pages that aren't in view, jump between pages, or hold node references across an asynchronous operation. Add-ons that work only with the current page and don't span async boundaries generally need no changes.
 
+#### How do I check whether my add-on is impacted?
+
+As a starting point, run the **Large Document Support add-on check**—a skill Adobe provides that scans your add-on's code for the deprecated APIs and the unsafe node-reference patterns this page describes and reports whether your add-on is likely impacted. Treat the result as a starting point, not a ruling: it can produce false positives and false negatives, so always validate your add-on in the [testing environment](#testing-your-add-on-with-large-document-support) regardless of what it reports.
+
 #### What is the difference between an active and an inactive page?
 
 An active page has its content loaded and accessible. An inactive page does not: its metadata (id, name, dimensions, add-on data) is still readable, but its content (artboards, text, shapes) is not, until the page is made active again. A visible page is always active, but Express may keep additional pages active beyond the one in view.
@@ -270,6 +306,18 @@ A new class in the document model that represents a page whose content is curren
 #### Do I have to rewrite my add-on?
 
 Most add-ons need only targeted changes: replace whole-document content traversal with visitPages(), wrap async operations in keepContentActiveDuringAsync(), and stop holding node references across asynchronous boundaries. The introduction of ActivePageNode by itself does not break existing code.
+
+#### Do I still need the experimentalApis flag for visitPages and keepContentActiveDuringAsync?
+
+No, not as of Phase 2. Both APIs shipped as experimental in Phase 1 and required the `experimentalApis` flag during development. With Phase 2 they have graduated to stable—they now sit inside the usual stability guarantees, and you no longer need the `experimentalApis` flag to call them.
+
+#### What happens if the user cancels a visitPages operation?
+
+While `visitPages()` runs, Express shows a modal progress bar that blocks page-switching for the duration of your callback. It carries a cancel button, and pressing it rejects the promise `visitPages()` returned, so handle that rejection in your code. Automatic rollback of partial changes on cancel is not yet in place, so if your callback had already modified some pages, cleaning up is currently your responsibility.
+
+#### Do my iframe (Add-on UI SDK) calls like createRenditions need changes?
+
+No. Add-ons that use only the iframe Add-on UI SDK (`addOnUISdk.app.document.*`) need no code changes—Express activates the pages those calls need on your behalf. The one thing to plan for is timing: calls that span many pages, such as `createRenditions`, `getPagesMetadata`, and `printQualityCheck`, can take noticeably longer on large documents, and there is no built-in progress UI. Surface your own feedback—a toast, a spinner, or an inline message—so a longer call reads as progress rather than a frozen add-on.
 
 #### What is Add-on Compatibility Mode, and can I rely on it?
 
