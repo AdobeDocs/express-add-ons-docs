@@ -109,7 +109,9 @@ The children of a VisualNode are always other VisualNode classes (never the more
 
 #### Overrides
 
-[`BaseNode`](base-node.md).[`allChildren`](base-node.md#allchildren)
+```ts
+BaseNode.allChildren
+```
 
 <HorizontalLine />
 

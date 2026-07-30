@@ -67,6 +67,7 @@ const listStyle = {
 | Enumeration | Description |
 | ------ | ------ |
 | [CreateRenditionFormat](../enumerations/create-rendition-format.md) | **Experimental** |
+| [ErrorNames](../enumerations/ErrorNames.md) | - |
 | [OrderedListNumbering](../enumerations/ordered-list-numbering.md) | Numbering types used to display ordered lists: 1, A, a, I, i 01, 001. |
 | [ParagraphListType](../enumerations/paragraph-list-type.md) | Indicates list type: see [UnorderedListStyleInput](../interfaces/unordered-list-style-input.md) and [OrderedListStyleInput](../interfaces/ordered-list-style-input.md). |
 | [TextStyleSource](../enumerations/text-style-source.md) | **Experimental** |

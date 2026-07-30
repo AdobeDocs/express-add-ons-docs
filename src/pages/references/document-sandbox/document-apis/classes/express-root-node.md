@@ -76,36 +76,6 @@ moved to a different part of the document.
 
 <HorizontalLine />
 
-### allChildren
-
-#### Get Signature
-
-```ts
-get allChildren(): Readonly<Iterable<BaseNode>>;
-```
-
-Returns a read-only list of all children of the node. General-purpose content containers such as ArtboardNode or
-GroupNode also provide a mutable [ContainerNode.children](../interfaces/container-node.md#children) list. Other nodes with a more specific structure can
-hold children in various discrete "slots"; this `allChildren` list includes *all* such children and reflects their
-overall display z-order.
-
-Although BaseNode's allChildren may yield other BaseNodes, the subclasses Node and ArtboardNode override allChildren
-to guarantee all their children are full-fledged Node instances.
-
-##### Deprecated
-
-This API will be removed after 2026-07-15. Use `ActivePageNode.allChildren` instead.
-
-##### Returns
-
-`Readonly`&lt;`Iterable`&lt;[`BaseNode`](base-node.md)&gt;&gt;
-
-#### Inherited from
-
-[`BaseNode`](base-node.md).[`allChildren`](base-node.md#allchildren)
-
-<HorizontalLine />
-
 ### type
 
 #### Get Signature
