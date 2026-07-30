@@ -25,6 +25,28 @@ contributors:
 
 # Changelog
 
+## 2026-07-29
+
+<InlineAlert slots="header, text1" variant="info"/>
+
+#### Large Document Support: Phase 2
+
+[Large Document Support](../learn/platform-concepts/large-document-support.md) has reached **Phase 2**: the new APIs are now stable, the deprecated ones are being removed, and the migration window is open—time to migrate, test, and resubmit.
+
+### Stabilized
+
+- [`visitPages`](../../references/document-sandbox/document-apis/classes/page-list.md#visitpages) and [`keepContentActiveDuringAsync`](../../references/document-sandbox/document-apis/classes/editor.md#keepcontentactiveduringasync) are no longer experimental and no longer require the `experimentalApis` flag.
+
+### Updated
+
+- Deprecated APIs (`queueAsyncEdit`, `PageNode.artboards`, `PageNode.allDescendants`, `PageNode.allTextContent`, `PageNode.cloneInPlace`) are removed from the SDK—local builds that still reference them will fail.
+- `visitPages` now shows a modal progress bar during long passes.
+- [Large Document Support](../learn/platform-concepts/large-document-support.md) concepts and [how-to](../learn/how-to/large-document-support.md) guides refreshed for Phase 2.
+
+### Added
+
+- **Large Document Support add-on check**—a skill you can run to scan your add-on for affected APIs and unsafe node-reference patterns, as a starting point for assessing impact (always confirm by testing).
+
 ## 2026-06-18
 
 <InlineAlert slots="header, text1" variant="info"/>
