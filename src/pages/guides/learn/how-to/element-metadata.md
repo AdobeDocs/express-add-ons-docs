@@ -173,7 +173,7 @@ import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 addOnUISdk.ready.then(async () => {
   try {
     // Create or fetch your image blob
-    const imageBlob = await fetch("./sample-image.png").then(r => r.blob());
+    const imageBlob = await fetch("./sample-image.png").then((r) => r.blob());
 
     // Import image with ImportAddOnData
     await addOnUISdk.app.document.addImage(
@@ -181,28 +181,27 @@ addOnUISdk.ready.then(async () => {
       // Optional MediaAttributes
       {
         title: "Sample Test Image",
-        author: "Add-on Developer"
+        author: "Add-on Developer",
       },
       {
         // Container-level metadata (persists with container)
         nodeAddOnData: {
-          "imageId": "test_001",
-          "category": "demo",
-          "importDate": new Date().toISOString(),
-          "source": "addon-tester"
+          imageId: "test_001",
+          category: "demo",
+          importDate: new Date().toISOString(),
+          source: "addon-tester",
         },
         // Content-level metadata (tied to actual image content)
         mediaAddOnData: {
-          "resolution": "200x150",
-          "format": "PNG",
-          "source": "generated_canvas",
-          "color": "green"
-        }
-      }
+          resolution: "200x150",
+          format: "PNG",
+          source: "generated_canvas",
+          color: "green",
+        },
+      },
     );
 
     console.log("✅ Image imported successfully with metadata!");
-
   } catch (error) {
     console.error("❌ Failed to import image:", error);
   }
@@ -214,20 +213,24 @@ addOnUISdk.ready.then(async () => {
 ```js
 // ui/index.js (iframe runtime)
 // Import a video with container metadata only
-await addOnUISdk.app.document.addVideo(videoBlob, {
-  title: "Product Demo"
-}, {
-  nodeAddOnData: {
-    "video-category": "product-demo",
-    "import-timestamp": new Date().toISOString()
+await addOnUISdk.app.document.addVideo(
+  videoBlob,
+  {
+    title: "Product Demo",
   },
-  mediaAddOnData: {
-    "resolution": "1920x1080",
-    "format": "MP4",
-    "duration": "596s",
-    "testFlag": "remote_video_test"
-  }
-});
+  {
+    nodeAddOnData: {
+      "video-category": "product-demo",
+      "import-timestamp": new Date().toISOString(),
+    },
+    mediaAddOnData: {
+      resolution: "1920x1080",
+      format: "MP4",
+      duration: "596s",
+      testFlag: "remote_video_test",
+    },
+  },
+);
 ```
 
 #### Add Animated Image
@@ -235,15 +238,19 @@ await addOnUISdk.app.document.addVideo(videoBlob, {
 ```js
 // ui/index.js (iframe runtime)
 // Import an animated image with media metadata only
-await addOnUISdk.app.document.addAnimatedImage(gifBlob, {
-  title: "Animated Logo"
-}, {
-  mediaAddOnData: {
-    "animation-type": "logo",
-    "frame-count": "24",
-    "duration": "2000ms"
-  }
-});
+await addOnUISdk.app.document.addAnimatedImage(
+  gifBlob,
+  {
+    title: "Animated Logo",
+  },
+  {
+    mediaAddOnData: {
+      "animation-type": "logo",
+      "frame-count": "24",
+      duration: "2000ms",
+    },
+  },
+);
 ```
 
 <InlineAlert slots="text" variant="info"/>
@@ -260,29 +267,32 @@ await addOnUISdk.app.document.addAnimatedImage(gifBlob, {
 // sandbox/code.js (document sandbox)
 import { editor } from "express-document-sdk";
 
-function retrieveAllMediaMetadata() {
+async function retrieveAllMediaMetadata() {
   console.log("Starting metadata retrieval...");
 
-  const documentRoot = editor.documentRoot;
+  const pages = editor.documentRoot.pages;
   let mediaContainerCount = 0;
 
-  // Traverse document structure to find media nodes
-  for (const page of documentRoot.pages) {
+  // Visit every page so its content is active while we read it
+  await pages.visitPages([...pages], (page) => {
     console.log(`📄 Checking page: ${page.id}`);
 
     for (const artboard of page.artboards) {
+      // page is an ActivePageNode here
       console.log(`🎨 Checking artboard: ${artboard.id}`);
 
       // Use recursive traversal to find all MediaContainer nodes
       traverseNodeForMedia(artboard);
     }
-  }
+  });
 
   function traverseNodeForMedia(node) {
     // Check if current node is a MediaContainer
-    if (node.type === 'MediaContainer') {
+    if (node.type === "MediaContainer") {
       mediaContainerCount++;
-      console.log(`\n📦 Found MediaContainer #${mediaContainerCount}: ${node.id}`);
+      console.log(
+        `\n📦 Found MediaContainer #${mediaContainerCount}: ${node.id}`,
+      );
 
       try {
         // Retrieve container metadata (nodeAddOnData)
@@ -294,9 +304,12 @@ function retrieveAllMediaMetadata() {
         }
 
         if (containerKeys.length > 0) {
-          console.log('📝 Container metadata (nodeAddOnData):', containerMetadata);
+          console.log(
+            "📝 Container metadata (nodeAddOnData):",
+            containerMetadata,
+          );
         } else {
-          console.log('📝 No container metadata found');
+          console.log("📝 No container metadata found");
         }
 
         // Access the media rectangle directly via the mediaRectangle property
@@ -315,21 +328,22 @@ function retrieveAllMediaMetadata() {
             }
 
             if (mediaKeys.length > 0) {
-              console.log('🎯 Media metadata (mediaAddOnData):', mediaMetadata);
+              console.log("🎯 Media metadata (mediaAddOnData):", mediaMetadata);
             } else {
-              console.log('🎯 No media metadata found');
+              console.log("🎯 No media metadata found");
             }
-
           } catch (error) {
             // Handle PSD/AI assets or other errors
-            console.log('⚠️  Cannot access mediaAddOnData (likely PSD/AI asset):', error.message);
+            console.log(
+              "⚠️  Cannot access mediaAddOnData (likely PSD/AI asset):",
+              error.message,
+            );
           }
         } else {
-          console.log('⚠️  No media rectangle found');
+          console.log("⚠️  No media rectangle found");
         }
-
       } catch (error) {
-        console.error('❌ Error accessing container metadata:', error);
+        console.error("❌ Error accessing container metadata:", error);
       }
     }
 
@@ -342,8 +356,12 @@ function retrieveAllMediaMetadata() {
     }
   }
 
-  console.log(`\n✅ Metadata retrieval complete! Found ${mediaContainerCount} MediaContainer(s)`);
+  console.log(
+    `\n✅ Metadata retrieval complete! Found ${mediaContainerCount} MediaContainer(s)`,
+  );
 }
+
+retrieveAllMediaMetadata();
 ```
 
 #### Known MediaContainer

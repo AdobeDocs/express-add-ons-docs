@@ -55,7 +55,7 @@ faq:
       answer: 'Await `fonts.fromPostscriptName("PSName")` and pass the font to `applyCharacterStyles`.'
 
     - question: "Why must font edits be queued?"
-      answer: "Because `fromPostscriptName()` is async; wrap the style edit in `editor.queueAsyncEdit()`."
+      answer: "Because `fromPostscriptName()` is async; wrap the style edit in `editor.keepContentActiveDuringAsync()`."
 
     - question: "How do I apply paragraph-level formatting?"
       answer: 'Use `fullContent.applyParagraphStyles(styles, range)`.'
@@ -73,7 +73,7 @@ faq:
       answer: "Iterate over `textNode.fullContent.allTextNodes`. For threaded text, iterate over `textNode.fullContent.frames` to access the ThreadedTextList."
 
     - question: "How do I get all text content within a container (e.g., a group or page)?"
-      answer: "Use the `allTextContent` accessor on PageNode or VisualNode. It returns a flattened list of TextContent instances from all text-based nodes within the container."
+      answer: "Use the `allTextContent` accessor on VisualNode or ActivePageNode. It returns a flattened list of TextContent instances from all text-based nodes within the container."
 
     - question: "How do I add or remove hyperlinks from text?"
       answer: "Use `applyCharacterStyles()` with a `link` property. Set to a URL string to add a hyperlink, or to an empty string to remove it."
@@ -701,24 +701,29 @@ import { editor, fonts } from "express-document-sdk"; // 👈 fonts import
 // Assuming the user has selected a text frame
 const textNode = editor.context.selection[0];
 
-// Getting a new font object
+// fromPostscriptName() must run before keepContentActiveDuringAsync,
+// not inside its async lambda.
 const lato = await fonts.fromPostscriptName("Lato-Light");
 if (!lato) return; // in case the user isn't entitled to use this font
 
-// ⚠️ Queueing the edit
-editor.queueAsyncEdit(() => {
-  textNode.fullContent.applyCharacterStyles(
-    { font: lato, fontSize: 24 },
-    { start: 0, length: 3 }
-  );
-});
+// Keep the text node active, then apply the styles in the synchronous follow-up.
+await editor.keepContentActiveDuringAsync(
+  textNode,
+  async () => {},
+  () => {
+    textNode.fullContent.applyCharacterStyles(
+      { font: lato, fontSize: 24 },
+      { start: 0, length: 3 }
+    );
+  }
+);
 ```
 
 <InlineAlert slots="header, text" variant="warning"/>
 
 **Asynchronous operations**
 
-Queuing the `applyCharacterStyles()` method is necessary because `fromPostscriptName()` is asynchronous. This ensures the edit is properly tracked for saving and undo. You can read more about this in the [queueAsyncEdit()](../../../references/document-sandbox/document-apis/classes/editor.md#queueasyncedit) reference.
+The font lookup must complete *before* calling `keepContentActiveDuringAsync()`—it must not run inside its async lambda, which is reserved for non-SDK async work (or can be left empty). The text node is then kept active while the style edit runs in the synchronous follow-up, ensuring the edit is properly tracked for saving and undo. You can read more about this in the [keepContentActiveDuringAsync()](../../../references/document-sandbox/document-apis/classes/editor.md#keepcontentactiveduringasync) reference.
 
 ### Example: Get all Fonts
 
@@ -766,28 +771,35 @@ import { editor, fonts } from "express-document-sdk";
 const textNode = editor.context.selection[0];
 const contentModel = textNode.fullContent;
 
+// fromPostscriptName() must run before keepContentActiveDuringAsync,
+// not inside its async lambda.
 const sourceSansBold = await fonts.fromPostscriptName("SourceSans3-Bold");
 if (!sourceSansBold) return;
 
-// Get the array of character styles
-const existingStyles = contentModel.characterStyleRanges;
+// Keep the text node active, then apply the styles in the synchronous follow-up.
+await editor.keepContentActiveDuringAsync(
+  textNode,
+  async () => {},
+  () => {
+    // Get the array of character styles
+    const existingStyles = contentModel.characterStyleRanges;
 
-// Set the font for all styles
-existingStyles.forEach((style) => {
-  style.font = sourceSansBold;
-});
-// Alternatively, you could set the font for a specific style range
-// existingStyles[0].font = sourceSansBold;
+    // Set the font for all styles
+    existingStyles.forEach((style) => {
+      style.font = sourceSansBold;
+    });
+    // Alternatively, you could set the font for a specific style range
+    // existingStyles[0].font = sourceSansBold;
 
-// Reassign the array to apply the style changes
-editor.queueAsyncEdit(() => {
-  contentModel.characterStyleRanges = existingStyles;
-});
+    // Reassign the array to apply the style changes
+    contentModel.characterStyleRanges = existingStyles;
+  }
+);
 ```
 
 <InlineAlert slots="text" variant="warning"/>
 
-Since we're dealing with asynchronous operations, we're queuing the edit to ensure it's properly tracked for saving and undo, as we did for [setting other styles](#example-set-all-styles)
+Since we're dealing with asynchronous operations, the font lookup runs before `keepContentActiveDuringAsync()`—not inside its async lambda—so that the text node stays active for the synchronous style edit, ensuring it's properly tracked for saving and undo, as we did for [setting other styles](#example-set-all-styles)
 
 ### Error Handling with Unavailable Fonts
 
@@ -807,26 +819,32 @@ let safeFont;
 
 try {
   // Check if the text has unavailable fonts
-
   if (contentModel.hasUnavailableFonts()) {
     console.warn("Text contains unavailable fonts. Text modification may be limited.");
 
     // You might want to inform the user or handle this case specially
-    // For example, you could change the font to an available one first
+    // For example, you could change the font to an available one first.
+    // fromPostscriptName() must run before keepContentActiveDuringAsync,
+    // not inside its async lambda.
     safeFont = await fonts.fromPostscriptName("SourceSans3-Regular");
   }
 
-  // // ⚠️ Queueing the edit
-  editor.queueAsyncEdit(() => { // Queue the edit to ensure it's properly tracked for saving and undo
-  // Proceed with the text operation
-    contentModel.insertText(
-      ", ",             // inserted text
-      15,               // insertion index
-      {
-        font: safeFont, // font to use (surely available)
-      }
-    );
-  });
+  // Keep the text node active, then apply the text operation
+  // in the synchronous follow-up.
+  await editor.keepContentActiveDuringAsync(
+    textNode,
+    async () => {},
+    () => {
+      // Proceed with the text operation
+      contentModel.insertText(
+        ", ",             // inserted text
+        15,               // insertion index
+        {
+          font: safeFont, // font to use (surely available)
+        }
+      );
+    }
+  );
 
 } catch (error) {
   console.error("Text replacement failed:", error.message);
@@ -954,7 +972,7 @@ If the updated text does not match the original paragraph boundaries, some style
 
 ## Iterate Over Text in Containers
 
-[`PageNode`](../../../references/document-sandbox/document-apis/classes/page-node.md) and [`VisualNode`](../../../references/document-sandbox/document-apis/classes/visual-node.md) expose accessors for retrieving text content and descendants within a container. Use [`allTextContent`](../../../references/document-sandbox/document-apis/classes/page-node.md#alltextcontent) to obtain a flattened list of [`TextContent`](../../../references/document-sandbox/document-apis/interfaces/text-content.md) instances from all text-based nodes in the container. Use [`allDescendants`](../../../references/document-sandbox/document-apis/classes/page-node.md#alldescendants) when a flattened list of all descendant nodes is needed; for text-specific iteration, prefer `allTextContent`.
+[`ActivePageNode`](../../../references/document-sandbox/document-apis/classes/active-page-node.md) and [`VisualNode`](../../../references/document-sandbox/document-apis/classes/visual-node.md) expose accessors for retrieving text content and descendants within a container. Use [`allTextContent`](../../../references/document-sandbox/document-apis/classes/visual-node.md#alltextcontent) to obtain a flattened list of [`TextContent`](../../../references/document-sandbox/document-apis/interfaces/text-content.md) instances from all text-based nodes in the container. Use [`allDescendants`](../../../references/document-sandbox/document-apis/classes/visual-node.md#alldescendants) when a flattened list of all descendant nodes is needed; for text-specific iteration, prefer `allTextContent`.
 
 <InlineAlert slots="text" variant="warning"/>
 
@@ -1048,7 +1066,7 @@ if (selectedTextNode.fullContent.frames) {
 
 #### Q: Why must font edits be queued?
 
-**A:** Because `fromPostscriptName()` is async; wrap the style edit in `editor.queueAsyncEdit()`.
+**A:** Because `fromPostscriptName()` is async; wrap the style edit in `editor.keepContentActiveDuringAsync()`.
 
 #### Q: How do I apply paragraph-level formatting?
 
@@ -1072,7 +1090,7 @@ if (selectedTextNode.fullContent.frames) {
 
 #### Q: How do I get all text content within a container (e.g., a group or page)?
 
-**A:** Use the `allTextContent` accessor on PageNode or VisualNode. It returns a flattened list of TextContent instances from all text-based nodes within the container.
+**A:** Use the `allTextContent` accessor on VisualNode or ActivePageNode. It returns a flattened list of TextContent instances from all text-based nodes within the container.
 
 #### Q: What's the difference between `replaceText()` and setting `fullContent.text`?
 
