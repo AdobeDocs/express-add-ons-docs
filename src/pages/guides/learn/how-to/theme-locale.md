@@ -11,28 +11,35 @@ keywords:
   - Extensibility
   - API
   - Theme
+  - Dark theme
   - Locale
 title: Theme & Locale
-description: Theme & Locale.
+description: Detect and respond to the Adobe Express theme (including dark theme), locale, and format from your add-on.
 contributors:
   - https://github.com/undavide
   - https://github.com/hollyschinsky
 faq:
   questions:
     - question: "How do I get the current theme?"
-      answer: 'Access `addOnUISdk.app.ui.theme` property to get the current theme.'
+      answer: "Access `addOnUISdk.app.ui.theme` property to get the current theme."
 
     - question: "What themes are currently supported?"
-      answer: "Currently only 'light' theme is supported, with 'dark' theme planned for future releases."
+      answer: "Adobe Express supports both 'light' and 'dark' themes; the `theme` property and `themechange` event report whichever is active."
 
     - question: "How do I listen for theme changes?"
       answer: 'Use `addOnUISdk.app.on("themechange", callback)` to detect theme changes.'
 
+    - question: "Do I need to support dark theme in my add-on?"
+      answer: "It's encouraged but not mandatory. Add-ons submitted to the marketplace after August 31, 2026 are rejected if their UI is functionally broken (illegible or unusable) in dark theme."
+
+    - question: "How do I make my add-on dark-theme ready?"
+      answer: "Detect the active theme via `addOnUISdk.app.ui.theme` and the `themechange` event and adapt your styles. Building with Spectrum Web Components handles dark theme automatically."
+
     - question: "How do I get the current locale?"
-      answer: 'Access `addOnUISdk.app.ui.locale` property to get the current locale.'
+      answer: "Access `addOnUISdk.app.ui.locale` property to get the current locale."
 
     - question: "How do I get supported locales?"
-      answer: 'Access `addOnUISdk.app.ui.locales` array to get all supported locales.'
+      answer: "Access `addOnUISdk.app.ui.locales` array to get all supported locales."
 
     - question: "How do I listen for locale changes?"
       answer: 'Use `addOnUISdk.app.on("localechange", callback)` to detect locale changes.'
@@ -52,7 +59,7 @@ It can be useful to know what theme is currently set in Adobe Express, for insta
 
 <InlineAlert slots="text" variant="info"/>
 
-Currently, Adobe Express supports a "light" theme only, although a "dark" theme is planned for future releases.
+Adobe Express supports both `"light"` and `"dark"` themes. The `theme` property and `themechange` event report whichever is active, so keep your add-on's UI in sync with it. See [Supporting all Themes](#supporting-all-themes) below for readiness guidance.
 
 The current theme is available in the [`addOnUISdk.app.ui.theme`](../../../references/addonsdk/app-ui.md#theme) property. Changes can be detected by listening to the `themechange` event on the [`addOnUISdk.app`](../../../references/addonsdk/addonsdk-app.md) object. The event will provide the new theme in the `data.theme` property.
 
@@ -74,6 +81,22 @@ addOnUISdk.ready.then(async () => {
   });
 });
 ```
+
+## Supporting all Themes
+
+Adobe Express supports both a dark and a light theme. Make your add-on adapt to it so its UI stays legible and visually consistent with the app. Detect the active theme with the [`theme`](../../../references/addonsdk/app-ui.md#theme) property and the [`themechange`](../../../references/addonsdk/app-ui.md#themechange) event (see [Detecting Theme](#detecting-theme) above), and drive your styling from the reported value instead of hard-coding colors.
+
+<InlineAlert slots="text" variant="warning"/>
+
+Dark theme support is encouraged but not mandatory. Polished dark-theme styling isn't required, but your add-on's UI must remain fully functional and legible in both themes—text readable, controls visible and usable. Add-ons submitted to the marketplace after **August 31, 2026** are rejected if their interface is functionally broken in dark theme. Add-ons already published before the dark theme launch (July 31, 2026) are unaffected and continue to display in light theme.
+
+### Use Spectrum Web Components
+
+Build your UI with [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/) (SWC), which carry Adobe's design system and adapt to dark theme automatically—removing most of the manual styling otherwise needed to support both themes. See the [Theming design guidelines](../../build/design/ux-guidelines/theming.md) for contrast and UX considerations.
+
+### Test in dark theme
+
+Add-ons in development receive both `"light"` and `"dark"` values, so switch Adobe Express to dark theme and verify your UI before submitting. Use the [swc](../samples.md#swc) sample as a reference for a theme-aware add-on.
 
 ## Detecting Locale, Supported Locales, and Format
 
@@ -116,11 +139,19 @@ addOnUISdk.ready.then(() => {
 
 #### Q: What themes are currently supported?
 
-**A:** Currently only 'light' theme is supported, with 'dark' theme planned for future releases.
+**A:** Adobe Express supports both 'light' and 'dark' themes; the `theme` property and `themechange` event report whichever is active.
 
 #### Q: How do I listen for theme changes?
 
 **A:** Use `addOnUISdk.app.on("themechange", callback)` to detect theme changes.
+
+#### Q: Do I need to support dark theme in my add-on?
+
+**A:** It's encouraged but not mandatory. Add-ons submitted to the marketplace after August 31, 2026 are rejected if their UI is functionally broken (illegible or unusable) in dark theme.
+
+#### Q: How do I make my add-on dark-theme ready?
+
+**A:** Detect the active theme via `addOnUISdk.app.ui.theme` and the `themechange` event and adapt your styles. Building with Spectrum Web Components handles dark theme automatically.
 
 #### Q: How do I get the current locale?
 

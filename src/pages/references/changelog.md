@@ -25,6 +25,18 @@ contributors:
 
 # Changelog
 
+## 2026-07-31
+
+<InlineAlert slots="header, text1" variant="info"/>
+
+#### Dark Theme Support
+
+Adobe Express now supports a **dark theme**, and the [`theme`](./addonsdk/app-ui.md#theme) property and [`themechange`](./addonsdk/app-ui.md#themechange) event report both `"light"` and `"dark"`. Make your add-on dark-theme ready—add-ons submitted to the marketplace after **August 31, 2026** are rejected if their UI is functionally broken in dark mode. See [Supporting all Themes](../guides/learn/how-to/theme-locale.md#supporting-all-themes) for guidance.
+
+### Updated
+
+- [Theme & Locale](../guides/learn/how-to/theme-locale.md) how-to now covers dark-theme readiness: detecting the active theme, using [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/), and testing in dark mode.
+
 ## 2026-07-29
 
 <InlineAlert slots="header, text1" variant="info"/>
