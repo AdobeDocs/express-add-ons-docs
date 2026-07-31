@@ -668,10 +668,10 @@ import { getNodeData } from "./utils";
 
 runtime.exposeApi({
   async getDocumentData() {
-    const doc = editor.documentRoot; // get the document
+    const pages = editor.documentRoot.pages; // get the pages list
     let documentData = []; // initialize the array to return
-    for (const page of doc.pages) {
-      // loop through each page
+    // Visit every page so its content (and allChildren) is accessible while we read it
+    await pages.visitPages([...pages], (page) => {
       let pageData = {}; // create an empty object
       pageData.dimensions = {
         // get and store the page `dimensions`
@@ -680,7 +680,7 @@ runtime.exposeApi({
       };
       pageData.nodes = getNodeData(page); // 👈 build the `nodes` object (more on this later)
       documentData.push(pageData); // push the object to the documentData array
-    }
+    });
     // invoke the iframe method to create the table on the UI
     await panelUIProxy.createTable(documentData);
   },
@@ -1125,9 +1125,10 @@ async function start() {
 
   runtime.exposeApi({
     async getDocumentData() {
-      const doc = editor.documentRoot;
+      const pages = editor.documentRoot.pages;
       let documentData = [];
-      for (const page of doc.pages) {
+      // Visit every page so its content (and allChildren) is accessible while we read it
+      await pages.visitPages([...pages], (page) => {
         console.log("Page", page);
         let pageData = {};
         pageData.dimensions = {
@@ -1136,7 +1137,7 @@ async function start() {
         };
         pageData.nodes = getNodeData(page);
         documentData.push(pageData);
-      }
+      });
       console.log("documentData", documentData);
       await panelUIProxy.createTable(documentData);
     },
