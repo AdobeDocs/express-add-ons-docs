@@ -203,11 +203,17 @@ The new model creates a simple contract: **an add-on should only hold references
 
 ## New document model APIs
 
-The new APIs make the active/inactive distinction explicit and give add-ons safe ways to reach page content. This page describes what they're for; the [Support Large Documents](../how-to/large-document-support.md) how-to shows how to call them.
+The new APIs make the active/inactive distinction explicit and give add-ons safe ways to reach page content. This page describes what they're for.
+
+<InlineAlert slots="header, text1" variant="info"/>
+
+#### Examples and Best Practices
+
+Please see the [Support Large Documents](../how-to/large-document-support.md) how-to, which shows how to use the new APIs.
 
 ### `ActivePageNode`
 
-To make the active/inactive distinction explicit in code rather than implicit in your memory, the document model gains a **new class**. Today the hierarchy runs `BaseNode → PageNode`. Under Large Document Support it gains a leaf: `BaseNode` → `PageNode` → `ActivePageNode`.
+To make the active/inactive distinction explicit in code rather than implicit in your memory, the document model gains a **new class**. Today the hierarchy runs `BaseNode → PageNode`. Under Large Document Support it gains a leaf: `BaseNode` → `PageNode` → [**`ActivePageNode`**](../../../references/document-sandbox/document-apis/classes/active-page-node.md).
 
 `PageNode` remains the general page class—it carries the metadata that is always available. `ActivePageNode` represents a page whose content is currently accessible, and the content-bearing members move onto it. The split means the type you hold tells you what you're allowed to do: if you have an `ActivePageNode`, the content is there; if you have a plain `PageNode`, you have metadata and must activate the page to reach its content.
 
@@ -223,7 +229,14 @@ Introducing `ActivePageNode` does not, by itself, break existing add-ons: where 
 
 ### `visitPages()`
 
-`visitPages()` answers _"how do I reach content on pages that aren't in view?"_ Given a set of pages, it activates each one in turn and hands your callback a fully accessible `ActivePageNode`, guaranteeing the page stays active for the duration of that callback. It is the safe replacement for iterating `pages` and touching content directly.
+[`visitPages()`](../../../references/document-sandbox/document-apis/classes/page-list.md#visitpages) answers _"how do I reach content on pages that aren't in view?"_ Given a set of pages, it activates each one in turn and hands your callback a fully accessible `ActivePageNode`, guaranteeing the page stays active for the duration of that callback. It is the safe replacement for iterating `pages` and touching content directly.
+
+```ts
+visitPages(
+  pages: PageNode[],
+  callback: (page: ActivePageNode) => void | Promise<void>
+): Promise<void>;
+```
 
 Because a pass over a large document can take several seconds, Express shows a **modal progress bar** while `visitPages()` runs, whose UI may see minor changes in later releases. The dialog blocks the user from switching pages while your callback executes—so the page it hands you cannot be pulled out from under you mid-pass—and it appears only after a short minimum delay, so a quick pass doesn't flash a dialog on screen. It also carries a way to cancel the operation, **rejecting the promise** `visitPages()` returned.
 
@@ -235,11 +248,25 @@ One caveat for this phase: automatic rollback of partial changes on cancel is **
 
 ### `keepContentActiveDuringAsync()`
 
-`keepContentActiveDuringAsync()` answers _"how do I keep working with this node across an `await`?"_ You hand it a **target** (the node or page to keep active), an **async function** that does the waiting, and a **synchronous follow-up** that applies your edits while the target is still active—so an asset download or a translation call doesn't leave you holding a stale reference. It is the safe replacement for the older `queueAsyncEdit()` pattern.
+[`keepContentActiveDuringAsync()`](../../../references/document-sandbox/document-apis/classes/editor.md#keepcontentactiveduringasync) answers _"how do I keep working with this node across an `await`?"_ You hand it a **target** (the node or page to keep active), an **async function** that does the waiting (but doesn't mutate the document), and a **synchronous follow-up** that applies your edits while the target is still active—so an asset download or a translation call doesn't leave you holding a stale reference. It is the safe replacement for the older `queueAsyncEdit()` pattern.
+
+```ts
+keepContentActiveDuringAsync<AsyncResultT>(
+  target: ActivePageNode | VisualNode,
+  asyncCallback: () => Promise<AsyncResultT>,
+  afterAsyncCallback: (asyncResult: AsyncResultT) => void
+): Promise<void>;
+```
 
 Both `visitPages()` and `keepContentActiveDuringAsync()` shipped as **experimental** in the first phase of the rollout (see above). As of **Phase 2** they have graduated to **stable**: they now sit inside the usual stability guarantees, and you no longer need the `experimentalApis` flag to call them.
 
 ### Common migration mistakes
+
+<InlineAlert slots="header, text1" variant="info"/>
+
+**Read the Support Large Documents how-to**
+
+The [Support Large Documents](../how-to/large-document-support.md) how-to has the recipes, examples, and best practices.
 
 **Incorrect: iterating `pages` and reading content directly.**
 
