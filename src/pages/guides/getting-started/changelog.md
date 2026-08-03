@@ -25,23 +25,17 @@ contributors:
 
 # Changelog
 
-## 2026-07-31
+## 2026-08-03
 
-<InlineAlert slots="header, text1" variant="info"/>
+<InlineAlert slots="header, text1, text2" variant="info"/>
 
 #### Dark Theme Support
 
-Adobe Express now supports a **dark theme**, and the [`theme`](../../references/addonsdk/app-ui.md#theme) property and [`themechange`](../../references/addonsdk/app-ui.md#themechange) event report both `"light"` and `"dark"`. Make your add-on dark-theme ready—add-ons submitted to the marketplace after **August 31, 2026** are rejected if their UI is functionally broken in dark mode. See [Supporting all Themes](../learn/how-to/theme-locale.md#supporting-all-themes) for guidance.
+Adobe Express now supports a **dark theme**, and the [`theme`](../../references/addonsdk/app-ui.md#theme) property and [`themechange`](../../references/addonsdk/app-ui.md#themechange) event report both `"light"` and `"dark"`. Make your add-on dark-theme ready—add-ons submitted to the marketplace after **August 31, 2026** are rejected if their UI is functionally broken in dark mode.
 
-### Updated
+See [Supporting all Themes](../learn/how-to/theme-locale.md#supporting-all-themes) for guidance.
 
-- [Theme & Locale](../learn/how-to/theme-locale.md) how-to now covers dark-theme readiness: detecting the active theme, using [Spectrum Web Components](https://opensource.adobe.com/spectrum-web-components/), and testing in dark mode.
-
-## 2026-07-29
-
-<InlineAlert slots="header, text1" variant="info"/>
-
-#### Large Document Support: Phase 2
+### Large Document Support: Phase 2
 
 [Large Document Support](../learn/platform-concepts/large-document-support.md) has reached **Phase 2**: the new APIs are now stable, the deprecated ones are being removed, and the migration window is open—time to migrate, test, and resubmit.
 
@@ -57,7 +51,7 @@ Adobe Express now supports a **dark theme**, and the [`theme`](../../references/
 
 ### Added
 
-- **Large Document Support add-on check**—a skill you can run to scan your add-on for affected APIs and unsafe node-reference patterns, as a starting point for assessing impact (always confirm by testing).
+- **Large Document Support add-on check**—a [skill](../learn/platform-concepts/large-document-support.md#large-document-support-checker-skill) you can run to scan your add-on for affected APIs and unsafe node-reference patterns, as a starting point for assessing impact (always confirm by testing).
 
 ## 2026-06-18
 
