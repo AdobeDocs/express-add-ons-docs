@@ -41,7 +41,10 @@ See [Supporting all Themes](../learn/how-to/theme-locale.md#supporting-all-theme
 
 ### Stabilized
 
-- [`visitPages`](../../references/document-sandbox/document-apis/classes/page-list.md#visitpages) and [`keepContentActiveDuringAsync`](../../references/document-sandbox/document-apis/classes/editor.md#keepcontentactiveduringasync) are no longer experimental and no longer require the `experimentalApis` flag.
+The following APIs are now stable and no longer require the `experimentalApis` flag in your add-on's `manifest.json`:
+
+- [`visitPages()`](../../references/document-sandbox/document-apis/classes/page-list.md#visitpages) and [`keepContentActiveDuringAsync()`](../../references/document-sandbox/document-apis/classes/editor.md#keepcontentactiveduringasync).
+- [`addOnUISdk.app.document.isPresentation()`](../../references/addonsdk/app-document.md#ispresentation).
 
 ### Updated
 
