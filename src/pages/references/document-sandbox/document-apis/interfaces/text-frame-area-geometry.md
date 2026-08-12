@@ -8,13 +8,11 @@ hideEditInGitHub: true
 
 # Interface: TextFrameAreaGeometry
 
-**`Experimental`**
-
 Geometry for an area text frame in pixels.
 
 ## Properties
 
-| Property | Type | Description |
-| ------ | ------ | ------ |
-| `width` | `number` | **`Experimental`** |
-| `height` | `number` | **`Experimental`** |
+| Property | Type |
+| ------ | ------ |
+| `width` | `number` |
+| `height` | `number` |

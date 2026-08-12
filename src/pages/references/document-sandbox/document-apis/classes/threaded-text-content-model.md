@@ -9,8 +9,8 @@ hideEditInGitHub: true
 # Class: ThreadedTextContentModel
 
 ThreadedTextContentModel represents a complete piece of text content that is split across multiple
-[ThreadedTextNode](threaded-text-node.md) frames for display. This subclass provides a mutable allFrames list
-that supports adding, removing, and reordering text frames.
+[ThreadedTextNode](threaded-text-node.md) frames for display. Use [frames](#frames) to access the list of display frames
+and add new ones via [ThreadedTextList.addFrame](threaded-text-list.md#addframe).
 
 ## Extends
 

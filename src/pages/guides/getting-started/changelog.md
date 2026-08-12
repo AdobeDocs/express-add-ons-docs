@@ -45,6 +45,7 @@ The following APIs are now stable and no longer require the `experimentalApis` f
 
 - [`visitPages()`](../../references/document-sandbox/document-apis/classes/page-list.md#visitpages) and [`keepContentActiveDuringAsync()`](../../references/document-sandbox/document-apis/classes/editor.md#keepcontentactiveduringasync).
 - [`addOnUISdk.app.document.isPresentation()`](../../references/addonsdk/app-document.md#ispresentation).
+- [`editor.createThreadedText()`](../../references/document-sandbox/document-apis/classes/editor.md#createthreadedtext), [`ThreadedTextContentModel.allFrames`](../../references/document-sandbox/document-apis/classes/threaded-text-content-model.md#frames), and [`ThreadedTextList.addFrame()`](../../references/document-sandbox/document-apis/classes/threaded-text-list.md#addframe).
 
 ### Updated
 
