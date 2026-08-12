@@ -383,7 +383,7 @@
         "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4"
       ],
-      "lastUpdated": "8/4/2026"
+      "lastUpdated": "8/12/2026"
     },
     {
       "page": "/guides/getting-started/code-playground",
@@ -829,7 +829,7 @@
       "avatars": [
         "https://avatars.githubusercontent.com/u/5939127?v=4"
       ],
-      "lastUpdated": "7/31/2026"
+      "lastUpdated": "8/10/2026"
     },
     {
       "page": "/guides/learn/samples",
@@ -931,7 +931,7 @@
         "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/77717258?v=4"
       ],
-      "lastUpdated": "8/4/2026"
+      "lastUpdated": "8/12/2026"
     },
     {
       "page": "/references/addonsdk/app-oauth",
@@ -1004,7 +1004,7 @@
         "https://avatars.githubusercontent.com/u/97891206?v=4",
         "https://avatars.githubusercontent.com/u/25365634?v=4"
       ],
-      "lastUpdated": "8/4/2026"
+      "lastUpdated": "8/12/2026"
     },
     {
       "page": "/references/document-sandbox/",
@@ -1139,7 +1139,7 @@
         "https://avatars.githubusercontent.com/u/5939127?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "7/30/2026"
+      "lastUpdated": "8/12/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/classes/ellipse-node",
@@ -1166,7 +1166,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "7/30/2026"
+      "lastUpdated": "8/12/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/classes/express-root-node",
@@ -1424,16 +1424,16 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/27/2026"
+      "lastUpdated": "8/12/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/classes/threaded-text-list",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4",
+        "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4"
       ],
-      "lastUpdated": "3/31/2026"
+      "lastUpdated": "8/12/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/classes/threaded-text-node",
@@ -1983,7 +1983,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/18/2026"
+      "lastUpdated": "8/12/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/interfaces/text-range",
@@ -2025,7 +2025,7 @@
         "https://avatars.githubusercontent.com/u/23693692?v=4",
         "https://avatars.githubusercontent.com/u/359935?v=4"
       ],
-      "lastUpdated": "6/30/2026"
+      "lastUpdated": "8/12/2026"
     },
     {
       "page": "/references/document-sandbox/document-apis/type-aliases/editor-event-handler",
