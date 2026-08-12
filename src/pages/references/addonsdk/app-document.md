@@ -76,6 +76,10 @@ addOnUISdk.app.on("documentTitleChange", data => {
 
 Retrieve the metadata for all of the pages in the document.
 
+<InlineAlert slots="text1" variant="info"/>
+
+This operation may take a **noticeable amount of time** for large or complex documents. It is **recommended to display a progress indicator** (such as a spinner or progress bar) within the add-on while waiting for the returned promise to resolve.
+
 #### Signature
 
 `getPagesMetadata(options: PageMetadataOptions): Promise<PageMetadata[]>`
@@ -812,6 +816,10 @@ The table below describes the possible error messages that may occur when using 
 ### createRenditions()
 
 Generate renditions of the current page, specific pages or the entire document in a specified format for export.
+
+<InlineAlert slots="text1" variant="info"/>
+
+This operation may take a **noticeable amount of time** for large or complex documents. It is **recommended to display a progress indicator** (such as a spinner or progress bar) within the add-on while waiting for the returned promise to resolve.
 
 #### Signature
 
