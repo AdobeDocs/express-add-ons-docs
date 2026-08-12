@@ -464,16 +464,15 @@ In other words, we're adding `rect` as a sibling of whatever happens to be activ
 
 ![](./images/grids-addon-shape.png)
 
-Alternatively, you can target the insertion point specifically rather than relying on what happens to be selected at the time of execution. For instance, the following code uses the first [Artboard](../../../../references/document-sandbox/document-apis/classes/artboard-node.md) of the first [Page](../../../../references/document-sandbox/document-apis/classes/page-node.md).
+Alternatively, you can target the insertion point specifically rather than relying on what happens to be selected at the time of execution. For instance, the following code uses the first [Artboard](../../../../references/document-sandbox/document-apis/classes/artboard-node.md) of the active [Page](../../../../references/document-sandbox/document-apis/classes/active-page-node.md).
 
 ```js
 // ...
-const doc = editor.documentRoot; // document
-const currentPage = doc.pages.first; // page
+const currentPage = editor.context.currentPage; // page
 const currentArtboard = currentPage.artboards.first; // artboard
 currentArtboard.children.append(rect); // children
 // or
-editor.documentRoot.pages.first.artboards.first.children.append(rect);
+editor.context.currentPage.artboards.first.children.append(rect);
 ```
 
 Quoting a revealing bit of the Page reference:
@@ -830,7 +829,7 @@ This is because we're using gutters as page margins, too, as the following illus
 
 ![](./images/grids-addon-rowheight.png)
 
-We must get hold of the [Document](../../../../references/document-sandbox/document-apis/classes/editor.md#documentroot) (as `documentRoot`, from the Editor class) and [Page](../../../../references/document-sandbox/document-apis/classes/page-node.md)—the first one from the `pages` list will be OK for our purposes. Page properties like `width` and `height` will be used to compute the attributes of each "row" Rectangle.
+We must get hold of the active [Page](../../../../references/document-sandbox/document-apis/classes/active-page-node.md), via `editor.context.currentPage`. Page properties like `width` and `height` will be used to compute the attributes of each "row" Rectangle.
 
 ```js
 // documentSandbox/code.js
@@ -838,33 +837,11 @@ We must get hold of the [Document](../../../../references/document-sandbox/docum
 // ...
 runtime.exposeApi({
   addGrid({ columns, rows, gutter, columnColor, rowColor }) {
-    const doc = editor.documentRoot;
-    const page = doc.pages.first;
+    const page = editor.context.currentPage;
     const rowWidth = page.width;
     const rowHeight = (page.height - (rowsNumber + 1) * gutter) / rowsNumber;
   },
 });
-```
-
-In case you want to use the currently active Page instead, you have to traverse back to it using the `insertionParent` property of the `context` we've seen earlier as a starting point, and its `parent` property until you reach a node whose `type` is equal to the string `"Page"`. Adobe Express documents must have at least one page, so this is a safe operation. Modify the `addGrid()` function as follows.
-
-```js
-// documentSandbox/code.js
-
-addGrid({ columns, rows, gutter, columnColor, rowColor }) {
-  // Using the current page.
-  let currentNode = editor.context.insertionParent;
-  let page = null;
-
-  while (currentNode) {
-    if (currentNode.type === "Page") {
-      page = currentNode;
-      break;
-    }
-    currentNode = currentNode.parent;
-  }
-// ... rest of the code
-}
 ```
 
 To draw all four (or any number coming from the UI) rectangles at once, a loop is in order.
@@ -897,8 +874,7 @@ Using the same principles, we can create columns: rectangles as tall as the page
 ```js
 // documentSandbox/code.js
 
-const doc = editor.documentRoot;
-const page = doc.pages.first;
+const page = editor.context.currentPage;
 var colsRect = [];
 const colWidth = (page.width - (cols + 1) * gutter) / cols;
 for (let i = 0; i < cols; i++) {
@@ -970,7 +946,7 @@ const createRect = (width, height, color) => {
 };
 
 const addRows = (rowsNumber, gutter, color) => {
-  const page = editor.documentRoot.pages.first;
+  const page = editor.context.currentPage;
   var rows = [];
   const rowHeight = (page.height - (rowsNumber + 1) * gutter) / rowsNumber;
   for (let i = 0; i < rowsNumber; i++) {
@@ -982,7 +958,7 @@ const addRows = (rowsNumber, gutter, color) => {
 };
 
 const addColumns = (columNumber, gutter, color) => {
-  const page = editor.documentRoot.pages.first;
+  const page = editor.context.currentPage;
   var cols = [];
   const colWidth = (page.width - (columNumber + 1) * gutter) / columNumber;
   for (let i = 0; i < columNumber; i++) {
@@ -1674,9 +1650,8 @@ function start() {
      * @returns {Group} The group containing the grid.
      */
     addGrid({ columns, rows, gutter, columnColor, rowColor }) {
-      // Get the document and page.
-      const doc = editor.documentRoot;
-      const page = doc.pages.first;
+      // Get the active page.
+      const page = editor.context.currentPage;
       // Create the grid.
       const rowGroup = addRows(rows, gutter, rowColor);
       const columnGroup = addColumns(columns, gutter, columnColor);
@@ -1744,8 +1719,7 @@ const createRect = (width, height, color) => {
  * @returns {GroupNode} A group containing the created rows.
  */
 const addRows = (rowsNumber, gutter, color) => {
-  const doc = editor.documentRoot;
-  const page = doc.pages.first;
+  const page = editor.context.currentPage;
 
   var rows = [];
   const rowHeight = (page.height - (rowsNumber + 1) * gutter) / rowsNumber;
@@ -1778,8 +1752,7 @@ const addRows = (rowsNumber, gutter, color) => {
  * @returns {GroupNode} A group containing the created columns.
  */
 const addColumns = (columsNumber, gutter, color) => {
-  const doc = editor.documentRoot;
-  const page = doc.pages.first;
+  const page = editor.context.currentPage;
   var cols = [];
   const colWidth = (page.width - (columsNumber + 1) * gutter) / columsNumber;
   // Create the rectangles

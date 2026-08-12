@@ -76,6 +76,10 @@ addOnUISdk.app.on("documentTitleChange", data => {
 
 Retrieve the metadata for all of the pages in the document.
 
+<InlineAlert slots="text1" variant="info"/>
+
+This operation may take a **noticeable amount of time** for large or complex documents. It is **recommended to display a progress indicator** (such as a spinner or progress bar) within the add-on while waiting for the returned promise to resolve.
+
 #### Signature
 
 `getPagesMetadata(options: PageMetadataOptions): Promise<PageMetadata[]>`
@@ -219,10 +223,10 @@ Retrieve the details about the template used to create the document.
 
 The options to pass into the print quality check.
 
-| Name       | Type                                         | Description                                                           |
-| ---------- | -------------------------------------------- | --------------------------------------------------------------------- |
+| Name       | Type                             | Description                                                           |
+| ---------- | -------------------------------- | --------------------------------------------------------------------- |
 | `range`    | [`Range`](addonsdk-constants.md) | The range of the document to run the print quality check on.          |
-| `pageIds?` | `string[]`                                   | Id's of the pages. (Only required when the range is `specificPages`). |
+| `pageIds?` | `string[]`                       | Id's of the pages. (Only required when the range is `specificPages`). |
 
 #### `PageMetadata`
 
@@ -248,10 +252,10 @@ The metadata of a page.
 
 This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetadata) method and includes the range and optional `pageIds` for which you want to retrieve metadata for.
 
-| Name                 | Type                                         |                                                           Description |
-| -------------------- | -------------------------------------------- | --------------------------------------------------------------------: |
+| Name                 | Type                             |                                                           Description |
+| -------------------- | -------------------------------- | --------------------------------------------------------------------: |
 | `range`              | [`Range`](addonsdk-constants.md) |                             Range of the document to get the metadata |
-| `pageIds?: string[]` | `string`                                     | Id's of the pages. (Only required when the range is `specificPages`). |
+| `pageIds?: string[]` | `string`                         | Id's of the pages. (Only required when the range is `specificPages`). |
 
 ### getSelectedPageIds()
 
@@ -282,7 +286,10 @@ async function getSelectedPages() {
     if (selectedPageIds.length === 0) {
       console.log("No pages are currently selected");
     } else {
-      console.log(`${selectedPageIds.length} page(s) selected:`, selectedPageIds);
+      console.log(
+        `${selectedPageIds.length} page(s) selected:`,
+        selectedPageIds,
+      );
     }
   } catch (error) {
     console.log("Failed to get selected page ids:", error);
@@ -297,7 +304,7 @@ async function getSelectedPagesMetadata() {
     if (selectedPageIds.length > 0) {
       const metadata = await addOnUISdk.app.document.getPagesMetadata({
         range: addOnUISdk.constants.Range.specificPages,
-        pageIds: selectedPageIds
+        pageIds: selectedPageIds,
       });
 
       metadata.forEach((page, index) => {
@@ -360,12 +367,18 @@ addOnUISdk.ready.then(async () => {
 
   // Listen for document link availability changes
   addOnUISdk.app.on("documentLinkAvailable", (data) => {
-    console.log("Document link availability changed. Link value:", data.documentLink);
+    console.log(
+      "Document link availability changed. Link value:",
+      data.documentLink,
+    );
   });
 
   // Listen for published document link availability changes
   addOnUISdk.app.on("documentPublishedLinkAvailable", (data) => {
-    console.log("Published link availability changed. Link value:", data.documentPublishedLink);
+    console.log(
+      "Published link availability changed. Link value:",
+      data.documentPublishedLink,
+    );
   });
 });
 ```
@@ -374,17 +387,13 @@ addOnUISdk.ready.then(async () => {
 
 The options to pass into the link method.
 
-| Name          | Type     | Description                                              |
-| ------------- | -------- | -------------------------------------------------------- |
+| Name          | Type     | Description                                            |
+| ------------- | -------- | ------------------------------------------------------ |
 | `linkOptions` | `string` | [`LinkOptions`](addonsdk-constants.md) constant value. |
 
 ### isPresentation()
 
 Returns `true` if the document is a presentation.
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This method is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
 
 #### Signature
 
@@ -442,7 +451,7 @@ A resolved promise if the image was successfully added to the canvas; otherwise,
 // Add image(blob) to the current page
 async function addImageFromBlob(blob) {
   try {
-    await document.addImage(blob, {title: "Sample Image", author: "Creator"});
+    await document.addImage(blob, { title: "Sample Image", author: "Creator" });
   } catch (error) {
     console.log("Failed to add the image to the page.");
   }
@@ -452,7 +461,7 @@ async function addImageFromBlob(blob) {
 async function addImageFromURL(url) {
   try {
     const blob = await fetch(url).then((response) => response.blob());
-    await document.addImage(blob, {title: "Sample Image", author: "Creator"});
+    await document.addImage(blob, { title: "Sample Image", author: "Creator" });
   } catch (error) {
     console.log("Failed to add the image to the page.");
   }
@@ -467,13 +476,13 @@ async function addImageWithMetadata(blob) {
       {
         nodeAddOnData: {
           customId: "img_123",
-          category: "photos"
+          category: "photos",
         },
         mediaAddOnData: {
           sourceUrl: "https://example.com/image.jpg",
-          license: "CC0"
-        }
-      }
+          license: "CC0",
+        },
+      },
     );
   } catch (error) {
     console.log("Failed to add the image to the page.");
@@ -511,7 +520,10 @@ A resolved promise if the animated image was successfully added to the canvas; o
 // Add animated image(blob) to the current page
 async function addAnimatedImageFromBlob(blob) {
   try {
-    await document.addAnimatedImage(blob, {title: "Animated GIF", author: "Creator"});
+    await document.addAnimatedImage(blob, {
+      title: "Animated GIF",
+      author: "Creator",
+    });
   } catch (error) {
     console.log("Failed to add the animated image to the page.");
   }
@@ -543,7 +555,7 @@ Adds a video to the current page.
 ```js
 async function addVideoFromBlob(blob) {
   try {
-    await document.addVideo(blob, {title: "Sample Video", author: "Creator"});
+    await document.addVideo(blob, { title: "Sample Video", author: "Creator" });
   } catch (error) {
     console.log("Failed to add the video to the page.");
   }
@@ -552,7 +564,7 @@ async function addVideoFromBlob(blob) {
 async function addVideoFromURL(url) {
   try {
     const blob = await fetch(url).then((response) => response.blob());
-    await document.addVideo(blob, {title: "Sample Video", author: "Creator"});
+    await document.addVideo(blob, { title: "Sample Video", author: "Creator" });
   } catch (error) {
     console.log("Failed to add the video to the page.");
   }
@@ -646,8 +658,8 @@ None
 
 Mime type details for importing media
 
-| Name              | Type                       |                                                      Description |
-| ----------------- | -------------------------- | ---------------------------------------------------------------: |
+| Name              | Type                             |                                                      Description |
+| ----------------- | -------------------------------- | ---------------------------------------------------------------: |
 | `sourceMimeType?` | [`SupportedMimeTypes`](index.md) | Mime type of the original source asset that was converted to PDF |
 
 ### SupportedMimeTypes
@@ -688,7 +700,7 @@ async function importConvertedWordDoc(convertedPdfBlob) {
   try {
     document.importPdf(convertedPdfBlob, {
       title: "Converted Document.pdf",
-      sourceMimeType: "docx"
+      sourceMimeType: "docx",
     });
   } catch (error) {
     console.log("Failed to import the converted Word document.");
@@ -700,7 +712,7 @@ async function importConvertedGoogleDoc(convertedPdfBlob) {
   try {
     document.importPdf(convertedPdfBlob, {
       title: "Converted Google Doc.pdf",
-      sourceMimeType: "gdoc"
+      sourceMimeType: "gdoc",
     });
   } catch (error) {
     console.log("Failed to import the converted Google document.");
@@ -805,15 +817,19 @@ The table below describes the possible error messages that may occur when using 
 
 Generate renditions of the current page, specific pages or the entire document in a specified format for export.
 
+<InlineAlert slots="text1" variant="info"/>
+
+This operation may take a **noticeable amount of time** for large or complex documents. It is **recommended to display a progress indicator** (such as a spinner or progress bar) within the add-on while waiting for the returned promise to resolve.
+
 #### Signature
 
 `createRenditions(renditionOptions: RenditionOptions, renditionIntent?: RenditionIntent): Promise<Rendition[]>`
 
 #### Parameters
 
-| Name               | Type     |                                                  Description |
-| ------------------ | -------- | -----------------------------------------------------------: |
-| `renditionOptions` | `Object` |              [`RenditionOptions`](#renditionoptions) object. |
+| Name               | Type     |                                                Description |
+| ------------------ | -------- | ---------------------------------------------------------: |
+| `renditionOptions` | `Object` |            [`RenditionOptions`](#renditionoptions) object. |
 | `renditionIntent`  | `string` | [`RenditionIntent`](addonsdk-constants.md) constant value. |
 
 **NOTE:** The default value for `renditionIntent` is `export`. If it's set to `preview`, it also requires the `renditionPreview` flag to be set to `true` in the [manifest `requirements`](../manifest/index.md#requirements) section. Additionally, when implementing the premium content flows where you present a dialog or option to allow the user to upgrade, you must be sure to also include the following permissions in the [`sandbox`](../manifest/index.md#entrypointspermissionssandbox) attribute of your `manifest.json` to allow the Adobe Express pricing page to load properly:
@@ -828,8 +844,8 @@ Refer to the [manage premium content how-to](../../guides/learn/how-to/premium-c
 
 #### `RenditionOptions`
 
-| Name       | Type       |                                                                                  Description |
-| ---------- | ---------- | -------------------------------------------------------------------------------------------: |
+| Name       | Type       |                                                                                Description |
+| ---------- | ---------- | -----------------------------------------------------------------------------------------: |
 | `range`    | `string`   |                                           [`Range`](addonsdk-constants.md) constant value. |
 | `format`   | `string`   |                                 [`RenditionFormat`](addonsdk-constants.md) constant value. |
 | `pageIds?` | `string[]` | Id's of the pages (only required if the range is [`specificPages`](addonsdk-constants.md)) |
@@ -840,7 +856,7 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 | Name                                      | Type                                |                                                                                                                                                                            Description |
 | ----------------------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| `format`                                  | `string`                            |                                                                                                                       [`RenditionFormat.jpg`](addonsdk-constants.md) constant value. |
+| `format`                                  | `string`                            |                                                                                                                         [`RenditionFormat.jpg`](addonsdk-constants.md) constant value. |
 | `backgroundColor?`                        | `number`                            | Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
 | `quality?`                                | `number`                            |                                                                                                                    A number between 0 and 1, indicating image quality. Default is 1.0. |
 | [`requestedSize?`](#requested-size-notes) | `{width?: number; height?: number}` |                                                                                                                                                            Requested size (in pixels). |
@@ -851,11 +867,11 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 | Name                                      | Type                                |                                                                                                                                                                            Description |
 | ----------------------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| `format`                                  | `string`                            |                                                                                                                       [`RenditionFormat.png`](addonsdk-constants.md) constant value. |
+| `format`                                  | `string`                            |                                                                                                                         [`RenditionFormat.png`](addonsdk-constants.md) constant value. |
 | `backgroundColor?`                        | `number`                            | Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
 | [`requestedSize?`](#requested-size-notes) | `{width?: number; height?: number}` |                                                                                                                                                            Requested size (in pixels). |
 | `fileSizeLimit?`                          | `number`                            |                                                                                                                                                     File size limit for the rendition. |
-| `fileSizeLimitUnit?`                      | `string`                            |                                                                                                Unit of the file size limit, [`FileSizeLimitUnit`](addonsdk-constants.md) enumerable. |
+| `fileSizeLimitUnit?`                      | `string`                            |                                                                                                  Unit of the file size limit, [`FileSizeLimitUnit`](addonsdk-constants.md) enumerable. |
 
 #### Requested Size Notes
 
@@ -879,8 +895,8 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 Extends the [`RenditionOptions`](#renditionoptions) object with the specific format for `pptx` renditions:
 
-| Name     | Type     |                                                                                   Description |
-| -------- | -------- | --------------------------------------------------------------------------------------------: |
+| Name     | Type     |                                                                                 Description |
+| -------- | -------- | ------------------------------------------------------------------------------------------: |
 | `format` | `string` | [`RenditionFormat.pptx`](addonsdk-constants.md) constant value for PowerPoint presentation. |
 
 <InlineAlert slots="text" variant="info"/>
@@ -900,9 +916,9 @@ Extends the [`RenditionOptions`](#renditionoptions) object and adds the followin
 
 Represents a _bleed_ for a page. In printing, _bleed_ is printing that goes beyond the edge of where the sheet will be trimmed. In other words, the bleed is the area to be trimmed off. If the value is left undefined, then no bleed will be assumed.
 
-| Name      | Type                                             |                                      Description |
-| --------- | ------------------------------------------------ | -----------------------------------------------: |
-| `amount?` | `number`                                         |                        The amount for the bleed. |
+| Name      | Type                                 |                                      Description |
+| --------- | ------------------------------------ | -----------------------------------------------: |
+| `amount?` | `number`                             |                        The amount for the bleed. |
 | `unit`    | [`BleedUnit`](addonsdk-constants.md) | The unit in which the bleed amount is expressed. |
 
 #### `PdfPageBoxes`
@@ -939,11 +955,11 @@ Represents margins for a PDF page box.
 
 Extends the [`RenditionOptions`](#renditionoptions) object and adds the following additional options for `mp4` renditions:
 
-| Name                | Type     |                                                                         Description |
-| ------------------- | -------- | ----------------------------------------------------------------------------------: |
+| Name                | Type     |                                                                       Description |
+| ------------------- | -------- | --------------------------------------------------------------------------------: |
 | `format`            | `string` |                    [`RenditionFormat.mp4`](addonsdk-constants.md) constant value. |
 | `resolution?`       | `string` |                        [`VideoResolution`](addonsdk-constants.md) constant value. |
-| `customResolution?` | `number` |                  Only required/used if the `resolution` is `VideoResolution.custom` |
+| `customResolution?` | `number` |                Only required/used if the `resolution` is `VideoResolution.custom` |
 | `frameRate?`        | `number` | Frame rate in frames per second, [`FrameRate`](addonsdk-constants.md) enumerable. |
 | `bitRate?`          | `number` |       Bit rate in bits per second, [`BitRate`](addonsdk-constants.md) enumerable. |
 
@@ -973,7 +989,7 @@ async function displayPreview() {
     };
     const renditions = await addOnUISdk.app.document.createRenditions(
       renditionOptions,
-      addOnUISdk.constants.RenditionIntent.preview
+      addOnUISdk.constants.RenditionIntent.preview,
     );
     renditions.forEach((rendition) => {
       const image = document.createElement("img");
@@ -994,13 +1010,13 @@ async function exportAsPowerPoint() {
     };
     const renditions = await addOnUISdk.app.document.createRenditions(
       renditionOptions,
-      addOnUISdk.constants.RenditionIntent.export
+      addOnUISdk.constants.RenditionIntent.export,
     );
 
     // Download the PPTX file
     const rendition = renditions[0]; // PPTX exports as single file
     const url = URL.createObjectURL(rendition.blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
     a.download = `${rendition.title}.pptx`;
     a.click();
@@ -1029,7 +1045,7 @@ async function displayPreview() {
     };
     const renditions = await addOnUISdk.app.document.createRenditions(
       renditionOptions,
-      RenditionIntent.preview
+      RenditionIntent.preview,
     );
     renditions.forEach((rendition) => {
       const image = document.createElement("img");
@@ -1050,13 +1066,13 @@ async function exportAsPowerPoint() {
     };
     const renditions = await addOnUISdk.app.document.createRenditions(
       renditionOptions,
-      RenditionIntent.export
+      RenditionIntent.export,
     );
 
     // Download the PPTX file
     const rendition = renditions[0]; // PPTX exports as single file
     const url = URL.createObjectURL(rendition.blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
     a.download = `${rendition.title}.pptx`;
     a.click();
@@ -1124,16 +1140,22 @@ async function handleExportRequest() {
     if (canExport) {
       // Create rendition for export/download
       const rendition = await addOnUISdk.app.document.createRenditions(
-        { range: addOnUISdk.constants.Range.currentPage, format: addOnUISdk.constants.RenditionFormat.png },
-        addOnUISdk.constants.RenditionIntent.export
+        {
+          range: addOnUISdk.constants.Range.currentPage,
+          format: addOnUISdk.constants.RenditionFormat.png,
+        },
+        addOnUISdk.constants.RenditionIntent.export,
       );
       // ... handle download
     } else {
       // Show preview only since export is restricted
       console.log("Export restricted - showing preview only");
       const previewRendition = await addOnUISdk.app.document.createRenditions(
-        { range: addOnUISdk.constants.Range.currentPage, format: addOnUISdk.constants.RenditionFormat.png },
-        addOnUISdk.constants.RenditionIntent.preview
+        {
+          range: addOnUISdk.constants.Range.currentPage,
+          format: addOnUISdk.constants.RenditionFormat.png,
+        },
+        addOnUISdk.constants.RenditionIntent.preview,
       );
       // ... show preview in UI only
     }
@@ -1147,12 +1169,14 @@ addOnUISdk.ready.then(async () => {
   const exportAllowed = await addOnUISdk.app.document.exportAllowed();
 
   // Note: The "document" in the next two lines refers to the UI of your add-on (in the HTML file) versus the addOnUISdk.app.document object from the API
-  const downloadButton = document.getElementById('download-btn');
-  const previewButton = document.getElementById('preview-btn');
+  const downloadButton = document.getElementById("download-btn");
+  const previewButton = document.getElementById("preview-btn");
 
   // Download button only available if export is allowed
   downloadButton.disabled = !exportAllowed;
-  downloadButton.title = exportAllowed ? "Download rendition" : "Download restricted - document under review";
+  downloadButton.title = exportAllowed
+    ? "Download rendition"
+    : "Download restricted - document under review";
 
   // Preview button is always available
   previewButton.disabled = false;

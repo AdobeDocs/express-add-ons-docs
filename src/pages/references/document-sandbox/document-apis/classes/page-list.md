@@ -114,12 +114,6 @@ Last item in this list, or undefined if list is empty.
 visitPages(pages, callback): Promise<void>;
 ```
 
-**`Experimental`**
-
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This is currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use it, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../../../manifest/index.md#requirements) section of the `manifest.json`.
-
 Visit the given pages asynchronously: loading each one in turn so its content is accessible, and then invoking
 your provided `callback` for the resulting fully-accessible [ActivePageNode](active-page-node.md).
 
@@ -127,8 +121,8 @@ The callback receives an [ActivePageNode](active-page-node.md), which provides f
 and all descendants). This access is only guaranteed inside the callback; do not hold onto the reference after the
 callback returns.
 
-Visiting many pages can be slow – up to tens of seconds in larger documents. Any feature which visits all pages
-in the entire document should include a progress UI so users understand when the operation is still ongoing.
+Visiting many pages can be slow – up to tens of seconds in larger documents. A progress dialog UI will be shown to the user
+when this API is called and the visit is slow to indicate that the operation is still ongoing.
 
 There is no guarantee more than one of the Pages will be loaded at the same time – there may only be one page
 accessible at a time, each visited with sight delays in between. If your `callback` returns long-running
@@ -173,6 +167,12 @@ await pages.visitPages([...pages], async (page) => {
     page.artboards.first.children.append(container);
 });
 ```
+
+#### Throws
+
+If the user cancels the visit via the progress dialog, rejects with an error where
+     `err.name === constants.ErrorNames.userCancelled`. All other rejections originate from the
+     developer callback or an internal failure.
 
 <HorizontalLine />
 

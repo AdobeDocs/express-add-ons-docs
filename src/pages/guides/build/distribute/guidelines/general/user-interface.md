@@ -10,6 +10,8 @@ keywords:
   - Display Items
   - Design System
   - UI Standards
+  - Theme support
+  - Dark theme
 title: User Interface Guidelines
 description: Adobe Express add-on user interface requirements covering design standards, Adobe Spectrum integration, display items, and user experience best practices.
 contributors:
@@ -101,6 +103,14 @@ You must test your add-on to make sure that the user interface remains intact an
 ## Text display
 
 Ensure that changing the language does not result in add-on strings or text content being cut-off or truncated. All text should be visible and displayed appropriately on the add-on in all supported languages.
+
+## Theme support
+
+Adobe Express supports both a light and a dark theme, and your add-on should adapt to whichever theme the user has selected so its interface stays legible and visually consistent with Adobe Express.
+
+Polished dark-theme styling isn't required, but your add-on's UI must remain fully functional and legible in both themes—text readable, controls visible and usable. Add-ons submitted after August 31, 2026 are rejected if their interface is functionally broken in dark theme.
+
+For how to detect the active theme and adapt your UI—including using Spectrum Web Components to support both themes with minimal effort—see the [Theme & Locale](../../../../learn/how-to/theme-locale.md#supporting-all-themes) how-to.
 
 ## Branding your add-ons for monetization
 

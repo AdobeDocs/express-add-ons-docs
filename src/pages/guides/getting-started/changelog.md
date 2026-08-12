@@ -25,6 +25,38 @@ contributors:
 
 # Changelog
 
+## 2026-08-03
+
+<InlineAlert slots="header, text1, text2" variant="info"/>
+
+#### Dark Theme Support
+
+Adobe Express now supports a **dark theme**, and the [`theme`](../../references/addonsdk/app-ui.md#theme) property and [`themechange`](../../references/addonsdk/app-ui.md#themechange) event report both `"light"` and `"dark"`. Make your add-on dark-theme ready—add-ons submitted to the marketplace after **August 31, 2026** are rejected if their UI is functionally broken in dark mode.
+
+See [Supporting all Themes](../learn/how-to/theme-locale.md#supporting-all-themes) for guidance.
+
+### Large Document Support: Phase 2
+
+[Large Document Support](../learn/platform-concepts/large-document-support.md) has reached **Phase 2**: the new APIs are now stable, the deprecated ones are being removed, and the migration window is open—time to migrate, test, and resubmit.
+
+### Stabilized
+
+The following APIs are now stable and no longer require the `experimentalApis` flag in your add-on's `manifest.json`:
+
+- [`visitPages()`](../../references/document-sandbox/document-apis/classes/page-list.md#visitpages) and [`keepContentActiveDuringAsync()`](../../references/document-sandbox/document-apis/classes/editor.md#keepcontentactiveduringasync).
+- [`addOnUISdk.app.document.isPresentation()`](../../references/addonsdk/app-document.md#ispresentation).
+- [`editor.createThreadedText()`](../../references/document-sandbox/document-apis/classes/editor.md#createthreadedtext), [`ThreadedTextContentModel.allFrames`](../../references/document-sandbox/document-apis/classes/threaded-text-content-model.md#frames), and [`ThreadedTextList.addFrame()`](../../references/document-sandbox/document-apis/classes/threaded-text-list.md#addframe).
+
+### Updated
+
+- Deprecated APIs (`queueAsyncEdit`, `PageNode.artboards`, `PageNode.allDescendants`, `PageNode.allTextContent`, `PageNode.cloneInPlace`) are removed from the SDK—local builds that still reference them will fail.
+- `visitPages` now shows a modal progress bar during long passes.
+- [Large Document Support](../learn/platform-concepts/large-document-support.md) concepts and [how-to](../learn/how-to/large-document-support.md) guides refreshed for Phase 2.
+
+### Added
+
+- **Large Document Support add-on check**—a [skill](../learn/platform-concepts/large-document-support.md#large-document-support-checker-skill) you can run to scan your add-on for affected APIs and unsafe node-reference patterns, as a starting point for assessing impact (always confirm by testing).
+
 ## 2026-06-18
 
 <InlineAlert slots="header, text1" variant="info"/>

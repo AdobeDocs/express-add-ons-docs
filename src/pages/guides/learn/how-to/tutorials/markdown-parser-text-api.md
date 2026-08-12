@@ -848,8 +848,8 @@ This `sandbox/code.js` is where the visual transformation happens. Here are the 
 - The `createStyledTextFromMarkdown` function receives the plain text and style ranges from the UI.
 - It first creates a single `TextNode` with the entire plain text content and adds it to the document.
 - **Performance Tip: Font Caching.** The `preloadFonts` function and `fontCache` map are used to load all necessary fonts at once and store them. This avoids making multiple, slow requests for the same font.
-- **Safe Asynchronous Edits.** [`editor.queueAsyncEdit()`](../../../../references/document-sandbox/document-apis/classes/editor.md#queueasyncedit) is essential for making changes to the document _after_ an asynchronous operation (like `preloadFonts`). The Add-on SDK requires that any edits following a pause for an `await` be wrapped in `queueAsyncEdit()`. This ensures that all changes are correctly tracked for the application's save and undo history. While this also has the benefit of batching multiple edits into a single, efficient operation, its primary role here is to guarantee document stability.
-- Inside the queue, a base style is applied to the entire text block first. Then, the code iterates through the `styleRanges` array, applying each specific character or paragraph style to the correct portion of the text.
+- **Safe Asynchronous Edits.** [`editor.keepContentActiveDuringAsync()`](../../../../references/document-sandbox/document-apis/classes/editor.md#keepcontentactiveduringasync) is essential for making changes to the document _after_ an asynchronous operation (like `preloadFonts`). Because `preloadFonts` itself calls into the SDK's font-loading machinery, it must run to completion _before_ calling `keepContentActiveDuringAsync()`—not inside its async lambda, which is reserved for non-SDK async work (or can be left empty). Once the fonts are loaded, `keepContentActiveDuringAsync()` keeps the target node active for the synchronous follow-up callback where the edits happen. This ensures that all changes are correctly tracked for the application's save and undo history, and guarantees document stability across the async span.
+- Inside that synchronous follow-up, a base style is applied to the entire text block first. Then, the code iterates through the `styleRanges` array, applying each specific character or paragraph style to the correct portion of the text.
 
 <CodeBlock slots="heading, code" repeat="2" languages="JavaScript"/>
 
@@ -916,15 +916,8 @@ function start() {
     // Creates a text node in the current document
     createTextNode: (text) => {
       try {
-        // Find the current page
-        let currentNode = editor.context.insertionParent;
-        let page = null;
-        while (currentNode) {
-          if (currentNode.type === "Page") {
-            page = currentNode; break;
-          }
-          currentNode = currentNode.parent;
-        }
+        // The current page is already an ActivePageNode
+        const page = editor.context.currentPage;
 
         // Create a new text node
         const textNode = editor.createText(text);
@@ -970,87 +963,95 @@ function start() {
         // Create text node first (this is allowed synchronously)
         const textNode = docApi.createTextNode(markdownText);
 
-        // Preload fonts we'll need for styling
+        // Preload fonts before keepContentActiveDuringAsync—preloadFonts()
+        // calls fonts.fromPostscriptName(), which must not run inside its
+        // async lambda.
         await preloadFonts([
           MD_STYLES.FONTS.HEADING, MD_STYLES.FONTS.EMPHASIS,
           MD_STYLES.FONTS.REGULAR, MD_STYLES.FONTS.CODE,
         ]);
 
-        // Get cached fonts
-        const headingFont = fontCache.get(MD_STYLES.FONTS.HEADING);
-        const italicFont = fontCache.get(MD_STYLES.FONTS.EMPHASIS);
-        const boldFont = fontCache.get(MD_STYLES.FONTS.STRONG);
-        const monospaceFont = fontCache.get(MD_STYLES.FONTS.CODE);
+        // Keep the text node's page active, then apply the styles
+        // in the synchronous follow-up.
+        await editor.keepContentActiveDuringAsync(
+          textNode,
+          async () => {},
+          () => {
+            // Get cached fonts
+            const headingFont = fontCache.get(MD_STYLES.FONTS.HEADING);
+            const italicFont = fontCache.get(MD_STYLES.FONTS.EMPHASIS);
+            const boldFont = fontCache.get(MD_STYLES.FONTS.STRONG);
+            const monospaceFont = fontCache.get(MD_STYLES.FONTS.CODE);
 
-        // Now queue all style edits together for better performance
-        await editor.queueAsyncEdit(async () => {
-          for (const range of styleRanges) {
-            if (DEBUG_STYLES) {
-              console.log(`Applying ${range.style.type} style:`, range);
-            }
-            // Apply different styles based on the type
-            if (range.style.type === "list") {
-              docApi.applyListStyle(
-                textNode, range.start, range.end, range.style.ordered
-              );
-            } else if (range.style.type === "heading") {
+            // Now apply all style edits together
+            for (const range of styleRanges) {
               if (DEBUG_STYLES) {
-                console.log(
-                  "Applying heading style for level:", range.style.level
+                console.log(`Applying ${range.style.type} style:`, range);
+              }
+              // Apply different styles based on the type
+              if (range.style.type === "list") {
+                docApi.applyListStyle(
+                  textNode, range.start, range.end, range.style.ordered
                 );
+              } else if (range.style.type === "heading") {
+                if (DEBUG_STYLES) {
+                  console.log(
+                    "Applying heading style for level:", range.style.level
+                  );
+                }
+                // Apply heading styles
+                textNode.fullContent.applyCharacterStyles(
+                  {
+                    font: headingFont,
+                    fontSize: getFontSizeForHeadingLevel(range.style.level),
+                  },
+                  { start: range.start, length: range.end - range.start }
+                );
+                if (DEBUG_STYLES) {
+                  console.log("Applied heading style:", range.style.level);
+                }
+              } else if (range.style.type === "emphasis") {
+                if (DEBUG_STYLES) {
+                  console.log("Applying emphasis style");
+                }
+                // Apply italic style
+                textNode.fullContent.applyCharacterStyles(
+                  { font: italicFont },
+                  { start: range.start, length: range.end - range.start }
+                );
+                if (DEBUG_STYLES) {
+                  console.log("Applied emphasis style");
+                }
+              } else if (range.style.type === "strong") {
+                if (DEBUG_STYLES) {
+                  console.log("Applying strong style");
+                }
+                // Apply bold style
+                textNode.fullContent.applyCharacterStyles(
+                  { font: boldFont },
+                  { start: range.start, length: range.end - range.start }
+                );
+                if (DEBUG_STYLES) {
+                  console.log("Applied strong style");
+                }
+              } else if (range.style.type === "code") {
+                if (DEBUG_STYLES) {
+                  console.log("Applying code style");
+                }
+                // Apply monospace font for code
+                textNode.fullContent.applyCharacterStyles(
+                  { font: monospaceFont },
+                  { start: range.start, length: range.end - range.start }
+                );
+                if (DEBUG_STYLES) {
+                  console.log("Applied code style");
+                }
               }
-              // Apply heading styles
-              textNode.fullContent.applyCharacterStyles(
-                {
-                  font: headingFont,
-                  fontSize: getFontSizeForHeadingLevel(range.style.level),
-                },
-                { start: range.start, length: range.end - range.start }
-              );
-              if (DEBUG_STYLES) {
-                console.log("Applied heading style:", range.style.level);
-              }
-            } else if (range.style.type === "emphasis") {
-              if (DEBUG_STYLES) {
-                console.log("Applying emphasis style");
-              }
-              // Apply italic style
-              textNode.fullContent.applyCharacterStyles(
-                { font: italicFont },
-                { start: range.start, length: range.end - range.start }
-              );
-              if (DEBUG_STYLES) {
-                console.log("Applied emphasis style");
-              }
-            } else if (range.style.type === "strong") {
-              if (DEBUG_STYLES) {
-                console.log("Applying strong style");
-              }
-              // Apply bold style
-              textNode.fullContent.applyCharacterStyles(
-                { font: boldFont },
-                { start: range.start, length: range.end - range.start }
-              );
-              if (DEBUG_STYLES) {
-                console.log("Applied strong style");
-              }
-            } else if (range.style.type === "code") {
-              if (DEBUG_STYLES) {
-                console.log("Applying code style");
-              }
-              // Apply monospace font for code
-              textNode.fullContent.applyCharacterStyles(
-                { font: monospaceFont },
-                { start: range.start, length: range.end - range.start }
-              );
-              if (DEBUG_STYLES) {
-                console.log("Applied code style");
-              }
+              // Add any additional styles here...
             }
-            // Add any additional styles here...
+            console.log("All styles applied");
           }
-          console.log("All styles applied");
-        });
+        );
       } catch (error) {
         console.error("Error creating styled text from markdown:", error);
         throw error;
@@ -1787,16 +1788,8 @@ function start() {
     // Creates a text node in the current document
     createTextNode: (text) => {
       try {
-        // Find the current page
-        let currentNode = editor.context.insertionParent;
-        let page = null;
-        while (currentNode) {
-          if (currentNode.type === "Page") {
-            page = currentNode;
-            break;
-          }
-          currentNode = currentNode.parent;
-        }
+        // The current page is already an ActivePageNode
+        const page = editor.context.currentPage;
 
         // Create a new text node
         const textNode = editor.createText(text);
@@ -1845,7 +1838,9 @@ function start() {
         // Create text node first (this is allowed synchronously)
         const textNode = docApi.createTextNode(markdownText);
 
-        // Preload fonts we'll need for styling
+        // Preload fonts before keepContentActiveDuringAsync—preloadFonts()
+        // calls fonts.fromPostscriptName(), which must not run inside its
+        // async lambda.
         await preloadFonts([
           MD_CONSTANTS.FONTS.HEADING,
           MD_CONSTANTS.FONTS.EMPHASIS,
@@ -1853,85 +1848,91 @@ function start() {
           MD_CONSTANTS.FONTS.CODE,
         ]);
 
-        // Get cached fonts
-        const headingFont = fontCache.get(MD_CONSTANTS.FONTS.HEADING);
-        const italicFont = fontCache.get(MD_CONSTANTS.FONTS.EMPHASIS);
-        const boldFont = fontCache.get(MD_CONSTANTS.FONTS.STRONG);
-        const monospaceFont = fontCache.get(MD_CONSTANTS.FONTS.CODE);
+        // Keep the text node's page active, then apply the styles
+        // in the synchronous follow-up.
+        await editor.keepContentActiveDuringAsync(
+          textNode,
+          async () => {},
+          () => {
+            // Get cached fonts
+            const headingFont = fontCache.get(MD_CONSTANTS.FONTS.HEADING);
+            const italicFont = fontCache.get(MD_CONSTANTS.FONTS.EMPHASIS);
+            const boldFont = fontCache.get(MD_CONSTANTS.FONTS.STRONG);
+            const monospaceFont = fontCache.get(MD_CONSTANTS.FONTS.CODE);
 
-        // Now queue all style edits together for better performance
-        await editor.queueAsyncEdit(async () => {
-          for (const range of styleRanges) {
-            if (DEBUG_STYLES) {
-              console.log(`Applying ${range.style.type} style:`, range);
-            }
-            // Apply different styles based on the type
-            if (range.style.type === "list") {
-              docApi.applyListStyle(
-                textNode,
-                range.start,
-                range.end,
-                range.style.ordered
-              );
-            } else if (range.style.type === "heading") {
+            // Now apply all style edits together
+            for (const range of styleRanges) {
               if (DEBUG_STYLES) {
-                console.log(
-                  "Applying heading style for level:",
-                  range.style.level
+                console.log(`Applying ${range.style.type} style:`, range);
+              }
+              // Apply different styles based on the type
+              if (range.style.type === "list") {
+                docApi.applyListStyle(
+                  textNode,
+                  range.start,
+                  range.end,
+                  range.style.ordered
                 );
+              } else if (range.style.type === "heading") {
+                if (DEBUG_STYLES) {
+                  console.log(
+                    "Applying heading style for level:",
+                    range.style.level
+                  );
+                }
+                // Apply heading styles
+                textNode.fullContent.applyCharacterStyles(
+                  {
+                    font: headingFont,
+                    fontSize: getFontSizeForHeadingLevel(range.style.level),
+                  },
+                  { start: range.start, length: range.end - range.start }
+                );
+                if (DEBUG_STYLES) {
+                  console.log("Applied heading style:", range.style.level);
+                }
+              } else if (range.style.type === "emphasis") {
+                if (DEBUG_STYLES) {
+                  console.log("Applying emphasis style");
+                }
+                // Apply italic style
+                textNode.fullContent.applyCharacterStyles(
+                  { font: italicFont },
+                  { start: range.start, length: range.end - range.start }
+                );
+                if (DEBUG_STYLES) {
+                  console.log("Applied emphasis style");
+                }
+              } else if (range.style.type === "strong") {
+                if (DEBUG_STYLES) {
+                  console.log("Applying strong style");
+                }
+                // Apply bold style
+                textNode.fullContent.applyCharacterStyles(
+                  { font: boldFont },
+                  { start: range.start, length: range.end - range.start }
+                );
+                if (DEBUG_STYLES) {
+                  console.log("Applied strong style");
+                }
+              } else if (range.style.type === "code") {
+                if (DEBUG_STYLES) {
+                  console.log("Applying code style");
+                }
+                // Apply monospace font for code
+                textNode.fullContent.applyCharacterStyles(
+                  { font: monospaceFont },
+                  { start: range.start, length: range.end - range.start }
+                );
+                if (DEBUG_STYLES) {
+                  console.log("Applied code style");
+                }
               }
-              // Apply heading styles
-              textNode.fullContent.applyCharacterStyles(
-                {
-                  font: headingFont,
-                  fontSize: getFontSizeForHeadingLevel(range.style.level),
-                },
-                { start: range.start, length: range.end - range.start }
-              );
-              if (DEBUG_STYLES) {
-                console.log("Applied heading style:", range.style.level);
-              }
-            } else if (range.style.type === "emphasis") {
-              if (DEBUG_STYLES) {
-                console.log("Applying emphasis style");
-              }
-              // Apply italic style
-              textNode.fullContent.applyCharacterStyles(
-                { font: italicFont },
-                { start: range.start, length: range.end - range.start }
-              );
-              if (DEBUG_STYLES) {
-                console.log("Applied emphasis style");
-              }
-            } else if (range.style.type === "strong") {
-              if (DEBUG_STYLES) {
-                console.log("Applying strong style");
-              }
-              // Apply bold style
-              textNode.fullContent.applyCharacterStyles(
-                { font: boldFont },
-                { start: range.start, length: range.end - range.start }
-              );
-              if (DEBUG_STYLES) {
-                console.log("Applied strong style");
-              }
-            } else if (range.style.type === "code") {
-              if (DEBUG_STYLES) {
-                console.log("Applying code style");
-              }
-              // Apply monospace font for code
-              textNode.fullContent.applyCharacterStyles(
-                { font: monospaceFont },
-                { start: range.start, length: range.end - range.start }
-              );
-              if (DEBUG_STYLES) {
-                console.log("Applied code style");
-              }
+              // Add any additional styles here...
             }
-            // Add any additional styles here...
+            console.log("All styles applied");
           }
-          console.log("All styles applied");
-        });
+        );
       } catch (error) {
         console.error("Error creating styled text from markdown:", error);
         throw error;

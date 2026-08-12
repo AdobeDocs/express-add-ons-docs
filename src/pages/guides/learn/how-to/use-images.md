@@ -24,19 +24,19 @@ contributors:
 faq:
   questions:
     - question: "How do I add images to a document?"
-      answer: 'Call `addOnUISdk.app.document.addImage(blob, attributes, importAddOnData)` with image blob and optional MediaAttributes and ImportAddOnData.'
+      answer: "Call `addOnUISdk.app.document.addImage(blob, attributes, importAddOnData)` with image blob and optional MediaAttributes and ImportAddOnData."
 
     - question: "What parameters does addImage require?"
       answer: "A Blob object is required. MediaAttributes (title, author) and ImportAddOnData (custom metadata) are optional."
 
     - question: "How do I get an image as a blob?"
-      answer: 'Use `fetch(imageUrl).then(r => r.blob())` to convert images to blob format.'
+      answer: "Use `fetch(imageUrl).then(r => r.blob())` to convert images to blob format."
 
     - question: "Can I use local image files?"
       answer: "Yes, use relative paths from add-on root with fetch() to load local images."
 
     - question: "How do I add animated GIFs?"
-      answer: 'Use `addOnUISdk.app.document.addAnimatedImage(blob, attributes, importAddOnData)` instead of addImage().'
+      answer: "Use `addOnUISdk.app.document.addAnimatedImage(blob, attributes, importAddOnData)` instead of addImage()."
 
     - question: "Why doesn't addImage work with GIFs?"
       answer: "addImage() converts animations to static images; use addAnimatedImage() to preserve animation."
@@ -51,7 +51,7 @@ faq:
 
     - question: "Can I replace any media type with `replaceMedia()`?"
       answer: "Currently, `replaceMedia()` only accepts `BitmapImage` objects. The original media can be any type, but replacement must be a static image."
-      
+
     - question: "How do I attach custom metadata to imported images?"
       answer: "Use the optional `importAddOnData` parameter with `nodeAddOnData` and `mediaAddOnData` objects to store custom metadata that can be retrieved later via document sandbox APIs."
 ---
@@ -88,10 +88,11 @@ addOnUISdk.ready.then(async () => {
         title: "Placeholder image", // 👈 Optional MediaAttributes
         author: "Adobe Developer",
       },
-      { // 👈 Optional ImportAddOnData - metadata that persists with the image
-        nodeAddOnData: { "imageId": "placeholder_123", "category": "demo" },
-        mediaAddOnData: { "source": "external", "resolution": "600x400" }
-      }
+      {
+        // 👈 Optional ImportAddOnData - metadata that persists with the image
+        nodeAddOnData: { imageId: "placeholder_123", category: "demo" },
+        mediaAddOnData: { source: "external", resolution: "600x400" },
+      },
     );
   } catch (e) {
     console.error("Failed to add the image", e);
@@ -139,12 +140,13 @@ addOnUISdk.ready.then(async () => {
       gifImageBlob, // 👈 Blob object
       {
         title: "Animated GIF",
-        author: "GIF Creator"
+        author: "GIF Creator",
       }, // 👈 Optional MediaAttributes
-      { // 👈 Optional ImportAddOnData
-        nodeAddOnData: { "gifId": "animated_456", "type": "animation" },
-        mediaAddOnData: { "duration": "3s", "frames": "24" }
-      }
+      {
+        // 👈 Optional ImportAddOnData
+        nodeAddOnData: { gifId: "animated_456", type: "animation" },
+        mediaAddOnData: { duration: "3s", frames: "24" },
+      },
     );
   } catch (e) {
     console.error("Failed to add the image", e);
@@ -179,15 +181,28 @@ You can copy and paste the following code into a [Code Playground](../../getting
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Get Started</title>
-</head>
+  </head>
   <body>
     <div class="container">
-      <button id="replace-media-btn" disabled>Replace Media</button>
+      <button
+        id="replace-media-btn"
+        disabled
+      >
+        Replace Media
+      </button>
     </div>
+    <div
+      id="message"
+      class="message"
+      style="display:none;"
+    ></div>
   </body>
 </html>
 ```
@@ -220,7 +235,6 @@ button:not([disabled]):hover {
   background-color: rgb(64, 70, 202);
   cursor: pointer;
 }
-
 ```
 
 #### iFrame JS
@@ -288,7 +302,6 @@ addOnUISdk.ready.then(async () => {
         replaceButton.disabled = false;
         showMessage(result.error);
       }
-
     } catch (error) {
       console.error("Failed to replace media:", error);
       replaceButton.textContent = "Replace Selected Media";
@@ -317,7 +330,7 @@ runtime.exposeApi({
       if (!editor.context.hasSelection) {
         return {
           success: false,
-          error: "No node selected. Please select a MediaContainerNode first."
+          error: "No node selected. Please select a MediaContainerNode first.",
         };
       }
 
@@ -325,30 +338,36 @@ runtime.exposeApi({
       if (selectedNode.type !== constants.SceneNodeType.mediaContainer) {
         return {
           success: false,
-          error: "Selected node is not a MediaContainerNode. Please select an image or media container."
+          error:
+            "Selected node is not a MediaContainerNode. Please select an image or media container.",
         };
       }
 
-      // Load the new image as a BitmapImage
+      // Load the new image first—loadBitmapImage() must not run inside
+      // keepContentActiveDuringAsync()'s async lambda.
       const bitmapImage = await editor.loadBitmapImage(imageBlob);
 
-      // Replace the media using queueAsyncEdit since loadBitmapImage is async
-      editor.queueAsyncEdit(() => {
-        selectedNode.replaceMedia(bitmapImage);
-      });
+      // Keep the selected node's page active, then replace the media
+      // in the synchronous follow-up.
+      await editor.keepContentActiveDuringAsync(
+        selectedNode,
+        async () => {},
+        () => {
+          selectedNode.replaceMedia(bitmapImage);
+        },
+      );
 
       return {
-        success: true
+        success: true,
       };
-
     } catch (error) {
       console.error("Failed to replace media:", error);
       return {
         success: false,
-        error: "Failed to replace media. Please try again."
+        error: "Failed to replace media. Please try again.",
       };
     }
-  }
+  },
 });
 ```
 

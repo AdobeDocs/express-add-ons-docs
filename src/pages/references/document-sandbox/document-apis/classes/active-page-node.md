@@ -62,7 +62,9 @@ Returns a read-only list of all children of the node. This list includes all art
 
 #### Overrides
 
-[`PageNode`](page-node.md).[`allChildren`](page-node.md#allchildren)
+```ts
+PageNode.allChildren
+```
 
 <HorizontalLine />
 
@@ -84,7 +86,9 @@ To create new artboards, see [ArtboardList.addArtboard](artboard-list.md#addartb
 
 #### Overrides
 
-[`PageNode`](page-node.md).[`artboards`](page-node.md#artboards)
+```ts
+PageNode.artboards
+```
 
 <HorizontalLine />
 
@@ -409,7 +413,9 @@ the cloned page.
 
 #### Overrides
 
-[`PageNode`](page-node.md).[`cloneInPlace`](page-node.md#cloneinplace)
+```ts
+PageNode.cloneInPlace
+```
 
 <HorizontalLine />
 

@@ -52,7 +52,7 @@ faq:
     - question: "Can I use bringIntoView() to activate an inactive page?"
       answer: "No. `bringIntoView()` is a viewport primitive, not a page-switch primitive; it throws when called with a node on an inactive page. Use `visitPages()` to make a page active for content access."
     - question: "Are visitPages and keepContentActiveDuringAsync stable?"
-      answer: "Not yet. In Phase 1 they are experimental, so set `experimentalApis: true` in your `manifest.json` during development."
+      answer: "Yes."
     - question: "How do I test my add-on with Large Document Support?"
       answer: "Open https://new.express.adobe.com/lArg3-d0c-supp0rt-4-add0ns in its own browser tab—that URL enforces Large Document Support for developer testing. Stress-test with your add-on open: add pages, switch pages in the UI mid-operation, use very long documents, and re-run whole-document passes and async workflows. Don't share the URL with end users."
     - question: "Do my iframe (Add-on UI SDK) APIs need changes?"
@@ -65,9 +65,9 @@ Adobe Express no longer keeps every page of a document loaded at once, so add-on
 
 For the model behind this—active versus inactive pages, and why it exists—see [Large Document Support](../platform-concepts/large-document-support.md). This guide covers the code changes.
 
-<InlineAlert slots="text1" variant="warning"/>
+<InlineAlert slots="text1" variant="info"/>
 
-**IMPORTANT:** The `visitPages` and `keepContentActiveDuringAsync` APIs are currently **_experimental only_** and require the `experimentalApis` flag set to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of `manifest.json`.
+**IMPORTANT:** The `visitPages` and `keepContentActiveDuringAsync` APIs are stable as of Phase 2—no `experimentalApis` flag is required in the [`requirements`](../../../references/manifest/index.md#requirements) section of `manifest.json`.
 
 <InlineAlert slots="header, text1" variant="info"/>
 
@@ -86,7 +86,7 @@ Several common operations stay safe and need no migration:
 
 ## Visit all pages in a document
 
-The `visitPages()` method on [`editor.documentRoot.pages`](../../../references/document-sandbox/document-apis/classes/page-list.md) accepts an array of pages and a callback. It activates each page in turn and invokes the callback with a fully accessible `ActivePageNode`, so you can read and write that page's content. The page is guaranteed to remain active until the callback returns; if the callback returns a promise, the page stays active until it resolves (use an `async` callback when you need to `await`). There is no need to call [`editor.queueAsyncEdit()`](../../../references/document-sandbox/document-apis/classes/editor.md) inside the callback. Pages may be visited in a different order than the array you pass.
+The [`visitPages()`](../../../references/document-sandbox/document-apis/classes/page-list.md#visitpages) method on [`editor.documentRoot.pages`](../../../references/document-sandbox/document-apis/classes/page-list.md) accepts an array of pages and a callback. It activates each page in turn and invokes the callback with a fully accessible `ActivePageNode`, so you can read and write that page's content. The page is guaranteed to remain active until the callback returns; if the callback returns a promise, the page stays active until it resolves (use an `async` callback when you need to `await`). There is no need to call [`editor.queueAsyncEdit()`](../../../references/document-sandbox/document-apis/classes/editor.md) inside the callback. Pages may be visited in a different order than the array you pass.
 
 ### Example: Read content on every page
 
@@ -337,7 +337,7 @@ Keep this testing environment to yourself—do not share the URL with your add-o
 
 #### Q: Are visitPages and keepContentActiveDuringAsync stable?
 
-**A:** Not yet. In Phase 1 they are experimental, so set `experimentalApis: true` in your `manifest.json` during development.
+**A:** Yes.
 
 #### Q: How do I test my add-on with Large Document Support?
 
