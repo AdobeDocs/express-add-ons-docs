@@ -1,0 +1,42 @@
+---
+name: Generate llms.txt
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/pages/**'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate llms.txt
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { execSync } = require('child_process');
+            execSync('npm install --no-save github:AdobeDocs/adp-devsite-scripts', { stdio: 'inherit' });
+            const generate = require('./node_modules/adp-devsite-scripts/llm-txt-generate/generate-llms-txt.js');
+            await generate({ core });
+
+      - name: Save PR metadata
+        run: |
+          echo "${{ github.event.pull_request.number }}" > pr-number.txt
+          echo "${{ github.event.pull_request.head.ref }}" > pr-branch.txt
+
+      - name: Upload llms.txt artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: llms-txt
+          path: |
+            src/pages/llms.txt
+            pr-number.txt
+            pr-branch.txt

@@ -1,0 +1,58 @@
+---
+name: Commit llms.txt
+on:
+  workflow_run:
+    workflows: ["Generate llms.txt"]
+    types:
+      - completed
+
+permissions:
+  contents: write
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+    if: github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion == 'success'
+    steps:
+      - name: Download llms.txt artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: llms-txt
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Read PR metadata
+        id: meta
+        run: |
+          echo "pr_number=$(cat pr-number.txt)" >> "$GITHUB_OUTPUT"
+          echo "pr_branch=$(cat pr-branch.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.meta.outputs.pr_branch }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Copy generated llms.txt
+        uses: actions/download-artifact@v4
+        with:
+          name: llms-txt
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: .artifact
+
+      - name: Commit llms.txt if changed
+        run: |
+          cp .artifact/src/pages/llms.txt src/pages/llms.txt
+          rm -rf .artifact
+
+          git add src/pages/llms.txt
+          if git diff --staged --quiet; then
+            echo "No changes to llms.txt, skipping commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "auto-generate llms.txt"
+          git push
