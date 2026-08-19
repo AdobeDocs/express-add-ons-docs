@@ -74,6 +74,10 @@ faq:
 
 A set of constants used throughout the Add-on UI SDK for type-safe development. See the [Add-on UI SDK Constants Guide](../../guides/learn/fundamentals/ui-sdk-constants.md) for practical examples and usage patterns.
 
+<InlineAlert slots="text" variant="info"/>
+
+**Runtime:** These constants are used in the **iframe runtime** (`addOnUISdk`). See the [Add-on Architecture Guide](../../guides/learn/platform-concepts/architecture.md#the-two-environments) for the dual-runtime model.
+
 Most constants support dual access ([import statement](../../guides/learn/fundamentals/terminology.md#overloaded-terms-clarification) OR `addOnUISdk.constants.*`), but four constants require an import statement: [`AppEvent`](#appevent), [`ColorPickerEvent`](#colorpickerevent), [`SupportedMimeTypes`](#supportedmimetypes), and [`EntrypointType`](#entrypointtype).
 
 ## Import Quick Reference

@@ -1,6 +1,23 @@
+---
+title: "addOnUISdk.app.oauth — Adobe Express Add-on SDK"
+description: "Reference for the addOnUISdk.app.oauth object, providing the authorize() method to implement OAuth 2.0 PKCE user authorization workflows."
+keywords:
+    - Adobe Express
+    - Add-on SDK
+    - addOnUISdk
+    - app.oauth
+    - authorize
+    - OAuth 2.0
+    - PKCE
+---
+
 # addOnUISdk.app.oauth
 
 Provides access to the OAuth API methods needed for implementing the [user authorization with OAuth 2.0 use case](../../guides/learn/how-to/oauth2.md#use-oauth-20). Be sure to check out the [code samples](../../guides/learn/samples.md) as well for more extensive examples of using this workflow.
+
+<InlineAlert slots="text" variant="info"/>
+
+**Runtime:** This API runs in the **iframe runtime** (`addOnUISdk`). See the [Add-on Architecture Guide](../../guides/learn/platform-concepts/architecture.md#the-two-environments) for the dual-runtime model.
 
 ## Methods
 

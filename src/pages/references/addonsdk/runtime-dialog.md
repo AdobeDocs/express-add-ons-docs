@@ -1,6 +1,22 @@
+---
+title: "addOnUISdk.instance.runtime.dialog — Adobe Express Add-on SDK"
+description: "Reference for the addOnUISdk.instance.runtime.dialog object, used to close a modal dialog and return results to the dialog invoker."
+keywords:
+    - Adobe Express
+    - Add-on SDK
+    - addOnUISdk
+    - instance.runtime.dialog
+    - close
+    - showModalDialog
+---
+
 # addOnUISdk.instance.runtime.dialog
 
 Represents the modal dialog presented to the user. This object can be used to manage the dialog, like closing it and sending results to the caller. Check out the [modal dialogs use case examples](../../guides/learn/how-to/modal-dialogs.md) for more details on using dialogs, as well as the related [`showModalDialog` method](addonsdk-app.md#showmodaldialog).
+
+<InlineAlert slots="text" variant="info"/>
+
+**Runtime:** This API runs in the **iframe runtime** (`addOnUISdk.instance.runtime.dialog`). See the [Add-on Architecture Guide](../../guides/learn/platform-concepts/architecture.md#the-two-environments) for the dual-runtime model.
 
 ## Methods
 

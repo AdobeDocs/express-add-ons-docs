@@ -25,6 +25,20 @@ contributors:
 
 # Changelog
 
+## 2026-08-18
+
+### Stabilized
+
+The [`link()`](./addonsdk/app-document.md#link) method and the [`LinkOptions`](./addonsdk/addonsdk-constants.md) parameter are now stable and no longer require the `experimentalApis` flag in your add-on's `manifest.json`.
+
+### Updated
+
+The `addAudio()` method now supports `audio/mp4` files in addition to the other formats listed in the [FAQ](../support/faq.md#-file-formats--media-support).
+
+### Updated
+
+- Removed experimental warnings referencing `link()` from the [Document Metadata How-to Guide](../guides/learn/how-to/document-metadata.md) and the [`addOnUISdk.app.document`](addonsdk/app-document.md#link) reference.
+
 ## 2026-08-03
 
 <InlineAlert slots="header, text1, text2" variant="info"/>

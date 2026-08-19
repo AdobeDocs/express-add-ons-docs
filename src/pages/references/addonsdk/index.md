@@ -1,17 +1,17 @@
 ---
 keywords:
   - Adobe Express
-  - Express Add-on SDK
   - Express Editor
   - Adobe Express
   - Add-on SDK
+  - addOnUISdk
   - SDK
   - JavaScript
   - Extend
   - Extensibility
   - API
   - Add-on Manifest
-title: SDK Reference
+title: Add-on UI SDK Reference
 description: The Adobe Express add-on SDK Reference.
 contributors:
   - https://github.com/hollyschinsky

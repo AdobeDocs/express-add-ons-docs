@@ -1,6 +1,24 @@
+---
+title: "addOnUISdk — Adobe Express Add-on SDK"
+description: "Reference for the core addOnUISdk object, providing access to the SDK's apiVersion, app, constants, instance, and ready properties."
+keywords:
+    - Adobe Express
+    - Add-on SDK
+    - addOnUISdk
+    - apiVersion
+    - ready
+    - app
+    - constants
+    - instance
+---
+
 # addOnUISdk
 
 The core add-on UI SDK object which provides access to everything needed for add-on development. This includes determining the current version of the platform, an object to use for determining when the SDK has been initialized and ready for use, and other core objects you can use to access specific features you may want to use for building your add-on.
+
+<InlineAlert slots="text" variant="info"/>
+
+**Runtime:** This API runs in the **iframe runtime** (`addOnUISdk`). See the [Add-on Architecture Guide](../../guides/learn/platform-concepts/architecture.md#the-two-environments) for the dual-runtime model.
 
 ## addOnUISdk Properties
 

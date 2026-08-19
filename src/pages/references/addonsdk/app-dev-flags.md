@@ -1,6 +1,22 @@
+---
+title: "addOnUISdk.app.devFlags — Adobe Express Add-on SDK"
+description: "Reference for the addOnUISdk.app.devFlags object, used to simulate behaviors such as free user status during add-on development and testing."
+keywords:
+    - Adobe Express
+    - Add-on SDK
+    - addOnUISdk
+    - app.devFlags
+    - simulateFreeUser
+    - testing
+---
+
 # addOnUISdk.app.devFlags
 
 This object contains flags which can be used to simulate certain behavior during development.
+
+<InlineAlert slots="text" variant="info"/>
+
+**Runtime:** This API runs in the **iframe runtime** (`addOnUISdk`). See the [Add-on Architecture Guide](../../guides/learn/platform-concepts/architecture.md#the-two-environments) for the dual-runtime model.
 
 <InlineAlert slots="text" variant="warning"/>
 

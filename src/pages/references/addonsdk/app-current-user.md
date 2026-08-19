@@ -1,6 +1,23 @@
+---
+title: "addOnUISdk.app.currentUser — Adobe Express Add-on SDK"
+description: "Reference for the addOnUISdk.app.currentUser object, providing methods to retrieve the current user's ID and premium or anonymous status."
+keywords:
+    - Adobe Express
+    - Add-on SDK
+    - addOnUISdk
+    - app.currentUser
+    - userId
+    - isPremiumUser
+    - isAnonymousUser
+---
+
 # addOnUISdk.app.currentUser
 
 Provides access to the currently logged in user.
+
+<InlineAlert slots="text" variant="info"/>
+
+**Runtime:** This API runs in the **iframe runtime** (`addOnUISdk`). See the [Add-on Architecture Guide](../../guides/learn/platform-concepts/architecture.md#the-two-environments) for the dual-runtime model.
 
 ## Methods
 
