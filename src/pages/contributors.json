@@ -379,11 +379,12 @@
     {
       "page": "/guides/getting-started/changelog",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4"
       ],
-      "lastUpdated": "8/12/2026"
+      "lastUpdated": "8/19/2026"
     },
     {
       "page": "/guides/getting-started/code-playground",
@@ -539,9 +540,10 @@
     {
       "page": "/guides/learn/how-to/document-metadata",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "2/23/2026"
+      "lastUpdated": "8/19/2026"
     },
     {
       "page": "/guides/learn/how-to/drag-and-drop",
@@ -731,10 +733,11 @@
     {
       "page": "/guides/learn/how-to/use-audio",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "2/24/2026"
+      "lastUpdated": "8/19/2026"
     },
     {
       "page": "/guides/learn/how-to/use-color",
@@ -843,12 +846,12 @@
     {
       "page": "/guides/support/faq",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4",
-        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4"
       ],
-      "lastUpdated": "2/24/2026"
+      "lastUpdated": "8/19/2026"
     },
     {
       "page": "/references/",
@@ -863,31 +866,31 @@
     {
       "page": "/references/addonsdk/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4",
-        "https://avatars.githubusercontent.com/u/5939127?v=4",
-        "https://avatars.githubusercontent.com/u/359935?v=4"
+        "https://avatars.githubusercontent.com/u/5939127?v=4"
       ],
-      "lastUpdated": "2/24/2026"
+      "lastUpdated": "8/19/2026"
     },
     {
       "page": "/references/addonsdk/addonsdk",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/14320591?v=4",
-        "https://avatars.githubusercontent.com/u/359935?v=4"
+        "https://avatars.githubusercontent.com/u/359935?v=4",
+        "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "2/25/2026"
+      "lastUpdated": "8/19/2026"
     },
     {
       "page": "/references/addonsdk/addonsdk-app",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4",
-        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4",
         "https://avatars.githubusercontent.com/u/77717258?v=4"
       ],
-      "lastUpdated": "2/26/2026"
+      "lastUpdated": "8/19/2026"
     },
     {
       "page": "/references/addonsdk/addonsdk-constants",
@@ -895,116 +898,119 @@
         "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4"
       ],
-      "lastUpdated": "10/22/2025"
+      "lastUpdated": "8/19/2026"
     },
     {
       "page": "/references/addonsdk/addonsdk-instance",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4",
-        "https://avatars.githubusercontent.com/u/5939127?v=4",
-        "https://avatars.githubusercontent.com/u/359935?v=4"
+        "https://avatars.githubusercontent.com/u/5939127?v=4"
       ],
-      "lastUpdated": "2/24/2026"
+      "lastUpdated": "8/19/2026"
     },
     {
       "page": "/references/addonsdk/app-current-user",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "2/24/2026"
+      "lastUpdated": "8/19/2026"
     },
     {
       "page": "/references/addonsdk/app-dev-flags",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "2/23/2026"
+      "lastUpdated": "8/19/2026"
     },
     {
       "page": "/references/addonsdk/app-document",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4",
-        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/77717258?v=4"
       ],
-      "lastUpdated": "8/12/2026"
+      "lastUpdated": "8/19/2026"
     },
     {
       "page": "/references/addonsdk/app-oauth",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4",
-        "https://avatars.githubusercontent.com/u/5939127?v=4",
-        "https://avatars.githubusercontent.com/u/359935?v=4"
+        "https://avatars.githubusercontent.com/u/5939127?v=4"
       ],
-      "lastUpdated": "2/24/2026"
+      "lastUpdated": "8/19/2026"
     },
     {
       "page": "/references/addonsdk/app-ui",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4",
-        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4",
         "https://avatars.githubusercontent.com/u/77717258?v=4"
       ],
-      "lastUpdated": "2/24/2026"
+      "lastUpdated": "8/19/2026"
     },
     {
       "page": "/references/addonsdk/instance-client-storage",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "2/24/2026"
+      "lastUpdated": "8/19/2026"
     },
     {
       "page": "/references/addonsdk/instance-manifest",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4",
-        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4"
       ],
-      "lastUpdated": "2/24/2026"
+      "lastUpdated": "8/19/2026"
     },
     {
       "page": "/references/addonsdk/instance-runtime",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4",
-        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/25365634?v=4"
       ],
-      "lastUpdated": "2/23/2026"
+      "lastUpdated": "8/19/2026"
     },
     {
       "page": "/references/addonsdk/runtime-dialog",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4",
-        "https://avatars.githubusercontent.com/u/5939127?v=4",
-        "https://avatars.githubusercontent.com/u/359935?v=4"
+        "https://avatars.githubusercontent.com/u/5939127?v=4"
       ],
-      "lastUpdated": "2/24/2026"
+      "lastUpdated": "8/19/2026"
     },
     {
       "page": "/references/changelog",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4",
-        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/77717258?v=4",
         "https://avatars.githubusercontent.com/u/108254604?v=4",
         "https://avatars.githubusercontent.com/u/97891206?v=4",
         "https://avatars.githubusercontent.com/u/25365634?v=4"
       ],
-      "lastUpdated": "8/12/2026"
+      "lastUpdated": "8/19/2026"
     },
     {
       "page": "/references/document-sandbox/",
