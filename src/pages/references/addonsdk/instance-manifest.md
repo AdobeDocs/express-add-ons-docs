@@ -1,6 +1,23 @@
+---
+title: "addOnUISdk.instance.manifest — Adobe Express Add-on SDK"
+description: "Reference for the addOnUISdk.instance.manifest object, which provides access to the entries defined in the add-on's manifest.json file."
+keywords:
+    - Adobe Express
+    - Add-on SDK
+    - addOnUISdk
+    - instance.manifest
+    - manifest.json
+contributors:
+    - https://github.com/hollyschinsky
+---
+
 # addOnUISdk.instance.manifest
 
 The `manifest` object provides access to the `manifest.json` file entries of the add-on.
+
+<InlineAlert slots="text" variant="info"/>
+
+**Runtime:** This API runs in the **iframe runtime** (`addOnUISdk`). See the [Add-on Architecture Guide](../../guides/learn/platform-concepts/architecture.md#the-two-environments) for the dual-runtime model.
 
 ## Type
 
@@ -20,7 +37,8 @@ Below is an example of using the `manifest` object, along with the expected outp
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(() => {
-  console.log(JSON.stringify(addOnUISdk.instance.manifest));
+  const manifest = addOnUISdk.instance.manifest;
+  console.log(JSON.stringify(manifest));
 
   console.log("Name: " + manifest["name"]);
   console.log("Test ID " + manifest["testId"]);

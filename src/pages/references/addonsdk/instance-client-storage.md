@@ -1,6 +1,27 @@
+---
+title: "addOnUISdk.instance.clientStorage — Adobe Express Add-on SDK"
+description: "Reference for the addOnUISdk.instance.clientStorage object, providing methods to store, retrieve, and delete persistent add-on data in the user's browser."
+keywords:
+    - Adobe Express
+    - Add-on SDK
+    - addOnUISdk
+    - instance.clientStorage
+    - getItem
+    - setItem
+    - removeItem
+    - clear
+    - keys
+contributors:
+    - https://github.com/hollyschinsky
+---
+
 # addOnUISdk.instance.clientStorage
 
 The `clientStorage` object provides a reference to Client Storage in the currently running add-on. Client Storage allows you to store, retrieve, and delete persistent data in the user's current browser.
+
+<InlineAlert slots="text" variant="info"/>
+
+**Runtime:** This API runs in the **iframe runtime** (`addOnUISdk`). See the [Add-on Architecture Guide](../../guides/learn/platform-concepts/architecture.md#the-two-environments) for the dual-runtime model.
 
 Client Storage is similar to using `Window.localStorage`, but is asynchronous, supports multiple datatypes, (i.e., objects, arrays, strings, numbers, booleans, `null`, `undefined` and `Uint8Array`) and has a larger storage limit. Each add-on can store up to 10 mb of data in `ClientStorage`, per user. Any data additions over 10 mb will throw a quota error. However, an add-on developer can write code to delete old data so that new data can be added. See the [Storing and Retrieving Client Side Data](../../guides/learn/how-to/local-data-management.md) for more details.
 
@@ -11,6 +32,10 @@ Since the data in Client Storage is stored in the user's current browser, any ac
 Additionally, you should always provide a way for users to delete or clear any data stored in Client Storage within your add-on, in case they want to remove any sensitive or unwanted data.
 
 ## Methods
+
+<InlineAlert slots="text" variant="info"/>
+
+All examples below assume you have obtained the `clientStorage` reference: `const { clientStorage } = addOnUISdk.instance;` after `addOnUISdk.ready` has resolved.
 
 ### getItem()
 
@@ -53,7 +78,7 @@ Store a value in Client Storage with the given key. The returned promise will re
 
 #### Returns
 
-`Promise` or `undefined` if no value has been stored for that key.
+`Promise<void>`. Resolves when storage is successful; rejects with an error if storage failed.
 
 #### Example Usage
 

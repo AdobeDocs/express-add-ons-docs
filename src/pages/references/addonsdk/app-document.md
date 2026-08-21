@@ -1,6 +1,31 @@
+---
+title: "addOnUISdk.app.document — Adobe Express Add-on SDK"
+description: "Reference for AppDocument APIs: document ID and title, page metadata, import media (image, video, audio, PDF, PPTX), and export renditions in Adobe Express."
+keywords:
+    - Adobe Express
+    - Add-on SDK
+    - addOnUISdk
+    - app.document
+    - AppDocument
+    - getPagesMetadata
+    - createRenditions
+    - importPdf
+    - importPresentation
+    - addImage
+    - addVideo
+    - addAudio
+    - print quality
+contributors:
+    - https://github.com/hollyschinsky
+---
+
 # addOnUISdk.app.document
 
 Provides access to the methods needed for retrieving [document metadata](#general-methods), [importing content](../../guides/learn/how-to/use-images.md#import-images-into-the-page) such as images, audio and video into the document, and for [exporting content](../../guides/learn/how-to/create-renditions.md) from the current document.
+
+<InlineAlert slots="text" variant="info"/>
+
+**Runtime:** This API runs in the **iframe runtime** (`addOnUISdk`). See the [Add-on Architecture Guide](../../guides/learn/platform-concepts/architecture.md#the-two-environments) for the dual-runtime model.
 
 ## General Methods
 
@@ -31,7 +56,10 @@ import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 function setId(id) { /* ... */ }
 
-addOnUISdk.ready.then(() => setId(await addOnUISdk.app.document.id()));
+addOnUISdk.ready.then(async () => {
+  const { document } = addOnUISdk.app;
+  setId(await document.id());
+});
 
 addOnUISdk.app.on("documentIdAvailable", data => {
   setId(data.documentId);
@@ -65,7 +93,10 @@ import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 function setTitle(title) { /* ... */ }
 
-addOnUISdk.ready.then(() => setTitle(await addOnUISdk.app.document.title()));
+addOnUISdk.ready.then(async () => {
+  const { document } = addOnUISdk.app;
+  setTitle(await document.title());
+});
 
 addOnUISdk.app.on("documentTitleChange", data => {
   setTitle(data.documentTitle);
@@ -106,10 +137,12 @@ import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 // Wait for the SDK to be ready
 await addOnUISdk.ready;
 
+const { document } = addOnUISdk.app;
+
 // Get metadata of all the pages
 async function logMetadata() {
   try {
-    const pages = (await addOnUISdk.app.document.getPagesMetadata({
+    const pages = (await document.getPagesMetadata({
         range: addOnUISdk.constants.Range.specificPages,
         pageIds: [
             "7477a5e7-02b2-4b8d-9bf9-f09ef6f8b9fc",
@@ -252,10 +285,10 @@ The metadata of a page.
 
 This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetadata) method and includes the range and optional `pageIds` for which you want to retrieve metadata for.
 
-| Name                 | Type                             |                                                           Description |
-| -------------------- | -------------------------------- | --------------------------------------------------------------------: |
-| `range`              | [`Range`](addonsdk-constants.md) |                             Range of the document to get the metadata |
-| `pageIds?: string[]` | `string`                         | Id's of the pages. (Only required when the range is `specificPages`). |
+| Name       | Type                              |                                                           Description |
+| ---------- | --------------------------------- | --------------------------------------------------------------------: |
+| `range`    | [`Range`](addonsdk-constants.md)  |                             Range of the document to get the metadata |
+| `pageIds?` | `string[]`                        | Id's of the pages. (Only required when the range is `specificPages`). |
 
 ### getSelectedPageIds()
 
@@ -277,10 +310,12 @@ import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 // Wait for the SDK to be ready
 await addOnUISdk.ready;
 
+const { document } = addOnUISdk.app;
+
 // Get the currently selected page ids
 async function getSelectedPages() {
   try {
-    const selectedPageIds = await addOnUISdk.app.document.getSelectedPageIds();
+    const selectedPageIds = await document.getSelectedPageIds();
     console.log("Selected page ids:", selectedPageIds);
 
     if (selectedPageIds.length === 0) {
@@ -299,10 +334,10 @@ async function getSelectedPages() {
 // Example: Get metadata for selected pages only
 async function getSelectedPagesMetadata() {
   try {
-    const selectedPageIds = await addOnUISdk.app.document.getSelectedPageIds();
+    const selectedPageIds = await document.getSelectedPageIds();
 
     if (selectedPageIds.length > 0) {
-      const metadata = await addOnUISdk.app.document.getPagesMetadata({
+      const metadata = await document.getPagesMetadata({
         range: addOnUISdk.constants.Range.specificPages,
         pageIds: selectedPageIds,
       });
@@ -327,10 +362,6 @@ getSelectedPagesMetadata();
 
 Retrieves the document link.
 
-<InlineAlert slots="text" variant="warning"/>
-
-**IMPORTANT:** This method, the LinkOptions parameter and the associated link events are currently **_experimental only_** and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the `experimentalApis` flag to `true` in the [`requirements`](../manifest/index.md#requirements) section of the `manifest.json`.
-
 #### Signature
 
 `link(options: LinkOptions): Promise<string | undefined>`
@@ -353,13 +384,15 @@ A `documentLinkAvailable` or `documentPublishedLinkAvailable` event is triggered
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
+  const { document } = addOnUISdk.app;
+
   try {
     // Get the current document link
-    const documentLink = await addOnUISdk.app.document.link("document");
+    const documentLink = await document.link("document");
     console.log("Document link:", documentLink);
 
     // Get the published document link
-    const publishedLink = await addOnUISdk.app.document.link("published");
+    const publishedLink = await document.link("published");
     console.log("Published link:", publishedLink);
   } catch (error) {
     console.log("Failed to get document links:", error);
@@ -387,9 +420,9 @@ addOnUISdk.ready.then(async () => {
 
 The options to pass into the link method.
 
-| Name          | Type     | Description                                            |
-| ------------- | -------- | ------------------------------------------------------ |
-| `linkOptions` | `string` | [`LinkOptions`](addonsdk-constants.md) constant value. |
+| Name      | Type     | Description                                                                                          |
+| --------- | -------- | ----------------------------------------------------------------------------------------------------- |
+| `options` | `string` | [`LinkOptions`](addonsdk-constants.md#linkoptions) constant value — `"document"` or `"published"`. |
 
 ### isPresentation()
 
@@ -413,9 +446,11 @@ A resolved `Promise` containing `true` if the document is a presentation, `false
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(async () => {
+  const { document } = addOnUISdk.app;
+
   try {
     // Get if the document is a presentation
-    const isPresentation = await addOnUISdk.app.document.isPresentation();
+    const isPresentation = await document.isPresentation();
     console.log("Is presentation:", isPresentation);
   } catch (error) {
     console.log("Failed to get is presentation:", error);
@@ -448,6 +483,10 @@ A resolved promise if the image was successfully added to the canvas; otherwise,
 #### Example Usage
 
 ```javascript
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+const { document } = addOnUISdk.app;
+
 // Add image(blob) to the current page
 async function addImageFromBlob(blob) {
   try {
@@ -517,6 +556,10 @@ A resolved promise if the animated image was successfully added to the canvas; o
 #### Example Usage
 
 ```js
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+const { document } = addOnUISdk.app;
+
 // Add animated image(blob) to the current page
 async function addAnimatedImageFromBlob(blob) {
   try {
@@ -553,6 +596,10 @@ Adds a video to the current page.
 #### Example Usage
 
 ```js
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+const { document } = addOnUISdk.app;
+
 async function addVideoFromBlob(blob) {
   try {
     await document.addVideo(blob, { title: "Sample Video", author: "Creator" });
@@ -593,6 +640,10 @@ A resolved promise if the audio was successfully added to the canvas; otherwise 
 #### Example Usage
 
 ```js
+import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
+const { document } = addOnUISdk.app;
+
 async function addAudioFromBlob(blob) {
   try {
       await document.addAudio(blob, {title: "Jazzy beats", author: "Jazzy"});
@@ -610,6 +661,7 @@ async function addAudioFromURL(url) {
   catch(error) {
       console.log("Failed to add the audio to the page.");
   }
+}
 ```
 
 #### `MediaAttributes`
@@ -797,7 +849,7 @@ If you supply `addImage()` with an animated GIF, only the first frame will be ad
 
 \*\* See the [FAQ's](../../guides/support/faq.md#what-are-the-supported-file-formats-for-imported-content-in-adobe-express) for the specific file formats allowed for imported content.
 
-### Errors
+### Import Errors
 
 The table below describes the possible error messages that may occur when using the import methods, with a description of the scenario that would cause them to be returned.
 
@@ -1121,6 +1173,10 @@ A resolved `Promise` containing a `boolean` value indicating whether export is a
 
 <InlineAlert slots="text" variant="info"/>
 
+**Note:** A `documentExportAllowedChange` event is triggered when the document's export permission changes in the application. You can listen for this event via the [`addOnUISdk.app.on()`](addonsdk-app.md#on) method.
+
+<InlineAlert slots="text" variant="info"/>
+
 This method is particularly useful in collaborative environments where documents may be subject to review and approval processes. When a document is in certain review states, export functionality may be restricted to prevent unauthorized distribution of content that hasn't been approved.
 
 **Important:** This restriction only applies to renditions created with `RenditionIntent.export` or `RenditionIntent.print`. Renditions created with `RenditionIntent.preview` are always allowed, regardless of the export status, as they are intended for preview purposes only.
@@ -1180,10 +1236,18 @@ addOnUISdk.ready.then(async () => {
 
   // Preview button is always available
   previewButton.disabled = false;
+
+  // Listen for export permission changes
+  addOnUISdk.app.on("documentExportAllowedChange", (data) => {
+    downloadButton.disabled = !data.documentExportAllowed;
+    downloadButton.title = data.documentExportAllowed
+      ? "Download rendition"
+      : "Download restricted - document under review";
+  });
 });
 ```
 
-### Errors
+### Export Errors
 
 The table below describes the possible error messages that may occur when using the export methods, with a description of the scenario that will return them.
 

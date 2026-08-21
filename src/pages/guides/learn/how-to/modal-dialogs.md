@@ -122,7 +122,7 @@ addOnUISdk.ready.then(() => {
         inputDialogOptions
       );
 
-      if (inputDialogResultwi.buttonType === "primary") {
+      if (inputDialogResult.buttonType === "primary") {
         // returns the input the user entered if they didn't cancel
         console.log("Field value", inputDialogResult.fieldValue); // 👈
       }

@@ -1,6 +1,28 @@
+---
+title: "addOnUISdk.app — Adobe Express Add-on SDK"
+description: "Reference for the addOnUISdk.app object, providing access to the host application's document, oauth, and ui objects, plus event subscription and modal dialog methods."
+keywords:
+    - Adobe Express
+    - Add-on SDK
+    - addOnUISdk
+    - app
+    - on
+    - off
+    - showModalDialog
+    - startPremiumUpgradeIfFreeUser
+    - modal dialog
+    - events
+contributors:
+    - https://github.com/hollyschinsky
+---
+
 # addOnUISdk.app
 
 Provides access to the Adobe Express host application's objects and methods to provide features such as content import and export through the [`document` object](app-document.md), OAuth 2.0 authorization flows with the [`oauth` object](app-oauth.md), theme and locale detection with the [`ui` object](app-ui.md), [current logged in user info](app-current-user.md) and more. It also provides access to methods to [show modal dialogs](../../guides/learn/how-to/modal-dialogs.md), [enable drag and drop](../../guides/learn/how-to/drag-and-drop.md) of content and subscribe and unsubscribe to events.
+
+<InlineAlert slots="text" variant="info"/>
+
+**Runtime:** This API runs in the **iframe runtime** (`addOnUISdk`). See the [Add-on Architecture Guide](../../guides/learn/platform-concepts/architecture.md#the-two-environments) for the dual-runtime model.
 
 [](../../guides/learn/how-to/index.md)
 
@@ -250,6 +272,8 @@ Returns a void `Promise`.
 #### Example Usage
 
 ```js
+import addOnUISdk, { ColorPickerPlacement, ColorPickerEvent } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
 const colorPickerButton = document.getElementById("color-picker-button");
 
 colorPickerButton.addEventListener("click", () => {
@@ -262,7 +286,7 @@ colorPickerButton.addEventListener("click", () => {
 });
 
 colorPickerButton.addEventListener(ColorPickerEvent.colorChange, (event) => {
-  console.log("Color change event received!", event.detail.color;);
+  console.log("Color change event received!", event.detail.color);
 });
 ```
 
@@ -281,7 +305,7 @@ Returns a void `Promise`.
 #### Example Usage
 
 ```js
-const colorPickerButton = document.getElementById("color-picker-button");
+import addOnUISdk, { ColorPickerPlacement, ColorPickerEvent } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 colorPickerButton.addEventListener("click", () => {
   addOnUISdk.app.showColorPicker(colorPickerButton, {
@@ -469,10 +493,16 @@ The table below describes the events triggered from the add-on SDK. Use the `add
 | ----- | ---- | ----------- |
 | `localechange` | `string` | Triggered when there is a locale change at the host side. |
 | `themechange` | `string` | Triggered when there is a theme change at the host side. |
+| `formatchange` | `string` | Triggered when the regional format setting changes at the host side. |
 | `dragstart` | `string` | Triggered when the user starts dragging an item for which drag behavior is enabled. |
 | `dragend` | `string` | Triggered when the drag operation ends. |
+| `dragcancel` | `string` | Triggered when the drag operation is cancelled. |
+| `reset` | `string` | Triggered when the add-on is reset. |
 | `documentIdAvailable` | `string` | Triggered when the document id is available in the application. |
+| `documentLinkAvailable` | `string` | Triggered when the document link is available in the application. |
+| `documentPublishedLinkAvailable` | `string` | Triggered when the published document link is available in the application. |
 | `documentTitleChange` | `string` | Triggered when the document title is changed in the application. |
+| `documentExportAllowedChange` | `string` | Triggered when the document's export permission changes in review and approval workflows. |
 
 ## Errors
 

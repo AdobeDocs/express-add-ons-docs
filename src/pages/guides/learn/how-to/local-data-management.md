@@ -58,11 +58,11 @@ let store;
 
 addOnUISdk.ready.then(async () => {
     store = addOnUISdk.instance.clientStorage;
-}
+});
 /**
  * Store item
  */
-async function setItem(item: string, isComplete: boolean) {
+async function setItem(item, isComplete) {
     await store.setItem(item, isComplete);
     todoItemInput.value = "";
 }
@@ -71,7 +71,7 @@ async function setItem(item: string, isComplete: boolean) {
  */
 async function displayAllItems() {
     const todoItems = await store.keys();
-    todoItems.forEach(async (item: string) => {
+    todoItems.forEach(async (item) => {
         const itemValue = await store.getItem(item);
         console.log("Key: " + item + " value: " + itemValue);
     });

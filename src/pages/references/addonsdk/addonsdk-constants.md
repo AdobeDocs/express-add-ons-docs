@@ -74,6 +74,10 @@ faq:
 
 A set of constants used throughout the Add-on UI SDK for type-safe development. See the [Add-on UI SDK Constants Guide](../../guides/learn/fundamentals/ui-sdk-constants.md) for practical examples and usage patterns.
 
+<InlineAlert slots="text" variant="info"/>
+
+**Runtime:** These constants are used in the **iframe runtime** (`addOnUISdk`). See the [Add-on Architecture Guide](../../guides/learn/platform-concepts/architecture.md#the-two-environments) for the dual-runtime model.
+
 Most constants support dual access ([import statement](../../guides/learn/fundamentals/terminology.md#overloaded-terms-clarification) OR `addOnUISdk.constants.*`), but four constants require an import statement: [`AppEvent`](#appevent), [`ColorPickerEvent`](#colorpickerevent), [`SupportedMimeTypes`](#supportedmimetypes), and [`EntrypointType`](#entrypointtype).
 
 ## Import Quick Reference
@@ -191,13 +195,18 @@ import { AuthorizationStatus } from "https://express.adobe.com/static/add-on-sdk
 addOnUISdk.constants.AuthorizationStatus
 ```
 
-OAuth authorization status values.
+OAuth authorization status values. Each value is the exact string returned by the SDK (e.g., `SUCCESS = "SUCCESS"`).
 
 | Value | Description |
 |-------|-------------|
-| `authorized` | Authorization successful |
-| `cancelled` | Authorization cancelled by user |
-| `error` | Authorization error occurred |
+| `SUCCESS` | Authorization completed successfully. Expected result for the `authorize()` method. |
+| `POPUP_OPENED` | The authorization popup was opened. Expected result for the `authorizeWithOwnRedirect()` method. |
+| `POPUP_BLOCKED` | The popup was blocked by the browser. Add `allow-popups` to your manifest `sandbox` permissions. |
+| `POPUP_CLOSED` | The user closed the popup without completing authorization. |
+| `POPUP_TIMEOUT` | The authorization popup timed out. |
+| `FAILED` | The authorization workflow failed. The `description` field contains the failure details. |
+| `IFRAME_LOAD_FAILED` | The OAuth iframe failed to load. |
+| `RESTRICTED_CLIENT_ID` | The client ID is restricted and not permitted for this context. |
 
 ### ColorPickerEvent
 

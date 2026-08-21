@@ -1,6 +1,26 @@
+---
+title: "addOnUISdk.instance.runtime — Adobe Express Add-on SDK"
+description: "Reference for the addOnUISdk.instance.runtime object, providing the current runtime type and methods for cross-runtime API exposure and communication."
+keywords:
+    - Adobe Express
+    - Add-on SDK
+    - addOnUISdk
+    - instance.runtime
+    - exposeApi
+    - apiProxy
+    - RuntimeType
+    - document sandbox
+contributors:
+    - https://github.com/hollyschinsky
+---
+
 # addOnUISdk.instance.runtime
 
 Represents the runtime of the current add-on.
+
+<InlineAlert slots="text" variant="info"/>
+
+**Runtime:** This object (`addOnUISdk.instance.runtime`) runs in the **iframe runtime**. The document sandbox has its own equivalent, `addOnSandboxSdk.instance.runtime`, and the two are used together for cross-runtime communication. See the [Add-on Architecture Guide](../../guides/learn/platform-concepts/architecture.md#the-two-environments) for the dual-runtime model.
 
 ## Properties
 

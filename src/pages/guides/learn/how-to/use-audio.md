@@ -95,7 +95,7 @@ addOnUISdk.ready.then(async () => {
 
 #### Audio file requirements
 
-Please refer to [this page](https://helpx.adobe.com/au/express/create-and-edit-videos/change-file-formats/video-quick-actions-requirements.html) to know more about the file formats support and size/length requirements for audio.
+Please refer to [the FAQ page](../../support/faq.md#-file-formats--media-support) to understand more about the file formats support and size/length requirements for audio.
 
 ## FAQs
 

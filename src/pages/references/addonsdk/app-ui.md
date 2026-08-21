@@ -1,6 +1,27 @@
+---
+title: "addOnUISdk.app.ui — Adobe Express Add-on SDK"
+description: "Reference for the addOnUISdk.app.ui object, providing access to the host application's theme, locale, and regional format, plus the openEditorPanel() method."
+keywords:
+    - Adobe Express
+    - Add-on SDK
+    - addOnUISdk
+    - app.ui
+    - theme
+    - locale
+    - locales
+    - format
+    - openEditorPanel
+contributors:
+    - https://github.com/hollyschinsky
+---
+
 # addOnUISdk.app.ui
 
 Provides you with UI related values from the Adobe Express host application where the add-on is running, so you can do things such as detect the [current locale](../../guides/learn/how-to/theme-locale.md#detecting-locale-supported-locales-and-format) or [theme](../../guides/learn/how-to/theme-locale.md#detecting-theme) in use to update your add-on user interface accordingly.
+
+<InlineAlert slots="text" variant="info"/>
+
+**Runtime:** This API runs in the **iframe runtime** (`addOnUISdk`). See the [Add-on Architecture Guide](../../guides/learn/platform-concepts/architecture.md#the-two-environments) for the dual-runtime model.
 
 ## Properties
 
@@ -61,7 +82,7 @@ addOnUISdk.ready.then(async () => {
 ### locales
 
 
-Access all locales currently supported in Adobe Express. This value is accessed via the `addOnUISdk.app.ui` object, so you should ensure you only access this object after the AddOnSdk is initialized (via the `addOnUISdk.ready`).
+Access all locales currently supported in Adobe Express. This value is accessed via the `addOnUISdk.app.ui` object, so you should ensure you only access this object after the `addOnUISdk` is initialized (via the `addOnUISdk.ready`).
 
 #### Values
 
@@ -265,7 +286,7 @@ addOnUISdk.ready.then(() => {
 
 // Navigate to tab
 addOnUISdk.ready.then(() => {
-  const action: NavigateAction = {
+  const action = {
     type: PanelActionType.navigate,
     tab: "photos",
   };
@@ -274,7 +295,7 @@ addOnUISdk.ready.then(() => {
 
 // Navigate to tab + collection
 addOnUISdk.ready.then(() => {
-  const action: NavigateAction = {
+  const action = {
     type: PanelActionType.navigate,
     tab: "photos",
     collectionId: "urn:aaid:sc:VA6C2:cd6aa706-12f2-525b-9500-3d23bc663882",

@@ -1,6 +1,25 @@
+---
+title: "addOnUISdk.app.oauth — Adobe Express Add-on SDK"
+description: "Reference for the addOnUISdk.app.oauth object, providing the authorize() method to implement OAuth 2.0 PKCE user authorization workflows."
+keywords:
+    - Adobe Express
+    - Add-on SDK
+    - addOnUISdk
+    - app.oauth
+    - authorize
+    - OAuth 2.0
+    - PKCE
+contributors:
+    - https://github.com/hollyschinsky
+---
+
 # addOnUISdk.app.oauth
 
 Provides access to the OAuth API methods needed for implementing the [user authorization with OAuth 2.0 use case](../../guides/learn/how-to/oauth2.md#use-oauth-20). Be sure to check out the [code samples](../../guides/learn/samples.md) as well for more extensive examples of using this workflow.
+
+<InlineAlert slots="text" variant="info"/>
+
+**Runtime:** This API runs in the **iframe runtime** (`addOnUISdk`). See the [Add-on Architecture Guide](../../guides/learn/platform-concepts/architecture.md#the-two-environments) for the dual-runtime model.
 
 ## Methods
 
@@ -40,13 +59,13 @@ A resolved `Promise` with the [`AuthorizationResponse`](#authorizationresponse) 
 | `id`          | `string`             |                                                                                                                                                                                                                                                                                                                    Unique identifier for the authorization request. |
 | `code`        | `string`             |                                                                                                                                                                                                                                                        OAuth 2.0 generated authorization code which can be used once to obtain an access token and a refresh token. |
 | `redirectUri` | `string`             |                                                                                                                                                                                                   URL where the user is redirected to after authorization. This is the default URL owned by Adobe and it is this URL which needs to be used to obtain access_token. |
-| `result`      | `string` or `object` | An [`AuthorizationResult`](#authorizationresult) payload which denotes either success or failure. In the event of a "FAILED" status reported by the OAuth provider during authorization, the value of this property is an `object`, in the form of `{[failure_title]: "failure_description"}`, and for all other statuses the value of `description` is a `string`. |
+| `result` | [`AuthorizationResult`](#authorizationresult) | An [`AuthorizationResult`](#authorizationresult) payload which denotes either success or failure. In the event of a "FAILED" status reported by the OAuth provider during authorization, the value of this property is an `object`, in the form of `{[failure_title]: "failure_description"}`, and for all other statuses the value of `description` is a `string`. |
 
 ### authorizeWithOwnRedirect()
 
 Initiate the OAuth 2.0 PKCE authorization workflow by opening the user sign-in window. After authorization, the user is redirected to the add-on developer provided URL.
 
-#### Signature:
+#### Signature
 
 `authorizeWithOwnRedirect(request: AuthorizeWithOwnRedirectRequest): Promise<AuthorizationResult>`
 
@@ -82,15 +101,18 @@ A resolved `Promise` with the [`AuthorizationResult`](#authorizationresult) obje
 
 #### `AuthorizationStatus`
 
-Each of the statuses returned below is the exact name as a string (ie: SUCCESS = "SUCCESS")
+Each of the statuses returned below is the exact string value (e.g., `SUCCESS = "SUCCESS"`).
 
-| Name          | Type     |                                                                                                             Description |
-| ------------- | -------- | ----------------------------------------------------------------------------------------------------------------------: |
-| SUCCESS       | `string` |                            Successful authorization this is the expected result for the [Authorize](#authorize) method |
-| POPUP_OPENED  | `string` | The popup was opened (this is the expected result for the [AuthorizeWithOwnRedirect](#authorizewithownredirect) method) |
-| POPUP_BLOCKED | `string` |      The popup was blocked. (Add `allow-popups` permission to your [manifest.json](../manifest/index.md) `sandbox` permissions) |
-| POPUP_TIMEOUT | `string` |                                                                                                    The popup timed out. |
-| FAILED        | `string` |                                                                                       The authorization workflow failed |
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| `SUCCESS` | `string` | Authorization completed successfully. Expected result for the `authorize()` method. |
+| `POPUP_OPENED` | `string` | The popup was opened. Expected result for the `authorizeWithOwnRedirect()` method. |
+| `POPUP_BLOCKED` | `string` | The popup was blocked. Add `allow-popups` to your [manifest.json](../manifest/index.md) `sandbox` permissions. |
+| `POPUP_CLOSED` | `string` | The user closed the popup before completing authorization. |
+| `POPUP_TIMEOUT` | `string` | The popup timed out. |
+| `FAILED` | `string` | The authorization workflow failed. |
+| `IFRAME_LOAD_FAILED` | `string` | The OAuth iframe failed to load. |
+| `RESTRICTED_CLIENT_ID` | `string` | The client ID is restricted and not permitted for this context. |
 
 ## Errors
 
