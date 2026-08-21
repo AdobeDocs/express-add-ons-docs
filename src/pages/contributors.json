@@ -384,7 +384,7 @@
         "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4"
       ],
-      "lastUpdated": "8/19/2026"
+      "lastUpdated": "8/21/2026"
     },
     {
       "page": "/guides/getting-started/code-playground",
@@ -587,9 +587,10 @@
     {
       "page": "/guides/learn/how-to/local-data-management",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "2/23/2026"
+      "lastUpdated": "8/21/2026"
     },
     {
       "page": "/guides/learn/how-to/manage-pages",
@@ -603,17 +604,19 @@
     {
       "page": "/guides/learn/how-to/modal-dialogs",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "2/23/2026"
+      "lastUpdated": "8/21/2026"
     },
     {
       "page": "/guides/learn/how-to/oauth2",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "3/11/2026"
+      "lastUpdated": "8/21/2026"
     },
     {
       "page": "/guides/learn/how-to/page-metadata",
@@ -792,9 +795,10 @@
     {
       "page": "/guides/learn/how-to/user-info",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "2/23/2026"
+      "lastUpdated": "8/21/2026"
     },
     {
       "page": "/guides/learn/platform-concepts/architecture",
@@ -871,7 +875,7 @@
         "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4"
       ],
-      "lastUpdated": "8/19/2026"
+      "lastUpdated": "8/21/2026"
     },
     {
       "page": "/references/addonsdk/addonsdk",
@@ -879,7 +883,7 @@
         "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "8/19/2026"
+      "lastUpdated": "8/21/2026"
     },
     {
       "page": "/references/addonsdk/addonsdk-app",
@@ -890,7 +894,7 @@
         "https://avatars.githubusercontent.com/u/5939127?v=4",
         "https://avatars.githubusercontent.com/u/77717258?v=4"
       ],
-      "lastUpdated": "8/19/2026"
+      "lastUpdated": "8/21/2026"
     },
     {
       "page": "/references/addonsdk/addonsdk-constants",
@@ -898,7 +902,7 @@
         "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4"
       ],
-      "lastUpdated": "8/19/2026"
+      "lastUpdated": "8/21/2026"
     },
     {
       "page": "/references/addonsdk/addonsdk-instance",
@@ -908,7 +912,7 @@
         "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4"
       ],
-      "lastUpdated": "8/19/2026"
+      "lastUpdated": "8/21/2026"
     },
     {
       "page": "/references/addonsdk/app-current-user",
@@ -917,7 +921,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "8/19/2026"
+      "lastUpdated": "8/21/2026"
     },
     {
       "page": "/references/addonsdk/app-dev-flags",
@@ -925,7 +929,7 @@
         "https://avatars.githubusercontent.com/u/359935?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "8/19/2026"
+      "lastUpdated": "8/21/2026"
     },
     {
       "page": "/references/addonsdk/app-document",
@@ -936,7 +940,7 @@
         "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/77717258?v=4"
       ],
-      "lastUpdated": "8/19/2026"
+      "lastUpdated": "8/21/2026"
     },
     {
       "page": "/references/addonsdk/app-oauth",
@@ -946,7 +950,7 @@
         "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4"
       ],
-      "lastUpdated": "8/19/2026"
+      "lastUpdated": "8/21/2026"
     },
     {
       "page": "/references/addonsdk/app-ui",
@@ -957,7 +961,7 @@
         "https://avatars.githubusercontent.com/u/5939127?v=4",
         "https://avatars.githubusercontent.com/u/77717258?v=4"
       ],
-      "lastUpdated": "8/19/2026"
+      "lastUpdated": "8/21/2026"
     },
     {
       "page": "/references/addonsdk/instance-client-storage",
@@ -966,7 +970,7 @@
         "https://avatars.githubusercontent.com/u/113968869?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "8/19/2026"
+      "lastUpdated": "8/21/2026"
     },
     {
       "page": "/references/addonsdk/instance-manifest",
@@ -976,7 +980,7 @@
         "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4"
       ],
-      "lastUpdated": "8/19/2026"
+      "lastUpdated": "8/21/2026"
     },
     {
       "page": "/references/addonsdk/instance-runtime",
@@ -986,7 +990,7 @@
         "https://avatars.githubusercontent.com/u/5939127?v=4",
         "https://avatars.githubusercontent.com/u/25365634?v=4"
       ],
-      "lastUpdated": "8/19/2026"
+      "lastUpdated": "8/21/2026"
     },
     {
       "page": "/references/addonsdk/runtime-dialog",
@@ -996,7 +1000,7 @@
         "https://avatars.githubusercontent.com/u/14320591?v=4",
         "https://avatars.githubusercontent.com/u/5939127?v=4"
       ],
-      "lastUpdated": "8/19/2026"
+      "lastUpdated": "8/21/2026"
     },
     {
       "page": "/references/changelog",
@@ -1010,7 +1014,7 @@
         "https://avatars.githubusercontent.com/u/97891206?v=4",
         "https://avatars.githubusercontent.com/u/25365634?v=4"
       ],
-      "lastUpdated": "8/19/2026"
+      "lastUpdated": "8/21/2026"
     },
     {
       "page": "/references/document-sandbox/",
