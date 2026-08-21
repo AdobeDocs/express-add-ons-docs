@@ -10,6 +10,8 @@ keywords:
     - apiProxy
     - RuntimeType
     - document sandbox
+contributors:
+    - https://github.com/hollyschinsky
 ---
 
 # addOnUISdk.instance.runtime

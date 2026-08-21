@@ -9,6 +9,8 @@ keywords:
     - clientStorage
     - manifest
     - runtime
+contributors:
+    - https://github.com/hollyschinsky
 ---
 
 # addOnUISdk.instance

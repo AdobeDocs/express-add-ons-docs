@@ -15,6 +15,8 @@ keywords:
     - addVideo
     - addAudio
     - print quality
+contributors:
+    - https://github.com/hollyschinsky
 ---
 
 # addOnUISdk.app.document

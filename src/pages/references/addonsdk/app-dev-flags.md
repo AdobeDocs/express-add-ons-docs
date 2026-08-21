@@ -8,6 +8,8 @@ keywords:
     - app.devFlags
     - simulateFreeUser
     - testing
+contributors:
+    - https://github.com/hollyschinsky
 ---
 
 # addOnUISdk.app.devFlags
@@ -22,7 +24,7 @@ This object contains flags which can be used to simulate certain behavior during
 
 `addOnUISdk.app.devFlags` are provided for testing purposes only, and thus can only be used during the development phase.
 
-## Methods
+## Properties
 
 ### simulateFreeUser
 
@@ -32,7 +34,7 @@ Simulate APIs as a free user.
 
 `simulateFreeUser: boolean`
 
-#### Return Value
+#### Type
 
 `boolean` representing the current value of the flag.
 

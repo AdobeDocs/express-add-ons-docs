@@ -7,6 +7,8 @@ keywords:
     - addOnUISdk
     - instance.manifest
     - manifest.json
+contributors:
+    - https://github.com/hollyschinsky
 ---
 
 # addOnUISdk.instance.manifest
@@ -35,7 +37,8 @@ Below is an example of using the `manifest` object, along with the expected outp
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 addOnUISdk.ready.then(() => {
-  console.log(JSON.stringify(addOnUISdk.instance.manifest));
+  const manifest = addOnUISdk.instance.manifest;
+  console.log(JSON.stringify(manifest));
 
   console.log("Name: " + manifest["name"]);
   console.log("Test ID " + manifest["testId"]);

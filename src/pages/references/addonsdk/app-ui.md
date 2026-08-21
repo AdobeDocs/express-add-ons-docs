@@ -11,6 +11,8 @@ keywords:
     - locales
     - format
     - openEditorPanel
+contributors:
+    - https://github.com/hollyschinsky
 ---
 
 # addOnUISdk.app.ui
@@ -80,7 +82,7 @@ addOnUISdk.ready.then(async () => {
 ### locales
 
 
-Access all locales currently supported in Adobe Express. This value is accessed via the `addOnUISdk.app.ui` object, so you should ensure you only access this object after the AddOnSdk is initialized (via the `addOnUISdk.ready`).
+Access all locales currently supported in Adobe Express. This value is accessed via the `addOnUISdk.app.ui` object, so you should ensure you only access this object after the `addOnUISdk` is initialized (via the `addOnUISdk.ready`).
 
 #### Values
 
@@ -284,7 +286,7 @@ addOnUISdk.ready.then(() => {
 
 // Navigate to tab
 addOnUISdk.ready.then(() => {
-  const action: NavigateAction = {
+  const action = {
     type: PanelActionType.navigate,
     tab: "photos",
   };
@@ -293,7 +295,7 @@ addOnUISdk.ready.then(() => {
 
 // Navigate to tab + collection
 addOnUISdk.ready.then(() => {
-  const action: NavigateAction = {
+  const action = {
     type: PanelActionType.navigate,
     tab: "photos",
     collectionId: "urn:aaid:sc:VA6C2:cd6aa706-12f2-525b-9500-3d23bc663882",

@@ -11,6 +11,8 @@ keywords:
     - removeItem
     - clear
     - keys
+contributors:
+    - https://github.com/hollyschinsky
 ---
 
 # addOnUISdk.instance.clientStorage
@@ -30,6 +32,10 @@ Since the data in Client Storage is stored in the user's current browser, any ac
 Additionally, you should always provide a way for users to delete or clear any data stored in Client Storage within your add-on, in case they want to remove any sensitive or unwanted data.
 
 ## Methods
+
+<InlineAlert slots="text" variant="info"/>
+
+All examples below assume you have obtained the `clientStorage` reference: `const { clientStorage } = addOnUISdk.instance;` after `addOnUISdk.ready` has resolved.
 
 ### getItem()
 
@@ -72,7 +78,7 @@ Store a value in Client Storage with the given key. The returned promise will re
 
 #### Returns
 
-`Promise` or `undefined` if no value has been stored for that key.
+`Promise<void>`. Resolves when storage is successful; rejects with an error if storage failed.
 
 #### Example Usage
 

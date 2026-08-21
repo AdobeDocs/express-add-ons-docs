@@ -21,7 +21,7 @@ contributors:
 
 ## Overview
 
-This reference is provided to outline the interfaces, methods, properties and events that support the [add-on UI SDK features](#features-supported-by-the-sdk). It begins with an introduction to the core `addOnUiSdk` module, which provides access to all of the interfaces available to use in the iframe where your add-on is running. Import this module to use it for accessing all of the API's that allow you to implement features like those outlined in the next section.
+This reference is provided to outline the interfaces, methods, properties and events that support the [add-on UI SDK features](#features-supported-by-the-sdk). It begins with an introduction to the core `addOnUISdk` module, which provides access to all of the interfaces available to use in the iframe where your add-on is running. Import this module to use it for accessing all of the API's that allow you to implement features like those outlined in the next section.
 
 ## Features Supported by the SDK
 

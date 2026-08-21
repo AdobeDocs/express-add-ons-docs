@@ -12,6 +12,8 @@ keywords:
     - startPremiumUpgradeIfFreeUser
     - modal dialog
     - events
+contributors:
+    - https://github.com/hollyschinsky
 ---
 
 # addOnUISdk.app
@@ -270,6 +272,8 @@ Returns a void `Promise`.
 #### Example Usage
 
 ```js
+import addOnUISdk, { ColorPickerPlacement, ColorPickerEvent } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+
 const colorPickerButton = document.getElementById("color-picker-button");
 
 colorPickerButton.addEventListener("click", () => {
@@ -282,7 +286,7 @@ colorPickerButton.addEventListener("click", () => {
 });
 
 colorPickerButton.addEventListener(ColorPickerEvent.colorChange, (event) => {
-  console.log("Color change event received!", event.detail.color;);
+  console.log("Color change event received!", event.detail.color);
 });
 ```
 
@@ -301,7 +305,7 @@ Returns a void `Promise`.
 #### Example Usage
 
 ```js
-const colorPickerButton = document.getElementById("color-picker-button");
+import addOnUISdk, { ColorPickerPlacement, ColorPickerEvent } from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
 colorPickerButton.addEventListener("click", () => {
   addOnUISdk.app.showColorPicker(colorPickerButton, {
@@ -489,8 +493,11 @@ The table below describes the events triggered from the add-on SDK. Use the `add
 | ----- | ---- | ----------- |
 | `localechange` | `string` | Triggered when there is a locale change at the host side. |
 | `themechange` | `string` | Triggered when there is a theme change at the host side. |
+| `formatchange` | `string` | Triggered when the regional format setting changes at the host side. |
 | `dragstart` | `string` | Triggered when the user starts dragging an item for which drag behavior is enabled. |
 | `dragend` | `string` | Triggered when the drag operation ends. |
+| `dragcancel` | `string` | Triggered when the drag operation is cancelled. |
+| `reset` | `string` | Triggered when the add-on is reset. |
 | `documentIdAvailable` | `string` | Triggered when the document id is available in the application. |
 | `documentLinkAvailable` | `string` | Triggered when the document link is available in the application. |
 | `documentPublishedLinkAvailable` | `string` | Triggered when the published document link is available in the application. |

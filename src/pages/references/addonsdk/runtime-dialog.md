@@ -8,6 +8,8 @@ keywords:
     - instance.runtime.dialog
     - close
     - showModalDialog
+contributors:
+    - https://github.com/hollyschinsky
 ---
 
 # addOnUISdk.instance.runtime.dialog
@@ -27,13 +29,13 @@ Closes the modal dialog and posts the result back to the dialog invoker.
 
 #### Parameters
 
-| Name      | Type           |                                         Description |
-| --------- | -------------- | --------------------------------------------------: |
-| `result?` | `unknown<any>` | An optional result to return to the dialog invoker. |
+| Name      | Type      |                                         Description |
+| --------- | --------- | --------------------------------------------------: |
+| `result?` | `unknown` | An optional result to return to the dialog invoker. |
 
 #### Returns
 
-An optional result of a user-defined type.
+`void`. The result is delivered to the caller of `showModalDialog()`, not returned here.
 
 #### Example Usage
 

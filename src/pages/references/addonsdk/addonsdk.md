@@ -10,6 +10,8 @@ keywords:
     - app
     - constants
     - instance
+contributors:
+    - https://github.com/hollyschinsky
 ---
 
 # addOnUISdk
@@ -28,7 +30,7 @@ The core add-on UI SDK object which provides access to everything needed for add
 | `readonly` | `addOnUISdk.app` | `object` | Provides access to the host application (Adobe Express) |
 | | `addOnUISdk.constants` | `object` | A set of constants used throughout the add-on SDK. |
 | `readonly` | `addOnUISdk.instance` | `object` | The currently running add-on instance. |
-| `readonly` | `AddOnSdk.ready` | `Promise` | Indicates the addOnUISdk object has been initialized and you can start accessing the APIs. Register a call back with [Promise.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or [await this promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await). |
+| `readonly` | `addOnUISdk.ready` | `Promise` | Indicates the addOnUISdk object has been initialized and you can start accessing the APIs. Register a call back with [Promise.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) or [await this promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await). |
 
 \<!-- ## Methods
 
