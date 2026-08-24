@@ -33,15 +33,11 @@ The [`link()`](./addonsdk/app-document.md#link) method and the [`LinkOptions`](.
 
 ### Updated
 
-The `addAudio()` method now supports `audio/mp4` files in addition to the other formats listed in the [FAQ](../guides/support/faq.md#-file-formats--media-support).
-
-### Updated
-
-- Removed experimental warnings referencing `link()` from the [Document Metadata How-to Guide](../guides/learn/how-to/document-metadata.md) and the [`addOnUISdk.app.document`](addonsdk/app-document.md#link) reference.
+- The `addAudio()` method now supports `audio/mp4` files in addition to the other formats listed in the [FAQ](../guides/support/faq.md#-file-formats--media-support).
 
 ### Added
 
-- New **Experimental** [`currentUser.identity()`](./addonsdk/app-current-user.md#identity) method in the [`addOnUISdk.app.currentUser`](./addonsdk/app-current-user.md) API. Returns the user's SHA-256 hashed, canonical ID and any legacy IDs consolidated into it through [Connected Enterprise](https://helpx.adobe.com/business/enterprise/global-admin-console/get-started/connected-enterprise.html), so add-ons can reconcile a user's data across pre- and post-consolidation profiles. See the [Identify Users guide](../guides/learn/how-to/user-info.md) for a feature-detection pattern that falls back to `userId()`.
+- New **Experimental** [`currentUser.identity()`](./addonsdk/app-current-user.md#identity) method in the [`addOnUISdk.app.currentUser`](./addonsdk/app-current-user.md) API. Returns the user's SHA-256 hashed, canonical ID and any legacy IDs consolidated into it through [Connected Enterprise](https://helpx.adobe.com/business/enterprise/global-admin-console/get-started/connected-enterprise.html), so add-ons can reconcile a user's data across pre- and post-consolidation profiles. See the updated [How-to Guide](../guides/learn/how-to/user-info.md) for more details.
 
 <InlineAlert slots="text" variant="warning" className="inline-alert-bullet-aligned"/>
 
