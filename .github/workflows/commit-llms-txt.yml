@@ -41,18 +41,19 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path: .artifact
 
-      - name: Commit llms.txt if changed
+      - name: Commit llms files if changed
         run: |
           cp .artifact/src/pages/llms.txt src/pages/llms.txt
+          cp .artifact/src/pages/llms.md src/pages/llms.md || true
           rm -rf .artifact
 
-          git add src/pages/llms.txt
+          git add src/pages/llms.txt src/pages/llms.md
           if git diff --staged --quiet; then
-            echo "No changes to llms.txt, skipping commit."
+            echo "No changes to llms files, skipping commit."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -m "auto-generate llms.txt"
+          git commit -m "auto-generate llms.txt and llms.md"
           git push

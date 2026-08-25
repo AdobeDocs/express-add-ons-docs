@@ -16,60 +16,77 @@ const path = require('path');
 
 const CONFIG_PATH = path.join('src', 'pages', 'config.md');
 const PAGES_DIR = path.join('src', 'pages');
+const CONTEXT_PATH = path.join(PAGES_DIR, 'llms-context.md');
 const OUTPUT_PATH = path.join(PAGES_DIR, 'llms.txt');
+const OUTPUT_MD_PATH = path.join(PAGES_DIR, 'llms.md');
 const DEFAULT_SITE_BASE = 'https://developer.adobe.com';
+const LINK_RE = /\[([^\]]+)\]\(([^)]+)\)/;
 
-// ---------------------------------------------------------------------------
-// READ: Parse config.md to extract pathPrefix and page links
-// ---------------------------------------------------------------------------
-
+// Parse config.md into { pathPrefix, sections: [{ title, pages: [{ title, href }] }] }
 function parseConfigMd(content) {
-  const lines = content.split('\n');
-  let pathPrefix = '';
-  const pages = [];
-  let inPages = false;
-  let inSubPages = false;
-  const linkRe = /\[([^\]]+)\]\(([^)]+)\)/;
+  const lines = content.replace(/\r/g, '').split('\n');
+  let pathPrefix = '', inSubPages = false, currentHeader = '', currentSection = null;
+  const sections = [];
+  const seenHrefs = new Set();
+
+  const getOrCreateSection = (title) => {
+    let sec = sections.find(s => s.title === title);
+    if (!sec) sections.push(sec = { title, pages: [] });
+    return sec;
+  };
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
 
     if (/^\s*-\s*pathPrefix:/.test(line)) {
-      const nextLine = lines[i + 1];
-      const match = nextLine?.match(/\s*-\s*(\S+)/);
+      const match = lines[i + 1]?.match(/\s*-\s*(\S+)/);
       if (match) pathPrefix = match[1];
       continue;
     }
 
-    if (/^\s*-\s*pages:/.test(line)) { inPages = true; inSubPages = false; continue; }
-    if (/^\s*-\s*subPages:/.test(line)) { inSubPages = true; inPages = false; continue; }
-    if (/^\s*-\s*(buttons|home|versions):/.test(line)) {
-      inPages = false; inSubPages = false; continue;
+    if (/^\s*-\s*subPages:/.test(line)) { inSubPages = true; continue; }
+    if (/^\s*-\s*(buttons|home|versions):/.test(line)) { inSubPages = false; continue; }
+    if (!inSubPages) continue;
+
+    const indentMatch = line.match(/^(\s*)-\s+(.*)$/);
+    if (!indentMatch) continue;
+
+    const indent = indentMatch[1].length;
+    const rawText = indentMatch[2].trim();
+
+    // Explicit section headers, e.g. "Learn header"
+    const headerMatch = rawText.match(/^(.+?)\s+header$/i);
+    if (headerMatch) {
+      currentSection = getOrCreateSection(currentHeader = headerMatch[1].trim());
+      continue;
     }
 
-    if (!inPages && !inSubPages) continue;
-
-    const match = line.match(linkRe);
+    const match = rawText.match(LINK_RE);
     if (!match) continue;
 
     const [, title, href] = match;
-    if (href.startsWith('http')) continue;
+    if (href.startsWith('http') || seenHrefs.has(href)) continue;
+    seenHrefs.add(href);
 
-    pages.push({ title: title.trim(), href: href.trim() });
+    // Determine section dynamically based on config.md hierarchy
+    if (currentHeader) {
+      currentSection = (currentHeader === 'Learn' || currentHeader === 'Build')
+        ? (indent === 4 ? getOrCreateSection(`${currentHeader} - ${title.trim()}`) : currentSection)
+        : getOrCreateSection(currentHeader);
+    } else if (indent === 4) {
+      currentSection = getOrCreateSection(title.trim());
+    }
+
+    (currentSection ||= getOrCreateSection('Overview')).pages.push({ title: title.trim(), href: href.trim() });
   }
 
-  return { pathPrefix, pages };
+  return { pathPrefix, sections: sections.filter(s => s.pages.length > 0) };
 }
 
-// ---------------------------------------------------------------------------
-// READ: Parse YAML frontmatter (title, description, keywords) from a .md file.
-// Handles both single-line values and multi-line YAML lists (e.g. keywords).
-// ---------------------------------------------------------------------------
-
+// Parse YAML frontmatter (handles inline values and simple `- item` lists)
 function parseFrontmatter(filePath) {
   if (!fs.existsSync(filePath)) return {};
-  const content = fs.readFileSync(filePath, 'utf-8');
-  const fmMatch = content.match(/^---\s*\n([\s\S]*?)\n---/);
+  const fmMatch = fs.readFileSync(filePath, 'utf-8').match(/^---\s*\n([\s\S]*?)\n---/);
   if (!fmMatch) return {};
 
   const fm = {};
@@ -78,120 +95,99 @@ function parseFrontmatter(filePath) {
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     const colonIdx = line.indexOf(':');
-    if (colonIdx < 0) continue;
+    if (colonIdx < 0 || /^\s/.test(line)) continue;
 
     const key = line.slice(0, colonIdx).trim();
-    if (!key || /^\s/.test(line)) continue;
+    if (!key) continue;
 
     const inlineVal = line.slice(colonIdx + 1).trim();
-
     if (inlineVal) {
       fm[key] = inlineVal;
-    } else {
-      const listItems = [];
-      while (i + 1 < lines.length && /^\s*-\s+/.test(lines[i + 1])) {
-        i++;
-        listItems.push(lines[i].replace(/^\s*-\s+/, '').trim());
-      }
-      if (listItems.length > 0) {
-        fm[key] = listItems;
-      }
+      continue;
     }
+
+    const listItems = [];
+    while (i + 1 < lines.length && /^\s*-\s+/.test(lines[i + 1])) {
+      listItems.push(lines[++i].replace(/^\s*-\s+/, '').trim());
+    }
+    if (listItems.length > 0) fm[key] = listItems;
   }
   return fm;
 }
 
-function cleanDescription(str) {
-  return str.replace(/\n/g, ' ').replace(/\s+/g, ' ').trim();
-}
+const cleanDescription = (str) => str.replace(/\n/g, ' ').replace(/\s+/g, ' ').trim();
 
-// ---------------------------------------------------------------------------
-// GENERATE: Main pipeline — read → enrich → assemble → write
-// ---------------------------------------------------------------------------
-
+// Main pipeline — read config.md → enrich → assemble → write
 function generate(siteBase) {
-
-  // --- Step 1: READ config.md to get pathPrefix and the list of page links ---
-
   if (!fs.existsSync(CONFIG_PATH)) {
     throw new Error('src/pages/config.md not found. Run this from a content repo root.');
   }
 
-  const configContent = fs.readFileSync(CONFIG_PATH, 'utf-8');
-  const { pathPrefix, pages } = parseConfigMd(configContent);
-
-  if (!pathPrefix) {
-    throw new Error('Could not extract pathPrefix from config.md');
-  }
-
-  // --- Step 2: READ repo-level metadata from index.md frontmatter ---
+  const { pathPrefix, sections } = parseConfigMd(fs.readFileSync(CONFIG_PATH, 'utf-8'));
+  if (!pathPrefix) throw new Error('Could not extract pathPrefix from config.md');
 
   const indexFm = parseFrontmatter(path.join(PAGES_DIR, 'index.md'));
-  const repoTitle = indexFm.title || pathPrefix.replace(/^\/|\/$/g, '').replace(/[-_]/g, ' ');
-  const repoDesc = indexFm.description || '';
+  const repoTitle = indexFm.title || 'Adobe Express Add-ons Documentation';
+  const repoDesc = indexFm.description || 'Official developer documentation and API reference for building Adobe Express add-ons.';
 
-  // --- Step 3: ENRICH each page with its frontmatter metadata ---
-  // For every page link found in config.md, resolve the .md file on disk
-  // and read its frontmatter `title`, `description`, and `keywords` fields.
+  let totalPages = 0;
+  const enrichedSections = sections.map(section => {
+    const pages = section.pages.map(page => {
+      let localPath = page.href.replace(/^\.\//, '/');
+      if (!localPath.startsWith('/')) localPath = '/' + localPath;
 
-  const seen = new Set();
-  const uniquePages = pages.filter(p => {
-    if (seen.has(p.href)) return false;
-    seen.add(p.href);
-    return true;
+      let filePath = path.join(PAGES_DIR, localPath);
+      if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
+        filePath = path.join(filePath, 'index.md');
+      } else if (!filePath.endsWith('.md')) {
+        filePath += '.md';
+      }
+
+      const fm = parseFrontmatter(filePath);
+      return {
+        title: fm.title || page.title,
+        href: page.href,
+        url: siteBase + pathPrefix.replace(/\/$/, '') + localPath,
+        description: fm.description || '',
+        keywords: Array.isArray(fm.keywords) ? fm.keywords : [],
+      };
+    });
+    totalPages += pages.length;
+    return { title: section.title, pages };
   });
 
-  const enriched = uniquePages.map(page => {
-    let localPath = page.href.replace(/^\.\//, '/');
-    if (!localPath.startsWith('/')) localPath = '/' + localPath;
-
-    let filePath = path.join(PAGES_DIR, localPath);
-    if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
-      filePath = path.join(filePath, 'index.md');
-    } else if (!filePath.endsWith('.md')) {
-      filePath += '.md';
-    }
-
-    const fm = parseFrontmatter(filePath);
-    const fullUrl = siteBase + pathPrefix.replace(/\/$/, '') + localPath;
-
-    const title = fm.title || page.title;
-    const keywords = Array.isArray(fm.keywords) ? fm.keywords : [];
-
-    return {
-      title,
-      url: fullUrl,
-      description: fm.description || '',
-      keywords,
-    };
-  });
-
-  // --- Step 4: ASSEMBLE the llms.txt output string ---
-
+  // Assemble output per llms.txt v2 spec
   let output = `# ${repoTitle}\n\n`;
-  if (repoDesc) {
-    output += `> ${repoDesc}\n\n`;
+  if (repoDesc) output += `> ${repoDesc}\n\n`;
+
+  if (fs.existsSync(CONTEXT_PATH)) {
+    const contextContent = fs.readFileSync(CONTEXT_PATH, 'utf-8').trim();
+    if (contextContent) output += `${contextContent}\n\n`;
   }
+
   output += 'For detailed documentation on any page below, request the URL with `Accept: text/markdown` header to receive LLM-optimized markdown.\n\n';
-  output += '## Pages\n\n';
 
-  for (const page of enriched) {
-    const desc = page.description ? `: ${cleanDescription(page.description)}` : '';
-    const kw = page.keywords.length > 0 ? ` [${page.keywords.join(', ')}]` : '';
-    output += `- [${page.title}](${page.url})${desc}${kw}\n`;
+  for (const section of enrichedSections) {
+    if (section.pages.length === 0) continue;
+    output += `## ${section.title}\n\n`;
+    for (const page of section.pages) {
+      const desc = page.description ? `: ${cleanDescription(page.description)}` : '';
+      const kw = page.keywords.length > 0 ? ` [${page.keywords.join(', ')}]` : '';
+      output += `- [${page.title}](${page.url})${desc}${kw}\n`;
+    }
+    output += '\n';
   }
-
-  output += '\n';
-
-  // --- Step 5: WRITE to src/pages/llms.txt ---
 
   fs.writeFileSync(OUTPUT_PATH, output);
+  fs.writeFileSync(OUTPUT_MD_PATH, output);
 
   return {
     pathPrefix,
     repoTitle,
-    pageCount: enriched.length,
+    pageCount: totalPages,
+    sectionCount: enrichedSections.length,
     outputPath: OUTPUT_PATH,
+    outputMdPath: OUTPUT_MD_PATH,
     sizeKB: (output.length / 1024).toFixed(1),
   };
 }
@@ -200,8 +196,9 @@ function generate(siteBase) {
 module.exports = async ({ core, siteBase }) => {
   try {
     const result = generate(siteBase || DEFAULT_SITE_BASE);
-    console.log(`Generated ${result.outputPath} (${result.sizeKB} KB, ${result.pageCount} entries)`);
+    console.log(`Generated ${result.outputPath} and ${result.outputMdPath} (${result.sizeKB} KB, ${result.pageCount} entries across ${result.sectionCount} sections)`);
     core.setOutput('llms_txt_path', result.outputPath);
+    core.setOutput('llms_md_path', result.outputMdPath);
     core.setOutput('page_count', result.pageCount);
   } catch (err) {
     core.setFailed(`llms.txt generation failed: ${err.message}`);
@@ -210,12 +207,11 @@ module.exports = async ({ core, siteBase }) => {
 
 // Standalone entry point: node -e "require('./generate-llms-txt.js').standalone()"
 module.exports.standalone = () => {
-  const siteBase = process.argv.includes('--site-base')
-    ? process.argv[process.argv.indexOf('--site-base') + 1]
-    : DEFAULT_SITE_BASE;
+  const idx = process.argv.indexOf('--site-base');
+  const siteBase = idx !== -1 ? process.argv[idx + 1] : DEFAULT_SITE_BASE;
 
   const result = generate(siteBase);
   console.log(`Repo: ${result.repoTitle}`);
   console.log(`Path prefix: ${result.pathPrefix}`);
-  console.log(`Generated ${result.outputPath}`);
+  console.log(`Generated ${result.outputPath} and ${result.outputMdPath} (${result.sizeKB} KB, ${result.pageCount} entries across ${result.sectionCount} sections)`);
 };

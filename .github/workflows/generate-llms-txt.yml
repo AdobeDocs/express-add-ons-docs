@@ -38,5 +38,6 @@ jobs:
           name: llms-txt
           path: |
             src/pages/llms.txt
+            src/pages/llms.md
             pr-number.txt
             pr-branch.txt
