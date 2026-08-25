@@ -18,7 +18,6 @@ const CONFIG_PATH = path.join('src', 'pages', 'config.md');
 const PAGES_DIR = path.join('src', 'pages');
 const CONTEXT_PATH = path.join(PAGES_DIR, 'llms-context.md');
 const OUTPUT_PATH = path.join(PAGES_DIR, 'llms.txt');
-const OUTPUT_MD_PATH = path.join(PAGES_DIR, 'llms.md');
 const DEFAULT_SITE_BASE = 'https://developer.adobe.com';
 const LINK_RE = /\[([^\]]+)\]\(([^)]+)\)/;
 
@@ -179,7 +178,6 @@ function generate(siteBase) {
   }
 
   fs.writeFileSync(OUTPUT_PATH, output);
-  fs.writeFileSync(OUTPUT_MD_PATH, output);
 
   return {
     pathPrefix,
@@ -187,7 +185,6 @@ function generate(siteBase) {
     pageCount: totalPages,
     sectionCount: enrichedSections.length,
     outputPath: OUTPUT_PATH,
-    outputMdPath: OUTPUT_MD_PATH,
     sizeKB: (output.length / 1024).toFixed(1),
   };
 }
@@ -196,9 +193,8 @@ function generate(siteBase) {
 module.exports = async ({ core, siteBase }) => {
   try {
     const result = generate(siteBase || DEFAULT_SITE_BASE);
-    console.log(`Generated ${result.outputPath} and ${result.outputMdPath} (${result.sizeKB} KB, ${result.pageCount} entries across ${result.sectionCount} sections)`);
+    console.log(`Generated ${result.outputPath} (${result.sizeKB} KB, ${result.pageCount} entries across ${result.sectionCount} sections)`);
     core.setOutput('llms_txt_path', result.outputPath);
-    core.setOutput('llms_md_path', result.outputMdPath);
     core.setOutput('page_count', result.pageCount);
   } catch (err) {
     core.setFailed(`llms.txt generation failed: ${err.message}`);
@@ -213,5 +209,5 @@ module.exports.standalone = () => {
   const result = generate(siteBase);
   console.log(`Repo: ${result.repoTitle}`);
   console.log(`Path prefix: ${result.pathPrefix}`);
-  console.log(`Generated ${result.outputPath} and ${result.outputMdPath} (${result.sizeKB} KB, ${result.pageCount} entries across ${result.sectionCount} sections)`);
+  console.log(`Generated ${result.outputPath} (${result.sizeKB} KB, ${result.pageCount} entries across ${result.sectionCount} sections)`);
 };
