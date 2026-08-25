@@ -82,35 +82,87 @@ function parseConfigMd(content) {
   return { pathPrefix, sections: sections.filter(s => s.pages.length > 0) };
 }
 
-// Parse YAML frontmatter (handles inline values and simple `- item` lists)
-function parseFrontmatter(filePath) {
-  if (!fs.existsSync(filePath)) return {};
-  const fmMatch = fs.readFileSync(filePath, 'utf-8').match(/^---\s*\n([\s\S]*?)\n---/);
-  if (!fmMatch) return {};
+// Extract first descriptive paragraph directly from markdown body text
+function extractTextDescription(content) {
+  const text = content
+    .replace(/^---\s*[\s\S]*?---\s*/, '')
+    .replace(/<[^>]+>/g, '')
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/\[\*\*@[^\]]+\]\([^)]+\)/g, '');
 
-  const fm = {};
-  const lines = fmMatch[1].split('\n');
+  const lines = text.split('\n');
+  let foundHeading = false;
+  const paragraph = [];
 
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    const colonIdx = line.indexOf(':');
-    if (colonIdx < 0 || /^\s/.test(line)) continue;
-
-    const key = line.slice(0, colonIdx).trim();
-    if (!key) continue;
-
-    const inlineVal = line.slice(colonIdx + 1).trim();
-    if (inlineVal) {
-      fm[key] = inlineVal;
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed) {
+      if (paragraph.length > 0) break;
       continue;
     }
-
-    const listItems = [];
-    while (i + 1 < lines.length && /^\s*-\s+/.test(lines[i + 1])) {
-      listItems.push(lines[++i].replace(/^\s*-\s+/, '').trim());
+    if (trimmed.startsWith('#')) {
+      if (foundHeading && paragraph.length > 0) break;
+      foundHeading = true;
+      continue;
     }
-    if (listItems.length > 0) fm[key] = listItems;
+    if (!foundHeading) continue;
+    if (trimmed.startsWith('|') || trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
+      if (paragraph.length > 0) break;
+      continue;
+    }
+    paragraph.push(trimmed);
   }
+
+  const desc = paragraph.join(' ')
+    .replace(/\[`?([^\]`]+)`?\]\([^)]+\)/g, '$1')
+    .replace(/[*_~`]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  if (!desc) return '';
+  if (desc.length <= 180) return desc;
+  const period = desc.indexOf('. ', 60);
+  return (period !== -1 && period < 200) ? desc.slice(0, period + 1) : desc.slice(0, 177) + '...';
+}
+
+// Parse YAML frontmatter or fallback to extracting description from markdown text
+function parseFrontmatter(filePath) {
+  if (!fs.existsSync(filePath)) return {};
+  const content = fs.readFileSync(filePath, 'utf-8');
+  const fmMatch = content.match(/^---\s*\n([\s\S]*?)\n---/);
+
+  const fm = {};
+  if (fmMatch) {
+    const lines = fmMatch[1].split('\n');
+
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+      const colonIdx = line.indexOf(':');
+      if (colonIdx < 0 || /^\s/.test(line)) continue;
+
+      const key = line.slice(0, colonIdx).trim();
+      if (!key) continue;
+
+      const inlineVal = line.slice(colonIdx + 1).trim();
+      if (inlineVal) {
+        fm[key] = inlineVal;
+        continue;
+      }
+
+      const listItems = [];
+      while (i + 1 < lines.length && /^\s*-\s+/.test(lines[i + 1])) {
+        listItems.push(lines[++i].replace(/^\s*-\s+/, '').trim());
+      }
+      if (listItems.length > 0) fm[key] = listItems;
+    }
+  }
+
+  if (!fm.description) {
+    const textDesc = extractTextDescription(content);
+    if (textDesc) fm.description = textDesc;
+  }
+
   return fm;
 }
 
