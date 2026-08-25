@@ -19,6 +19,7 @@ const PAGES_DIR = path.join('src', 'pages');
 const CONTEXT_PATH = path.join(PAGES_DIR, 'llms-context.md');
 const OUTPUT_PATH = path.join(PAGES_DIR, 'llms.txt');
 const DEFAULT_SITE_BASE = 'https://developer.adobe.com';
+const LLMS_CONFIG_PATH = path.join(PAGES_DIR,'llms-config.json');
 const LINK_RE = /\[([^\]]+)\]\(([^)]+)\)/;
 
 // Parse config.md into { pathPrefix, sections: [{ title, pages: [{ title, href }] }] }
@@ -120,10 +121,21 @@ function extractTextDescription(content) {
     .replace(/\s+/g, ' ')
     .trim();
 
-  if (!desc) return '';
-  if (desc.length <= 180) return desc;
-  const period = desc.indexOf('. ', 60);
-  return (period !== -1 && period < 200) ? desc.slice(0, period + 1) : desc.slice(0, 177) + '...';
+  if (desc.length <= 240) {
+    return desc;
+  }
+  
+  const sentences = desc.match(/[^.!?]+[.!?]+/g);
+  
+  if (sentences && sentences.length > 0) {
+    const firstSentence = sentences[0].trim();
+  
+    if (firstSentence.length <= 240) {
+      return firstSentence;
+    }
+  }
+    
+  return '';
 }
 
 // Parse YAML frontmatter or fallback to extracting description from markdown text
@@ -166,15 +178,193 @@ function parseFrontmatter(filePath) {
   return fm;
 }
 
-const cleanDescription = (str) => str.replace(/\n/g, ' ').replace(/\s+/g, ' ').trim();
+function cleanDescription(str) {
+  if (!str || typeof str !== 'string') {
+    return '';
+  }
 
-// Main pipeline — read config.md → enrich → assemble → write
+  const description = str
+    .replace(/\[([^\]]+)]\([^)]+\)/g, '$1')
+    .replace(/\n/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  if (!description) {
+    return '';
+  }
+
+  // Reject incomplete Markdown links.
+  if (
+    description.includes('](') ||
+    description.includes('[') ||
+    description.includes('](')
+  ) {
+    return '';
+  }
+
+  if (description.length <= 240) {
+    return description;
+  }
+
+  const sentences = description.match(
+    /[^.!?]+[.!?]+/g
+  );
+
+  if (sentences?.length) {
+    const firstSentence = sentences[0].trim();
+
+    if (firstSentence.length <= 240) {
+      return firstSentence;
+    }
+  }
+
+  return '';
+}
+
+function matchesRule(section, page, rule) {
+  const match = rule.match || {};
+
+  const sectionTitle = section.title.toLowerCase();
+  const pageTitle = page.title.toLowerCase();
+  const pageHref = page.href.toLowerCase();
+
+  let hasCondition = false;
+
+  if (match.section) {
+    hasCondition = true;
+
+    if (
+      sectionTitle !==
+      String(match.section).toLowerCase()
+    ) {
+      return false;
+    }
+  }
+
+  if (match.sectionContains) {
+    hasCondition = true;
+
+    if (
+      !sectionTitle.includes(
+        String(match.sectionContains).toLowerCase()
+      )
+    ) {
+      return false;
+    }
+  }
+
+  if (match.hrefContains) {
+    hasCondition = true;
+
+    if (
+      !pageHref.includes(
+        String(match.hrefContains).toLowerCase()
+      )
+    ) {
+      return false;
+    }
+  }
+
+  if (match.titleContains) {
+    hasCondition = true;
+
+    if (
+      !pageTitle.includes(
+        String(match.titleContains).toLowerCase()
+      )
+    ) {
+      return false;
+    }
+  }
+
+  return hasCondition;
+}
+
+function resolveConfiguredSection(
+  section,
+  page,
+  llmsConfig
+) {
+  const matchingRule =
+    llmsConfig.sectionMappings.find(rule =>
+      matchesRule(section, page, rule)
+    );
+
+  return matchingRule
+    ? matchingRule.target.trim()
+    : section.title;
+}
+
+function groupSections(sections, llmsConfig) {
+  const grouped = new Map();
+  const discoveredOrder = new Map();
+
+  let discoveredIndex = 0;
+
+  for (const section of sections) {
+    for (const page of section.pages) {
+      const targetSection =
+        resolveConfiguredSection(
+          section,
+          page,
+          llmsConfig
+        );
+
+      if (!grouped.has(targetSection)) {
+        grouped.set(targetSection, []);
+        discoveredOrder.set(
+          targetSection,
+          discoveredIndex++
+        );
+      }
+
+      grouped.get(targetSection).push(page);
+    }
+  }
+
+  const configuredOrder = new Map(
+    llmsConfig.sectionOrder.map(
+      (title, index) => [title, index]
+    )
+  );
+
+  return [...grouped.entries()]
+    .map(([title, pages]) => ({
+      title,
+      pages,
+    }))
+    .sort((first, second) => {
+      const firstConfigured =
+        configuredOrder.has(first.title);
+
+      const secondConfigured =
+        configuredOrder.has(second.title);
+
+      if (firstConfigured && secondConfigured) {
+        return (
+          configuredOrder.get(first.title) -
+          configuredOrder.get(second.title)
+        );
+      }
+
+      if (firstConfigured) return -1;
+      if (secondConfigured) return 1;
+
+      return (
+        discoveredOrder.get(first.title) -
+        discoveredOrder.get(second.title)
+      );
+    });
+}
+
+//generate llms.txt from config md file... If the repo has a llms-config.json file, use that to group the sections.
 function generate(siteBase) {
   if (!fs.existsSync(CONFIG_PATH)) {
     throw new Error('src/pages/config.md not found. Run this from a content repo root.');
   }
 
   const { pathPrefix, sections } = parseConfigMd(fs.readFileSync(CONFIG_PATH, 'utf-8'));
+  const llmsConfig = loadLlmsConfig();
   if (!pathPrefix) throw new Error('Could not extract pathPrefix from config.md');
 
   const indexFm = parseFrontmatter(path.join(PAGES_DIR, 'index.md'));
@@ -182,7 +372,7 @@ function generate(siteBase) {
   const repoDesc = indexFm.description || 'Official developer documentation and API reference for building Adobe Express add-ons.';
 
   let totalPages = 0;
-  const enrichedSections = sections.map(section => {
+  const sourceSections = sections.map(section => {
     const pages = section.pages.map(page => {
       let localPath = page.href.replace(/^\.\//, '/');
       if (!localPath.startsWith('/')) localPath = '/' + localPath;
@@ -199,14 +389,14 @@ function generate(siteBase) {
         title: fm.title || page.title,
         href: page.href,
         url: siteBase + pathPrefix.replace(/\/$/, '') + localPath,
-        description: fm.description || '',
-        keywords: Array.isArray(fm.keywords) ? fm.keywords : [],
+        description: fm.description || ''
       };
     });
     totalPages += pages.length;
     return { title: section.title, pages };
   });
 
+  const enrichedSections = groupSections(sourceSections, llmsConfig);
   // Assemble output per llms.txt v2 spec
   let output = `# ${repoTitle}\n\n`;
   if (repoDesc) output += `> ${repoDesc}\n\n`;
@@ -216,15 +406,17 @@ function generate(siteBase) {
     if (contextContent) output += `${contextContent}\n\n`;
   }
 
-  output += 'For detailed documentation on any page below, request the URL with `Accept: text/markdown` header to receive LLM-optimized markdown.\n\n';
+  output +=
+  'The links below are organized by developer task and API runtime. ' +
+  'When retrieving a page, send the `Accept: text/markdown` header ' +
+  'to receive LLM-optimized Markdown.\n\n';
 
   for (const section of enrichedSections) {
     if (section.pages.length === 0) continue;
     output += `## ${section.title}\n\n`;
     for (const page of section.pages) {
       const desc = page.description ? `: ${cleanDescription(page.description)}` : '';
-      const kw = page.keywords.length > 0 ? ` [${page.keywords.join(', ')}]` : '';
-      output += `- [${page.title}](${page.url})${desc}${kw}\n`;
+      output += `- [${page.title}](${page.url})${desc}\n`;
     }
     output += '\n';
   }
@@ -241,7 +433,38 @@ function generate(siteBase) {
   };
 }
 
-// Entry point for actions/github-script
+//load the llms-config.json file if it exists.
+function loadLlmsConfig() {
+  if (!fs.existsSync(LLMS_CONFIG_PATH)) {
+    return {
+      sectionOrder: [],
+      sectionMappings: [],
+    };
+  }
+
+  try {
+    const content = fs.readFileSync(
+      LLMS_CONFIG_PATH,
+      'utf-8'
+    );
+
+    const config = JSON.parse(content);
+
+    return {
+      sectionOrder: Array.isArray(config.sectionOrder)
+        ? config.sectionOrder
+        : [],
+      sectionMappings: Array.isArray(config.sectionMappings)
+        ? config.sectionMappings
+        : [],
+    };
+  } catch (error) {
+    throw new Error(
+      `Invalid llms-config.json: ${error.message}`
+    );
+  }
+}
+
 module.exports = async ({ core, siteBase }) => {
   try {
     const result = generate(siteBase || DEFAULT_SITE_BASE);
@@ -253,7 +476,6 @@ module.exports = async ({ core, siteBase }) => {
   }
 };
 
-// Standalone entry point: node -e "require('./generate-llms-txt.js').standalone()"
 module.exports.standalone = () => {
   const idx = process.argv.indexOf('--site-base');
   const siteBase = idx !== -1 ? process.argv[idx + 1] : DEFAULT_SITE_BASE;

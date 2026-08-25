@@ -1,0 +1,106 @@
+{
+    "sectionOrder": [
+        "Overview",
+        "Getting Started",
+        "Platform Concepts",
+        "SDK Fundamentals",
+        "How-to Guides",
+        "Samples",
+        "Design and UI",
+        "Advanced Development",
+        "Distributing",
+        "Add-on UI SDK References",
+        "Built-in UI Components References",
+        "Document Sandbox References",
+        "Document API References",
+        "Manifest References",
+        "Changelog",
+        "Support"
+    ],
+    "sectionMappings": [
+      {
+        "match": {
+          "section": "Getting Started"
+        },
+        "target": "Getting Started"
+      },
+      {
+        "match": {
+          "section": "Learn - Platform Concepts"
+        },
+        "target": "Platform Concepts"
+      },
+      {
+        "match": {
+          "section": "Learn - How-to"
+        },
+        "target": "How-to Guides"
+      },
+      {
+        "match": {
+          "section": "Build - Distribute"
+        },
+        "target": "Distributing"
+      },
+      {
+        "match": {
+          "section": "Add-on UI SDK"
+        },
+        "target": "Add-on UI SDK References"
+      },
+      {
+        "match": {
+          "hrefContains": "/document-sandbox/document-apis/"
+        },
+        "target": "Document API References"
+      },
+      {
+        "match": {
+          "section": "Document Sandbox"
+        },
+        "target": "Document Sandbox References"
+      },
+      {
+        "match": {
+          "section": "Manifest Schema"
+        },
+        "target": "Manifest References"
+      },
+      {
+        "match": {
+          "section": "Learn - SDK Fundamentals"
+        },
+        "target": "SDK Fundamentals"
+      },
+      {
+        "match": {
+          "section": "Learn - Sample add-ons"
+        },
+        "target": "Samples"
+      },
+      {
+        "match": {
+          "section": "Build - Advanced Topics"
+        },
+        "target": "Advanced Development"
+      },
+      {
+        "match": {
+          "section": "Build - Design"
+        },
+        "target": "Design and UI"
+      },
+      {
+        "match": {
+          "section": "Built-in UI Components"
+        },
+        "target": "Built-in UI Components References"
+      },
+      {
+        "match": {
+          "section": "Changelog"
+        },
+        "target": "Changelog"
+      }
+    ]
+  }
