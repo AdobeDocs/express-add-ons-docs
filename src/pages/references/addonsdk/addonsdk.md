@@ -12,6 +12,7 @@ keywords:
     - instance
 contributors:
     - https://github.com/hollyschinsky
+hideBreadcrumbNav: true 
 ---
 
 # addOnUISdk

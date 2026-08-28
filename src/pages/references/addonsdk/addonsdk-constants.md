@@ -68,6 +68,7 @@ faq:
 
     - question: "What events can I listen for with AppEvent?"
       answer: "AppEvent includes: themechange, localechange, formatchange, reset, dragstart, dragend, dragcancel, documentIdAvailable, documentLinkAvailable, documentPublishedLinkAvailable, documentTitleChange, and documentExportAllowedChange."
+hideBreadcrumbNav: true
 ---
 
 # addOnUISdk.constants

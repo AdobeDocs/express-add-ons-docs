@@ -25,27 +25,23 @@ contributors:
 
 # Changelog
 
-## 2026-08-24
+## 2026-08-27
 
-### Stabilized
+### Added
 
-The [`link()`](../../references/addonsdk/app-document.md#link) method and the [`LinkOptions`](../../references/addonsdk/addonsdk-constants.md) parameter are now stable and no longer require the `experimentalApis` flag in your add-on's `manifest.json`.
+- Connected Enterprise consolidates a user's enterprise profiles into a single profile, which can result in changes to their user ID. A new [`currentUser.identity()`](../../references/addonsdk/app-current-user.md#identity) method in the [`addOnUISdk.app.currentUser`](../../references/addonsdk/app-current-user.md) API returns the user's SHA-256 hashed canonical ID and associated legacy IDs, enabling add-ons to reconcile user data across pre- and post-consolidation profiles. See the updated [How-to Guide](../learn/how-to/user-info.md) for details.
+
+### Deprecated
+
+- [`currentUser.userId()`](../../references/addonsdk/app-current-user.md#userid) is soft-deprecated in favor of [`identity()`](../../references/addonsdk/app-current-user.md#identity) and is scheduled for removal on **November 15, 2026**.
 
 ### Updated
 
 - The `addAudio()` method now supports `audio/mp4` files in addition to the other formats listed in the [FAQ](../support/faq.md#-file-formats--media-support).
 
-### Added
+### Stabilized
 
-- New **Experimental** [`currentUser.identity()`](../../references/addonsdk/app-current-user.md#identity) method in the [`addOnUISdk.app.currentUser`](../../references/addonsdk/app-current-user.md) API. Returns the user's SHA-256 hashed, canonical ID and any legacy IDs consolidated into it through [Connected Enterprise](https://helpx.adobe.com/business/enterprise/global-admin-console/get-started/connected-enterprise.html), so add-ons can reconcile a user's data across pre- and post-consolidation profiles. See the updated [How-to Guide](../learn/how-to/user-info.md) for more details.
-
-<InlineAlert slots="text" variant="warning" className="inline-alert-bullet-aligned"/>
-
-**IMPORTANT:** `identity()` is currently **_experimental only_**. To call it during development, set the `experimentalApis` flag to `true` in the [`requirements`](../../references/manifest/index.md#requirements) section of the `manifest.json`. Submissions with that flag enabled will fail validation, so remove it before distributing your add-on.
-
-### Deprecated
-
-- [`currentUser.userId()`](../../references/addonsdk/app-current-user.md#userid) is soft-deprecated in favor of [`identity()`](../../references/addonsdk/app-current-user.md#identity) and is scheduled for removal on **November 15, 2026**.
+The [`link()`](../../references/addonsdk/app-document.md#link) method and the [`LinkOptions`](../../references/addonsdk/addonsdk-constants.md) parameter are now stable and no longer require the `experimentalApis` flag in your add-on's `manifest.json`.
 
 ## 2026-08-03
 

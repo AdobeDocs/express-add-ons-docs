@@ -9,6 +9,7 @@ keywords:
     - manifest.json
 contributors:
     - https://github.com/hollyschinsky
+hideBreadcrumbNav: true
 ---
 
 # addOnUISdk.instance.manifest

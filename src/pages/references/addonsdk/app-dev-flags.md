@@ -10,6 +10,7 @@ keywords:
     - testing
 contributors:
     - https://github.com/hollyschinsky
+hideBreadcrumbNav: true
 ---
 
 # addOnUISdk.app.devFlags
@@ -22,7 +23,7 @@ This object contains flags which can be used to simulate certain behavior during
 
 <InlineAlert slots="text" variant="warning"/>
 
-`addOnUISdk.app.devFlags` are provided for testing purposes only, and thus can only be used during the development phase.
+**Development only:** `addOnUISdk.app.devFlags` is provided for testing purposes and can only be used during development.
 
 ## Properties
 

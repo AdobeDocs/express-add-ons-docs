@@ -14,6 +14,7 @@ keywords:
     - events
 contributors:
     - https://github.com/hollyschinsky
+hideBreadcrumbNav: true
 ---
 
 # addOnUISdk.app

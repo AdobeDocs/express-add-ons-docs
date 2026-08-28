@@ -31,7 +31,10 @@ faq:
       answer: "Call `await addOnUISdk.app.currentUser.identity()` to get a `UserIdentity` object containing the current `userId` and any `legacyIds`."
 
     - question: "What are legacyIds?"
-      answer: "For users whose account has been migrated through Connected Enterprise, `legacyIds` contains SHA-256 hashes of their previous user IDs. This lets you map a migrated user to their historical records. The array is empty for users who have not been consolidated."
+      answer: "For users whose account has been migrated through Connected Enterprise, `legacyIds` contains SHA-256 hashes of their previous user IDs, letting you map a migrated user to their historical records. Connected Enterprise consolidation rolls out in phases, so `legacyIds` can be empty today and gain entries later once that user's profile is actually consolidated. An empty array doesn't confirm a user hasn't been or won't be consolidated."
+
+    - question: "Can I tell whether a user's profile has been consolidated?"
+      answer: "No, don't try to infer consolidation status from the values `identity()` returns. Matching IDs or an empty `legacyIds` array don't confirm anything: the user may not be an enterprise user, or may be an enterprise user who hasn't been consolidated yet. Always treat the resolved `userId` as the canonical identifier and use `legacyIds` when present to reconcile previously stored data."
 
     - question: "Why is userId() deprecated?"
       answer: "`userId()` is deprecated because Connected Enterprise may change a user's ID during account consolidation. `identity()` exposes both the current canonical ID and any legacy IDs, so your add-on can recognize users across a migration. `userId()` is scheduled for removal on November 15, 2026."
@@ -67,12 +70,14 @@ faq:
 
 You can leverage the [`addOnUISdk.app.currentUser`](../../../references/addonsdk/app-current-user.md) API to retrieve information for the current user using Adobe Express. The following asynchronous methods are available:
 
-* `identity()`: returns the current user's SHA-256 hashed, canonical ID and any legacy user IDs consolidated into it (**Experimental**)
-* `userId()`: returns a SHA-256 hashed ID unique to the user (**Deprecated**, scheduled for removal November 15, 2026; use `identity()` instead)
+* `identity()`: returns the current user's SHA-256 hashed, canonical ID and any legacy user IDs consolidated into it
+* `userId()`: (**Deprecated** in favor of `identity()`) returns a SHA-256 hashed ID unique to the user
 * `isPremiumUser()`: returns `true` if the user has a premium Adobe Express subscription, `false` otherwise
 * `isAnonymousUser()`: returns `true` if the current user is browsing as a guest (not signed in), `false` otherwise
 
 ### Example
+
+The following example retrieves the current user's identity, premium status, and anonymous status, then logs each value:
 
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
@@ -100,50 +105,34 @@ addOnUISdk.ready.then(async () => {
 
 ### User Identity
 
-A user's identity uniquely identifies who's using your add-on, useful for tracking subscriptions, managing entitlements, or scoping other user-specific features. Use [`identity()`](../../../references/addonsdk/app-current-user.md#identity) for this; [`userId()`](../../../references/addonsdk/app-current-user.md#userid) is **Deprecated** and scheduled for removal on November 15, 2026. For users whose account has not been consolidated through Connected Enterprise, `identity().userId` returns the same value as `userId()`.
+Use [`identity()`](../../../references/addonsdk/app-current-user.md#identity) to identify the current user of your add-on. It returns a [`UserIdentity`](../../../references/addonsdk/app-current-user.md#useridentity) object containing:
 
-<InlineAlert slots="header,text1,text2" variant="info"/>
+- `userId`: the current canonical user identifier
+- `legacyIds`: previous user identifiers associated with the user, when available
 
-#### [Connected Enterprise](https://helpx.adobe.com/business/enterprise/global-admin-console/get-started/connected-enterprise.html)
+<InlineAlert slots="header,text" variant="warning"/>
 
-An Adobe initiative that consolidates multiple organization-specific user profiles into a single unified profile, which can change a user's ID during migration.
+#### `userId()` is deprecated
 
-If your add-on stores the user ID for subscription management, analytics, licensing, or account linking, use `identity()` and check `legacyIds` to map a migrated user to their previous records. See [Unify identity and storage with Connected Enterprise](https://helpx.adobe.com/business/enterprise/global-admin-console/get-started/connected-enterprise.html) for full details, particularly the **Add-ons and plugins** section.
+Use [`addOnUISdk.app.currentUser.identity()`](../../../references/addonsdk/app-current-user.md#identity) instead of the deprecated [`addOnUISdk.app.currentUser.userId()`](../../../references/addonsdk/app-current-user.md#userid) method, which is scheduled for removal on **November 15, 2026**.
 
-The [`UserIdentity`](../../../references/addonsdk/app-current-user.md#useridentity) object returned by `identity()` contains the current `userId` and any `legacyIds` consolidated during a Connected Enterprise migration.
+#### Handle user ID changes
 
-### Handling the Transition Period
+With Connected Enterprise, a user's ID may change when organization-specific profiles are consolidated into a single profile.
 
-<InlineAlert slots="text" variant="warning"/>
+If your add-on stores user IDs for subscriptions, entitlements, analytics, licensing, account linking, or other user-specific data:
 
-**IMPORTANT:** The `identity()` method is currently **_experimental only_** and requires the `experimentalApis` flag set to `true` in the [`requirements`](../../../references/manifest/index.md#requirements) section of `manifest.json`. Remove the flag before submitting your add-on. Without it, `identity()` won't resolve, which is expected.
+1. Call `identity()` and treat `userId` as the current canonical identifier.
+2. Check whether any `legacyIds` match IDs your add-on previously stored.
+3. If a legacy ID matches an existing record, associate that record with the current `userId`.
 
-Until `identity()` is declared stable, use the feature-detection pattern below to fall back to `userId()`. The following example retrieves all known user IDs, including legacy IDs, while supporting both methods:
+<InlineAlert slots="header,text" variant="info"/>
 
-```javascript
-import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
+#### Don't infer consolidation status
 
-addOnUISdk.ready.then(async () => {
-  const allKnownIds = await getAllUserIds();
-  console.log("All known user IDs:", allKnownIds);
-});
+Don't use `userId` or `legacyIds` to determine whether a user's profile has been consolidated. A matching `userId` or an empty `legacyIds` array does not indicate consolidation status.
 
-async function getAllUserIds() {
-  // Feature-detect: identity() exists once it goes GA
-  if (typeof addOnUISdk.app.currentUser.identity === "function") {
-    const identity = await addOnUISdk.app.currentUser.identity();
-    // Safely spread legacyIds, fallback to an empty array if undefined
-    return [identity.userId, ...(identity.legacyIds || [])];
-  }
-
-  // Fallback to deprecated userId() until identity() is stable
-  return [await addOnUISdk.app.currentUser.userId()];
-}
-```
-
-Once `identity()` is declared stable, update your add-on to use it exclusively and remove the fallback to `userId()`. This ensures your users are not impacted during the transition period.
-
-Refer to the [`addOnUISdk.app.currentUser`](../../../references/addonsdk/app-current-user.md) reference and the [licensed-addon code sample](../samples.md#licensed-addon), which shows how you can utilize the hash of the user ID to integrate your add-on with licensing and payment services.
+For more information about the Connected Enterprise initiative, see [Unify identity and storage with Connected Enterprise](https://helpx.adobe.com/business/enterprise/global-admin-console/get-started/connected-enterprise.html), particularly the **Add-ons and plugins** section.
 
 ### Premium Features
 
@@ -178,7 +167,11 @@ When `isAnonymousUser()` returns `true`, the user is browsing as a guest without
 
 #### Q: What are legacyIds?
 
-**A:** For users whose account has been migrated through Connected Enterprise, `legacyIds` contains SHA-256 hashes of their previous user IDs. This lets you map a migrated user to their historical records. The array is empty for users who have not been consolidated.
+**A:** For users whose account has been migrated through Connected Enterprise, `legacyIds` contains SHA-256 hashes of their previous user IDs, letting you map a migrated user to their historical records. Connected Enterprise consolidation rolls out in phases, so `legacyIds` can be empty today and gain entries later once that user's profile is actually consolidated. An empty array doesn't confirm a user hasn't been or won't be consolidated.
+
+#### Q: Can I tell whether a user's profile has been consolidated?
+
+**A:** No, don't try to infer consolidation status from the values `identity()` returns. Matching IDs or an empty `legacyIds` array don't confirm anything: the user may not be an enterprise user, or may be an enterprise user who hasn't been consolidated yet. Always treat the resolved `userId` as the canonical identifier and use `legacyIds` when present to reconcile previously stored data.
 
 #### Q: Why is userId() deprecated?
 

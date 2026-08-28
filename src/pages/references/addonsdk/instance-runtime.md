@@ -12,6 +12,7 @@ keywords:
     - document sandbox
 contributors:
     - https://github.com/hollyschinsky
+hideBreadcrumbNav: true
 ---
 
 # addOnUISdk.instance.runtime

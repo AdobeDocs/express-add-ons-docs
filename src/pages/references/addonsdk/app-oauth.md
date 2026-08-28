@@ -11,6 +11,7 @@ keywords:
     - PKCE
 contributors:
     - https://github.com/hollyschinsky
+hideBreadcrumbNav: true
 ---
 
 # addOnUISdk.app.oauth
