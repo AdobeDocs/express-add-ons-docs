@@ -118,7 +118,7 @@ Use [`addOnUISdk.app.currentUser.identity()`](../../../references/addonsdk/app-c
 
 #### Handle user ID changes
 
-If your add-on relies on the `userId` API to identify users uniquely for subscriptions, entitlements, analytics, licensing, account linking, or other user-specific data, Connected Enterprise might lead to a change in the user's ID when organization-specific profiles are consolidated into a single profile.
+If your add-on relies on the `userId` API to identify users uniquely for subscriptions, entitlements, analytics, licensing, account linking, or other user-specific data, Connected Enterprise (starting July 2026) might lead to a change in the user's ID when organization-specific profiles are consolidated into a single profile.
 
 To handle this:
 
