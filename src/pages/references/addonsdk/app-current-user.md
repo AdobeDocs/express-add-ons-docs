@@ -32,12 +32,6 @@ Provides access to the current user's identity, premium status, and guest-state 
 Returns the user's canonical ID and any legacy IDs associated with the current profile.
 All IDs are SHA-256 hashed and cannot be used to identify users personally. Use this method for use cases that rely on user identification, such as subscription management, analytics, and account linking.
 
-For users whose account has been migrated through Connected Enterprise, `legacyIds` contains previous user IDs when available. See [Unify identity and storage with Connected Enterprise](https://helpx.adobe.com/business/enterprise/global-admin-console/get-started/connected-enterprise.html) for full details.
-
-Don't infer a user's consolidation status from `userId` or `legacyIds`. Connected Enterprise consolidation rolls out in phases across an organization, so a matching `userId` or an empty `legacyIds` array does not indicate whether the user's profile has been consolidated. `legacyIds` may be empty today and gain entries later as consolidation progresses.
-
-Always treat `userId` as the canonical identifier going forward, and use `legacyIds` to reconcile previously stored user data when present.
-
 #### Signature
 
 `identity(): Promise<UserIdentity>`
@@ -51,7 +45,7 @@ A `Promise` that resolves to a `UserIdentity` object.
 | Property | Type | Description |
 | -------- | ---- | ----------- |
 | `userId` | `string` | SHA-256 hashed, canonical ID for the current active profile. Matches the value returned by the deprecated [`userId()`](#userid) method for accounts that haven't been consolidated through Connected Enterprise. |
-| `legacyIds` | `string[]` | SHA-256 hashed legacy user IDs consolidated into the current profile, when available. |
+| `legacyIds` | `string[]` | SHA-256 hashed legacy user IDs, if any. |
 
 #### Example Usage
 
@@ -85,7 +79,7 @@ Legacy IDs: a3f1c2d4e5b6789012345678abcdef90abcdef90abcdef90abcdef90abcdef90, b7
 
 **Deprecated.** `userId()` is scheduled for removal on **November 15, 2026** in favor of the [`identity()`](#identity) method. After that date, this method will throw an error. Calling this method now logs a one-time console warning.
 
-Retrieve a SHA-256 hashed ID for the current user of the host application (Adobe Express). For accounts that haven't been consolidated through Connected Enterprise, this returns the same value as [`identity().userId`](#identity).
+Retrieve a SHA-256 hashed ID for the current user of the host application (Adobe Express).
 
 #### Signature
 

@@ -114,13 +114,13 @@ Use [`identity()`](../../../references/addonsdk/app-current-user.md#identity) to
 
 #### `userId()` is deprecated
 
-Use [`addOnUISdk.app.currentUser.identity()`](../../../references/addonsdk/app-current-user.md#identity) instead of the deprecated [`addOnUISdk.app.currentUser.userId()`](../../../references/addonsdk/app-current-user.md#userid) method, which is scheduled for removal on **November 15, 2026**.
+Use [`addOnUISdk.app.currentUser.identity()`](../../../references/addonsdk/app-current-user.md#identity) instead of the deprecated [`addOnUISdk.app.currentUser.userId()`](../../../references/addonsdk/app-current-user.md#userid) method, which is scheduled for removal on **November 15, 2026**. For accounts that haven't been consolidated through Connected Enterprise, `userId()` returns the same value as `identity().userId`.
 
 #### Handle user ID changes
 
-With Connected Enterprise, a user's ID may change when organization-specific profiles are consolidated into a single profile.
+If your add-on relies on the `userId` API to identify users uniquely for subscriptions, entitlements, analytics, licensing, account linking, or other user-specific data, Connected Enterprise might lead to a change in the user's ID when organization-specific profiles are consolidated into a single profile.
 
-If your add-on stores user IDs for subscriptions, entitlements, analytics, licensing, account linking, or other user-specific data:
+To handle this:
 
 1. Call `identity()` and treat `userId` as the current canonical identifier.
 2. Check whether any `legacyIds` match IDs your add-on previously stored.
