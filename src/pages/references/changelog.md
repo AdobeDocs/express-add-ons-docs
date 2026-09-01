@@ -25,6 +25,24 @@ contributors:
 
 # Changelog
 
+## 2026-09-01
+
+### Added
+
+- Connected Enterprise consolidates a user's enterprise profiles into a single profile, which can result in changes to their user ID. A new [`currentUser.identity()`](./addonsdk/app-current-user.md#identity) method in the [`addOnUISdk.app.currentUser`](./addonsdk/app-current-user.md) API returns the user's SHA-256 hashed canonical ID and associated legacy IDs, enabling add-ons to reconcile user data across pre- and post-consolidation profiles. See the updated [How-to Guide](../guides/learn/how-to/user-info.md) for details.
+
+### Deprecated
+
+- [`currentUser.userId()`](./addonsdk/app-current-user.md#userid) is soft-deprecated in favor of [`identity()`](./addonsdk/app-current-user.md#identity) and is scheduled for removal on **November 15, 2026**.
+
+### Updated
+
+- The `addAudio()` method now supports `audio/mp4` files in addition to the other formats listed in the [FAQ](../guides/support/faq.md#-file-formats--media-support).
+
+### Stabilized
+
+The [`link()`](./addonsdk/app-document.md#link) method and the [`LinkOptions`](./addonsdk/addonsdk-constants.md) parameter are now stable and no longer require the `experimentalApis` flag in your add-on's `manifest.json`.
+
 ## 2026-08-03
 
 <InlineAlert slots="header, text1, text2" variant="info"/>

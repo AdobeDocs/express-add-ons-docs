@@ -307,6 +307,7 @@ Adobe Express add-ons support importing various file types through the document 
 - ADTS: `audio/aac`
 - M4A: `audio/m4a`
 - MP3: `audio/mpeg`
+- MP4: `audio/mp4`
 - WAV: `audio/wav`
 - XM4A: `audio/x-m4a`
 - XWAV: `audio/x-wav`
