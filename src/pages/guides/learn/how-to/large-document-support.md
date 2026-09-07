@@ -29,6 +29,8 @@ keywords:
   - experimentalApis
   - feature flag
   - testing
+  - mutating API
+  - afterAsyncCallback
 title: Support Large Documents
 description: Update your add-on for Large Document Support—visit pages safely, keep content active across async operations, and replace deprecated APIs.
 contributors:
@@ -57,6 +59,8 @@ faq:
       answer: "Open https://new.express.adobe.com/lArg3-d0c-supp0rt-4-add0ns in its own browser tab—that URL enforces Large Document Support for developer testing. Stress-test with your add-on open: add pages, switch pages in the UI mid-operation, use very long documents, and re-run whole-document passes and async workflows. Don't share the URL with end users."
     - question: "Do my iframe (Add-on UI SDK) APIs need changes?"
       answer: "No. If your add-on uses only the iframe `document.*` APIs—`createRenditions`, `getPagesMetadata`, `addImage`—Adobe Express activates the pages those calls need for you. Migration applies to Document Sandbox code (`editor.*`, `pages.*`)."
+    - question: "Why do I get a mutating-API error inside a keepContentActiveDuringAsync callback?"
+      answer: "A mutating API was called from the async lambda (the first callback), which is only for awaiting. Move every document edit into the `afterAsyncCallback`. Some APIs mutate under the hood even when they look read-only—so trust the runtime error and relocate the call."
 ---
 
 # Support Large Documents
@@ -218,6 +222,8 @@ await editor.keepContentActiveDuringAsync(
 
 Do all your document edits in the third argument, the `afterAsyncCallback`—it runs synchronously while the target is still active. Once it returns, the target may become inaccessible again, so don't hold the reference past that point.
 
+Put **every mutating call** in the follow-up, not the async lambda—including calls that don't look like edits. Some APIs mutate the document as part of their implementation even though their purpose reads as read-only. Call a mutating API from the async lambda and Adobe Express throws a runtime error; move that call into the `afterAsyncCallback` to fix it. For why an API can be mutating when its name isn't, see [Large Document Support](../platform-concepts/large-document-support.md#keepcontentactiveduringasync).
+
 ## Replace deprecated APIs
 
 Several content-access APIs that assumed every page was loaded are deprecated and move to `ActivePageNode`. Update each call to run against an active page (from `visitPages()` or `editor.context.currentPage`). All are removed from the SDK during [Phase 2](../platform-concepts/large-document-support.md#rollout-and-migration-timeline) of the migration.
@@ -281,7 +287,11 @@ When this happens, Adobe Express fails fast with an actionable error rather than
 
 ## Test your add-on with Large Document Support
 
-Don't assume that testing in regular Express exercises this behavior. Use the dedicated Large Document Support testing URL so pages are activated and deactivated as they will be in production, then validate your add-on—especially whole-document passes and any operation that spans an `await`. For background on what the testing environment exercises, see [Large Document Support](../platform-concepts/large-document-support.md#testing).
+Don't assume that testing in regular Express exercises this behavior. Use the dedicated Large Document Support testing URL so pages are activated and deactivated as they will be in production, then validate your add-on—especially whole-document passes and any operation that spans an `await`. For background on what the testing environment exercises, see [Large Document Support](../platform-concepts/large-document-support.md#testing-your-add-on-with-large-document-support).
+
+<InlineAlert slots="text1" variant="info"/>
+
+Some glitches you hit here come from Adobe Express itself, not your add-on—they're expected in the testing environment and fixed automatically at rollout. Reproduce a suspect step in regular Express without your add-on to tell the two apart.
 
 ### Open the testing environment
 
@@ -346,3 +356,7 @@ Keep this testing environment to yourself—do not share the URL with your add-o
 #### Q: Do my iframe (Add-on UI SDK) APIs need changes?
 
 **A:** No. If your add-on uses only the iframe `document.*` APIs—`createRenditions`, `getPagesMetadata`, `addImage`—Adobe Express activates the pages those calls need for you. Migration applies to Document Sandbox code (`editor.*`, `pages.*`).
+
+#### Q: Why do I get a mutating-API error inside a keepContentActiveDuringAsync callback?
+
+**A:** A mutating API was called from the async lambda (the first callback), which is only for awaiting. Move every document edit into the `afterAsyncCallback`. Some APIs mutate under the hood even when they look read-only—so trust the runtime error and relocate the call.

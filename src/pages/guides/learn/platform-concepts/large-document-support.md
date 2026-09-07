@@ -31,6 +31,9 @@ keywords:
   - rollout
   - phases
   - migration window
+  - mutating API
+  - afterAsyncCallback
+  - testing environment
 title: Large Document Support
 description: How Adobe Express works with documents whose pages aren't all loaded at once: the active/inactive page model, the safe APIs, and the phased migration.
 contributors:
@@ -67,6 +70,10 @@ faq:
       answer: "Impacted marketplace add-ons that are not updated by the end of the migration window may be removed from the marketplace, and users may see compatibility warnings before then. Updating the code is not enough on its own—an impacted marketplace add-on must be resubmitted to be recognized as compatible."
     - question: "Are private and internally distributed add-ons affected?"
       answer: "Yes, they are subject to the same behavior changes, but the enforcement differs: they are not automatically removed, and the responsibility for updating them rests with their owners. If left unmodified, they may stop working correctly once the migration period ends."
+    - question: "Why do I get a mutating-API error inside keepContentActiveDuringAsync?"
+      answer: "Because a mutating API was called from the async lambda—the first callback, which is only for waiting. Every document change must happen in the synchronous follow-up (afterAsyncCallback). Some APIs are mutating because of their underlying implementation even when they look read-only, so judge an API by its effect rather than by whether its name sounds read-only. When you see the error, move that call into the follow-up."
+    - question: "I see glitches in the testing environment—is my add-on broken?"
+      answer: "Not necessarily. The testing URL turns on Large Document Support ahead of the production rollout, so you may hit rough edges in Express itself. These are known and expected there, and they are fixed automatically as the rollout proceeds. To tell an environment issue from an add-on issue, reproduce the same step in regular Express without your add-on; if it still happens, it is the environment."
 canonical: true
 ai_assistant_note: "This is the canonical explanation of Large Document Support (internally, the Active
   Content Facade or ACF) for Adobe Express add-ons. Use it to explain the active/inactive page model,
@@ -109,11 +116,13 @@ If terms like _page_, _artboard_, and _scenegraph_ are unfamiliar, start with th
 
 Not every add-on is affected. An add-on that performs synchronous operations on the current page, and doesn't carry node references across asynchronous waits, generally needs no changes. If your add-on depends on content being available everywhere, all the time, you should review the rest of this page and the [Support Large Documents](../how-to/large-document-support.md) how-to.
 
-<InlineAlert slots="header, text1, text2" variant="info"/>
+<InlineAlert slots="header, text1, text2, text3" variant="info"/>
 
 #### Large Document Support Checker Skill
 
-To help you triage, Adobe provides the [Large Document Support add-on check skill](https://github.com/AdobeDocs/express-add-ons-docs/raw/refs/heads/main/static/zip/large-document-support-add-on-check.zip)—a tool that you can use with your LLM of choice, to scan your add-on's code for the deprecated APIs and the unsafe node-reference patterns described on this page and flag whether it is likely impacted.
+To help you triage, Adobe provides the [Large Document Support add-on check skill](https://github.com/AdobeDocs/express-add-ons-docs/raw/refs/heads/main/static/zip/acf-safety-check-skill.zip)—a lightweight tool you run with your LLM of choice. It scans your add-on's own source directly, with no build step and no bundling: you point it at your source folder and it flags the exact unsafe patterns this page describes—the deprecated APIs and the node-reference shapes that break under the new model. For each finding it explains _why_ that shape breaks and shows a before/after fix; it can apply the fixes on request, re-check afterward, and doubles as a CI or pre-commit gate.
+
+**Try it:** just ask your agent to "check my add-on for Large Document Support safety using the `acf-safety-check-skill`" and point it at your add-on folder.
 
 **Treat its result as a starting point** for assessment, not a verdict: it can produce false positives and false negatives, so always validate against the [testing environment](#testing-your-add-on-with-large-document-support) regardless of what it reports.
 
@@ -238,7 +247,7 @@ visitPages(
 ): Promise<void>;
 ```
 
-Because a pass over a large document can take several seconds, Express shows a **modal progress bar** while `visitPages()` runs, whose UI may see minor changes in later releases. The dialog blocks the user from switching pages while your callback executes—so the page it hands you cannot be pulled out from under you mid-pass—and it appears only after a short minimum delay, so a quick pass doesn't flash a dialog on screen. It also carries a way to cancel the operation, **rejecting the promise** `visitPages()` returned.
+Because a pass over a large document can take several seconds, Express shows a **modal progress bar** while `visitPages()` runs, whose UI may see minor changes in later releases—cosmetic refinements that introduce **no breaking changes** for your add-on. The dialog blocks the user from switching pages while your callback executes—so the page it hands you cannot be pulled out from under you mid-pass—and it appears only after a short minimum delay, so a quick pass doesn't flash a dialog on screen. It also carries a way to cancel the operation, **rejecting the promise** `visitPages()` returned.
 
 ![visitPages progress bar](./images/LDS--progress-bar.png)
 
@@ -259,6 +268,16 @@ keepContentActiveDuringAsync<AsyncResultT>(
 ```
 
 Both `visitPages()` and `keepContentActiveDuringAsync()` shipped as **experimental** in the first phase of the rollout (see above). As of **Phase 2** they have graduated to **stable**: they now sit inside the usual stability guarantees, and you no longer need the `experimentalApis` flag to call them.
+
+**Which work goes in which callback matters.** The async lambda is for _waiting_—the network request, the translation call—and must not change the document. Every edit belongs in the synchronous follow-up (`afterAsyncCallback`), which Express runs while the target is still active. The split is enforced: call a **mutating** API from the async lambda and Express throws a runtime error rather than let a change land against a page that may already have gone inactive.
+
+<InlineAlert slots="header, text1, text2" variant="warning"/>
+
+#### Mutating APIs
+
+An API can be _mutating_ because of what it does under the hood, not because of what it appears to do from the outside. When that is the case, they belong **in the follow-up, not the async lambda**.
+
+When you call a mutating API in the wrong place, Express fails fast with a runtime error that names the problem. **Treat that error as an instruction**: move the offending call into the synchronous follow-up. For the step-by-step pattern, see [Keep content active during async operations](../how-to/large-document-support.md#keep-content-active-during-async-operations) in the how-to.
 
 ### Common migration mistakes
 
@@ -303,6 +322,12 @@ Treating Add-on Compatibility Mode as permanent is a mistake. It works until it 
 We are introducing a dedicated testing URL that turns on Large Document Support in Adobe Express as if the new model were already in place. Open [https://new.express.adobe.com/lArg3-d0c-supp0rt-4-add0ns](https://new.express.adobe.com/lArg3-d0c-supp0rt-4-add0ns) in its own browser tab and use Express there while you assess and validate your add-on.
 
 Regular Express does not exercise page activation and deactivation the way production will once Large Document Support is fully rolled out. This URL acts as a developer feature flag: it enforces the active/inactive page behavior so you can see whether your add-on still works when content is not guaranteed to stay available everywhere, all the time.
+
+<InlineAlert slots="header, text1" variant="info"/>
+
+#### Some glitches in the testing environment are expected
+
+Because this URL turns the new model on ahead of the production rollout, you may hit rough edges in Express itself while testing—behavior that looks like a bug but isn't coming from your add-on. These are **known and expected in the testing environment**, and they are fixed automatically as Large Document Support rolls out in Express. When something misbehaves, separate a native Express issue from an add-on issue first: reproduce the same step in regular Express _without_ your add-on. If it happens there too, it's the environment, not your code.
 
 **Stress-test with your add-on open.** The failure modes users trigger without thinking about them are the ones worth reproducing deliberately: add new pages, run asynchronous operations, and change the active page in the Express UI while your add-on is still mid-operation. Use very long documents with a lot of content, and repeat those flows. Whole-document passes, async work that spans an `await`, and any logic that assumes every page's content stays reachable are where silent failures and stale-reference errors tend to surface first.
 
@@ -369,6 +394,14 @@ Impacted marketplace add-ons that are not updated by the end of the migration wi
 #### Are private and internally distributed add-ons affected?
 
 Yes, they are subject to the same behavior changes, but the enforcement differs: they are not automatically removed, and the responsibility for updating them rests with their owners. If left unmodified, they may stop working correctly once the migration period ends.
+
+#### Why do I get a mutating-API error inside keepContentActiveDuringAsync?
+
+Because a mutating API was called from the async lambda—the first callback, which is only for waiting. Every document change must happen in the synchronous follow-up (`afterAsyncCallback`). Some APIs are mutating because of their underlying implementation even when they look read-only, so judge an API by its effect rather than by whether its name sounds read-only. When you see the error, move that call into the follow-up.
+
+#### I see glitches in the testing environment—is my add-on broken?
+
+Not necessarily. The testing URL turns on Large Document Support ahead of the production rollout, so you may hit rough edges in Express itself. These are known and expected there, and they are fixed automatically as the rollout proceeds. To tell an environment issue from an add-on issue, reproduce the same step in regular Express without your add-on; if it still happens, it's the environment.
 
 <HorizontalLine />
 
