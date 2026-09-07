@@ -122,7 +122,7 @@ Not every add-on is affected. An add-on that performs synchronous operations on 
 
 To help you triage, Adobe provides the [Large Document Support add-on check skill](https://raw.githubusercontent.com/AdobeDocs/express-add-ons-docs/refs/heads/main/static/zip/large-document-support-add-on-check-skill.zip)—a lightweight tool you run with your LLM of choice. It scans your add-on's own source directly, with no build step and no bundling: you point it at your source folder and it flags the exact unsafe patterns this page describes—the deprecated APIs and the node-reference shapes that break under the new model. For each finding it explains _why_ that shape breaks and shows a before/after fix; it can apply the fixes on request, re-check afterward, and doubles as a CI or pre-commit gate.
 
-**Try it:** just ask your agent to "check my add-on for Large Document Support safety using the `acf-safety-check-skill`" and point it at your add-on folder.
+**Try it:** just ask your agent to "check my add-on for Large Document Support safety using the provided skill" and point it at your add-on folder.
 
 **Treat its result as a starting point** for assessment, not a verdict: it can produce false positives and false negatives, so always validate against the [testing environment](#testing-your-add-on-with-large-document-support) regardless of what it reports.
 
