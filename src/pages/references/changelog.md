@@ -25,6 +25,13 @@ contributors:
 
 # Changelog
 
+## 2026-09-07
+
+### Updated
+
+- The **Large Document Support add-on check** [skill](../guides/learn/platform-concepts/large-document-support.md#large-document-support-checker-skill) is now more capable: it scans your add-on's source directly (no build step or bundling), explains why each finding breaks and shows a before/after fix, can apply the fixes on request, and doubles as a CI or pre-commit gate.
+- [Large Document Support](../guides/learn/platform-concepts/large-document-support.md) concepts and [how-to](../guides/learn/how-to/large-document-support.md) guides have been amended to better clarify how mutating APIs must belong to the [`keepContentActiveDuringAsync()`](./document-sandbox/document-apis/classes/editor.md#keepcontentactiveduringasync) second lambda function.
+
 ## 2026-09-01
 
 ### Added
