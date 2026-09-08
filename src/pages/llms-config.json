@@ -1,14 +1,15 @@
 {
     "sectionOrder": [
-        "Overview",
         "Getting Started",
         "Platform Concepts",
         "SDK Fundamentals",
         "How-to Guides",
+        "Tutorials",
         "Samples",
         "Design and UI",
         "Advanced Development",
         "Distributing",
+        "References Overview",
         "Add-on UI SDK References",
         "Built-in UI Components References",
         "Document Sandbox References",
@@ -26,9 +27,21 @@
       },
       {
         "match": {
+          "hrefContains": "references/index.md"
+        },
+        "target": "References Overview"
+      },
+      {
+        "match": {
           "section": "Learn - Platform Concepts"
         },
         "target": "Platform Concepts"
+      },
+      {
+        "match": {
+          "hrefContains": "how-to/tutorials/"
+        },
+        "target": "Tutorials"
       },
       {
         "match": {
@@ -102,5 +115,16 @@
         },
         "target": "Changelog"
       }
-    ]
+    ],
+    "curatedSections": {
+      "Document API References": {
+        "keep": [
+          "editor",
+          "node",
+          "visual-node",
+          "text-content-model",
+          "color-utils"
+        ]
+      }
+    }
   }

@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: read
 
 jobs:
   commit:
@@ -25,12 +26,29 @@ jobs:
         id: meta
         run: |
           echo "pr_number=$(cat pr-number.txt)" >> "$GITHUB_OUTPUT"
-          echo "pr_branch=$(cat pr-branch.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Resolve trusted PR branch
+        id: pr
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pr_number="${{ steps.meta.outputs.pr_number }}"
+          is_fork=$(gh pr view "$pr_number" --repo "${{ github.repository }}" --json isCrossRepository -q '.isCrossRepository')
+          if [ "$is_fork" = "true" ]; then
+            echo "PR is from a fork, refusing to check out/push." >&2
+            exit 1
+          fi
+          branch=$(gh pr view "$pr_number" --repo "${{ github.repository }}" --json headRefName -q '.headRefName')
+          if [ -z "$branch" ]; then
+            echo "Could not resolve PR branch." >&2
+            exit 1
+          fi
+          echo "branch=$branch" >> "$GITHUB_OUTPUT"
 
       - name: Checkout PR branch
         uses: actions/checkout@v4
         with:
-          ref: ${{ steps.meta.outputs.pr_branch }}
+          ref: ${{ steps.pr.outputs.branch }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Copy generated llms.txt

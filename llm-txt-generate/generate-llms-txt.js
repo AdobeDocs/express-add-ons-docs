@@ -13,6 +13,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const matter = require('gray-matter');
 
 const CONFIG_PATH = path.join('src', 'pages', 'config.md');
 const PAGES_DIR = path.join('src', 'pages');
@@ -83,10 +84,9 @@ function parseConfigMd(content) {
   return { pathPrefix, sections: sections.filter(s => s.pages.length > 0) };
 }
 
-// Extract first descriptive paragraph directly from markdown body text
+// Extract first descriptive paragraph directly from markdown body text (gray-matter already stripped)
 function extractTextDescription(content) {
   const text = content
-    .replace(/^---\s*[\s\S]*?---\s*/, '')
     .replace(/<[^>]+>/g, '')
     .replace(/<!--[\s\S]*?-->/g, '')
     .replace(/```[\s\S]*?```/g, '')
@@ -116,7 +116,7 @@ function extractTextDescription(content) {
   }
 
   const desc = paragraph.join(' ')
-    .replace(/\[`?([^\]`]+)`?\]\([^)]+\)/g, '$1')
+    .replace(/\[([^\]]+)]\([^)]+\)/g, '$1')
     .replace(/[*_~`]/g, '')
     .replace(/\s+/g, ' ')
     .trim();
@@ -124,54 +124,35 @@ function extractTextDescription(content) {
   if (desc.length <= 240) {
     return desc;
   }
-  
-  const sentences = desc.match(/[^.!?]+[.!?]+/g);
-  
-  if (sentences && sentences.length > 0) {
-    const firstSentence = sentences[0].trim();
-  
+  const firstSentenceMatch = desc.match(/^[^.!?]*[.!?]+(?=\s|$)/);
+
+  if (firstSentenceMatch) {
+    const firstSentence = firstSentenceMatch[0].trim();
+
     if (firstSentence.length <= 240) {
       return firstSentence;
     }
   }
-    
-  return '';
+
+  return desc.slice(0, 237).trim() + '...';
 }
 
 // Parse YAML frontmatter or fallback to extracting description from markdown text
 function parseFrontmatter(filePath) {
   if (!fs.existsSync(filePath)) return {};
-  const content = fs.readFileSync(filePath, 'utf-8');
-  const fmMatch = content.match(/^---\s*\n([\s\S]*?)\n---/);
 
-  const fm = {};
-  if (fmMatch) {
-    const lines = fmMatch[1].split('\n');
-
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i];
-      const colonIdx = line.indexOf(':');
-      if (colonIdx < 0 || /^\s/.test(line)) continue;
-
-      const key = line.slice(0, colonIdx).trim();
-      if (!key) continue;
-
-      const inlineVal = line.slice(colonIdx + 1).trim();
-      if (inlineVal) {
-        fm[key] = inlineVal;
-        continue;
-      }
-
-      const listItems = [];
-      while (i + 1 < lines.length && /^\s*-\s+/.test(lines[i + 1])) {
-        listItems.push(lines[++i].replace(/^\s*-\s+/, '').trim());
-      }
-      if (listItems.length > 0) fm[key] = listItems;
-    }
+  const raw = fs.readFileSync(filePath, 'utf-8');
+  let fm, body;
+  try {
+    ({ data: fm, content: body } = matter(raw));
+  } catch (err) {
+    console.warn(`Skipping invalid frontmatter in ${filePath}: ${err.message}`);
+    fm = {};
+    body = raw.replace(/^---\s*[\s\S]*?---\s*/, '');
   }
 
   if (!fm.description) {
-    const textDesc = extractTextDescription(content);
+    const textDesc = extractTextDescription(body);
     if (textDesc) fm.description = textDesc;
   }
 
@@ -194,11 +175,7 @@ function cleanDescription(str) {
   }
 
   // Reject incomplete Markdown links.
-  if (
-    description.includes('](') ||
-    description.includes('[') ||
-    description.includes('](')
-  ) {
+  if (description.includes('[') || description.includes('](')) {
     return '';
   }
 
@@ -206,19 +183,17 @@ function cleanDescription(str) {
     return description;
   }
 
-  const sentences = description.match(
-    /[^.!?]+[.!?]+/g
-  );
+  const firstSentenceMatch = description.match(/^[^.!?]*[.!?]+(?=\s|$)/);
 
-  if (sentences?.length) {
-    const firstSentence = sentences[0].trim();
+  if (firstSentenceMatch) {
+    const firstSentence = firstSentenceMatch[0].trim();
 
     if (firstSentence.length <= 240) {
       return firstSentence;
     }
   }
 
-  return '';
+  return description.slice(0, 237).trim() + '...';
 }
 
 function matchesRule(section, page, rule) {
@@ -293,6 +268,18 @@ function resolveConfiguredSection(
   return matchingRule
     ? matchingRule.target.trim()
     : section.title;
+}
+
+
+function curateSection(pages, curation) {
+  if (!curation) return pages;
+
+  const keepSet = new Set((curation.keep || []).map(k => String(k).toLowerCase()));
+
+  return pages.filter(page => {
+    const base = path.basename(page.href, path.extname(page.href)).toLowerCase();
+    return base === 'index' || base === 'overview' || keepSet.has(base);
+  });
 }
 
 function groupSections(sections, llmsConfig) {
@@ -408,13 +395,13 @@ function generate(siteBase) {
 
   output +=
   'The links below are organized by developer task and API runtime. ' +
-  'When retrieving a page, send the `Accept: text/markdown` header ' +
-  'to receive LLM-optimized Markdown.\n\n';
+  'Each link resolves directly to LLM-optimized Markdown.\n\n';
 
   for (const section of enrichedSections) {
     if (section.pages.length === 0) continue;
+    const pages = curateSection(section.pages, llmsConfig.curatedSections[section.title]);
     output += `## ${section.title}\n\n`;
-    for (const page of section.pages) {
+    for (const page of pages) {
       const desc = page.description ? `: ${cleanDescription(page.description)}` : '';
       output += `- [${page.title}](${page.url})${desc}\n`;
     }
@@ -439,6 +426,7 @@ function loadLlmsConfig() {
     return {
       sectionOrder: [],
       sectionMappings: [],
+      curatedSections: {},
     };
   }
 
@@ -457,6 +445,9 @@ function loadLlmsConfig() {
       sectionMappings: Array.isArray(config.sectionMappings)
         ? config.sectionMappings
         : [],
+      curatedSections: config.curatedSections && typeof config.curatedSections === 'object'
+        ? config.curatedSections
+        : {},
     };
   } catch (error) {
     throw new Error(
