@@ -1,0 +1,1821 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Adobe Express Add Ons Changelog</title>
+    <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog</link>
+    <atom:link href="https://developer.adobe.com/express/add-ons/docs/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Release notes for the Adobe Express Add Ons.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Oct 2026 10:24:05 GMT</lastBuildDate>
+    <item>
+      <title>2026-09-07</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2026-09-07</link>
+      <guid isPermaLink="false">2026-09-07</guid>
+      <pubDate>Mon, 07 Sep 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Updated</h3>
+
+<ul>
+<li>The <strong>Large Document Support add-on check</strong> <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/platform-concepts/large-document-support#large-document-support-checker-skill">skill</a> is now more capable: it scans your add-on's source directly (no build step or bundling), explains why each finding breaks and shows a before/after fix, can apply the fixes on request, and doubles as a CI or pre-commit gate.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/platform-concepts/large-document-support/">Large Document Support</a> concepts and <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/large-document-support/">how-to</a> guides have been amended to better clarify how mutating APIs must belong to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/editor#keepcontentactiveduringasync"><code>keepContentActiveDuringAsync()</code></a> second lambda function.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2026-09-01</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2026-09-01</link>
+      <guid isPermaLink="false">2026-09-01</guid>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>Connected Enterprise consolidates a user's enterprise profiles into a single profile, which can result in changes to their user ID. A new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-current-user#identity"><code>currentUser.identity()</code></a> method in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-current-user/"><code>addOnUISdk.app.currentUser</code></a> API returns the user's SHA-256 hashed canonical ID and associated legacy IDs, enabling add-ons to reconcile user data across pre- and post-consolidation profiles. See the updated <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/user-info/">How-to Guide</a> for details.</li>
+</ul>
+
+<h3>Deprecated</h3>
+
+<ul>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-current-user#userid"><code>currentUser.userId()</code></a> is soft-deprecated in favor of <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-current-user#identity"><code>identity()</code></a> and is scheduled for removal on <strong>November 15, 2026</strong>.</li>
+</ul>
+
+<h3>Updated</h3>
+
+<ul>
+<li>The <code>addAudio()</code> method now supports <code>audio/mp4</code> files in addition to the other formats listed in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/support/faq#-file-formats--media-support">FAQ</a>.</li>
+</ul>
+
+<h3>Stabilized</h3>
+
+<p>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#link"><code>link()</code></a> method and the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-constants/"><code>LinkOptions</code></a> parameter are now stable and no longer require the <code>experimentalApis</code> flag in your add-on's <code>manifest.json</code>.</p>]]></description>
+    </item>
+    <item>
+      <title>2026-08-03</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2026-08-03</link>
+      <guid isPermaLink="false">2026-08-03</guid>
+      <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p><InlineAlert slots="header, text1, text2" variant="info"/></p>
+
+<p>#### Dark Theme Support</p>
+
+<p>Adobe Express now supports a <strong>dark theme</strong>, and the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-ui#theme"><code>theme</code></a> property and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-ui#themechange"><code>themechange</code></a> event report both <code>"light"</code> and <code>"dark"</code>. Make your add-on dark-theme ready—add-ons submitted to the marketplace after <strong>August 31, 2026</strong> are rejected if their UI is functionally broken in dark mode.</p>
+
+<p>See <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/theme-locale#supporting-all-themes">Supporting all Themes</a> for guidance.</p>
+
+<h3>Large Document Support: Phase 2</h3>
+
+<p><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/platform-concepts/large-document-support/">Large Document Support</a> has reached <strong>Phase 2</strong>: the new APIs are now stable, the deprecated ones are being removed, and the migration window is open—time to migrate, test, and resubmit.</p>
+
+<h3>Stabilized</h3>
+
+<p>The following APIs are now stable and no longer require the <code>experimentalApis</code> flag in your add-on's <code>manifest.json</code>:</p>
+
+<ul>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/page-list#visitpages"><code>visitPages()</code></a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/editor#keepcontentactiveduringasync"><code>keepContentActiveDuringAsync()</code></a>.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#ispresentation"><code>addOnUISdk.app.document.isPresentation()</code></a>.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/editor#createthreadedtext"><code>editor.createThreadedText()</code></a>, <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/threaded-text-content-model#frames"><code>ThreadedTextContentModel.allFrames</code></a>, and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/threaded-text-list#addframe"><code>ThreadedTextList.addFrame()</code></a>.</li>
+</ul>
+
+<h3>Updated</h3>
+
+<ul>
+<li>Deprecated APIs (<code>queueAsyncEdit</code>, <code>PageNode.artboards</code>, <code>PageNode.allDescendants</code>, <code>PageNode.allTextContent</code>, <code>PageNode.cloneInPlace</code>) are removed from the SDK—local builds that still reference them will fail.</li>
+<li><code>visitPages</code> now shows a modal progress bar during long passes.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/platform-concepts/large-document-support/">Large Document Support</a> concepts and <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/large-document-support/">how-to</a> guides refreshed for Phase 2.</li>
+</ul>
+
+<h3>Added</h3>
+
+<ul>
+<li><strong>Large Document Support add-on check</strong>—a <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/platform-concepts/large-document-support#large-document-support-checker-skill">skill</a> you can run to scan your add-on for affected APIs and unsafe node-reference patterns, as a starting point for assessing impact (always confirm by testing).</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2026-06-18</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2026-06-18</link>
+      <guid isPermaLink="false">2026-06-18</guid>
+      <pubDate>Thu, 18 Jun 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p><InlineAlert slots="header, text1" variant="info"/></p>
+
+<p>#### Large Document Support</p>
+
+<p>Adobe Express is evolving to handle documents with a large number of pages. This is a major change that _may_ require you to update your add-on to be compatible with the new model. Read the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/platform-concepts/large-document-support/">Large Document Support</a> guide to learn more.</p>
+
+<h3>Added</h3>
+
+<ul>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/platform-concepts/large-document-support/">Large Document Support</a> concepts guide explaining how Adobe Express will handle large documents in the future, including the active/inactive page model, the <code>ActivePageNode</code> hierarchy, compatibility mode, and the phased rollout timeline.</li>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/large-document-support/">how-to guide</a> with recipes for <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/page-list#visitpages"><code>visitPages</code></a>, <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/editor#keepcontentactiveduringasync"><code>keepContentActiveDuringAsync</code></a>, replacing deprecated APIs (<code>queueAsyncEdit</code>, <code>PageNode.artboards</code>, <code>PageNode.allDescendants</code>, <code>PageNode.allTextContent</code>, <code>PageNode.cloneInPlace</code>), and avoiding stale node references.</li>
+</ul>
+
+<h3>Updated</h3>
+
+<ul>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/manage-pages/">Manage Pages</a>—revised page-iteration examples to be Large Document Support–safe.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2026-05-19</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2026-05-19</link>
+      <guid isPermaLink="false">2026-05-19</guid>
+      <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/platform-concepts/deprecation-policy/">Deprecation Policy</a> guide explaining the API lifecycle from the developer's and user's perspective.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2026-03-26</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2026-03-26</link>
+      <guid isPermaLink="false">2026-03-26</guid>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Stabilized</h3>
+
+<p>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/node#resize"><code>Node.resize()</code></a> Document API and related APIs are no longer experimental and no longer require the <code>experimentalApis</code> flag in your manifest.</p>
+
+<h3>Added</h3>
+
+<ul>
+<li><strong>Experimental</strong> <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/media-container-node#replacemediawitheditedimage"><code>MediaContainerNode.replaceMediaWithEditedImage()</code></a>: Replaces the current media with an edited version of the same image while preserving existing filter effects, per-element metadata, and asset provenance (including attribution IDs and Adobe Stock information). Use this instead of <code>replaceMedia()</code> when the replacing with a modified version of the original image (e.g., recolored, upscaled).</li>
+<li><strong>Experimental</strong> <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/replace-media-with-edited-image-options/"><code>ReplaceMediaWithEditedImageOptions</code></a> interface: Options for <code>replaceMediaWithEditedImage()</code>, including the <code>preserveCutoutFilter</code> property.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2026-03-13</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2026-03-13</link>
+      <guid isPermaLink="false">2026-03-13</guid>
+      <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Updated</h3>
+
+<ul>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/create-renditions/">Create Renditions</a> - Guide now covers <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/visual-node#createrendition"><code>VisualNode.createRendition()</code></a>, which captures individual elements (shapes, groups, text) as PNG or JPEG from the Document Sandbox. Also documents <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#ispresentation"><code>isPresentation()</code></a> for checking document type before offering PPTX export, which is only available for presentation-type documents.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/use-text/">Use Text</a> - Guide now covers threaded text APIs (<code>createThreadedText</code>, <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/threaded-text-list/"><code>ThreadedTextList</code></a>) for multi-frame text flows, and the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/page-node#alltextcontent"><code>allTextContent</code></a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/page-node#alldescendants"><code>allDescendants</code></a> accessors for iterating over text within page or visual node containers.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/use-pdf-powerpoint/">Use PDF and PowerPoint</a> - Guide corrected to use <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#importpresentation"><code>importPresentation()</code></a> method, and clarified that only <code>.pptx</code> format is supported (legacy <code>.ppt</code> not supported).</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2026-02-06</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2026-02-06</link>
+      <guid isPermaLink="false">2026-02-06</guid>
+      <pubDate>Fri, 06 Feb 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<p>We have added new APIs to generate image rendition of visual nodes directly from the document sandbox.</p>
+
+<ul>
+<li><strong>Experimental</strong> <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/visual-node#createrendition"><code>VisualNode.createRendition()</code></a> asynchronous method - Generate a rendition of a visual node and its descendants.</li>
+<li><strong>Experimental</strong> <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/create-rendition-options/"><code>CreateRenditionOptions</code></a> interface - define configuration options for generating renditions.</li>
+<li><strong>Experimental</strong> <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/create-rendition-result/"><code>CreateRenditionResult</code></a> interface - define the structure of the returned rendition data (e.g., blob, metadata).</li>
+<li><strong>Experimental</strong> <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/enumerations/create-rendition-format/"><code>CreateRenditionFormat</code></a> enumeration - specify supported output formats (e.g., PNG, JPEG, PDF) in the <code>Constants</code> namespace.</li>
+</ul>
+
+<ul>
+<li><strong>Experimental</strong> <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#ispresentation"><code>addOnUISdk.app.document.isPresentation()</code></a> asynchronous method - Returns <code>true</code> if the document is a presentation, <code>false</code> if not.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2026-01-26</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2026-01-26</link>
+      <guid isPermaLink="false">2026-01-26</guid>
+      <pubDate>Mon, 26 Jan 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<p>We have added new APIs for threaded text handling across multiple frames, as well as new accessors for retrieving a flattened list of all descendant nodes and text content within the page and visual node containers.</p>
+
+<ul>
+<li><strong>Experimental</strong> <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/editor#createthreadedtext"><code>Editor.createThreadedText()</code></a> method - Create a <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/threaded-text-node/"><code>ThreadedTextNode</code></a> for threaded text handling across multiple frames.</li>
+<li><strong>Experimental</strong> <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/threaded-text-list/"><code>ThreadedTextList</code></a> class - Represents an ordered list of <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/threaded-text-node/"><code>ThreadedTextNode</code></a> objects, creating a single, continuous text story across multiple frames.</li>
+<li><strong>Experimental</strong> <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/page-node#alldescendants"><code>allDescendants</code></a> accessor on <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/page-node/"><code>PageNode</code></a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/visual-node/"><code>VisualNode</code></a> - Returns a flattened, read-only list of all descendant nodes within the container. For text-based nodes, please use the new <code>allTextContent</code> accessor instead.</li>
+<li><strong>Experimental</strong> <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/page-node#alltextcontent"><code>allTextContent</code></a> accessor on <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/page-node/"><code>PageNode</code></a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/visual-node/"><code>VisualNode</code></a> - Returns a flattened, read-only list of <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/text-content/"><code>TextContent</code></a> instances from all text-based nodes within the container.</li>
+<li><strong>Experimental</strong> <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/text-content/"><code>TextContent</code></a> interface - Represents text content data extracted from text-based nodes.</li>
+<li><strong>Experimental</strong> <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/text-frame-area-geometry/"><code>TextFrameAreaGeometry</code></a> interface - Defines the geometry of a text frame area.</li>
+</ul>
+
+<h3>Updated</h3>
+
+<ul>
+<li><strong>Experimental</strong> <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/threaded-text-content-model#frames"><code>ThreadedTextContentModel.frames</code></a> property - Updated to properly support the new threaded text implementation with <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/threaded-text-list/"><code>ThreadedTextList</code></a>.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2026-01-13</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2026-01-13</link>
+      <guid isPermaLink="false">2026-01-13</guid>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Adobe Express Developer MCP Server Updates</h3>
+
+<ul>
+<li>The Adobe Express Add-on MCP Server (Beta) has been replaced by the <strong><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/local-development/mcp-server/">Adobe Express Developer MCP Server</a></strong>, which is now officially supported and production ready.</li>
+<li>It ships under a new npm package (<code>@adobe/express-developer-mcp</code>) and supersedes the beta version (<code>@adobe/express-add-on-dev-mcp</code>) now deprecated, in all MCP configurations. Learn how to set it up and use it to enhance your development workflow in compatible editors such as Cursor.</li>
+</ul>
+
+<h3>Added</h3>
+
+<ul>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/platform-concepts/architecture/">Add-on Architecture</a> guide with dual-runtime system explanation, SDK imports and usage, and cross-runtime communication patterns.</li>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/getting-started/addon-project-anatomy/">Add-on Project Anatomy & CLI Templates</a> guide with add-on project structure, file organization, and template selection for efficient Adobe Express add-on development.</li>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/fundamentals/terminology/">Add-on Development Terminology</a> guide with standardized definitions, decision matrices, and troubleshooting for Adobe Express Add-on development terminology.</li>
+<li>New practical usage guide for <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/fundamentals/ui-sdk-constants/">Using Add-on UI SDK Constants</a>, focusing on import patterns, common pitfalls, and solutions for UI SDK constants.</li>
+<li>New practical usage guide for <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/fundamentals/document-sandbox-constants/">Using Document Sandbox Constants</a> to guide on the use of constants in the Document Sandbox environment, including <code>colorUtils</code> integration and practical examples.</li>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/fundamentals/terminology/">"SDK Fundamentals"</a> section in navigation under "Learn" to group terminology and constants usage guides for better discoverability.</li>
+</ul>
+
+<h3>Updated</h3>
+
+<ul>
+<li><strong>Major restructure</strong> of the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-constants/">Add-on UI SDK Constants Reference</a>.</li>
+<li>Improved content and metadata for SEO and AI assistant optimization.</li>
+<li><strong>Breaking change:</strong> Removed experimental resize/rescale methods (<code>rescaleProportionalToWidth()</code>, <code>rescaleProportionalToHeight()</code>, <code>resizeToFitWithin()</code>, <code>resizeToCover()</code>) and replaced with unified <strong>experimental</strong> <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/node#resize"><code>resize()</code></a> method offering more flexible behavior control via <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/enumerations/resize-behavior/"><code>ResizeBehavior</code></a> options. The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#requirements"><code>experimentalApis</code></a> flag is required.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-12-28</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-12-28</link>
+      <guid isPermaLink="false">2025-12-28</guid>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li><strong>SVG image support</strong> in <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#addimage"><code>addImage()</code></a> - You can now import SVG files (<code>image/svg+xml</code>) to the document using the <code>addImage()</code> method.</li>
+</ul>
+
+<h3>Updated</h3>
+
+<ul>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#getselectedpageids"><code>getSelectedPageIds()</code></a> method <strong>promoted from experimental to stable</strong> - Retrieve the currently selected page IDs in the document. The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#requirements"><code>experimentalApis</code></a> flag is no longer required to use this API.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-11-29</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-11-29</link>
+      <guid isPermaLink="false">2025-11-29</guid>
+      <pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Code Playground Updates</h3>
+
+<p>The Adobe Express Code Playground has received a major update with the release of a new set of features and improvements.</p>
+
+<ul>
+<li>Open Code Playground with a single click (<a href="https://www.adobe.com/go/addon-playground">https://www.adobe.com/go/addon-playground</a>) or find the <strong>Code Playground</strong> button in the top navigation bar of the How-to guides, Hello World!, Code Playground pages, and other sections. You can also bookmark links that point to either the <a href="https://www.adobe.com/go/addon-playground?executionMode=script">Script</a> or <a href="https://www.adobe.com/go/addon-playground">Add-on</a> Mode.</li>
+<li>The Code Playground now supports multiple sessions backed up in the cloud, allowing you to save your work and resume where you left off anywhere. Check out the <strong>More</strong> menu to <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/code-playground-workflow#session-management">manage your sessions</a> (find, rename, or delete).</li>
+<li>Now you can try out the code blocks (e.g. in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/use-text/">How-to guides</a>) by simply clicking on the <strong>Try in playground</strong> button.</li>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/code-playground/">Code Playground</a> documentation has been <strong>updated and split into multiple pages</strong> for better organization.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/code-playground/">Overview</a></li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/code-playground-script-mode/">Script Mode</a></li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/code-playground-addon-mode/">Add-on Mode</a></li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/code-playground-workflow/">Workflow & Productivity</a></li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/code-playground-troubleshooting/">Troubleshooting</a></li>
+</ul>
+
+<h3>Added</h3>
+
+<ul>
+<li>It's now easier to identify Console logs coming from the CLI or Code Playground, because they automatically include new <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/code-playground-workflow#debugging">helpful prefixes</a> such as <code>[Playground: Add-on]</code>, <code>[Playground: Script]</code>, and <code>[Add-on: &lt;add-on-name&gt;]</code>.</li>
+<li>Open Add-on testing window with a single click. Bookmark the URL (<a href="https://www.adobe.com/go/addon-cli">https://www.adobe.com/go/addon-cli</a>) to easily access it later.</li>
+<li>New Express-specific Document API classes: <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/express-context/"><code>ExpressContext</code></a>, <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/express-editor/"><code>ExpressEditor</code></a>, and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/express-viewport/"><code>ExpressViewport</code></a>, which inherit from the corresponding non-specific Classes.</li>
+<li>New Text classes: <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/standalone-text-content-model/"><code>StandaloneTextContentModel</code></a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/threaded-text-content-model/"><code>ThreadedTextContentModel</code></a>, representing a complete piece of text content contained within a single <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/standalone-text-node/"><code>StandaloneTextNode</code></a> or split across multiple <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/threaded-text-node/"><code>ThreadedTextNode</code></a>s.</li>
+<li><strong>Experimental</strong> <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/image-rectangle-node#fetchbitmapimage"><code>ImageRectangleNode.fetchBitmapImage()</code></a> method - Fetch the bitmap image associated with the image rectangle node.</li>
+<li><strong>Experimental</strong> <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/bitmap-image#data"><code>BitmapImage.data()</code></a> method - Fetch the bitmap image data as a Blob.</li>
+</ul>
+
+<h3>Updated</h3>
+
+<ul>
+<li>The <code>Context.currentPage()</code> method has moved to the new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/express-context#currentpage"><code>ExpressContext.currentPage()</code></a>.</li>
+<li>The <code>Viewport</code> class has been renamed to <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/express-viewport/"><code>ExpressViewport</code></a>.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-11-10</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-11-10</link>
+      <guid isPermaLink="false">2025-11-10</guid>
+      <pubDate>Mon, 10 Nov 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/local-development/known-issues-limitations#chrome-local-network-access-restriction">Known Issues & Limitations</a> documentation for Chrome Local Network Access restriction (Chrome 142+) that affects local add-on development</li>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/support/faq#chrome-is-blocking-my-local-add-on-development-with-a-local-network-access-permission-prompt-what-should-i-do">FAQ entry</a> with troubleshooting steps for the Chrome Local Network Access permission prompt</li>
+<li>Added informational alert in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/local-development/browser/">Browser debugging guide</a> to notify Chrome users about the Local Network Access permission requirement</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-10-08</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-10-08</link>
+      <guid isPermaLink="false">2025-10-08</guid>
+      <pubDate>Wed, 08 Oct 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li><strong>Experimental</strong> <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-content-model#id"><code>id</code></a> property - Unique identifier for text content models</li>
+<li><strong>Experimental</strong> <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/enumerations/text-style-source/"><code>TextStyleSource</code></a> enumeration - Options for text style source matching</li>
+</ul>
+
+<h3>Updated</h3>
+
+<ul>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/node#cloneinplace"><code>cloneInPlace()</code></a> method <strong>promoted from experimental to stable</strong> - Available on all node types for creating copies with subtrees</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-content-model#paragraphstyleranges"><code>paragraphStyleRanges</code></a> property <strong>promoted from experimental to stable</strong> - Get/set paragraph-level styles with ranges</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-content-model#applyparagraphstyles"><code>applyParagraphStyles()</code></a> method <strong>promoted from experimental to stable</strong> - Apply styles to specific paragraph ranges</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/standalone-text-node#layout"><code>layout</code></a> property <strong>promoted from experimental to stable</strong> - Control text layout modes for standalone text</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/threaded-text-node#layout"><code>layout</code></a> property <strong>promoted from experimental to stable</strong> - Control text layout modes for threaded text</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/area-text-layout/"><code>AreaTextLayout</code></a> interface <strong>promoted from experimental to stable</strong> - Fixed width and height text layout configuration</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/auto-height-text-layout/"><code>AutoHeightTextLayout</code></a> interface <strong>promoted from experimental to stable</strong> - Auto-height text layout configuration</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/auto-width-text-layout/"><code>AutoWidthTextLayout</code></a> interface <strong>promoted from experimental to stable</strong> - Auto-width text layout configuration</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/unsupported-text-layout/"><code>UnsupportedTextLayout</code></a> interface <strong>promoted from experimental to stable</strong> - Representation of unsupported text layouts</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/paragraph-styles/"><code>ParagraphStyles</code></a> interface <strong>promoted from experimental to stable</strong> - Complete paragraph style definitions</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/paragraph-styles-input/"><code>ParagraphStylesInput</code></a> interface <strong>promoted from experimental to stable</strong> - Input interface for paragraph styles</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/paragraph-styles-range/"><code>ParagraphStylesRange</code></a> interface <strong>promoted from experimental to stable</strong> - Paragraph styles with text ranges</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/paragraph-styles-range-input/"><code>ParagraphStylesRangeInput</code></a> interface <strong>promoted from experimental to stable</strong> - Input interface for paragraph style ranges</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/base-paragraph-styles/"><code>BaseParagraphStyles</code></a> interface <strong>promoted from experimental to stable</strong> - Base paragraph style properties</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/ordered-list-style-input/"><code>OrderedListStyleInput</code></a> interface <strong>promoted from experimental to stable</strong> - Configuration for ordered lists</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/unordered-list-style-input/"><code>UnorderedListStyleInput</code></a> interface <strong>promoted from experimental to stable</strong> - Configuration for unordered lists</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/type-aliases/ordered-list-style/"><code>OrderedListStyle</code></a> type <strong>promoted from experimental to stable</strong> - Type definition for ordered list styles</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/type-aliases/unordered-list-style/"><code>UnorderedListStyle</code></a> type <strong>promoted from experimental to stable</strong> - Type definition for unordered list styles</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/enumerations/ordered-list-numbering/"><code>OrderedListNumbering</code></a> enumeration <strong>promoted from experimental to stable</strong> - Numbering types for ordered lists</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/enumerations/paragraph-list-type/"><code>ParagraphListType</code></a> enumeration <strong>promoted from experimental to stable</strong> - List type enumeration with <code>none</code> value added</li>
+<li>Removed experimental warnings from documentation guides for all APIs promoted to stable, including the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/use-text/">Use Text</a> guide</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-10-02</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-10-02</link>
+      <guid isPermaLink="false">2025-10-02</guid>
+      <pubDate>Thu, 02 Oct 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-app#importaddondata"><code>ImportAddOnData</code></a> parameter support for enhanced metadata tracking on imported media in <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#addimage"><code>addImage()</code></a>, <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#addvideo"><code>addVideo()</code></a>, <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#addanimatedimage"><code>addAnimatedImage()</code></a>, and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-app#enabledragtodocument"><code>enableDragToDocument()</code></a> methods.</li>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/handle-selection/">Handle Element Selection How-to Guide</a> covering selection operations, real-time selection events, UI integration patterns, selection-based actions, and working with locked elements.</li>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/manage-pages/">Manage Pages How-to Guide</a> covering page creation, navigation, and management, positioned in a new <strong>Document Structure</strong> navigation category.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-app#mediaattributes"><code>MediaAttributes</code></a> parameter documentation for <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#addvideo"><code>addVideo()</code></a> method.</li>
+</ul>
+
+<h3>Updated</h3>
+
+<p>The following how-to guides have been updated with <code>ImportAddOnData</code> support for enhanced metadata tracking on imported media, including examples and implementation patterns:</p>
+
+<ul>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/use-images/">Use Images</a></li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/use-videos/">Use Videos</a></li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/drag-and-drop/">Drag and Drop</a></li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/element-metadata/">Element Metadata</a></li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-09-10</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-09-10</link>
+      <guid isPermaLink="false">2025-09-10</guid>
+      <pubDate>Wed, 10 Sep 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>New Text Replacement APIs: <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-node-content-model#appendtext"><code>appendText()</code></a>, <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-node-content-model#deleteText"><code>deleteText()</code></a>, <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-node-content-model#insertText"><code>insertText()</code></a>, and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-node-content-model#replaceText"><code>replaceText()</code></a>.</li>
+</ul>
+
+<p><InlineAlert slots="text" variant="warning" className="inline-alert-bullet-aligned"/></p>
+
+<p><strong>IMPORTANT:</strong> The Text Replacement APIs are currently <strong>_experimental only_</strong> and should not be used in any add-ons you will be distributing until they have been declared stable. To use these APIs, you will first need to set the <code>experimentalApis</code> flag to <code>true</code> in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#requirements"><code>requirements</code></a> section of the <code>manifest.json</code>.</p>
+
+<ul>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/image-rectangle-node#mediaAddOnData"><code>mediaAddOnData</code></a> to support additional metadata on the <code>ImageRectangleNode</code>.</li>
+<li>New <code>link</code> property in Character Style ranges <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/character-styles-input#link"><code>CharacterStylesInput</code></a> to support hyperlinks.</li>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/use-text/">Use Text</a> guide has been updated to include the new Text APIs.</li>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/use-images/">Use Images</a> guide has been updated to include a <code>replaceMedia()</code> example.</li>
+</ul>
+
+<h3>Updated</h3>
+
+<ul>
+<li>Renamed <code>clone()</code> to <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/node#cloneInPlace"><code>cloneInPlace()</code></a>.</li>
+</ul>
+
+<p><InlineAlert slots="text" variant="warning" className="inline-alert-bullet-aligned"/></p>
+
+<p><strong>IMPORTANT:</strong> The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/node#cloneInPlace"><code>cloneInPlace()</code></a> method is currently <strong>_experimental only_</strong> and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the <code>experimentalApis</code> flag to <code>true</code> in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#requirements"><code>requirements</code></a> section of the <code>manifest.json</code>.</p>
+
+<ul>
+<li>Updated <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/grid-cell-node#maskShape"><code>maskShape</code></a> in <code>GridCellNode</code> to readonly.</li>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/bitmap-image/"><code>BitmapImage</code></a> has been converted from an interface to a class.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-09-01</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-09-01</link>
+      <guid isPermaLink="false">2025-09-01</guid>
+      <pubDate>Mon, 01 Sep 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<p>Introduced a new <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/getting-started/local-development/mcp-server/">guide</a> with the release of our public beta <strong>Adobe Express Add-on MCP Server</strong>.</p>
+
+<p>With MCP-enabled IDEs (Cursor, Claude Desktop, VS Code etc.), developers can <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/getting-started/local-development/mcp-server/">connect to the Adobe Express Add-on MCP Server (Beta)</a> to accelerate their add-on development with contextually-aware responses and reduced hallucinations from their AI-assistants.</p>]]></description>
+    </item>
+    <item>
+      <title>2025-08-25</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-08-25</link>
+      <guid isPermaLink="false">2025-08-25</guid>
+      <pubDate>Mon, 25 Aug 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>New experimental <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#getselectedpageids"><code>getSelectedPageIds()</code></a> method to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document/"><code>addOnUISdk.app.document</code></a> API. This method retrieves the currently selected page IDs in the document, useful for getting metadata or performing operations on only the pages that the user has selected.</li>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#pptxrenditionoptions"><code>PptxRenditionOptions</code></a> object for PPTX export support in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#createrenditions"><code>createRenditions()</code></a> API. PPTX export is only available for presentation-type documents in Adobe Express.</li>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-constants/"><code>RenditionFormat.pptx</code></a> constant added to support PowerPoint presentation export format with MIME type <code>"application/vnd.openxmlformats-officedocument.presentationml.presentation"</code>.</li>
+</ul>
+
+<h3>Updated</h3>
+
+<ul>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/page-metadata/">Page Metadata how-to guide</a> with documentation and examples for the new experimental <code>getSelectedPageIds()</code> method, including usage patterns for getting metadata of only selected pages.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/create-renditions/">Create Renditions how-to guide</a> with comprehensive PPTX export support documentation, including developer guidance about font differences and content limitations when exporting to PowerPoint format.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/platform-concepts/context/">Add-on Iframe Context guide</a> with additional permissions documentation, including details about <code>oauth</code>, <code>clipboard</code>, <code>microphone</code>, and <code>camera</code> permissions beyond the existing sandbox permissions.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/support/faq/">FAQ</a> with a new comprehensive entry about available add-on permissions and their configuration, plus updated supported file formats for imported content organized by category (Image, Design, Video, Audio).</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-08-14</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-08-14</link>
+      <guid isPermaLink="false">2025-08-14</guid>
+      <pubDate>Thu, 14 Aug 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/code-playground/">Code Playground</a> now includes a download feature that allows developers to export their playground code as a zip file containing both the add-on folder structure and a standalone script file. This enables seamless transition from prototyping in the playground to local development using the CLI.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-07-27</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-07-27</link>
+      <guid isPermaLink="false">2025-07-27</guid>
+      <pubDate>Sun, 27 Jul 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-current-user#isanonymoususer"><code>isAnonymousUser()</code></a> method to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-current-user/"><code>addOnUISdk.app.currentUser</code></a> API. This method returns a boolean indicating whether the current user is browsing as a guest (not logged in).</li>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#exportallowed"><code>exportAllowed()</code></a> method added to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document/"><code>addOnUISdk.app.document</code></a> API. This method determines whether the current document can be exported based on its review status in collaborative review and approval workflows.</li>
+<li>Enhanced <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#importpdf"><code>importPdf()</code></a> method now supports a <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#sourcemimetypeinfo"><code>SourceMimeTypeInfo</code></a> parameter. When your add-on converts Word documents (<code>.docx</code>) or Google Docs (<code>.gdoc</code>) to PDF before importing, you can now specify the original file's mime type to improve the user experience.</li>
+<li>Enhanced drag-and-drop functionality with <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-app#dragcompletiondata"><code>SourceMimeTypeInfo</code></a> support.</li>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-constants/"><code>fileSizeLimit</code></a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-constants/"><code>fileSizeLimitUnit</code></a> properties added to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#pngrenditionoptions"><code>PngRenditionOptions</code></a> object.</li>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-constants/"><code>bitRate</code></a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-constants/"><code>frameRate</code></a> properties added to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#mp4renditionoptions"><code>Mp4RenditionOptions</code></a> object.</li>
+</ul>
+
+<h3>Updated</h3>
+
+<ul>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/user-info/">User Info guide</a> with guidance on handling logged out users (browsing as a guest), with important considerations and limitations.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/create-renditions/">Create Renditions guide</a> to include proactive export permission checking using <code>exportAllowed()</code> before creating renditions with <code>RenditionIntent.export</code> or <code>RenditionIntent.print</code>. The guide now demonstrates graceful fallback to preview renditions when export is restricted.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/use-pdf-powerpoint/">PDF and PowerPoint guide</a> with information about the <code>sourceMimeType</code> parameter for improved UX when importing converted documents.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/drag-and-drop/">Drag-and-Drop guide</a> with examples of using <code>sourceMimeType</code> when dragging converted documents.</li>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/tutorials/grids-addon/">Grids add-on tutorial</a> has been updated to use the Adobe Express native <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/ui-components/color-picker/">Color Picker</a> instead of the hidden <code>&lt;input&gt;</code> element workaround.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-07-25</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-07-25</link>
+      <guid isPermaLink="false">2025-07-25</guid>
+      <pubDate>Fri, 25 Jul 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>The Text API has been updated to include Super/SubScript via the <code>baselineShift</code> property of the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/character-styles/">CharacterStyles</a> interface. The corresponding <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/enumerations/text-script-style/">TextScriptStyle</a> enumerable has been added. The new API has been introduced as stable.</li>
+<li>A new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/node#cloneInPlace"><code>cloneInPlace()</code></a> method has been added to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/node/">Node</a> class and propagated to all its subclasses, which allows you to clone a node and all its children. This new API is still experimental, and requires the <code>experimentalApis</code> flag to be set to <code>true</code> in the add-on's <code>manifest.json</code>.</li>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/media-rectangle-node/"><code>MediaRectangleNode</code></a>, a base class for a rectangular node that represents the _uncropped_ media within a <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/media-container-node/"><code>MediaContainerNode</code></a>.</li>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/unknown-media-rectangle-node/"><code>UnknownMediaRectangleNode</code></a>, a subclass of <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/media-rectangle-node/"><code>MediaRectangleNode</code></a> for cases where the media type is not yet supported by the API.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-07-11</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-07-11</link>
+      <guid isPermaLink="false">2025-07-11</guid>
+      <pubDate>Fri, 11 Jul 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/tutorials/markdown-parser-text-api/">Markdown Parser add-on tutorial</a> covering the Text API, while building from scratch an add-on capable of parsing Markdown files and converting them into rich text directly within an Adobe Express document.</li>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/resize-elements/">Resize and Rescale Elements</a> how-to guide, which covers the new Resize/Rescale APIs, and provides examples and code snippets.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-06-19</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-06-19</link>
+      <guid isPermaLink="false">2025-06-19</guid>
+      <pubDate>Thu, 19 Jun 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<p>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#pagemetadata">Page Metadata API</a> now includes new properties to detect audio, video, and animated content on pages. You can retrieve duration information for pages with temporal content (such as timelines). We've also updated the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/page-metadata/">how-to guide</a> to cover these new capabilities.</p>]]></description>
+    </item>
+    <item>
+      <title>2025-06-06</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-06-06</link>
+      <guid isPermaLink="false">2025-06-06</guid>
+      <pubDate>Fri, 06 Jun 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Updated</h3>
+
+<ul>
+<li>Enhanced monetization guidelines documentation in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/distribute/public-dist#step-8-enter-the-monetization-details">Public add-on Distribution guide</a> with additional clarity on Adobe's requirements and recommendations for monetizing add-ons. Developers are encouraged to carefully review the updated <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/distribute/guidelines/monetization/">monetization guidelines</a> for the latest information.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-05-27</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-05-27</link>
+      <guid isPermaLink="false">2025-05-27</guid>
+      <pubDate>Tue, 27 May 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>Four new Resize/Rescale APIs have been added to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/node/">Node</a> class as experimental features:</li>
+<li><code>rescaleProportionalToHeight()</code></li>
+<li><code>rescaleProportionalToWidth()</code></li>
+<li><code>resizeToCover()</code></li>
+<li><code>resizeToFitWithin()</code></li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/editor#createtext"><code>Editor.createText()</code></a> now accepts a String parameter, which sets the text content of the new node. The use without a parameter is deprecated.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-node/"><code>TextNode</code></a> is now an abstract base class with two specialized subclasses:</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/standalone-text-node/">StandaloneTextNode</a>: displays text in a single frame.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/threaded-text-node/">ThreadedTextNode</a>: supports text that can flow across multiple frames.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-05-26</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-05-26</link>
+      <guid isPermaLink="false">2025-05-26</guid>
+      <pubDate>Mon, 26 May 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>Added support for retrieving published (shared) document links via the new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-constants/"><code>LinkOptions</code></a> enumerable in <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#link"><code>addOnUISdk.app.document.link()</code></a>, along with the <code>documentPublishedLinkAvailable</code> event, which is triggered when the published link becomes available. Both updates are reflected in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/document-metadata/">Document Metadata How-to Guide</a>.</li>
+</ul>
+
+<p><InlineAlert slots="text" variant="warning"/></p>
+
+<p><strong>IMPORTANT:</strong> The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#link"><code>link()</code></a> method, the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-constants/"><code>LinkOptions</code></a> parameter and the associated link events are currently <strong>_experimental only_</strong> and should not be used in any add-ons you will be distributing until they have been declared stable. To use this method, you will first need to set the <code>experimentalApis</code> flag to <code>true</code> in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#requirements"><code>requirements</code></a> section of the <code>manifest.json</code>.</p>
+
+<h3>Updates</h3>
+
+<ul>
+<li><a href="https://github.com/adobe/create-ccweb-add-on/releases"><code>@adobe-ccwebext/ccweb-add-on-sdk-types</code></a>: Type Definitions for the CLI have been updated to version <code>1.17.0</code>.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-05-16</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-05-16</link>
+      <guid isPermaLink="false">2025-05-16</guid>
+      <pubDate>Fri, 16 May 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Updated</h3>
+
+<ul>
+<li>We’ve <strong>completely revamped the information architecture</strong> of the site! 🎉 The new structure is designed to make content easier to navigate, whether you’re just getting started or you’ve been building add-ons for a while. This update aims to reduce friction, surface what matters most, and help both newcomers and experienced developers find their way faster. Among the changes, we have:</li>
+<li>Rebuilt the Guides navigation from scratch, and grouped the content in new sections (Getting Started, Learn, Build, Support).</li>
+<li>Introduced a new <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/developer-journey/">Developer Journey</a> page.</li>
+<li>Rewritten and improved the QuickStart guide, now <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/hello-world/">Hello, World!</a></li>
+<li>Moved the Tutorials as <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/tutorials/index/">Complete Projects</a> within the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/index/">How To Guides</a>, now more visible.</li>
+<li>Regrouped content into the new <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/platform-concepts/context/">Platform Concepts</a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/advanced-topics/frameworks-libraries-bundling/">Advanced Topics</a> sections.</li>
+<li>Updated screenshots, added animations, and enhanced the overall site usability.</li>
+<li><strong>Note:</strong> with the new site structure, some of your bookmarks may be broken. We'll set redirects for the most common links, but please check and update them.</li>
+<li>We're constantly thinking about ways to improve the developer experience; there is more to come, stay tuned and reach out if you want to share your thoughts!</li>
+</ul>
+
+<p><InlineAlert variant="info" slots="header, text, text2" /></p>
+
+<p><strong>New OAuth2 redirect URI:</strong></p>
+
+<p>As part of the sunsetting of the legacy version, Adobe Express has moved from the <code>new.express.adobe.com</code> domain to <code>express.adobe.com</code>.</p>
+
+<p>While there are redirects in place, please <strong>add</strong> <code>https://express.adobe.com/static/oauth-redirect.html</code> <strong>to the list of allowed redirect URIs</strong> in your OAuth provider configuration in addition to the existing <code>https://new.express.adobe.com/static/oauth-redirect.html</code>. For more details, see the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/oauth2#login-and-logout-flows">OAuth2 guide</a>.</p>]]></description>
+    </item>
+    <item>
+      <title>2025-05-07</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-05-07</link>
+      <guid isPermaLink="false">2025-05-07</guid>
+      <pubDate>Wed, 07 May 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/tutorials/using-lit-typescript/">Using Lit & TypeScript Guide</a> to help developers understand and use Lit and TypeScript in their add-ons.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-05-05</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-05-05</link>
+      <guid isPermaLink="false">2025-05-05</guid>
+      <pubDate>Mon, 05 May 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Updated</h3>
+
+<ul>
+<li>There are a few notable changes regarding the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-app#showcolorpicker">Color Picker APIs</a>, which have now moved to stable:</li>
+<li>The <code>initialColor</code> parameter now accepts a string in <code>"#RRGGBB[AA]"</code> format, in addition to the previous HEX number <code>0xRRGGBB[AA]</code>—both with optional alpha channel.</li>
+<li>We fixed the return value of the <code>ColorPickerEvent.colorChange</code> event, which now correctly handles the color with or without the alpha channel, depending on the value of the <code>disableAlphaChannel</code> parameter.</li>
+<li><strong>Breaking change</strong>: the <code>ColorPickerEvents</code> enum has been renamed to <code>ColorPickerEvent</code> (singular).</li>
+<li>Renamed the TextType enumerable to <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/enumerations/text-layout/"><code>TextLayout</code></a> in the Text APIs.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-04-22</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-04-22</link>
+      <guid isPermaLink="false">2025-04-22</guid>
+      <pubDate>Tue, 22 Apr 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Updated</h3>
+
+<ul>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/code-playground/">Code Playground</a> documentation has been updated with details about the new <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/code-playground-script-mode#how-to-use-script-mode">Script Mode</a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/code-playground-workflow/">Local Persistence</a> features, as well as additional details around existing features. The updates include:</li>
+<li>New sections explaining Script Mode and Add-on Mode.</li>
+<li>Detailed descriptions of the different tabs available in the Add-on mode and what type of code belongs in each.</li>
+<li>Information about local persistence and session management.</li>
+<li>Additional guidance on transitioning code between modes.</li>
+<li>New keyboard shortcuts for improved productivity.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-04-10</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-04-10</link>
+      <guid isPermaLink="false">2025-04-10</guid>
+      <pubDate>Thu, 10 Apr 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#link"><code>link()</code></a> method added to the <code>addOnUISdk.app.document</code> reference and <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/document-metadata/">Document Metadata How-to Guide</a>. This method retrieves the document link and triggers a <code>documentLinkAvailable</code> event when the link is available.</li>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/samples#vue-starter">vue-starter</a> sample add-on to help developers get started using Vue.js in their add-ons.</li>
+<li>Fixes <code>fromRGB()</code> method reference in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/use-color/">Using Color How-to</a>.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-04-03</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-04-03</link>
+      <guid isPermaLink="false">2025-04-03</guid>
+      <pubDate>Thu, 03 Apr 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>A new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-content-model#hasunavailablefonts"><code>hasUnavailableFonts()</code></a> method is added to <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-content-model/"><code>TextContentModel</code></a> class, which returns true if the text contains any fonts unavailable to the current user.</li>
+</ul>
+
+<p><InlineAlert slots="text" variant="warning"/></p>
+
+<p><strong>IMPORTANT:</strong> The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-content-model#hasunavailablefonts"><code>hasUnavailableFonts()</code></a> is currently <strong>_experimental only_</strong> and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the <code>experimentalApis</code> flag to <code>true</code> in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#requirements"><code>requirements</code></a> section of the <code>manifest.json</code>.</p>
+
+<h3>Updated</h3>
+
+<p>The CLI has been updated with the following package versions:</p>
+
+<ul>
+<li><code>@adobe/ccweb-add-on-manifest</code>: 3.0.0</li>
+<li><code>@adobe/create-ccweb-add-on</code>: 3.0.0</li>
+<li><code>@adobe/ccweb-add-on-scaffolder</code>: 3.0.0</li>
+<li><code>@adobe/ccweb-add-on-analytics</code>: 3.0.0</li>
+<li><code>@adobe/ccweb-add-on-core</code>: 3.0.0</li>
+<li><code>@adobe/ccweb-add-on-scripts</code>: 3.0.0</li>
+<li><code>@adobe/ccweb-add-on-ssl</code>: 3.0.0</li>
+<li><code>@adobe/ccweb-add-on-sdk-types</code>: 1.14.0</li>
+</ul>
+
+<p><strong>IMPORTANT:</strong> As a result of the above, please be aware of the following:</p>
+
+<p>1. Node-related tooling requirements are now:</p>
+
+<ul>
+<li>Minimum <code>node</code> version: 18</li>
+<li>Minimum <code>npm</code> version: 10</li>
+</ul>
+
+<p>2. SSL Certificates:</p>
+
+<p>SSL for hosting add-ons is now managed from the following locations:</p>
+
+<ul>
+<li>Mac: <code>/Users/[user]/Library/Application Support/Adobe/CCWebAddOn/devcert</code></li>
+<li>Windows: <code>C:\Users\Administrator\AppData\Local\Adobe\CCWebAddOn\devcert</code></li>
+</ul>
+
+<p>After updating <code>@adobe/ccweb-add-on-scripts</code> to <code>3.0.0</code>, developers will be asked to re-create their SSL certificate.</p>
+
+<p>For a new add-on created using <code>npx @adobe/create-ccweb-add-on@3.0.0</code>, a new SSL certificate will be set up one-time.</p>
+
+<p>For removing expired SSL certificate or certificate authority, developers can now run: <code>npx @adobe/ccweb-add-on-ssl purge</code>, and re-create them using <code>npx @adobe/ccweb-add-on-ssl setup --hostname localhost</code></p>
+
+<p>3. Spectrum Web Components</p>
+
+<ul>
+<li>The version of <code>@swc-react</code> components in the templates based on React has been updated to <code>1.0.3</code>.</li>
+<li>The version of <code>@spectrum-web-components</code> components in the templates based on SWC has been updated to <code>1.1.2</code>.</li>
+<li>The theme usage has been updated to use the <code>system</code> attribute instead of <code>theme</code>, ie:</li>
+<li>SWC: <code>&lt;sp-theme system="express" color="light"  scale="medium"&gt;</code></li>
+<li>React: <code>&lt;Theme system="express" scale="medium" color="light"&gt;</code></li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-03-21</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-03-21</link>
+      <guid isPermaLink="false">2025-03-21</guid>
+      <pubDate>Fri, 21 Mar 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>A native Color Picker is available to add-ons via the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-app#showcolorpicker"><code>showColorPicker()</code></a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-app#hidecolorpicker"><code>hideColorPicker()</code></a> methods of the <code>addOnUiSdk.app</code> object.</li>
+<li>We've updated the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/use-color/">Use Color</a> How-to guide, now including a few examples on the Color Picker.</li>
+<li>A <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/ui-components/color-picker/">new section</a> has been added to the documentation, which provides a reference for the Adobe Express built-in UI components available to add-ons, like the Color Picker.</li>
+<li>A new version of the <code>@adobe/ccweb-add-on-sdk-types</code> package (v1.14.0) has been released for the CLI. Run <code>npm update</code> from the root of your add-on project to update to get the latest typings.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-03-07</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-03-07</link>
+      <guid isPermaLink="false">2025-03-07</guid>
+      <pubDate>Fri, 07 Mar 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>A new <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/index/">How-to</a> section replaces the old Use Cases, expanding it to include more detailed guides on specific topics, like using Text, Color, or Geometry. Each guide includes a brief description, example code snippets, and links to relevant API references.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-03-06</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-03-06</link>
+      <guid isPermaLink="false">2025-03-06</guid>
+      <pubDate>Thu, 06 Mar 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>An <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/support/faq#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows">FAQ item</a> was added for a known issue found where the CLI is failing on Windows when running certain versions of Node.js. The <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/support/faq#why-is-the-cli-failing-with-an-invalid-url-error-when-creating-a-new-add-on-on-windows">FAQ</a> provides a workaround for this issue.</li>
+</ul>
+
+<ul>
+<li>The following new properties have been added to the AddOnSdk <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#pagemetadata"><code>PageMetadata</code></a> API:</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#pagemetadata"><code>isBlank</code></a>: Allows you to check if a page is blank.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#pagemetadata"><code>templateDetails</code></a>: Retrieves details about the template used to create the document.</li>
+</ul>
+
+<ul>
+<li>A new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#runprintqualitycheck"><code>runPrintQualityCheck</code></a> method has been added to the AddOnSdk <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document/"><code>App.Document</code></a> API, which allows you to run a print quality check on the document to ensure that it meets print quality standards.</li>
+</ul>
+
+<p><InlineAlert slots="text" variant="warning"/></p>
+
+<p><strong>IMPORTANT:</strong> The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#runprintqualitycheck"><code>runPrintQualityCheck()</code></a> is currently <strong>_experimental only_</strong> and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the <code>experimentalApis</code> flag to <code>true</code> in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#requirements"><code>requirements</code></a> section of the <code>manifest.json</code>.</p>]]></description>
+    </item>
+    <item>
+      <title>2025-03-04</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-03-04</link>
+      <guid isPermaLink="false">2025-03-04</guid>
+      <pubDate>Tue, 04 Mar 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Changed</h3>
+
+<ul>
+<li>Stabilized the following HLAPI's:</li>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-node/">TextNode</a> API's.</li>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/fonts#fromPostscriptName">fromPostscriptName()</a> API of <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/fonts/">Fonts</a> class.</li>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-content-model/">TextContentModel</a> APIs like <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-content-model#characterstyleranges"><code>TextContentModel.characterStyleRanges</code></a>. The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#requirements"><code>experimentalApis</code></a> flag is no longer required to use these APIs.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-03-03</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-03-03</link>
+      <guid isPermaLink="false">2025-03-03</guid>
+      <pubDate>Mon, 03 Mar 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Changed</h3>
+
+<ul>
+<li>The Per Element Metadata APIs have been stabilized. You can refer to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/add-on-data/">AddOnData</a> class for details. The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#requirements"><code>experimentalApis</code></a> flag is no longer required to use these APIs.</li>
+</ul>
+
+<ul>
+<li>The Selection Change Notification Events APIs have been stabilized. You can refer to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/context/">Context</a> class, which provides two methods: <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/context#on"><code>on()</code></a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/context#off"><code>off()</code></a>. These methods allow you to register and un-register notifications for selection changes and selection properties changes. The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#requirements"><code>experimentalApis</code></a> flag is no longer required to use these APIs.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-02-26</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-02-26</link>
+      <guid isPermaLink="false">2025-02-26</guid>
+      <pubDate>Wed, 26 Feb 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<p><strong>New Feature: <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/distribute/public-dist#step-4-enter-listing-details">Add-on Icon Auto-Resizing Support</a></strong></p>
+
+<ul>
+<li>Icon Size Requirement: The uploaded icon must be 144 px.</li>
+<li>Auto-Resizing: Once uploaded, the icon will be automatically resized to:</li>
+<li>Minimized Add-on Module Icon: 36 px</li>
+<li>Panel Header Icon: 64 px</li>
+<li>Launchpad Icon: 144 px</li>
+</ul>
+
+<p><strong>API <code>paragraphStyleRanges</code></strong></p>
+
+<p>Added new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-content-model#paragraphstyleranges"><code>TextContentModel.paragraphStyleRanges</code></a>,i.e. ParagraphStyles API as experimental, to apply styles to different paragraphs of text content.</p>
+
+<h3>Changed</h3>
+
+<p>Stabilized <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-app#registeriframe"><code>registerIframe()</code></a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-ui#openeditorpanel"><code>openEditorPanel()</code></a> APIs. The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#requirements"><code>experimentalApis</code></a> flag is no longer required to utilize these APIs.</p>]]></description>
+    </item>
+    <item>
+      <title>2025-02-17</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-02-17</link>
+      <guid isPermaLink="false">2025-02-17</guid>
+      <pubDate>Mon, 17 Feb 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Update</h3>
+
+<ul>
+<li>Starting February 17, 2025: Listings will not be visible in the European Union unless trader information is provided.</li>
+<li>Compliance: Trader information will be displayed publicly on listing detail pages to comply with EU Digital Services Act (DSA) regulations.</li>
+</ul>
+
+<p><a href="https://express.adobe.com/add-ons?mode=submission">Add trader details now.</a></p>
+
+<h3>Fixed</h3>
+
+<ul>
+<li>Fixed an issue where the <code>addAnimatedImage()</code> API was not working as expected.</li>
+<li>Fixed the technical requirements for GIF; the maximum resolution is 1080px.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-01-27</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-01-27</link>
+      <guid isPermaLink="false">2025-01-27</guid>
+      <pubDate>Mon, 27 Jan 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Changed</h3>
+
+<p>Stabilized <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#importpdf"><code>importPdf()</code></a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#importpresentation"><code>importPresentation()</code></a> APIs. The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#requirements"><code>experimentalApis</code></a> flag is no longer required to utilize these APIs.</p>]]></description>
+    </item>
+    <item>
+      <title>2025-01-17</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-01-17</link>
+      <guid isPermaLink="false">2025-01-17</guid>
+      <pubDate>Fri, 17 Jan 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>A new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/express-viewport/"><code>Viewport</code></a> class has been added to the Document APIs. <code>Viewport</code> represents the canvas area currently visible on-screen.</li>
+<li>A new API <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/express-viewport#bringIntoView"><code>bringIntoView</code></a> have been added which adjusts the viewport to make the node's bounds visible on-screen, assuming all bounds are within the artboard bounds.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2025-01-13</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2025-01-13</link>
+      <guid isPermaLink="false">2025-01-13</guid>
+      <pubDate>Mon, 13 Jan 2025 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>Adds a new section in <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/distribute/guidelines/general/listing/">Listing Your Add-on guidelines</a> which describes how to <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/distribute/guidelines/general/listing#trader-details">add trader details</a> in the publisher profile.</li>
+</ul>
+
+<p><InlineAlert variant="warning" slots="text1, text2, text3" /></p>
+
+<p><strong>Are you an existing developer?</strong></p>
+
+<p>You must provide trader details by February 16, 2025, to keep your add-on visible and available in Adobe Express for users in the European Union as of February 17, 2025. This trader information will be displayed publicly on your listing detail pages when viewed from EU countries.</p>
+
+<p><a href="https://express.adobe.com/add-ons?mode=submission">Add trader details now.</a></p>]]></description>
+    </item>
+    <item>
+      <title>2024-11-04</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2024-11-04</link>
+      <guid isPermaLink="false">2024-11-04</guid>
+      <pubDate>Mon, 04 Nov 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>Adds a new <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/advanced-topics/coi/">Cross-origin Isolation Handling</a> page which describes an upcoming change to how Adobe Express enforces cross-origin isolation, and the impact it may have on current add-ons, as well as those currently in-development.</li>
+<li>Updates the descriptions for the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#importpdf"><code>importPdf()</code></a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#importpresentation"><code>importPresentation()</code></a> functions to clarify that when used, the associated PDF or presentation file will be imported as a new Adobe Express document.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2024-10-08</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2024-10-08</link>
+      <guid isPermaLink="false">2024-10-08</guid>
+      <pubDate>Tue, 08 Oct 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<ul>
+<li>Adds a brand new version of the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/design/ux-guidelines/introduction/">UX Guidelines</a> for Adobe Express add-ons.</li>
+<li>Removes the experimental warnings for <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#addanimatedimage"><code>addAnimatedImage()</code></a> since it is now stable.</li>
+<li>Adds the <code>author</code> property to <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#mediaattributes"><code>MediaAttributes</code></a> to allow it to be used with the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#addaudio"><code>addAudio()</code></a> API.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2024-09-30</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2024-09-30</link>
+      <guid isPermaLink="false">2024-09-30</guid>
+      <pubDate>Mon, 30 Sep 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>New</h3>
+
+<ul>
+<li>Added many new <strong>Text APIs</strong> for improved text management.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-node#fullcontent"><code>TextNode.fullContent</code></a> accessor: returns the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-content-model/"><code>TextContentModel</code></a> containing the complete text string and its styles associated to the Text Flow (Threaded Text or Overflow Text).</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-node#nexttextnode"><code>TextNode.nextTextNode</code></a> accessor: gets the next node that overflowing text will spill into.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-node#layout"><code>TextNode.layout</code></a> accessor: gets and sets the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/enumerations/text-layout/"><code>TextType</code></a> of the text node frame.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-node#visualeffects"><code>TextNode.visualEffects</code></a> accessor: list of <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/enumerations/visual-effect-type/"><code>VisualEffectType</code></a> applied to the text node.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-content-model#characterstyleranges"><code>TextContentModel.characterStyleRanges</code></a> accessor: list of <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/character-styles/">character style</a> ranges in the text content, controlling the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/character-styles#color"><code>color</code></a>, <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/character-styles/"><code>font</code></a> ranges in the text content, controlling the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/character-styles#font"><code>color</code></a>, <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/character-styles/"><code>fontSize</code></a> ranges in the text content, controlling the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/character-styles#fontsize"><code>color</code></a>, <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/character-styles/"><code>letterSpacing</code></a> ranges in the text content, controlling the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/character-styles#letterSpacing"><code>color</code></a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/character-styles/"><code>underline</code></a> ranges in the text content, controlling the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/character-styles#underline"><code>color</code></a> properties.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/available-font/">AvailableFont</a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/unavailable-font/">UnavailableFont</a> classes.</li>
+<li>Supporting interfaces, enumerations and type aliases.</li>
+<li>Added <strong>Per Element Metadata APIs</strong>: with this feature, add-ons can store private metadata to any node of the Express document. This metadata is accessible only to the add-on that has set it. See the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/add-on-data/"><code>AddOnData</code></a> class and the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/base-node#addondata"><code>addOnData</code></a> accessor for the BaseNode class.</li>
+<li>Added <strong>Selection Change Notification Events APIs</strong>: add-on can register to be notified when selection and properties in the selection changes on the document. The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/context/"><code>Context</code></a> class will expose two <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/context#on"><code>on()</code></a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/context#off"><code>off()</code></a> methods which can be used to register and un-register selection change and selection properties change notifications.</li>
+<li>Added a new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/grid-cell-node/"><code>GridCellNode</code></a> class that represents a <strong>cell in a grid</strong>.</li>
+</ul>
+
+<p><InlineAlert slots="text" variant="warning"/></p>
+
+<p><strong>IMPORTANT:</strong> This round of new APIs is currently <strong>_experimental only_</strong> with the exception of <code>TextNode.fullContent.text</code>, and should not be used in any add-ons you will be distributing until it has been declared stable. To use them, you will first need to set the <code>experimentalApis</code> flag to <code>true</code> in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#requirements"><code>requirements</code></a> section of the <code>manifest.json</code>.</p>
+
+<h3>Fixed</h3>
+
+<ul>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/grid-layout-node#allchildren"><code>GridLayoutNode.allChildren</code></a> does not include rectangle nodes.</li>
+</ul>
+
+<h3>Deprecated</h3>
+
+<ul>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-node#text"><code>TextNode.text</code></a> is now deprecated; it is still working, but will be removed in a future update. Please use <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/text-node#fullcontent"><code>TextNode.fullContent.text</code></a> instead.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2024-09-24</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2024-09-24</link>
+      <guid isPermaLink="false">2024-09-24</guid>
+      <pubDate>Tue, 24 Sep 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<ul>
+<li>Adds a new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#addanimatedimage"><code>addAnimatedImage()</code></a> method which can be used to add <strong>animated GIF</strong> images to the document (as long as they fit within certain <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#image-requirements">technical constraints</a>).</li>
+<li>Adds a new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#importpdf"><code>importPdf()</code></a> method which can be used to import a PDF as a new Adobe Express document.</li>
+<li>Adds a new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#importpresentation"><code>importPresentation()</code></a> method which can be used to import a Powerpoint as a new Adobe Express document.</li>
+<li>Adds notes about specific support and handling for animated GIF images when <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#addimage">importing</a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-app#enabledragtodocument">dragging content</a>. This includes a <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/support/faq#are-animated-gifs-supported-when-importing-or-dragging-content-to-the-document">new FAQ item</a> summarizing the associated use cases.</li>
+<li>Adds all of the new methods mentioned above to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/index/">How-to</a> section with example code snippets for each.</li>
+</ul>
+
+<p><InlineAlert slots="text" variant="warning"/></p>
+
+<p><strong>IMPORTANT:</strong> The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#importpdf"><code>importPdf()</code></a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#importpresentation"><code>importPresentation()</code></a> methods are currently <strong>_experimental only_</strong> and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the <code>experimentalApis</code> flag to <code>true</code> in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#requirements"><code>requirements</code></a> section of the <code>manifest.json</code>.</p>]]></description>
+    </item>
+    <item>
+      <title>2024-09-10</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2024-09-10</link>
+      <guid isPermaLink="false">2024-09-10</guid>
+      <pubDate>Tue, 10 Sep 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<ul>
+<li>Added a new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/media-container-node#replacemedia"><code>replaceMedia()</code></a> method to the <code>MediaContainerNode</code> class that can be used to replace existing media inline.</li>
+<li>Refactoring done to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/stroke/"><code>Stroke</code></a> APIs.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2024-07-22</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2024-07-22</link>
+      <guid isPermaLink="false">2024-07-22</guid>
+      <pubDate>Mon, 22 Jul 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<ul>
+<li>Added a new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-ui#format"><code>format</code></a> property to the <code>addOnUISdk.app.ui</code> object that reflects the format used to display dates, times, numbers, etc. in the user's environment. It supports a <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-ui#formatchange"><code>"formatchange"</code></a> event triggered when the format changes—see an example in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/theme-locale/">Locale, Supported Locales, and Format</a> section.</li>
+<li>Removed <code>mobile</code> and <code>app</code> as <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#requirementsappssupporteddeviceclass"><code>supportedDeviceClass</code></a> values in the Manifest's <code>requirements.apps</code> object.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2024-05-28</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2024-05-28</link>
+      <guid isPermaLink="false">2024-05-28</guid>
+      <pubDate>Tue, 28 May 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<ul>
+<li>Added a new _experimental_ <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-ui#openeditorpanel"><code>openEditorPanel()</code></a> API to programmatically open and interact with the Editor panel. This method of the <code>addOnUISdk.app.ui</code> allows navigation to specific tabs and collections, as well as performing content searches. The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-constants/">Constants</a> page has been updated accordingly.</li>
+<li>Added a new <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/support/faq#how-do-i-prevent-my-iframe-content-from-being-blocked-due-to-cross-origin-issues"><code>Cross-Origin-Embedder-Policy</code></a> FAQ.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2024-05-21</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2024-05-21</link>
+      <guid isPermaLink="false">2024-05-21</guid>
+      <pubDate>Tue, 21 May 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<ul>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/hello-world/">Quickstart</a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/distribute/index/">Distribute</a> guides have been updated to reflect major UI/UX improvements for in-app workflows, particularly around distribution and listing management.</li>
+<li>The Add-ons tab is now active also in the Adobe Express home page, regardless of whether a project is open or not.</li>
+<li>A new section on Marketplace <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/distribute/rejections/">rejections</a> has been added, highlighting the most common problems found during the add-on review process and how to avoid them.</li>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index/">Manifest Reference</a> has been updated with two new permission properties: <code>microphone</code> and <code>camera</code>.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2024-04-10</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2024-04-10</link>
+      <guid isPermaLink="false">2024-04-10</guid>
+      <pubDate>Wed, 10 Apr 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<ul>
+<li>A new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/visual-node/"><code>VisualNode</code></a> class has been added to the Document APIs, and represents any node that can be visually perceived in the content.</li>
+<li>New Document APIs have been added:</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/express-context#currentpage"><code>currentPage</code></a> Context accessor: returns the active page.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/visual-node#visualroot"><code>visualRoot</code></a> accessor: the highest ancestor that still has visual presence in the document—typically, an Artboard.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/page-node#cloneinplace"><code>cloneInPlace()</code></a> method: clones a Page, all artboards within it, and all content within those artboards.</li>
+<li>Support to Bounds has been added in several classes: <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/node#boundsinparent"><code>boundsInParent</code></a>; <code>boundsLocal</code> (for both <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/group-node#boundslocal">GroupNode</a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/visual-node#boundslocal">VisualNode</a>); <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/visual-node#centerpointlocal"><code>centerPointLocal</code></a>; <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/visual-node#topleftlocal"><code>topLeftLocal</code></a>; <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/node#boundsinnode"><code>boundsInNode()</code></a>; <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/visual-node#localpointinnode"><code>localPointInNode()</code></a>;</li>
+<li>The CLI has been updated to release version <code>2.0.0</code>, and includes the following:</li>
+<li>Periodic login and EULA consent are no longer required.</li>
+<li>Two new templates for creating add-ons with built-in support to Spectrum Web Components have been added and documented: <code>swc-javascript</code> and <code>swc-javascript-with-document-sandbox</code>. Typescript templates have been renamed to <code>swc-typescript</code> and <code>swc-typescript-with-document-sandbox</code>. See <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/getting-started/local-development/dev-tooling#templates">this page</a> for details on all the available templates.</li>
+<li>Typings have been updated to include the latest SDK changes, and other internal packages are now at version <code>2.0.0</code>.</li>
+</ul>
+
+<p>  <strong>NOTE:</strong> The new version should be installed by default when you create a new add-on. If, for any reason, it doesn't, you can force it to install by clearing the <code>npx</code> cache first with <code>npx clear-npx-cache</code> or by specifying the version in the command, i.e.: <code>npx @adobe/create-ccweb-add-on@2.0.0 my-add-on</code>.</p>
+
+<ul>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/samples/">Samples</a> page has been updated to document the existing add-ons in the <a href="https://github.com/AdobeDocs/express-add-on-samples"><code>express-add-on-samples</code></a> repository, including a newly added <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/samples#audio-recording-addon"><code>audio-recording-addon</code></a>.</li>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/index/">Common Use Cases</a> section has been refactored as a sub-menu, grouping similar topics into individual pages. A new <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/oauth2#login-and-logout-flows">Login and Logout flows</a> section has been added. Other minor fixes and improvements have been made to the documentation.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2024-03-19</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2024-03-19</link>
+      <guid isPermaLink="false">2024-03-19</guid>
+      <pubDate>Tue, 19 Mar 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<ul>
+<li>Support for Ps and Ai files to be added to the page via the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#addimage"><code>addImage()</code></a> method. (Note: there were no changes to the drag-n-drop APIs).</li>
+<li>Adds new <code>MediaAttributes</code> parameter to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#addimage"><code>addImage()</code></a> method for Ps/Ai file types to pass media attributes like <code>title</code>.</li>
+<li>Adds new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#mp4renditionoptions"><code>Mp4RenditionOptions</code></a> object to support <code>mp4</code> renditions.</li>
+<li>Adds new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-constants/"><code>VideoResolution</code></a> constant to set video resolution options.</li>
+<li>Adds <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-app#registeriframe"><code>registerIframe()</code></a> method and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-app#unregisteriframe-type-definition"><code>unregisterIframe</code></a> type definition with example usage. <strong>NOTE:</strong> These APIs are currently experimental.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2024-03-08</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2024-03-08</link>
+      <guid isPermaLink="false">2024-03-08</guid>
+      <pubDate>Fri, 08 Mar 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<ul>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#getpagesmetadata"><code>getPagesMetadata()</code></a>, <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-app#startpremiumupgradeiffreeuser"><code>startPremiumUpgradeIfFreeUser</code></a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-current-user#ispremiumuser"><code>isPremiumUser</code></a> have been moved to stable and no longer require the <code>experimentalApis</code> flag to be set.</li>
+<li>New examples have been added to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/premium-content/">use cases guide</a> for handling premium content.</li>
+<li>A new video has been added to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/tutorials/grids-addon/">grids tutorial</a> to help guide developers in building the grids add-on.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2024-02-21</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2024-02-21</link>
+      <guid isPermaLink="false">2024-02-21</guid>
+      <pubDate>Wed, 21 Feb 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<ul>
+<li>New support for <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/distribute/public-dist#step-8-enter-the-monetization-details">monetization details</a> has been added to the public distribution flow and allows you to <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/distribute/public-dist#step-8-enter-the-monetization-details">provide details around monetization options</a> your add-on supports. A selection will now be required when you submit a new add-on to the marketplace or update an existing one. The options include _free_, _one-time payment_, _recurring subscription_, _micro-transactions_, and _other_.</li>
+</ul>
+
+<p>  In addition, the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/distribute/guidelines/monetization/">monetization guidelines</a> were updated with details to help guide you in communicating your monetization strategy, and include new branding <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/distribute/guidelines/monetization#branding-assets-for-monetization">badges</a> you can use to visually indicate when content or features require a purchase or when they are paid and unlocked. Please ensure you review the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/distribute/guidelines/monetization/">updated monetization guidelines</a> carefully for specific details. <strong>NOTE:</strong> Adobe does not currently provide a specific monetization feature, but with this update, provides a way for developers to communicate the monetization details of their add-ons.</p>
+
+<ul>
+<li>The first phase of add-on analytics support has been released, and allows developers to <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/distribute/public-dist#post-submission-details-and-insights">download insights data</a> for their published add-ons via the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/distribute/public-dist#post-submission-details-and-insights">Download insights</a> button in the in-app distribution modal.</li>
+<li>A new <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/platform-concepts/document-api/">Concepts guide</a> was added to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/index/">Document APIs</a> section to provide a deep-dive into the architecture and key elements of the Adobe Express Document Object Model (DOM).</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2024-02-14</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2024-02-14</link>
+      <guid isPermaLink="false">2024-02-14</guid>
+      <pubDate>Wed, 14 Feb 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<ul>
+<li>A new <code>id</code> accessor has been added to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/base-node/"><code>BaseNode</code></a> class in the Document APIs and is inherited by all classes that extend it. The <code>id</code> represents a unique identifier that stays the same when the file is closed and reopened, or if the node is moved to a different part of the document.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2024-02-07</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2024-02-07</link>
+      <guid isPermaLink="false">2024-02-07</guid>
+      <pubDate>Wed, 07 Feb 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<ul>
+<li>A new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/editor#createpath"><code>createPath</code></a> method is now available for allowing you to create a path with the Document APIs.</li>
+<li>Updates descriptions in various methods and classes in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/index/">Document APIs</a>.</li>
+<li>Updates to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#createrenditions"><code>createRenditions</code></a> API, including a new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-constants/"><code>print</code></a> option for <code>RenditionIntent</code> to be be used for generating a print optimized pdf, and an update to <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#pdfrenditionoptions"><code>PdfRenditionOptions</code></a> which exposes the ability to customize each PDF Page Box's (<code>MediaBox</code>, <code>BleedBox</code>, <code>CropBox</code>, <code>TrimBox</code>) dimensions using a <code>pageBoxes</code> property.</li>
+<li>Updates to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/tutorials/spectrum-workshop/index/">Using Adobe Spectrum tutorial</a> with additional details on <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/tutorials/spectrum-workshop/part3#styling-with-spectrum-css">why you should use Spectrum CSS variables</a> to style your add-ons, and <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/tutorials/spectrum-workshop/part3#layout-and-typography-styling">additional helpful guidelines for locating and using them</a>.</li>
+<li>The table of contents in each Document API class/interface/constant has been removed since it was a duplicate of the right side navigation menu.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2024-01-31</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2024-01-31</link>
+      <guid isPermaLink="false">2024-01-31</guid>
+      <pubDate>Wed, 31 Jan 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p>Added a new tutorial - <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/tutorials/spectrum-workshop/index/">Building UIs using Adobe's Spectrum Design System</a>.</p>]]></description>
+    </item>
+    <item>
+      <title>2024-01-09</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2024-01-09</link>
+      <guid isPermaLink="false">2024-01-09</guid>
+      <pubDate>Tue, 09 Jan 2024 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>New Experimental APIs</h3>
+
+<ul>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-app#startpremiumupgradeiffreeuser"><code>startPremiumUpgradeIfFreeUser()</code></a> experimental API has been added to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-app/">addOnUISdk.app</a> object to display the in-app monetization upgrade flow and returns a value indicating whether the user upgraded to premium or not.</li>
+</ul>
+
+<ul>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-current-user#ispremiumuser"><code>isPremiumUser()</code></a> experimental API has been added to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-current-user/">addOnUISdk.app.currentUser</a> object to determine if the current user is a premium or free user.</li>
+</ul>
+
+<p><InlineAlert slots="text" variant="warning"/></p>
+
+<p><strong>IMPORTANT:</strong> The above new APIs are currently <strong>experimental only</strong> and should not be used in any add-ons you will be distributing until declared stable. To use these APIs, you will first need to set the <code>experimentalApis</code> flag to <code>true</code> in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#requirements"><code>requirements</code></a> section of the <code>manifest.json</code>.</p>
+
+<h3>Additional Updates</h3>
+
+<ul>
+<li>A new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#pdfrenditionoptions"><code>PdfRenditionOptions</code></a> object is now available to be used with the the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#createrenditions"><code>createRenditions()</code> export API</a> and allows a user to specify an optional <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#bleed">bleed</a> object (for printing).</li>
+<li>A new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#pagemetadata"><code>isPrintReady</code></a> property has been added to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#pagemetadata"><code>PageMetadata</code> API</a> to indicate if the page is ready to print.</li>
+<li>Updated the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/support/faq#what-mime-type-is-returned-from-a-pdf-that-was-exported-with-the-createrenditions-method">FAQ</a> regarding the mime type for exported PDF files. It will now return <code>application/pdf</code> (as opposed to <code>text/plain</code> from an earlier update).</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2023-12-07</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2023-12-07</link>
+      <guid isPermaLink="false">2023-12-07</guid>
+      <pubDate>Thu, 07 Dec 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p><InlineAlert slots="text" variant="warning"/></p>
+
+<p><strong>BREAKING NEWS:</strong> The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/index/">Adobe Express Document Sandbox</a> and all associated APIs have been deemed stable, and <strong>no longer require the <code>experimentalApis</code> flag</strong>. As a result, some breaking changes with these experimental APIs were introduced before deeming them stable, and they are summarized below. Please read them thoroughly and update your in-development add-ons as needed. If you run into any issues, please reach out to us on our <a href="http://discord.gg/nc3QDyFeb4">Adobe Express Add-on Developer’s Discord channel</a> for help.</p>
+
+<h3>Breaking changes (experimental APIs)</h3>
+
+<p>Some items in the following list of changes may have been mentioned in recent updates but are being listed in this summary again to serve as a reminder.</p>
+
+<ul>
+<li>The methods in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/editor/">Document API Editor class</a> to create a color fill and stroke have been renamed to <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/editor#makecolorfill"><code>makeColorFill</code></a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/editor#makestroke"><code>makeStroke</code></a> respectively.</li>
+<li><code>strokes</code> and <code>fills</code> have been renamed to their singular counterpart. (Express does not support multiple strokes or fills). You should use <code>stroke</code> and <code>fill</code> going forward to access them, and they will no longer be <code>ItemList</code> objects, since they represent only a single stroke or fill.</li>
+</ul>
+
+<p>  ```js</p>
+<p>  // Before</p>
+<p>  rectangle.fills.append(rectFill);</p>
+<p>  ellipse.fills.append(ellipseFill);</p>
+
+<p>  // After</p>
+<p>  rectangle.fill = rectFill;</p>
+<p>  ellipse.fill = ellipseFill;</p>
+<p>  ```</p>
+
+<ul>
+<li><code>fill</code> and <code>stroke.color</code> are just a <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/color/">color object</a> of the form <code>{ red, green, blue, alpha }</code>.</li>
+<li><code>stroke</code> is an object of the form <code>{ color, width, dashPattern, dashOffset }</code></li>
+</ul>
+
+<ul>
+<li>Color utilities have moved to <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/color-utils/"><code>colorUtils</code></a> instead of <code>utils</code>.</li>
+</ul>
+
+<p>  <strong>Old</strong>&lt;br /&gt;</p>
+<p>  &lt;del &gt;</p>
+
+<p>  ```js</p>
+<p>  import { utils } from "express-document-sdk";</p>
+<p>  const color = utils.createColor(1, 0, 0);</p>
+<p>  ```</p>
+
+<p>  &lt;/del &gt;</p>
+
+<p>  <strong>New</strong>&lt;br /&gt;</p>
+
+<p>  ```js</p>
+<p>  import { colorUtils } from "express-document-sdk";</p>
+
+<p>  // any of:</p>
+<p>  const color = colorUtils.fromRGB(1, 0, 0); // optional alpha</p>
+<p>  const color = colorUtils.fromRGB({ red: 1 , green: 0, blue: 0 };); // optional alpha</p>
+<p>  const color = colorUtils.fromHex("#ff0000");</p>
+<p>  const color = { red: 1, green: 0, blue: 0, alpha: 1 }; // mandatory alpha</p>
+<p>  ```</p>
+
+<ul>
+<li><code>fromHex</code> returns a color from a Hex string -- e.g., <code>colorUtils.fromHex("#FF8040")</code> or <code>colorUtils.fromHex("#FF8040FF")</code> (including the optional alpha);</li>
+<li><code>fromRGB</code> returns a color from a set of RGB(A) values (0-1) -- e.g., <code>colorUtils.fromRGB(1,0.5,0.25,1)</code>.</li>
+<li><code>toHex</code> converts a color object to a Hex string -- e.g., <code>colorUtils.toHex(aColor)</code>.</li>
+</ul>
+
+<ul>
+<li><code>allChildren</code> returns an <code>iterator</code>, not an <code>Array</code>. However if you want to use array methods (ie: <code>Array#map</code>), you can use <code>Array.from</code> to convert it to an array.</li>
+<li>Strokes and fills will no longer _move_ if you add an existing <code>stroke</code>/<code>fill</code> to another shape (previously the original shape would lose the corresponding <code>stroke</code> or <code>fill</code>). For example:</li>
+</ul>
+
+<p>  ```js</p>
+<p>  // Old way</p>
+<p>  const greenFill = editor.createColorFill(colorUtils.fromRGB(0, 0, 1));</p>
+<p>  someRect.fills.append(greenFill);</p>
+<p>  anotherRect.fills.append(greenFill);</p>
+<p>  /* oops, someRect no longer has a green fill, because anotherRect is its parent */</p>
+<p>  ```</p>
+
+<p>  versus:</p>
+
+<p>  ```js</p>
+<p>  // New way</p>
+<p>  const greenFill = editor.makeColorFill(colorUtils.fromRGB(0, 0, 1));</p>
+<p>  someRect.fill = greenFill;</p>
+<p>  anotherRect.fill = greenFill;</p>
+<p>  /* both rectangles have a green fill */</p>
+<p>  ```</p>
+
+<ul>
+<li>Some things that previously didn't make sense will now cause compile errors in typescript, or throw in javascript:</li>
+<li>Do not assume a node's parent is movable — e.g., an artboard can't be repositioned.</li>
+<li>Not all shapes support setting <code>opacity</code> or <code>locking</code> (e.g, the document root or an artboard).</li>
+<li>The <code>translateX</code> and <code>translateY</code> properties have been replaced by a single translation object.</li>
+</ul>
+
+<p>  ```js</p>
+<p>  // old</p>
+<p>  rectangle.translateX = 100;</p>
+<p>  rectangle.translateY = 20;</p>
+
+<p>  // new</p>
+<p>  rectangle.translation = { x: 100, y: 20 }; // both x,y properties are required</p>
+<p>  ```</p>
+
+<ul>
+<li>A new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/base-node/"><code>BaseNode</code></a> class has been introduced, and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/container-node/"><code>ContainerNode</code></a> has been moved from a class to an interface.</li>
+<li>The key to load APIs that use the Document APIs has changed, as well as the module names you import APIs from in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/index/">Document Sandbox</a>. The old ones will still work, but the CLI and templates have all been updated to use the new names. Please update your add-ons to use the new ones shown below:</li>
+</ul>
+
+<p>  <strong>Adobe Express Document APIs SDK import</strong>&lt;br /&gt;</p>
+<p>  For access to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/index/">Express document and content authoring APIs</a>:</p>
+
+<p>  &lt;del &gt;</p>
+
+<p>  ```js</p>
+<p>  // Old</p>
+<p>  import { editor } from "express";</p>
+<p>  ```</p>
+
+<p>&lt;/del &gt;</p>
+
+<p>```js</p>
+<p>// New</p>
+<p>import { editor } from "express-document-sdk";</p>
+<p>```</p>
+
+<p><strong>Document Sandbox SDK import</strong>&lt;br /&gt;</p>
+<p>For access to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/index/">document sandbox runtime APIs</a>:</p>
+
+<p>&lt;del &gt;</p>
+
+<p>```js</p>
+<p>// Old</p>
+<p>import AddOnScriptSdk from "AddOnScriptSdk";</p>
+<p>```</p>
+
+<p>&lt;/del &gt;</p>
+
+<p>```js</p>
+<p>// New</p>
+<p>import addOnSandboxSdk from "add-on-sdk-document-sandbox";</p>
+<p>```</p>
+
+<ul>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#entrypoints"><code>manifest.json</code> entry point</a> for the document sandbox script code reference was renamed from <code>script</code> to <code>documentSandbox</code>, as shown below:</li>
+</ul>
+
+<p>  ```json</p>
+<p>    "entryPoints": [</p>
+<p>          {</p>
+<p>              "type": "panel",</p>
+<p>              "id": "panel1",</p>
+<p>              "main": "index.html",</p>
+<p>              "documentSandbox": "code.js" // used to be "script": "code.js"</p>
+<p>          }</p>
+<p>      ]</p>
+<p>  ```</p>
+
+<ul>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/instance-runtime#apiproxy"><code>apiProxy()</code></a> method in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-instance#objects"><code>addOnSandboxSdk.instance.runtime</code></a> object now accepts <code>"documentSandbox"</code> as a parameter when referring to the entry point in the manifest where your document sandbox code resides, instead of <code>"script"</code>.</li>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-constants/"><code>RuntimeType</code></a> constant now uses the value of <code>"documentSandbox"</code> in lieu of <code>"script"</code>.</li>
+</ul>
+
+<p>  <strong>IMPORTANT:</strong> The above updates should be considered breaking changes, so any add-ons in development that relied on the experimental APIs may not work correctly until you make changes to use the new/updated ones above. The intention was to ensure these important changes were made prior to marking the APIs stable to 1) make them more intuitive for developers, 2) significantly improve the process of working with colors, strokes and fills, and 3) prevent certain operations from corrupting the document.</p>
+
+<ul>
+<li>The CLI has been updated to release version <code>1.1.1</code>, and includes the following:</li>
+<li>The document sandbox templates have been updated to reflect all of the latest changes to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/index/">Document Sandbox APIs</a>, and the <code>experimentalApis</code> flag has been removed. Please review the updated <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/index/">references</a> and changelog entries thoroughly for details on all of the recent changes. You may also want to refer to the <a href="https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples">document sandbox code samples</a> for additional help on how to use them.</li>
+<li>Typings support has been added to the <code>javascript</code> templates to enable intellisense features.</li>
+<li>Manifest property additions.</li>
+<li>General improvements and bug fixes.</li>
+</ul>
+
+<p>  <strong>NOTE:</strong> The new version should be installed by default when you create a new add-on. If, for any reason, it doesn't, you can force it to install by clearing the npx cache first with <code>npx clear-npx-cache</code> or by specifying the version in the command, i.e.: <code>npx @adobe/create-ccweb-add-on@1.1.1 my-add-on</code>. You can update any existing add-ons to use this new version by updating the version of the <code>ccweb-add-on-scripts</code> in the <code>package.json</code> to <code>1.1.1</code>.</p>
+
+<ul>
+<li>All <a href="https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples">code samples</a> and the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/tutorials/grids-addon/">Document API tutorial</a> have also been updated to reflect all of the latest changes to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/index/">Adobe Express Document Sandbox APIs</a> listed here.</li>
+<li>Removed all experimental APIs notes/warnings around the <strong>Document Sandbox</strong> since they <strong>are now stable</strong>.</li>
+</ul>
+
+<p><InlineAlert slots="text" variant="warning"/></p>
+
+<p><strong>Known Issue:</strong> Please note, there is an edge case where <strong>removing a page with your add-on</strong> could potentially cause a problem where the UI needs to be reloaded. This will be resolved in the very near future, but please take caution and be aware that it would be best to avoid page removal in the short-term until it's resolved.</p>
+
+<h3>Additional Updates</h3>
+
+<ul>
+<li>A new <code>getPagesMetadata()</code> method is now available in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#getpagesmetadata">Add-on UI SDK <code>document</code></a> object and includes an example code snippet. <strong>NOTE:</strong> This method is still considered <strong>experimental only</strong> and should not be used in any add-ons you will be distributing until it has been declared stable. To use this method, you will first need to set the <code>experimentalApis</code> flag to <code>true</code> in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#requirements"><code>requirements</code></a> section of the <code>manifest.json</code>.</li>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#createrenditions"><code>createRenditions()</code> export API</a> was updated with the following changes:</li>
+<li>You can now choose to generate renditions of specific pages via a new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-constants/"><code>Range.specificPages</code></a> constant value.</li>
+<li>The returned type now also includes page metadata (see <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#pagemetadata"><code>PageMetadata</code></a>) including useful information such as the id, page size, pixels per inch, and whether the page has premium or temporal (timeline) content or not, (in addition to the existing blob and title). An example is provided in the reference as well as in <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/page-metadata/">the use cases</a>.</li>
+<li>A new <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/document-metadata/">document metadata use case example</a> has been added to show how to retrieve the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#id">document id</a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#title">title (ie: name)</a>, including how to listen for the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-app#events">associated events</a>.</li>
+<li>New tables have been added to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/communication/index/">Communication API reference</a> denoting the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/communication/index#supported-data-types">supported</a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/communication/index#unsupported-data-types">unsupported data types</a> that can be used across the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/communication/index/">Communication API</a> layer.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2023-12-04</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2023-12-04</link>
+      <guid isPermaLink="false">2023-12-04</guid>
+      <pubDate>Mon, 04 Dec 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Updates</h3>
+
+<ul>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/index/">Document API's</a> were updated to add a new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/color-utils/"><code>ColorUtils</code></a> class, which replaces the previous <code>utils</code> module that was used as a color helper with a more enhanced utlility. If you've used the old <code>utils</code> module in your add-ons, it will require you to update them to use the new named import of <code>colorUtils</code> instead of <code>utils</code>. Color creation should now be done using the new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/color-utils/"><code>colorUtils</code> module</a>. An example of the old way and new way to create a color are shown below for reference:</li>
+</ul>
+
+<p>  ```js</p>
+<p>  // Before</p>
+<p>  import { utils } from "express-document-sdk";</p>
+<p>  const color = utils.createColor(1, 0, 0);</p>
+
+<p>  // After</p>
+<p>  import { colorUtils } from "express-document-sdk";</p>
+
+<p>  // any of:</p>
+<p>  const color = colorUtils.fromRGB(1, 0, 0); // optional alpha</p>
+<p>  const color = colorUtils.fromRGB({ red: 1, green: 0, blue: 0 }); // optional alpha</p>
+<p>  const color = colorUtils.fromHex("#ff0000");</p>
+<p>  const color = { red: 1, green: 0, blue: 0, alpha: 1 }; // mandatory alpha</p>
+<p>  ```</p>
+
+<p>  The <a href="https://github.com/AdobeDocs/express-add-on-samples/tree/main/document-sandbox-samples">code samples</a> have also been updated, so please also refer to those for further details on how to use it. Please note, the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/index#example-code-snippet">example code snippets</a> and samples using <code>fills</code> or <code>strokes</code> off a node class were also updated to use a singular <code>Fill</code> or <code>Stroke</code> object instead of as an <code>ItemList</code> object.</p>
+
+<p>  ```js</p>
+<p>  // Before</p>
+<p>  rectangle.fills.append(rectFill);</p>
+<p>  ellipse.fills.append(ellipseFill);</p>
+
+<p>  // After</p>
+<p>  rectangle.fill = rectFill;</p>
+<p>  ellipse.fill = ellipseFill;</p>
+<p>  ```</p>
+
+<ul>
+<li>A new release has landed for the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/distribute/index/"><strong>In-App Developer Submission experience</strong></a> in Express. Some highlights from the release:</li>
+</ul>
+
+<p>  <strong>Create Add-on flow:</strong> You can now create <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/distribute/public-dist#step-2-add-on-listing-settings">an add-on "container"</a> as your first step in building add-ons within the existing in-app distribution workflow. Creating the container gets you access to a few important settings and data (for instance your unique subdomain, see below) before you continue the development process in the CLI. All existing add-ons will automatically receive a parent container with the associated additional features today.</p>
+
+<p>  <strong>Unique Subdomain retrieval:</strong> As part of your add-on container, you will now be able to easily retrieve a unique subdomain for your add-on. Simply choose one of your add-ons in the distribution workflow and navigate to the new "Settings" tab and copy the Add-on URL. This URL is handy for addressing issues with CORS by adding the URL as an allowed origin. See <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/platform-concepts/context#cors">our CORS guide</a> for more details.</p>
+
+<p>  <strong>Delete Add-ons:</strong> The "container" concept allowed us to offer better management and cleanup of your add-ons. You will now find the option to delete an add-on container entirely from the new "Settings" tab of a given add-on.</p>
+
+<p>  <strong>NOTE:</strong> You can only delete add-ons that have not been published publicly or submitted to our Review team. Please contact us if you need to un-publish an add-on.</p>
+
+<p>  <strong>Supported Languages:</strong> The <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/distribute/public-dist#step-4-enter-listing-details">version details step</a> for publishing add-ons publicly now includes fields to indicate which languages are supported by your add-ons (beyond the required English). You can choose from any of the languages Express supports, and your designation will be shown to users when they browse your listing details. See <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/theme-locale/">our sample for detecting a user's locale to localize your add-on</a>.</p>
+
+<ul>
+<li>Updated list of templates and details to include the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/local-development/dev-tooling#templates">Document Sandbox template options</a>, and how to still scaffold from one when the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/local-development/dev-tooling#no-template-parameter"><code>--template</code> parameter is not explicitly supplied</a>.</li>
+<li>New FAQ item regarding the mime type for exported PDF files. This is due to an unexpected change made in Adobe Express core to the mime type returned when you generate a PDF using the export <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#createrenditions"><code>createRenditions</code></a> method. In the past it would return <code>application/pdf</code>, but currently it returns <code>text/plain</code>. This is something to be aware of if you are inspecting the mime type in the response and failing if it's anything other than <code>application/pdf</code>.</li>
+<li>Removed NPS survey.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2023-11-30</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2023-11-30</link>
+      <guid isPermaLink="false">2023-11-30</guid>
+      <pubDate>Thu, 30 Nov 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Updates</h3>
+
+<ul>
+<li>Adds support to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/index/">Add-on UI SDK</a> for retrieving the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#id">document id</a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#title">title</a>, as well as the ability for the add-on to be notified of the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-app#events">associated events</a>.</li>
+<li>Updates the names of the SDK imports for the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/communication/index/">Document Sandbox</a> and the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/index/">Document API's SDK</a>:</li>
+</ul>
+
+<p>  <strong>Document Sandbox SDK import</strong>&lt;br /&gt;</p>
+
+<p>  from:</p>
+
+<p>  <code>import AddOnScriptSdk from "AddOnScriptSdk";</code></p>
+
+<p>  to:</p>
+
+<p>  <code>import addOnSandboxSdk from "add-on-sdk-document-sandbox";</code></p>
+
+<p>  which also requires the following line to change in the example code to use the new reference:</p>
+
+<p>  <code>const { runtime } = addOnSandboxSdk.instance; // runtime object provides direct access to the comm methods</code></p>
+
+<p>  <strong>Express Document SDK Import (for accessing the Document APIs</strong>&lt;br /&gt;</p>
+
+<p>  from:</p>
+
+<p>  <code>import { editor } from "express";</code></p>
+
+<p>  to:</p>
+
+<p>  <code>import { editor } from "express-document-sdk";</code></p>
+
+<p>  <strong>NOTE:</strong> This includes the named imports for <code>utils</code> and <code>constants</code> modules as well if needed (ie: <code>import { editor, utils, constants } from "express-document-sdk"</code>).</p>
+
+<ul>
+<li>Updates the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#entrypoints"><code>manifest.json</code> entry for the document sandbox script code reference</a> from <code>script</code> to <code>documentSandbox</code>, as shown below:</li>
+</ul>
+
+<p>  ```json</p>
+<p>    "entryPoints": [</p>
+<p>          {</p>
+<p>              "type": "panel",</p>
+<p>              "id": "panel1",</p>
+<p>              "main": "index.html",</p>
+<p>              "documentSandbox": "code.js"</p>
+<p>          }</p>
+<p>      ]</p>
+<p>  ```</p>
+
+<ul>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/instance-runtime#apiproxy"><code>apiProxy()</code></a> now accepts <code>"documentSandbox"</code> as a parameter when referring to the entry point in the manifest where your document sandbox code resides, instead of <code>"script"</code>.</li>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-constants/"><code>RuntimeType</code></a> constant can now have a value of <code>"documentSandbox"</code> in lieu of <code>"script"</code>.</li>
+</ul>
+
+<p><InlineAlert slots="text" variant="warning"/></p>
+
+<p><strong>IMPORTANT:</strong> The old import names will continue to be supported for a period of time to allow developers to migrate to the new import names, but we encourage you to update as soon as possible to avoid any future issues.</p>]]></description>
+    </item>
+    <item>
+      <title>2023-11-28</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2023-11-28</link>
+      <guid isPermaLink="false">2023-11-28</guid>
+      <pubDate>Tue, 28 Nov 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Updates</h3>
+
+<ul>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/web/index/">Web API's in the Document Sandbox Reference</a> were updated to remove the timer methods which are no longer supported (ie: <code>setTimeout()</code>, <code>clearTimeout</code> and <code>setInterval()</code>, <code>clearInterval</code>).</li>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/index/">Document API References</a> were updated with the following additions and changes:</li>
+</ul>
+
+<p>  <strong>New Classes/Interfaces</strong>&lt;br /&gt;</p>
+<ul>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/restricted-item-list/">RestrictedItemList class</a></li>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/unknown-node/">UnknownNode class</a></li>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/solid-color-shape-node/">SolidColorShapeNode class</a></li>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/point/">Point interface</a></li>
+<li>New <code>queueAsyncEdit</code> method added to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/editor/">Editor</a> class.</li>
+<li>Renames the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/constants/overview/">Constants</a> to remove the <code>Value</code> suffix.</li>
+</ul>
+
+<p>  <strong>Updates to Node Classes</strong>&lt;br /&gt;</p>
+
+<p>The accessors and methods below were removed or replaced with new names in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/node/"><code>Node</code> class</a> and classes that extend it. Please refer to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/index/">Document API References</a> specifically to learn more about each.</p>
+
+<ul>
+<li>Removes <code>absoluteRotation</code> accessor</li>
+<li>Removes <code>absoluteTransform</code> accessor</li>
+<li>Removes <code>relativeRotation</code> accessor</li>
+<li>Removes <code>relativeTransform</code> accessor</li>
+<li>Removes <code>translateX</code> accessor</li>
+<li>Removes <code>translateY</code> accessor</li>
+<li>Adds <code>rotation</code> accessor</li>
+<li>Adds <code>rotationInScreen</code> accessor</li>
+<li>Adds <code>transformMatrix</code> accessor</li>
+<li>Adds <code>translation</code> accessor</li>
+<li>Adds <code>setPositionInParent</code> method</li>
+<li>Adds <code>setRotationInParent</code> method</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2023-11-27</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2023-11-27</link>
+      <guid isPermaLink="false">2023-11-27</guid>
+      <pubDate>Mon, 27 Nov 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<p>Updated <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/index/">Document API references</a> to include:</p>
+
+<ul>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/complex-shape-node/">ComplexShapeNode class</a></li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/classes/grid-layout-node/">GridLayoutNode class</a></li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/interfaces/i-strokable-node/">IStrokableNode interface</a></li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/document-apis/enumerations/fill-rule/">FillRule constant</a></li>
+</ul>
+
+<p>## 2023-11-6</p>
+
+<ul>
+<li>Added a <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/tutorials/index/">new tutorial section</a> to the Getting Started guides, including a new <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/tutorials/grids-addon/">"Building your first add-on with the Document API" tutorial</a> by Davide Barranca.</li>
+<li>Updated the naming conventions from Script Runtime to Document Sandbox and Editor APIs to Adobe Express Document APIs. The Document Sandbox now includes the Communication APIs, Web APIs and the Document APIs.</li>
+<li>Updated sample code snippets to use the <code>addOnUISdk</code> import name (vs <code>AddOnUISDK</code>) similar to what's generated in the templates for consistency.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2023-10-26</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2023-10-26</link>
+      <guid isPermaLink="false">2023-10-26</guid>
+      <pubDate>Thu, 26 Oct 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Updates</h3>
+
+<p>New questions and answers added to the FAQ regarding Adobe's use of add-on data, where to file feature requests and more.</p>]]></description>
+    </item>
+    <item>
+      <title>2023-10-10</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2023-10-10</link>
+      <guid isPermaLink="false">2023-10-10</guid>
+      <pubDate>Tue, 10 Oct 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Updates</h3>
+
+<p>Updates to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-oauth/">OAuth APIs</a> to allow for a new optional <code>windowSize</code> parameter to be specified in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-oauth#authorizationrequest"><code>AuthorizationRequest</code></a> object and the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-oauth#authorizewithownredirectrequest"><code>AuthorizeWithOwnRedirectRequest</code></a> to set the desired size of the authorization window.</p>]]></description>
+    </item>
+    <item>
+      <title>2023-10-09</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2023-10-09</link>
+      <guid isPermaLink="false">2023-10-09</guid>
+      <pubDate>Mon, 09 Oct 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Updates</h3>
+
+<p>Published new <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/distribute/guidelines/index/">Guidelines and requirements section</a>; including <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/distribute/guidelines/general/index/">General guidelines</a>, <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/distribute/guidelines/index/">Developer brand guidelines</a>, <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/distribute/guidelines/monetization/">Monetization guidelines</a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/distribute/guidelines/genai/index/">Generative AI guidelines</a>.</p>]]></description>
+    </item>
+    <item>
+      <title>2023-10-03</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2023-10-03</link>
+      <guid isPermaLink="false">2023-10-03</guid>
+      <pubDate>Tue, 03 Oct 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Updates</h3>
+
+<p>New versions of the CLI packages:</p>
+
+<p>```json</p>
+<p>  "@adobe-ccwebext/ccweb-add-on-manifest": "1.5.0"</p>
+<p>  "@adobe-ccwebext/ccweb-add-on-core": "1.5.0"</p>
+<p>  "@adobe-ccwebext/ccweb-add-on-ssl": "1.5.0"</p>
+<p>  "@adobe-ccwebext/ccweb-add-on-analytics": "1.5.0"</p>
+<p>  "@adobe-ccwebext/ccweb-add-on-developer-terms": "1.5.0"</p>
+<p>  "@adobe-ccwebext/create-ccweb-add-on": "1.5.0"</p>
+<p>  "@adobe-ccwebext/ccweb-add-on-scaffolder": "1.5.0"</p>
+<p>  "@adobe-ccwebext/ccweb-add-on-scripts": "1.5.0"</p>
+<p>  "@adobe-ccwebext/ccweb-add-on-sdk-types": "0.3.0"</p>
+<p>```</p>
+
+<p>which include:</p>
+
+<ul>
+<li>Updated templates for both iframe and document sandbox add-ons:</li>
+<li>All new add-ons created (other than those based on javascript) use <code>spectrum-web-components</code> with the Express theme pre-set.</li>
+<li>React-based templates include <a href="https://opensource.adobe.com/spectrum-web-components/using-swc-react/"><code>swc-react</code></a> setup.</li>
+<li>The <code>javascript-with-editor-apis</code> template has been removed from the initial template selection in this version but replaced with the option from the CLI to <a href="https://developer.adobe.com/express/add-ons/docs/references/document-sandbox/#cli-generated-script-runtime-add-on">include the document sandbox</a> when creating a new add-on.</li>
+</ul>
+
+<ul>
+<li>New type support for typescript based add-ons.</li>
+<li>Ability to recreate your SSL certificates.</li>
+</ul>
+
+<p>#### Documentation updates</p>
+
+<ul>
+<li>Updated <a href="https://developer.adobe.com/express/add-ons/docs/references/document-sandbox/#cli-generated-script-runtime-add-on">document sandbox Reference docs</a> to reflect the new CLI prompt to include document sandbox (vs the specific template).</li>
+<li>Updated <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog/changelog/">Getting Started guides</a> documentation and screenshots to reflect the <strong>new Add-on Launchpad panel update</strong> to the new <strong>two-tab view</strong> for "Discover" and "Your Add-ons".</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2023-09-26</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2023-09-26</link>
+      <guid isPermaLink="false">2023-09-26</guid>
+      <pubDate>Tue, 26 Sep 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Removed</h3>
+
+<ul>
+<li>Removed the experimental APIs notes/warnings around the <strong>Audio APIs and User APIs</strong> since they <strong>are now stable</strong>.</li>
+<li>Removed references to the Dropbox sample since the <a href="https://developer.adobe.com/express/add-ons/docs/samples/#import-images-using-oauth">import-images-from-oauth</a> contains the same functionality.</li>
+</ul>
+
+<h3>Updated</h3>
+
+<ul>
+<li>Updated the Express add-ons <a href="https://developer.adobe.com/express/add-ons/docs/guides/">introduction video</a> with a newly created version.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2023-09-25</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2023-09-25</link>
+      <guid isPermaLink="false">2023-09-25</guid>
+      <pubDate>Mon, 25 Sep 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Updates</h3>
+
+<p>The <a href="https://developer.adobe.com/express-add-on-apis/docs/api/classes/Editor/">Editor API references</a> have been updated with additional descriptions and details as well as some new and modified APIs:</p>
+
+<ul>
+<li>Artboard now has a single fill only. <strong>Note:</strong> it's possible that all node types will move to this model in the near future.</li>
+<li>The <code>name</code> property is now only available on <code>PageNode</code>, not all node types.</li>
+<li>New <code>Node.locked</code> & <code>Context.selectionIncludingNonEditable</code> properties were added for the locking feature that recently shipped in Express.</li>
+</ul>
+
+<p><InlineAlert slots="text" variant="info"/></p>
+
+<p>If you're using the experimental Document Sandbox APIs in any add-ons currently, we encourage you to check the specific methods and objects you're using in these <a href="https://developer.adobe.com/express-add-on-apis/docs/api/classes/Editor/">updated references</a> to discover anything new or changed.</p>]]></description>
+    </item>
+    <item>
+      <title>2023-09-19</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2023-09-19</link>
+      <guid isPermaLink="false">2023-09-19</guid>
+      <pubDate>Tue, 19 Sep 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>New <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/platform-concepts/context/">iframe Sandbox Context guide</a> with details on the new <code>subdomain</code> support and CORS handling.</li>
+<li>How-to videos embedded in various guides to help visually show how to use the information in those sections.</li>
+</ul>
+
+<h3>Updates</h3>
+
+<ul>
+<li><strong>New Types Package Versions Released</strong> &lt;br /&gt;</li>
+<li>A new version <code>0.1.6</code> of the <code>@adobe-ccwebext/ccweb-add-on-sdk-types</code> package with the latest typings for the <a href="https://developer.adobe.com/express/add-ons/docs/references/addonsdk/"><code>AddOnSDK</code> (iframe)</a>, including new experimental APIs, as well as general improvements and bug fixes.</li>
+<li>A new version <code>0.2.0</code> of the <code>@adobe-ccwebext/ccweb-add-on-sdk-types</code> package with the latest typings for the <strong>document sandbox/Editor APIs</strong>.</li>
+</ul>
+
+<p>  <strong>IMPORTANT</strong>:</p>
+<p>  Developers who are <strong>NOT</strong> using the <a href="https://developer.adobe.com/express/add-ons/docs/references/document-sandbox/">document sandbox/Editor APIs</a> should update to their types package to <code>0.1.6</code> at minimum by changing the version of it to <code>@adobe-ccwebext/ccweb-add-on-sdk-types@0.1.6</code> in the <code>package.json</code>.</p>
+
+<p>  The new types <code>0.2.0</code> types package will be used automatically for any new add-ons created. If you would like to update an existing add-on to the <code>0.2.0</code> version, you will need to update the <code>ccweb-add-on-sdk-typings.d.ts</code> file in your add-on with the content <a href="https://github.com/adobe-ccwebext/ccweb-add-on-cli/blob/main/packages/wxp-sdk-typings/ccweb-add-on-sdk-typings.d.ts">here</a>.</p>
+
+<ul>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/advanced-topics/performance/">Performance guide</a> updates to include <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/advanced-topics/performance#task-manager"><strong>Task Manager</strong></a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/advanced-topics/performance#memory-consumption-monitoring"><strong>Memory Consumption</strong></a> details for add-ons.</li>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/support/faq/">FAQ update</a> for <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/support/faq#is-sharedarraybuffer-supported"><code>SharedArrayBuffer</code></a>.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2023-09-12</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2023-09-12</link>
+      <guid isPermaLink="false">2023-09-12</guid>
+      <pubDate>Tue, 12 Sep 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Updates</h3>
+
+<ul>
+<li>Added supported file types for import and export to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/support/faq/">FAQ</a>.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2023-09-07</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2023-09-07</link>
+      <guid isPermaLink="false">2023-09-07</guid>
+      <pubDate>Thu, 07 Sep 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Updates</h3>
+
+<p>&lt;del &gt;</p>
+
+<ul>
+<li>The <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/communication/index/">Communication API</a> in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/index/">document sandbox reference section</a> was updated to change the example code importing the SDK to a default import rather than a named import as it was previously:</li>
+</ul>
+
+<p>  from:</p>
+
+<p>  <code>import { AddOnSdkApi } from "AddOnSdkApi";</code></p>
+
+<p>  to:</p>
+
+<p>  <code>import AddOnScriptSdk from "AddOnScriptSdk";</code></p>
+
+<p>  Note that you can now name the imported module whatever you'd like, but for simplicity in the examples, the name is kept the same. <strong>Since these APIs are currently experimental, this change will not impact any in-production add-ons, _however_, it will require you to update any existing usage of these APIs in progress</strong>.</p>
+
+<p>&lt;/del &gt;</p>
+
+<ul>
+<li>A <strong>new 1.4.2 version of the CLI</strong> was also released with an updated <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/index/"><code>javascript-with-editor-apis</code> template</a> reflecting the default SDK import noted in the first bullet above. The new CLI version will install automatically when you create a new add-on, or you can update existing add-ons by changing the version of the <code>ccweb-add-on-scripts</code> in the <code>package.json</code> to <code>1.4.2</code>.</li>
+<li>Updated the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/support/faq/">FAQ</a> with details on Experimental APIs and suppported file types for exported content.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2023-09-05</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2023-09-05</link>
+      <guid isPermaLink="false">2023-09-05</guid>
+      <pubDate>Tue, 05 Sep 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<p>Added new <strong>Audio API</strong> documentation. You can now import audio to the current Adobe Express document in two different methods:</p>
+
+<p>1. Using the new <a href="https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#addaudio"><code>addAudio()</code></a> method, which requires a <a href="https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#mediaattributes"><code>MediaAttributes</code></a> object containing the <code>title</code> of the audio content.</p>
+<p>2. Using <a href="https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#enabledragtodocument">drag and drop</a>, and supplying the <a href="https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#mediaattributes"><code>MediaAttributes</code></a> object in the <a href="https://developer.adobe.com/express/add-ons/docs/references/addonsdk/addonsdk-app/#dragcompletiondata"><code>DragCompletionData</code></a>.</p>
+
+<p>Please note, in both cases, the <code>MediaAttributes</code> object is required for audio content, but optional for video and image content. A new code sample will be supplied in the near future, but in the meantime, please refer to the example usage snippets provided in the <a href="https://developer.adobe.com/express/add-ons/docs/references/addonsdk/app-document/#addaudio">SDK Reference</a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/develop/">Implementing Common Use Cases Guide</a>.</p>]]></description>
+    </item>
+    <item>
+      <title>2023-08-31</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2023-08-31</link>
+      <guid isPermaLink="false">2023-08-31</guid>
+      <pubDate>Thu, 31 Aug 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<p>Added new code sample to demonstrate how to use SWC-React and set theme properties in add-ons called <strong>swc-react-theme-sampler</strong> to the <a href="https://developer.adobe.com/express/add-ons/docs/samples/#swc-react-theme-sampler">Code Samples</a>.</p>
+
+<h3>Updated</h3>
+
+<ul>
+<li>Updated the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/design/index/">User Interface Guide</a> to add more notes around the recommended use of <code>swc-react</code> over React Spectrum and to point to the new sample mentioned above.</li>
+</ul>
+
+<h3>Fixed</h3>
+
+<ul>
+<li>Fixed bug in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-ui/">locale</a> example.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2023-08-29</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2023-08-29</link>
+      <guid isPermaLink="false">2023-08-29</guid>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<ul>
+<li>Added <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/user-info/"><code>currentUser</code> API</a> details and usage example to the <a href="https://developer.adobe.com/express/add-ons/docs/references/addonsdk/">SDK References</a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/index/">Implementing Common Use Cases Guide</a>.</li>
+<li>Added a new <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/samples#licensed-addon">licensed-addon code sample</a> to illustrate how to implement monetization by leveraging the current userid.</li>
+<li>Added <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-dev-flags/"><code>devFlags</code> API</a> details, which can be used to simulate certain behavior during development.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2023-08-17</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2023-08-17</link>
+      <guid isPermaLink="false">2023-08-17</guid>
+      <pubDate>Thu, 17 Aug 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Bugs and Fixes</h3>
+
+<ul>
+<li>There's currently a bug where <code>addArtboard</code> could crash the application or corrupt the document if there's no <code>fill</code> specified on the artboard. _Please ensure you always add a fill in the same frame as the artboard creation until this issue is resolved_. Also note, when this bug is fixed, the <code>ArtboardNode</code> will accept a single <code>fill</code> object, rather than an <code>ItemList</code> of <code>fill</code>(s).</li>
+</ul>
+
+<ul>
+<li>Currently, in the <code>addPage</code> API, a new page is created, but the selected context is not changed to the newly added <code>artboard</code>. As a result, from a UI perspective, the user remains on the previous page. A change will be implemented this week which will change the default context to the <code>artboard</code> child of the newly added page. This results in actual navigation to the newly added page, and all new content which is added using the Editor APIs will be added to this page.</li>
+</ul>
+
+<p>  <strong>IMPORTANT:</strong> We recommend that you <strong>_only test the use of these experimental Editor APIs against non-essential documents_</strong>, due to the potential for loss or corruption.</p>
+
+<h3>Updates</h3>
+
+<ul>
+<li>Premium Content handling details have been added to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/premium-content/">Implementing Common Use Cases Guide</a>. Note the warning for ensuring that you include the specified <code>permissions</code> in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#entrypointspermissionssandbox"><code>manifest.json</code></a> to <code>allow-popups</code> and <code>allow-popups-to-escape-sandbox</code> to ensure the pricing page can be loaded when needed (and note the addition of the <code>renditionPreview</code> flag in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#requirements"><code>requirements</code></a> of the manifest when you want to allow premium content to be previewed).</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2023-08-09</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2023-08-09</link>
+      <guid isPermaLink="false">2023-08-09</guid>
+      <pubDate>Wed, 09 Aug 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>Added new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/index/">references section</a> for the document sandbox APIs.</li>
+</ul>
+
+<h3>Important notes on document sandbox APIs (aka Document Sandbox)</h3>
+
+<ul>
+<li>These APIs are experimental!</li>
+<li>Do not test your add-ons on documents that you care about as these APIs are not currently considered stable.</li>
+<li>Be sure to only use documented APIs when writing your add-ons. Use of undocumented APIs (which may be prefixed with an underscore, but not always) is not supported and may cause your add-on to fail or lead to document corruption. Visibility of a method or property is visible via <code>console.log</code> is not an indication of whether that field is supported or documented.</li>
+<li>Debugging & Console messages</li>
+<li>You may see "Empty transaction not added to pendingTransaction" while running code in the document sandbox. You can ignore this for now.</li>
+<li>You may see "Detected a possible stutter. Excessive ECS Frame duration of ## ms" in the console. You can ignore this for now.</li>
+<li>If your script code has a syntax error, the console will log an unhelpful error message (similar to <code>Uncaught (in promise) at adobe-internal.js:49</code>). Your add-on panel UI will be visible and continue to be interactive, but it won't be able to communicate with the document sandbox, resulting in what feels like non-responsive UI (e.g., clicking doesn't trigger the expected action). You'll want to configure your editor to highlight any syntax editors so that you can be sure your code is at least syntactically correct before you save.</li>
+<li>Intermittent issues</li>
+<li>Auto reload of the add-on when a change is detected sometimes fails to work properly. This can result in changes to the UI HTML not being reflected, but can also cause the connection between the panel UI and the document sandbox to not be properly initialized (your UI may appear to be unresponsive as a result). If you encounter this situation, manually reloading the add-on from the developer panel will usually resolve the issue. We're working on a fix.</li>
+<li>It's occasionally possible to run into a race condition where the communications bridge between the two contexts (panel vs document sandbox) is not set up in time. If you interact with your panel UI immediately after it's reloaded, the click may appear do nothing instead of invoking your script code. We're working on a fix for this.</li>
+<li>Common pitfalls</li>
+<li>If you split your work on a document over multiple frames, be sure to protect against reentrancy, otherwise you may end up corrupting the user's undo stack. You should disable elements on the panel UI that could allow the user to execute your code before it is complete and then re-enable those elements when the code is done. The issue will be fixed in a future release.</li>
+<li>When setting up communication between your panel UI code and your script sandbox code, calling <code>apiProxy()</code> with the wrong argument will do nothing without providing any error feedback. If communication is not working, carefully double-check your UI code is requesting the <code>"script"</code> API proxy and your script sandbox code is requesting the <code>"panel"</code> API proxy.</li>
+<li>Unexpected behavior</li>
+<li>If the user has a selection and your add-on creates new content, the selection is cleared. This will be addressed before release. An API will be added in the future that will allow you to change the selection to content your add-on creates.</li>
+<li>When you add text content to a document, font substitution is not working correctly. This means that if you use Asian-language characters, the user may see square boxes instead. If the user were to type the content manually, however, they would see the correct rendering. This issue will be fixed before release.</li>
+<li>Setting a blend mode on a media container node (e.g., after calling <code>editor.createImageContainer</code>) will be visually reflected, but doesn't currently update the "Blend mode" field in the property panel.</li>
+<li>Setting rotation on an empty group is ignored. Always add content (children) to a group first, and then set its rotation.</li>
+<li>When removing elements from a parent element, the element may continue to show in the Adobe Express layer stack. This will be addressed in the future. This can also occur if you call <code>clear()</code> to remove all children from an element as well as when using <code>removeFromParent()</code>.</li>
+<li>Shape elements added to the document by users (via the Media tab) do not support fill or stroke properties at this time. Furthermore, you should generally avoid making changes to these shapes (they'll appear as group nodes), as this could corrupt the document. We'll add protections around this in an upcoming release.</li>
+<li>While the API supports adding multiple strokes to elements, Express currently only supports editing the _first_ stroke added. If you want to change the stroke of an element, _remove_ the existing strokes and then add the new stroke so that the element continues to have a single stroke. For example:</li>
+</ul>
+
+<p>    ```js</p>
+<p>    element.strokes.clear();</p>
+<p>    element.strokes.append(newStroke);</p>
+<p>    ```</p>
+
+<ul>
+<li>Likely API changes</li>
+<li>Creating colors is currently done via <code>utils.createColor()</code>. We're likely to change how you assign colors to objects, so bear this in mind as you use the experimental APIs. Note that this means you cannot just pass a plain JS object of the form <code>{red, green, blue}</code> to the Editor APIs — it must be a color created using <code>utils.createColor</code>.</li>
+<li>Editor API constants may be renamed or may change how they are accessed.</li>
+<li>Fills and strokes can only be assigned to a single parent element. If you try to append a fill from one element to another element, the fill will be _moved_ and not cloned (just like moving a scenenode object from one parent to another). This behavior may change in the future.</li>
+<li>There is no support for <code>fetch</code> in the document sandbox environment. You can work around this by exposing a method from your panel that your script code can call that does the work of fetching remote content. In the future we may abstract this for you automatically.</li>
+<li>The <code>strokes</code> API is likely to be modified so that it only supports a single stroke.</li>
+<li>Typings & Typescript</li>
+<li>Typings and samples showing how to use Typescript will be available in a future release.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2023-08-01</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2023-08-01</link>
+      <guid isPermaLink="false">2023-08-01</guid>
+      <pubDate>Tue, 01 Aug 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>Added new properties to the manifest reference for <code>renditionPreview</code> in the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#requirements"><code>requirements</code></a> section, and the <code>script</code> property to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#entrypoints"><code>entryPoints</code></a> section to support the new experimental <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/document-sandbox/index/">document sandbox APIs</a>.</li>
+<li>Added <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-app#disabledragtodocument-type-definition"><code>DisableDragToDocument</code></a> and <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-app#dragendeventdata"><code>dropCancelReason</code></a> support to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/addonsdk-app/"><code>addonsdk.app</code></a> reference.</li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2023-07-11</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2023-07-11</link>
+      <guid isPermaLink="false">2023-07-11</guid>
+      <pubDate>Tue, 11 Jul 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/design/ux-guidelines/introduction/">UX Guidelines</a> are now available!</li>
+<li>A new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-document#jpgrenditionoptions"><code>requestedSize</code></a> parameter can now be supplied as part of the JPG and PNG rendition options passed in when exporting content with the <code>createRenditions</code> method.</li>
+<li>A new <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/manifest/index#entrypointspermissions"><code>clipboard</code> permission</a> can now be set with the <code>clipboard-write</code> value in the manifest to allow an add-on to write data to the clipboard.</li>
+<li>Information on <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/build/design/ux-guidelines/visual-elements#typography">using fonts</a>.</li>
+<li>CORS / COEP header handling added to the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/platform-concepts/context#cors--coep-handling">CORS guide</a></li></ul>
+]]></description>
+    </item>
+    <item>
+      <title>2023-06-08</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2023-06-08</link>
+      <guid isPermaLink="false">2023-06-08</guid>
+      <pubDate>Thu, 08 Jun 2023 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Added</h3>
+
+<ul>
+<li>Initial release for the beta version of Adobe Express.</li></ul>
+]]></description>
+    </item>
+  </channel>
+</rss>
