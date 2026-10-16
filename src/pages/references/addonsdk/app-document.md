@@ -2,21 +2,21 @@
 title: "addOnUISdk.app.document — Adobe Express Add-on SDK"
 description: "Reference for AppDocument APIs: document ID and title, page metadata, import media (image, video, audio, PDF, PPTX), and export renditions in Adobe Express."
 keywords:
-    - Adobe Express
-    - Add-on SDK
-    - addOnUISdk
-    - app.document
-    - AppDocument
-    - getPagesMetadata
-    - createRenditions
-    - importPdf
-    - importPresentation
-    - addImage
-    - addVideo
-    - addAudio
-    - print quality
+  - Adobe Express
+  - Add-on SDK
+  - addOnUISdk
+  - app.document
+  - AppDocument
+  - getPagesMetadata
+  - createRenditions
+  - importPdf
+  - importPresentation
+  - addImage
+  - addVideo
+  - addAudio
+  - print quality
 contributors:
-    - https://github.com/hollyschinsky
+  - https://github.com/hollyschinsky
 hideBreadcrumbNav: true
 ---
 
@@ -55,14 +55,16 @@ A resolved `Promise` containing the `id` of the document.
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
-function setId(id) { /* ... */ }
+function setId(id) {
+  /* ... */
+}
 
 addOnUISdk.ready.then(async () => {
   const { document } = addOnUISdk.app;
   setId(await document.id());
 });
 
-addOnUISdk.app.on("documentIdAvailable", data => {
+addOnUISdk.app.on("documentIdAvailable", (data) => {
   setId(data.documentId);
 });
 ```
@@ -92,14 +94,16 @@ A resolved `Promise` containing the `title` (ie: name) of the document.
 ```js
 import addOnUISdk from "https://express.adobe.com/static/add-on-sdk/sdk.js";
 
-function setTitle(title) { /* ... */ }
+function setTitle(title) {
+  /* ... */
+}
 
 addOnUISdk.ready.then(async () => {
   const { document } = addOnUISdk.app;
   setTitle(await document.title());
 });
 
-addOnUISdk.app.on("documentTitleChange", data => {
+addOnUISdk.app.on("documentTitleChange", (data) => {
   setTitle(data.documentTitle);
 });
 ```
@@ -286,10 +290,10 @@ The metadata of a page.
 
 This object is passed as a parameter to the [`getPagesMetadata`](#getpagesmetadata) method and includes the range and optional `pageIds` for which you want to retrieve metadata for.
 
-| Name       | Type                              |                                                           Description |
-| ---------- | --------------------------------- | --------------------------------------------------------------------: |
-| `range`    | [`Range`](addonsdk-constants.md)  |                             Range of the document to get the metadata |
-| `pageIds?` | `string[]`                        | Id's of the pages. (Only required when the range is `specificPages`). |
+| Name       | Type                             |                                                           Description |
+| ---------- | -------------------------------- | --------------------------------------------------------------------: |
+| `range`    | [`Range`](addonsdk-constants.md) |                             Range of the document to get the metadata |
+| `pageIds?` | `string[]`                       | Id's of the pages. (Only required when the range is `specificPages`). |
 
 ### getSelectedPageIds()
 
@@ -421,8 +425,8 @@ addOnUISdk.ready.then(async () => {
 
 The options to pass into the link method.
 
-| Name      | Type     | Description                                                                                          |
-| --------- | -------- | ----------------------------------------------------------------------------------------------------- |
+| Name      | Type     | Description                                                                                        |
+| --------- | -------- | -------------------------------------------------------------------------------------------------- |
 | `options` | `string` | [`LinkOptions`](addonsdk-constants.md#linkoptions) constant value — `"document"` or `"published"`. |
 
 ### isPresentation()
@@ -647,20 +651,18 @@ const { document } = addOnUISdk.app;
 
 async function addAudioFromBlob(blob) {
   try {
-      await document.addAudio(blob, {title: "Jazzy beats", author: "Jazzy"});
-  }
-  catch(error) {
-      console.log("Failed to add the audio to the page.");
+    await document.addAudio(blob, { title: "Jazzy beats", author: "Jazzy" });
+  } catch (error) {
+    console.log("Failed to add the audio to the page.");
   }
 }
 
 async function addAudioFromURL(url) {
   try {
-      const blob = await fetch(url).then(response => response.blob());
-      await document.addAudio(blob, {title: "Jazzy beats", author: "Jazzy"});
-  }
-  catch(error) {
-      console.log("Failed to add the audio to the page.");
+    const blob = await fetch(url).then((response) => response.blob());
+    await document.addAudio(blob, { title: "Jazzy beats", author: "Jazzy" });
+  } catch (error) {
+    console.log("Failed to add the audio to the page.");
   }
 }
 ```
@@ -907,12 +909,12 @@ Refer to the [manage premium content how-to](../../guides/learn/how-to/premium-c
 
 Extends the [`RenditionOptions`](#renditionoptions) object and adds the following additional options for `jpg` renditions:
 
-| Name                                      | Type                                |                                                                                                                                                                            Description |
-| ----------------------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| `format`                                  | `string`                            |                                                                                                                         [`RenditionFormat.jpg`](addonsdk-constants.md) constant value. |
-| `backgroundColor?`                        | `number`                            | Integer in 0xRRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
-| `quality?`                                | `number`                            |                                                                                                                    A number between 0 and 1, indicating image quality. Default is 1.0. |
-| [`requestedSize?`](#requested-size-notes) | `{width?: number; height?: number}` |                                                                                                                                                            Requested size (in pixels). |
+| Name                                      | Type                                |                                                                                                                                                                              Description |
+| ----------------------------------------- | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| `format`                                  | `string`                            |                                                                                                                           [`RenditionFormat.jpg`](addonsdk-constants.md) constant value. |
+| `backgroundColor?`                        | `number`                            | Integer in 0xAARRGGBB format of the background color you wish to sit behind any transparent areas. By default it is derived from the entity for which the rendition needs to be created. |
+| `quality?`                                | `number`                            |                                                                                                                      A number between 0 and 1, indicating image quality. Default is 1.0. |
+| [`requestedSize?`](#requested-size-notes) | `{width?: number; height?: number}` |                                                                                                                                                              Requested size (in pixels). |
 
 #### `PngRenditionOptions`
 
