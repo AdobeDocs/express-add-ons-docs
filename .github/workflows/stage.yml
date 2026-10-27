@@ -21,6 +21,7 @@ jobs:
       env: stage
       baseSha: ${{ inputs.baseSha }}
       deployAll: ${{ inputs.deployAll }}
+      changelogPath: 'src/pages/guides/getting-started/changelog.md'
 
   upload_playground:
     name: Upload playground samples (stage)
