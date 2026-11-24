@@ -27,6 +27,16 @@ contributors:
 
 Release notes for the Adobe Express Add Ons, with the newest release first.\<br>\<br>\<a href="https://raw.githubusercontent.com/AdobeDocs/express-add-ons-docs/refs/heads/main/src/pages/feed.xml" style="display: inline-flex; align-items: center; gap: 6px;">\<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">\<circle cx="6.18" cy="17.82" r="2.18" fill="#eb1000"/>\<path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z" fill="#eb1000"/>\</svg>\<span>Subscribe via RSS\</span>\</a>
 
+## 2026-11-24
+
+### Updated
+
+- [`currentUser.userId()`](../../references/addonsdk/app-current-user.md#userid) is now deprecated and being enforced. Following the **November 15, 2026** removal date, calling it fails with an error in the following cases:
+  - Add-ons loaded locally from your development server.
+  - Add-ons submitted to the marketplace after November 15, 2026 (00:00 UTC).
+
+  Add-ons submitted on or before that date continue to work, but log a deprecation warning to the browser console. To avoid errors, migrate to [`currentUser.identity()`](../../references/addonsdk/app-current-user.md#identity), which returns the user's SHA-256 hashed canonical `userId` and any associated `legacyIds`. See the [How-to Guide](../learn/how-to/user-info.md) for details.
+
 ## 2026-09-07
 
 ### Updated

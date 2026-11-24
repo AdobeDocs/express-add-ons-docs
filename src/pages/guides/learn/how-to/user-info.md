@@ -37,7 +37,7 @@ faq:
       answer: "No, don't try to infer consolidation status from the values `identity()` returns. Matching IDs or an empty `legacyIds` array don't confirm anything: the user may not be an enterprise user, or may be an enterprise user who hasn't been consolidated yet. Always treat the resolved `userId` as the canonical identifier and use `legacyIds` when present to reconcile previously stored data."
 
     - question: "Why is userId() deprecated?"
-      answer: "`userId()` is deprecated because Connected Enterprise may change a user's ID during account consolidation. `identity()` exposes both the current canonical ID and any legacy IDs, so your add-on can recognize users across a migration. `userId()` is scheduled for removal on November 15, 2026."
+      answer: "`userId()` is deprecated because Connected Enterprise may change a user's ID during account consolidation. `identity()` exposes both the current canonical ID and any legacy IDs, so your add-on can recognize users across a migration. Since November 15, 2026, `userId()` fails with an error for add-ons loaded locally from your development server and for add-ons submitted after that date. Earlier submissions continue to work but log a deprecation warning to the browser console."
 
     - question: "How do I check if a user has premium subscription?"
       answer: "Call `await addOnUISdk.app.currentUser.isPremiumUser()` to get a boolean premium status."
@@ -114,7 +114,7 @@ Use [`identity()`](../../../references/addonsdk/app-current-user.md#identity) to
 
 #### `userId()` is deprecated
 
-Use [`addOnUISdk.app.currentUser.identity()`](../../../references/addonsdk/app-current-user.md#identity) instead of the deprecated [`addOnUISdk.app.currentUser.userId()`](../../../references/addonsdk/app-current-user.md#userid) method, which is scheduled for removal on **November 15, 2026**. For accounts that haven't been consolidated through Connected Enterprise, `userId()` returns the same value as `identity().userId`.
+Use [`addOnUISdk.app.currentUser.identity()`](../../../references/addonsdk/app-current-user.md#identity) instead of the deprecated [`addOnUISdk.app.currentUser.userId()`](../../../references/addonsdk/app-current-user.md#userid) method. Since the **November 15, 2026** removal date, `userId()` fails with an error for add-ons loaded locally from your development server (for example, in Dev Mode) and for add-ons submitted after that date. Add-ons submitted on or before that date continue to work, but log a deprecation warning to the browser console. For accounts that haven't been consolidated through Connected Enterprise, `userId()` returns the same value as `identity().userId`.
 
 #### Handle user ID changes
 
@@ -175,7 +175,7 @@ When `isAnonymousUser()` returns `true`, the user is browsing as a guest without
 
 #### Q: Why is userId() deprecated?
 
-**A:** `userId()` is deprecated because Connected Enterprise may change a user's ID during account consolidation. `identity()` exposes both the current canonical ID and any legacy IDs, so your add-on can recognize users across a migration. `userId()` is scheduled for removal on November 15, 2026.
+**A:** `userId()` is deprecated because Connected Enterprise may change a user's ID during account consolidation. `identity()` exposes both the current canonical ID and any legacy IDs, so your add-on can recognize users across a migration. Since November 15, 2026, `userId()` fails with an error for add-ons loaded locally from your development server and for add-ons submitted after that date. Earlier submissions continue to work but log a deprecation warning to the browser console.
 
 #### Q: How do I check if a user has premium subscription?
 
