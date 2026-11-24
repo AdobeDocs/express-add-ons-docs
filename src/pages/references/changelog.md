@@ -25,6 +25,16 @@ contributors:
 
 # Changelog
 
+## 2026-11-24
+
+### Updated
+
+- [`currentUser.userId()`](./addonsdk/app-current-user.md#userid) is now deprecated and being enforced. Following the **November 15, 2026** removal date, calling it fails with an error in the following cases:
+  - Add-ons loaded locally from your development server.
+  - Add-ons submitted to the marketplace after November 15, 2026 (00:00 UTC).
+
+  Add-ons submitted on or before that date continue to work, but log a deprecation warning to the browser console. To avoid errors, migrate to [`currentUser.identity()`](./addonsdk/app-current-user.md#identity), which returns the user's SHA-256 hashed canonical `userId` and any associated `legacyIds`. See the [How-to Guide](../guides/learn/how-to/user-info.md) for details.
+
 ## 2026-09-07
 
 ### Updated

@@ -77,7 +77,7 @@ Legacy IDs: a3f1c2d4e5b6789012345678abcdef90abcdef90abcdef90abcdef90abcdef90, b7
 
 <InlineAlert slots="text" variant="warning"/>
 
-**Deprecated.** `userId()` is scheduled for removal on **November 15, 2026** in favor of the [`identity()`](#identity) method. After that date, this method will throw an error. Calling this method now logs a one-time console warning.
+**Deprecated.** `userId()` has been replaced by the [`identity()`](#identity) method. Since the **November 15, 2026** removal date, calling `userId()` fails with an error for add-ons loaded locally from your development server (for example, in Dev Mode) and for add-ons submitted to the marketplace after that date. Add-ons submitted on or before that date continue to work, but log a deprecation warning to the browser console.
 
 Retrieve a SHA-256 hashed ID for the current user of the host application (Adobe Express).
 
