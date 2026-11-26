@@ -6,7 +6,22 @@
     <atom:link href="https://developer.adobe.com/express/add-ons/docs/feed.xml" rel="self" type="application/rss+xml" />
     <description>Release notes for the Adobe Express Add Ons.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Oct 2026 10:24:05 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 13:11:47 GMT</lastBuildDate>
+    <item>
+      <title>2026-11-24</title>
+      <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2026-11-24</link>
+      <guid isPermaLink="false">2026-11-24</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[<h3>Updated</h3>
+
+<ul>
+<li><a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-current-user#userid"><code>currentUser.userId()</code></a> is now deprecated and being enforced. Following the <strong>November 15, 2026</strong> removal date, calling it fails with an error in the following cases:</li>
+<li>Add-ons loaded locally from your development server.</li>
+<li>Add-ons submitted to the marketplace after November 15, 2026 (00:00 UTC).</li>
+</ul>
+
+<p>  Add-ons submitted on or before that date continue to work, but log a deprecation warning to the browser console. To avoid errors, migrate to <a href="https://developer.adobe.com/express/add-ons/docs/guides/references/addonsdk/app-current-user#identity"><code>currentUser.identity()</code></a>, which returns the user's SHA-256 hashed canonical <code>userId</code> and any associated <code>legacyIds</code>. See the <a href="https://developer.adobe.com/express/add-ons/docs/guides/getting-started/learn/how-to/user-info/">How-to Guide</a> for details.</p>]]></description>
+    </item>
     <item>
       <title>2026-09-07</title>
       <link>https://developer.adobe.com/express/add-ons/docs/guides/getting-started/changelog#2026-09-07</link>

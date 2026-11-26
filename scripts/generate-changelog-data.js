@@ -6,32 +6,77 @@ const INPUT_MD_FILE = path.join(ROOT_DIR, "src", "pages", "guides", "getting-sta
 const OUTPUT_DATA_FILE = path.join(ROOT_DIR, "src", "pages", "changelog-data.yml");
 
 /**
+ * Removes common leading whitespace indentation from lines.
+ */
+function dedentLines(lines) {
+  if (!lines || lines.length === 0) return "";
+  let minIndent = Infinity;
+  for (const line of lines) {
+    if (line.trim().length > 0) {
+      const match = line.match(/^(\s*)/);
+      const indent = match ? match[1].length : 0;
+      if (indent < minIndent) minIndent = indent;
+    }
+  }
+  if (minIndent === Infinity || minIndent === 0) {
+    return lines.join("\n");
+  }
+  return lines.map((line) => (line.length >= minIndent ? line.slice(minIndent) : line)).join("\n");
+}
+
+/**
+ * Normalizes change types to standard lowercase types (new, improved, fixed, etc.)
+ */
+function normalizeType(type) {
+  if (!type) return null;
+  const t = type.trim();
+  const lower = t.toLowerCase();
+  if (lower === "added" || lower === "new") return "new";
+  if (lower === "updated" || lower === "improved") return "improved";
+  if (lower === "fixed") return "fixed";
+  if (lower === "deprecated") return "deprecated";
+  if (lower.startsWith("breaking")) return "breaking";
+  if (lower === "docs") return "docs";
+  if (lower === "removed") return "removed";
+  return lower;
+}
+
+/**
  * Parses markdown changelog into structured release objects:
- * each release has date, optional version, and changes array containing optional type and text.
+ * each release has date, optional version, and changes array containing optional type, text, list, and code.
  */
 function parseChangelogMarkdown(content) {
   const lines = content.split(/\r?\n/);
   const releases = [];
   let currentRelease = null;
-  let currentChangeLines = null;
+  let currentChange = null;
   let currentType = null;
   let inCodeBlock = false;
+  let codeBlockLines = null;
 
   function flushChange() {
-    if (currentRelease && currentChangeLines && currentChangeLines.length > 0) {
-      while (currentChangeLines.length > 0 && currentChangeLines[currentChangeLines.length - 1].trim() === "") {
-        currentChangeLines.pop();
+    if (currentChange) {
+      if (currentChange.textLines && currentChange.textLines.length > 0) {
+        while (currentChange.textLines.length > 0 && currentChange.textLines[currentChange.textLines.length - 1].trim() === "") {
+          currentChange.textLines.pop();
+        }
       }
-      if (currentChangeLines.length > 0) {
-        const text = currentChangeLines.join("\n");
+      if (currentChange.textLines && currentChange.textLines.length > 0) {
+        const text = currentChange.textLines.join("\n");
         const change = {};
         if (currentType) {
-          change.type = currentType;
+          change.type = normalizeType(currentType);
         }
         change.text = text;
+        if (currentChange.listLines && currentChange.listLines.length > 0) {
+          change.list = currentChange.listLines.join("\n");
+        }
+        if (currentChange.codeLines && currentChange.codeLines.length > 0) {
+          change.code = dedentLines(currentChange.codeLines);
+        }
         currentRelease.changes.push(change);
       }
-      currentChangeLines = null;
+      currentChange = null;
     }
   }
 
@@ -60,16 +105,28 @@ function parseChangelogMarkdown(content) {
 
     // Check for fenced code blocks
     if (trimmed.startsWith("```")) {
-      inCodeBlock = !inCodeBlock;
-      if (currentChangeLines) {
-        currentChangeLines.push(rawLine);
+      if (!inCodeBlock) {
+        inCodeBlock = true;
+        codeBlockLines = [];
+      } else {
+        inCodeBlock = false;
+        // Finished a code block: capture raw code without fence lines
+        if (currentChange && codeBlockLines) {
+          if (!currentChange.codeLines) {
+            currentChange.codeLines = [];
+          } else if (currentChange.codeLines.length > 0) {
+            currentChange.codeLines.push("");
+          }
+          currentChange.codeLines.push(...codeBlockLines);
+        }
+        codeBlockLines = null;
       }
       continue;
     }
 
     if (inCodeBlock) {
-      if (currentChangeLines) {
-        currentChangeLines.push(rawLine);
+      if (codeBlockLines) {
+        codeBlockLines.push(rawLine);
       }
       continue;
     }
@@ -105,12 +162,13 @@ function parseChangelogMarkdown(content) {
     const h4Match = rawLine.match(/^####\s+(.*)$/);
     if (h4Match) {
       flushChange();
-      currentChangeLines = [trimmed];
+      currentChange = { textLines: [trimmed], listLines: null, codeLines: null };
       continue;
     }
 
     // Skip <InlineAlert ...> component tags so raw JSX is not shown in the changelog text
     if (trimmed.startsWith("<InlineAlert")) {
+      flushChange();
       let nextNonEmptyIndex = -1;
       for (let ni = lineIndex + 1; ni < lines.length; ni += 1) {
         if (lines[ni].trim().length > 0) {
@@ -126,8 +184,7 @@ function parseChangelogMarkdown(content) {
         const hasHeaderSlot = /slots="[^"]*header[^"]*"/.test(trimmed);
 
         if (isH4 || (hasHeaderSlot && isBoldHeader)) {
-          flushChange();
-          currentChangeLines = [nextLineTrimmed];
+          currentChange = { textLines: [nextLineTrimmed], listLines: null, codeLines: null };
           lineIndex = nextNonEmptyIndex; // Advance past the header line
           continue;
         }
@@ -136,19 +193,58 @@ function parseChangelogMarkdown(content) {
       continue;
     }
 
-    // Top-level list item (- item, * item, 1. item)
+    // Top-level bullet: starts at line start (- item, * item, 1. item)
     const isTopBullet = /^[-*]\s+/.test(rawLine);
     const isTopNumbered = /^\d+\.\s+/.test(rawLine);
 
     if (isTopBullet || isTopNumbered) {
       flushChange();
-      const contentAfterMarker = rawLine.replace(/^[-*]\s+|\d+\.\s+/, "");
-      currentChangeLines = [contentAfterMarker];
+      const content = rawLine.replace(/^[-*]\s+|\d+\.\s+/, "");
+      currentChange = { textLines: [content], listLines: null, codeLines: null };
+      continue;
+    }
+
+    // Indented sub-bullet (e.g. "  - item" or "    - item") -> goes into currentChange.list
+    const isSubBullet = /^\s+[-*]\s+/.test(rawLine);
+    const isSubNumbered = /^\s+\d+\.\s+/.test(rawLine);
+
+    if (isSubBullet || isSubNumbered) {
+      if (currentChange) {
+        const itemContent = rawLine.replace(/^\s*[-*]\s+|\s*\d+\.\s+/, "");
+        if (!currentChange.listLines) {
+          currentChange.listLines = [];
+        }
+        currentChange.listLines.push(itemContent);
+        continue;
+      }
+    }
+
+    // Standalone callout notes like **NOTE:**, **IMPORTANT:**, **Known Issue:**
+    const isAlertCallout = /^\s*\*\*(?:NOTE|IMPORTANT|Known Issue|WARNING):?\*\*/i.test(trimmed);
+    if (isAlertCallout) {
+      flushChange();
+      currentChange = { textLines: [trimmed], listLines: null, codeLines: null };
+      continue;
+    }
+
+    // Transition / label lines between/before code blocks (e.g. **Old**, **New**, versus:, <del>)
+    const isTransition = /^(?:versus:?|\*+\s*(?:Old|New)[^*]*\*+|(?:&lt;|<)\/?del\s*(?:&gt;|>))/i.test(trimmed);
+    if (isTransition) {
+      continue;
+    }
+
+    // Check for prose after a completed code block (e.g. "The code samples have also been updated...")
+    if (currentChange && currentChange.codeLines && currentChange.codeLines.length > 0) {
+      if (trimmed === "") {
+        continue;
+      }
+      flushChange();
+      currentChange = { textLines: [trimmed], listLines: null, codeLines: null };
       continue;
     }
 
     // Continuation lines for active change item
-    if (currentChangeLines) {
+    if (currentChange) {
       if (trimmed === "") {
         let isContinuation = false;
         for (let nextIndex = lineIndex + 1; nextIndex < lines.length; nextIndex += 1) {
@@ -157,17 +253,30 @@ function parseChangelogMarkdown(content) {
           if (nextTrimmed.startsWith("##")) break;
           if (nextTrimmed.startsWith("### ")) break;
           if (nextTrimmed.startsWith("#### ")) break;
-          if (nextTrimmed.startsWith("<InlineAlert")) {
-            if (/slots="[^"]*header[^"]*"/.test(nextTrimmed)) break;
-            continue;
-          }
+          if (nextTrimmed.startsWith("<InlineAlert")) break;
           if (/^[-*]\s+/.test(lines[nextIndex]) || /^\d+\.\s+/.test(lines[nextIndex])) break;
+          if (/^\s+[-*]\s+/.test(lines[nextIndex]) || /^\s+\d+\.\s+/.test(lines[nextIndex])) {
+            isContinuation = true;
+            break;
+          }
+          if (/^\s*\*\*(?:NOTE|IMPORTANT|Known Issue|WARNING):?\*\*/i.test(nextTrimmed)) break;
           isContinuation = true;
           break;
         }
         if (isContinuation) {
-          if (currentChangeLines.length > 0 && currentChangeLines[currentChangeLines.length - 1].trim() !== "") {
-            currentChangeLines.push("");
+          // If the next content is not a sub-bullet, add a blank line to textLines
+          let nextIsSubBullet = false;
+          for (let nextIndex = lineIndex + 1; nextIndex < lines.length; nextIndex += 1) {
+            if (lines[nextIndex].trim() === "") continue;
+            if (/^\s+[-*]\s+/.test(lines[nextIndex]) || /^\s+\d+\.\s+/.test(lines[nextIndex])) {
+              nextIsSubBullet = true;
+            }
+            break;
+          }
+          if (!nextIsSubBullet) {
+            if (currentChange.textLines.length > 0 && currentChange.textLines[currentChange.textLines.length - 1].trim() !== "") {
+              currentChange.textLines.push("");
+            }
           }
         } else {
           flushChange();
@@ -175,20 +284,22 @@ function parseChangelogMarkdown(content) {
         continue;
       }
 
-      // Indented line (sub-bullets, indented text, code)
-      if (/^(\s{2,}|\t)/.test(rawLine)) {
-        currentChangeLines.push(rawLine);
-        continue;
+      // If currently accumulating sub-list items and this is indented text belonging to the sub-bullet
+      if (currentChange.listLines && currentChange.listLines.length > 0) {
+        if (/^\s{4,}/.test(rawLine)) {
+          currentChange.listLines[currentChange.listLines.length - 1] += "\n" + trimmed;
+          continue;
+        }
       }
 
-      currentChangeLines.push(rawLine);
+      currentChange.textLines.push(trimmed);
       continue;
     }
 
     // Standalone prose paragraph (e.g. "General improvements and bug fixes.")
     if (trimmed.length > 0 && !trimmed.startsWith("#") && !trimmed.startsWith("<!--")) {
       flushChange();
-      currentChangeLines = [trimmed];
+      currentChange = { textLines: [trimmed], listLines: null, codeLines: null };
     }
   }
 
@@ -224,22 +335,25 @@ function formatYamlScalar(text, indentSpaces = 8) {
 }
 
 /**
- * Serializes releases to YAML string with date, optional version, and changes (type & text).
+ * Serializes releases to YAML string with date, optional version, and changes (type, text, list, code).
  */
 function serializeReleasesToYaml(releases) {
   const yamlLines = [
     "# changelog-data.yml",
-    "# Generated from src/pages/guides/changelog/index.md",
+    'rssfeed : "https://raw.githubusercontent.com/AdobeDocs/express-add-ons-docs/refs/heads/main/src/pages/feed.xml"',
     "",
     "releases:",
   ];
 
   for (const release of releases) {
     yamlLines.push("");
-    yamlLines.push(`  - date: ${release.date}`);
     if (release.version) {
-      yamlLines.push(`    version: ${release.version}`);
+      yamlLines.push(`  - version: ${release.version}`);
+      yamlLines.push(`    date: ${release.date}`);
+    } else {
+      yamlLines.push(`  - date: ${release.date}`);
     }
+
     if (release.changes.length === 0) {
       yamlLines.push("    changes: []");
       continue;
@@ -252,6 +366,12 @@ function serializeReleasesToYaml(releases) {
         yamlLines.push(`        text: ${formatYamlScalar(change.text, 8)}`);
       } else {
         yamlLines.push(`      - text: ${formatYamlScalar(change.text, 8)}`);
+      }
+      if (change.list) {
+        yamlLines.push(`        list: ${formatYamlScalar(change.list, 8)}`);
+      }
+      if (change.code) {
+        yamlLines.push(`        code: ${formatYamlScalar(change.code, 8)}`);
       }
     }
   }
