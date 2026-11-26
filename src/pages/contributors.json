@@ -1,7 +1,7 @@
 {
-  "total": 246,
+  "total": 247,
   "offset": 0,
-  "limit": 246,
+  "limit": 247,
   "data": [
     {
       "page": "/config",
@@ -488,6 +488,13 @@
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
       "lastUpdated": "3/13/2026"
+    },
+    {
+      "page": "/guides/getting-started/test",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/113968869?v=4"
+      ],
+      "lastUpdated": "11/26/2026"
     },
     {
       "page": "/guides/learn/fundamentals/document-sandbox-constants",
