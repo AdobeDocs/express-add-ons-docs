@@ -1,0 +1,1 @@
+<Changelog content="../../changelog-data.yml" />
