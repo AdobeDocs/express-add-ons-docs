@@ -25,6 +25,25 @@ function dedentLines(lines) {
 }
 
 /**
+ * Converts any markdown headings (##, ###, ####, etc.) into bold text (**content**).
+ */
+function convertHeadingsToBold(text) {
+  if (!text) return text;
+  return text
+    .split("\n")
+    .map((line) => {
+      const match = line.match(/^(\s*)(?:#{2,6})\s+(.+)$/);
+      if (match) {
+        const indent = match[1];
+        const title = match[2].trim().replace(/^\*\*|\*\*$/g, "");
+        return `${indent}**${title}**`;
+      }
+      return line;
+    })
+    .join("\n");
+}
+
+/**
  * Normalizes change types to standard lowercase types (new, improved, fixed, etc.)
  */
 function normalizeType(type) {
@@ -32,10 +51,12 @@ function normalizeType(type) {
   const t = type.trim();
   const lower = t.toLowerCase();
   if (lower === "added" || lower === "new") return "new";
-  if (lower === "updated" || lower === "improved") return "improved";
-  if (lower === "fixed") return "fixed";
+  if (lower === "updated" || lower === "improved" || lower === "update" || lower === "updates" || lower === "additional updates") return "improved";
+  if (lower === "fixed" || lower === "bugs and fixes") return "fixed";
   if (lower === "deprecated") return "deprecated";
   if (lower.startsWith("breaking")) return "breaking";
+  if (lower === "stabilized") return "stabilized";
+  if (lower === "changed") return "changed";
   if (lower === "docs") return "docs";
   if (lower === "removed") return "removed";
   return lower;
@@ -72,14 +93,14 @@ function parseChangelogMarkdown(content) {
         }
       }
       if (currentChange.textLines && currentChange.textLines.length > 0) {
-        const text = currentChange.textLines.join("\n");
+        const text = convertHeadingsToBold(currentChange.textLines.join("\n"));
         const change = {};
         if (currentType) {
           change.type = normalizeType(currentType);
         }
         change.text = text;
         if (currentChange.listLines && currentChange.listLines.length > 0) {
-          change.list = currentChange.listLines.join("\n");
+          change.list = convertHeadingsToBold(currentChange.listLines.join("\n"));
         }
         if (currentChange.codeLines && currentChange.codeLines.length > 0) {
           change.code = dedentLines(currentChange.codeLines);
@@ -160,19 +181,42 @@ function parseChangelogMarkdown(content) {
       continue;
     }
 
-    // H3 section headers like ### Added, ### Updated (used as change type)
+    // H3 section headers like ### Added, ### Updated (used as change type), or custom section headers
     const h3Match = rawLine.match(/^###\s+(.*)$/);
     if (h3Match) {
       flushChange();
-      currentType = h3Match[1].trim();
+      const h3Text = h3Match[1].trim();
+      const lower = h3Text.toLowerCase();
+      const isType = [
+        "added", "new", "updated", "update", "updates", "improved", "fixed",
+        "bugs and fixes", "deprecated", "stabilized", "changed", "removed",
+        "docs", "additional updates", "new experimental apis"
+      ].includes(lower) || lower.startsWith("breaking");
+
+      if (isType) {
+        currentType = h3Text;
+      } else {
+        const title = h3Text.replace(/^\*\*|\*\*$/g, "");
+        currentChange = { textLines: [`**${title}**`], listLines: null, codeLines: null };
+      }
       continue;
     }
 
-    // H4 headers (used e.g. for standalone feature announcements like #### Dark Theme Support)
+    // H4 headers (e.g. #### Dark Theme Support) -> convert to bold **content**
     const h4Match = rawLine.match(/^####\s+(.*)$/);
     if (h4Match) {
       flushChange();
-      currentChange = { textLines: [trimmed], listLines: null, codeLines: null };
+      const title = h4Match[1].trim().replace(/^\*\*|\*\*$/g, "");
+      currentChange = { textLines: [`**${title}**`], listLines: null, codeLines: null };
+      continue;
+    }
+
+    // Non-release H2 headers (## Header) -> convert to bold **content**
+    const h2Match = rawLine.match(/^##\s+(.*)$/);
+    if (h2Match) {
+      flushChange();
+      const title = h2Match[1].trim().replace(/^\*\*|\*\*$/g, "");
+      currentChange = { textLines: [`**${title}**`], listLines: null, codeLines: null };
       continue;
     }
 
@@ -189,12 +233,15 @@ function parseChangelogMarkdown(content) {
 
       if (nextNonEmptyIndex !== -1) {
         const nextLineTrimmed = lines[nextNonEmptyIndex].trim();
-        const isH4 = /^####\s+/.test(nextLineTrimmed);
+        const headingMatch = nextLineTrimmed.match(/^(?:#{2,6})\s+(.*)$/);
         const isBoldHeader = /^\*\*[^*]+:\*\*\s*$/.test(nextLineTrimmed);
         const hasHeaderSlot = /slots="[^"]*header[^"]*"/.test(trimmed);
 
-        if (isH4 || (hasHeaderSlot && isBoldHeader)) {
-          currentChange = { textLines: [nextLineTrimmed], listLines: null, codeLines: null };
+        if (headingMatch || (hasHeaderSlot && isBoldHeader)) {
+          const headerText = headingMatch
+            ? `**${headingMatch[1].trim().replace(/^\*\*|\*\*$/g, "")}**`
+            : nextLineTrimmed;
+          currentChange = { textLines: [headerText], listLines: null, codeLines: null };
           lineIndex = nextNonEmptyIndex; // Advance past the header line
           continue;
         }
@@ -270,6 +317,12 @@ function parseChangelogMarkdown(content) {
             break;
           }
           if (/^\s*\*\*(?:NOTE|IMPORTANT|Known Issue|WARNING):?\*\*/i.test(nextTrimmed)) break;
+
+          // If the next line starts a code fence or a code transition tag (<del>, Old, New, versus), it belongs to the current change
+          if (nextTrimmed.startsWith("```") || /^(?:versus:?|\*+\s*(?:Old|New)[^*]*\*+|(?:&lt;|<)\/?del\s*(?:&gt;|>))/i.test(nextTrimmed)) {
+            isContinuation = true;
+            break;
+          }
 
           // If the current change has already accumulated list items, any subsequent non-bullet line is a separate item
           if (currentChange.listLines && currentChange.listLines.length > 0) {
