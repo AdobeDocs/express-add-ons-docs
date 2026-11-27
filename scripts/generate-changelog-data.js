@@ -61,6 +61,16 @@ function parseChangelogMarkdown(content) {
           currentChange.textLines.pop();
         }
       }
+      if (currentChange.listLines && currentChange.listLines.length > 0) {
+        while (currentChange.listLines.length > 0 && currentChange.listLines[currentChange.listLines.length - 1].trim() === "") {
+          currentChange.listLines.pop();
+        }
+      }
+      if (currentChange.codeLines && currentChange.codeLines.length > 0) {
+        while (currentChange.codeLines.length > 0 && currentChange.codeLines[currentChange.codeLines.length - 1].trim() === "") {
+          currentChange.codeLines.pop();
+        }
+      }
       if (currentChange.textLines && currentChange.textLines.length > 0) {
         const text = currentChange.textLines.join("\n");
         const change = {};
@@ -260,7 +270,19 @@ function parseChangelogMarkdown(content) {
             break;
           }
           if (/^\s*\*\*(?:NOTE|IMPORTANT|Known Issue|WARNING):?\*\*/i.test(nextTrimmed)) break;
-          isContinuation = true;
+
+          // If the current change has already accumulated list items, any subsequent non-bullet line is a separate item
+          if (currentChange.listLines && currentChange.listLines.length > 0) {
+            break;
+          }
+
+          // If the next line has at least 2 spaces indentation, it is an indented continuation paragraph
+          if (/^\s{2,}/.test(lines[nextIndex])) {
+            isContinuation = true;
+            break;
+          }
+
+          // Otherwise an unindented line at column 0 starts a new block
           break;
         }
         if (isContinuation) {
@@ -324,14 +346,15 @@ function formatYamlType(type) {
  */
 function formatYamlScalar(text, indentSpaces = 8) {
   const indent = " ".repeat(indentSpaces);
-  if (text.includes("\n")) {
-    const indentedLines = text
+  const trimmed = typeof text === "string" ? text.trim() : "";
+  if (trimmed.includes("\n")) {
+    const indentedLines = trimmed
       .split("\n")
       .map((line) => (line.trim().length > 0 ? `${indent}  ${line}` : ""))
       .join("\n");
     return `|\n${indentedLines}`;
   }
-  return JSON.stringify(text);
+  return JSON.stringify(trimmed);
 }
 
 /**
@@ -367,10 +390,10 @@ function serializeReleasesToYaml(releases) {
       } else {
         yamlLines.push(`      - text: ${formatYamlScalar(change.text, 8)}`);
       }
-      if (change.list) {
+      if (change.list && change.list.trim().length > 0) {
         yamlLines.push(`        list: ${formatYamlScalar(change.list, 8)}`);
       }
-      if (change.code) {
+      if (change.code && change.code.trim().length > 0) {
         yamlLines.push(`        code: ${formatYamlScalar(change.code, 8)}`);
       }
     }
